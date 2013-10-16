@@ -1,7 +1,25 @@
-project(razor-runner)
+cmake_minimum_required(VERSION 2.6)
+# additional cmake files
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+project(lxqt-runner)
 
-set(razor-runner_H_FILES
+find_package(Qt4 REQUIRED)
+include(${QT_USE_FILE})
+
+find_package(LXQT REQUIRED)
+include(${LXQT_USE_FILE})
+
+find_package(QTXDG REQUIRED)
+include(${QTXDG_USE_FILE})
+
+find_package(LXQT_GLOBALKEYS REQUIRED)
+include(${LXQT_GLOBALKEYS_USE_FILE})
+
+find_package(LXQT_GLOBALKEYS_UI REQUIRED)
+include(${LXQT_GLOBALKEYS_UI_USE_FILE})
+
+set(lxqt-runner_H_FILES
     dialog.h
     commanditemmodel.h
     widgets.h
@@ -10,7 +28,7 @@ set(razor-runner_H_FILES
     configuredialog/configuredialog.h
 )
 
-set(razor-runner_MOC_FILES
+set(lxqt-runner_MOC_FILES
     dialog.h
     commanditemmodel.h
     widgets.h
@@ -19,7 +37,7 @@ set(razor-runner_MOC_FILES
     yamlparser.h
 )
 
-set(razor-runner_CPP_FILES
+set(lxqt-runner_CPP_FILES
     main.cpp
     dialog.cpp
     commanditemmodel.cpp
@@ -29,7 +47,7 @@ set(razor-runner_CPP_FILES
     configuredialog/configuredialog.cpp
 )
 
-set(razor-runner_UI_FILES
+set(lxqt-runner_UI_FILES
     dialog.ui
     configuredialog/configuredialog.ui
 )
@@ -38,11 +56,11 @@ set(QRC_FILES
 
 )
 
-set(razor-runner_LIBRARIES
-    razorqt
-    razor-global-key-shortcuts-client
-    razor-global-key-shortcut-selector
-    qtxdg
+set(lxqt-runner_LIBRARIES
+    ${LXQT_LIBRARIES}
+    ${LXQT_GLOBALKEYS_LIBRARIES}
+    ${LXQT_GLOBALKEYS_UI_LIBRARIES}
+    ${QTXDG_LIBRARIES}
 )
 
 set(QT_USE_QTXML true)
@@ -67,23 +85,32 @@ setByDefault(RUNNER_VBOX Yes )
 
 
 # Translations **********************************
+#file(GLOB TS_FILES
+#    ${CMAKE_CURRENT_SOURCE_DIR}/translations/lxqt-runner_*.ts
+#)
+#qt4_add_translation(QM_FILES ${TS_FILES})
+#install(FILES ${QM_FILES} DESTINATION ${LXQT_TRANSLATIONS_DIR})
+
+# FIXME: we should deprecate RazorTranslate and use .tx scripts later
 include(RazorTranslate)
-razor_translate_ts(razor-runner_QM_FILES 
-    SOURCES
-        ${razor-runner_H_FILES}
-        ${razor-runner_CPP_FILES} 
-        ${razor-runner_UI_FILES}
+razor_translate_ts(lxqt-runner_QM_FILES 
+   SOURCES
+       ${lxqt-runner_H_FILES}
+       ${lxqt-runner_CPP_FILES} 
+       ${lxqt-runner_UI_FILES}
 )
+
 #************************************************
-cmake_minimum_required( VERSION 2.6 )
 
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_SOURCE_DIR}/libraries/
+    ${LXQT_INCLUDE_DIRS}
+    ${LXQT_GLOBALKEYS_INCLUDE_DIRS}
+    ${LXQT_GLOBALKEYS_UI_INCLUDE_DIRS}
+    ${QTXDG_INCLUDE_DIRS}
 )
-
 
 if(NOT CMAKE_BUILD_TYPE)
     set( CMAKE_BUILD_TYPE Release )
@@ -95,8 +122,8 @@ include(${QT_USE_FILE})
 find_package(X11 REQUIRED)
 include_directories(${X11_INCLUDE_DIR})
 
-set(RAZOR_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/razor)
-set(APP_SHARE_DIR ${RAZOR_SHARE_DIR}/${PROJECT_NAME})
+set(LXQT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/lxqt)
+set(APP_SHARE_DIR ${LXQT_SHARE_DIR}/${PROJECT_NAME})
 
 #************************************************
 
@@ -119,19 +146,18 @@ if (RUNNER_VBOX)
 	add_definitions(-DVBOX_ENABLED)
 endif (RUNNER_VBOX)
 
-qt4_wrap_cpp(razor-runner_MOC_SOURCES ${razor-runner_MOC_FILES})
-qt4_wrap_ui(razor-runner_UI_HEADERS ${razor-runner_UI_FILES})
-qt4_add_resources(razor-runner_QRC_SOURCES ${QRC_FILES})
+qt4_wrap_cpp(lxqt-runner_MOC_SOURCES ${lxqt-runner_MOC_FILES})
+qt4_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
+qt4_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
 
 add_executable(${PROJECT_NAME} 
-    ${razor-runner_CPP_FILES} 
-    ${razor-runner_UI_FILES} 
-    ${razor-runner_QRC_SOURCES} 
-    ${razor-runner_QM_FILES} 
-    ${razor-runner_MOC_SOURCES})
+    ${lxqt-runner_CPP_FILES} 
+    ${lxqt-runner_UI_FILES} 
+    ${lxqt-runner_QRC_SOURCES} 
+    ${lxqt-runner_QM_FILES} 
+    ${lxqt-runner_MOC_SOURCES})
 
-add_dependencies(${PROJECT_NAME} razorqt)
-target_link_libraries(${PROJECT_NAME}  ${razor-runner_LIBRARIES} ${QT_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}  ${lxqt-runner_LIBRARIES} ${QT_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(FILES   ${CONFIG_FILES}    DESTINATION ${APP_SHARE_DIR})

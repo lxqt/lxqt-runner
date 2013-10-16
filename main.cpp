@@ -26,17 +26,20 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 
-#include <razorqt/razorapplication.h>
+#include <lxqt/lxqtapplication.h>
+// #include <LxQtTranslator>
 #include "razortranslate.h"
 #include "dialog.h"
 
 
 int main(int argc, char *argv[])
 {
-    RazorApplication a(argc, argv);
+    LxQt::Application a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
 
     TRANSLATE_APP;
+    // FIXME: we should deprecate RazorTranslate
+    // LxQt::Translator::translateApplication("lxqt-runner");
 
     QWidget *hiddenPreviewParent = new QWidget(0, Qt::Tool);
     Dialog d(hiddenPreviewParent);

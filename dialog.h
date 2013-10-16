@@ -34,12 +34,16 @@ namespace Ui {
     class Dialog;
 }
 
-class RazorSettings;
+namespace LxQt {
+    class Settings;
+    class PowerManager;
+    class ScreenSaver;
+}
+
 class CommandListView;
 class CommandItemModel;
-class PowerManager;
-class ScreenSaver;
 class ConfigureDialog;
+
 namespace GlobalKeyShortcut
 {
 class Action;
@@ -65,13 +69,13 @@ protected:
 
 private:
     Ui::Dialog *ui;
-    RazorSettings *mSettings;
+    LxQt::Settings *mSettings;
     GlobalKeyShortcut::Action *mGlobalShortcut;
     CommandItemModel *mCommandItemModel;
     bool mShowOnTop;
     int mMonitor;
-    PowerManager *mPowerManager;
-    ScreenSaver *mScreenSaver;
+    LxQt::PowerManager *mPowerManager;
+    LxQt::ScreenSaver *mScreenSaver;
 
     bool mLockCascadeChanges;
 

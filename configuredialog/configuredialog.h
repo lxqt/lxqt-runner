@@ -36,7 +36,10 @@ namespace Ui {
 }
 
 class QSettings;
-class RazorSettingsCache;
+
+namespace LxQt {
+    class SettingsCache;
+}
 
 class ConfigureDialog : public QDialog
 {
@@ -58,7 +61,7 @@ protected:
 private:
     Ui::ConfigureDialog *ui;
     QSettings *mSettings;
-    RazorSettingsCache *mOldSettings;
+    LxQt::SettingsCache *mOldSettings;
     QString mDefaultShortcut;
 
 private slots:

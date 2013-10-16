@@ -43,10 +43,10 @@
 #include <QtCore/QDir>
 #include <QtGui/QApplication>
 #include <QtGui/QAction>
-#include <razorqt/powermanager.h>
-#include <razorqt/screensaver.h>
-#include "razorqt-runner/providers.h"
-#include "razorqt-globalkeyshortcuts/config/actions.h"
+#include <lxqt/lxqtpowermanager.h>
+#include <lxqt/lxqtscreensaver.h>
+#include "providers.h"
+#include <lxqt-globalkeys/action.h>
 #include <wordexp.h>
 
 #define MAX_HISTORY 100
@@ -790,13 +790,13 @@ unsigned int PowerProviderItem::rank(const QString &pattern) const
 
 PowerProvider::PowerProvider() : CommandProvider()
 {
-    m_power = new PowerManager(this);
+    m_power = new LxQt::PowerManager(this);
     foreach (QAction *a, m_power->availableActions())
     {
         append(new PowerProviderItem(a));
     }
 
-    m_screensaver = new ScreenSaver(this);
+    m_screensaver = new LxQt::ScreenSaver(this);
     foreach (QAction *a, m_screensaver->availableActions())
     {
         append(new PowerProviderItem(a));

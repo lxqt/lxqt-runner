@@ -32,11 +32,11 @@
 #include "commanditemmodel.h"
 #include "configuredialog/configuredialog.h"
 
-#include <razorqt/razorsettings.h>
+#include <lxqt/lxqtsettings.h>
 #include <qtxdg/xdgicon.h>
-#include <razor-global-key-shortcuts-client/razor-global-key-shortcuts-client.h>
-#include <razorqt/powermanager.h>
-#include <razorqt/screensaver.h>
+#include <lxqt-globalkeys.h>
+#include <lxqt/lxqtpowermanager.h>
+#include <lxqt/lxqtscreensaver.h>
 
 #include <iostream>
 #include <QtCore/QDebug>
@@ -52,7 +52,7 @@
 #include <QScrollBar>
 // I hate a X11 heading files. As a result we have such nightmare.
 QEvent::Type QEventKeyPress=QEvent::KeyPress;
-#include <razorqt/xfitman.h>
+#include <lxqt/lxqtxfitman.h>
 
 #define DEFAULT_SHORTCUT "Alt+F2"
 
@@ -62,7 +62,7 @@ QEvent::Type QEventKeyPress=QEvent::KeyPress;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
-    mSettings(new RazorSettings("razor-runner", this)),
+    mSettings(new LxQt::Settings("razor-runner", this)),
     mGlobalShortcut(0),
     mLockCascadeChanges(false),
     mConfigureDialog(0)
@@ -70,7 +70,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Razor Runner");
 
-    connect(RazorSettings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
+    connect(LxQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
 
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(hide()));
 
@@ -101,9 +101,9 @@ Dialog::Dialog(QWidget *parent) :
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 
-    mPowerManager = new PowerManager(this);
+    mPowerManager = new LxQt::PowerManager(this);
     addActions(mPowerManager->availableActions());
-    mScreenSaver = new ScreenSaver(this);
+    mScreenSaver = new LxQt::ScreenSaver(this);
     addActions(mScreenSaver->availableActions());
 
     setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -277,7 +277,7 @@ void Dialog::showHide()
         // in KWIN. So we use the native X11.
         //QApplication::setActiveWindow(this);
         //activateWindow();
-        xfitMan().raiseWindow(this->effectiveWinId());
+        LxQt::xfitMan().raiseWindow(this->effectiveWinId());
     }
 }
 
@@ -290,9 +290,9 @@ void Dialog::realign()
     QRect desktop;
 
     if (mMonitor) // Show on the specified monitor.
-        desktop = xfitMan().availableGeometry(mMonitor-1);
+        desktop = LxQt::xfitMan().availableGeometry(mMonitor-1);
     else         // Follow the mouse.
-        desktop = xfitMan().availableGeometry(QCursor::pos());
+        desktop = LxQt::xfitMan().availableGeometry(QCursor::pos());
 
 
     QRect rect = this->geometry();

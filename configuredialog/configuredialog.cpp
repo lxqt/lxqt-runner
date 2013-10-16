@@ -29,7 +29,7 @@
 #include "configuredialog.h"
 #include "ui_configuredialog.h"
 
-#include <razorqt/razorsettings.h>
+#include <lxqt/lxqtsettings.h>
 
 #include <QtCore/QSettings>
 #include <QtGui/QDesktopWidget>
@@ -49,7 +49,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     QDialog(parent),
     ui(new Ui::ConfigureDialog),
     mSettings(settings),
-    mOldSettings(new RazorSettingsCache(settings)),
+    mOldSettings(new LxQt::SettingsCache(settings)),
     mDefaultShortcut(defaultShortcut)
 {
     ui->setupUi(this);

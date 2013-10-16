@@ -26,8 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "commanditemmodel.h"
-#include "razorqt/razorsettings.h"
-
+#include <lxqt/lxqtsettings.h>
 
 #include <qtxdg/xdgicon.h>
 #include <QtCore/QFileInfo>
@@ -217,7 +216,7 @@ CommandSourceItemModel::CommandSourceItemModel(QObject *parent) :
     rebuild();
     mExternalProviderStartIndex = index(rowCount(), 0);
 
-    RazorSettings settings("razor-runner");
+    LxQt::Settings settings("razor-runner");
     int numExternalProviders = settings.beginReadArray("external providers");
     for (int i = 0; i < numExternalProviders; i++) 
     {

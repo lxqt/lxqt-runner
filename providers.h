@@ -295,8 +295,11 @@ private:
     QAction *m_action;
 };
 
-class PowerManager;
-class ScreenSaver;
+namespace LxQt {
+    class PowerManager;
+    class ScreenSaver;
+}
+
 /*! Power management built in into runner
  */
 class PowerProvider: public CommandProvider
@@ -306,8 +309,8 @@ public:
     PowerProvider();
 
 private:
-    PowerManager *m_power;
-    ScreenSaver *m_screensaver;
+    LxQt::PowerManager *m_power;
+    LxQt::ScreenSaver *m_screensaver;
 };
 
 class ExternalProviderItem: public CommandProviderItem
