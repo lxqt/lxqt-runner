@@ -62,13 +62,13 @@ QEvent::Type QEventKeyPress=QEvent::KeyPress;
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
-    mSettings(new LxQt::Settings("razor-runner", this)),
+    mSettings(new LxQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
     mLockCascadeChanges(false),
     mConfigureDialog(0)
 {
     ui->setupUi(this);
-    setWindowTitle("Razor Runner");
+    setWindowTitle("LXDE-Qt Runner");
 
     connect(LxQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
 
