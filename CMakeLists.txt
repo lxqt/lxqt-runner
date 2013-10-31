@@ -19,6 +19,17 @@ include(${LXQT_GLOBALKEYS_USE_FILE})
 find_package(LXQT_GLOBALKEYS_UI REQUIRED)
 include(${LXQT_GLOBALKEYS_UI_USE_FILE})
 
+# optionally use libmenu-cache from lxde to generate the application menu
+find_package(PkgConfig)
+pkg_check_modules(MENU_CACHE
+    libmenu-cache>=0.3.3
+)
+# if libmenu-cache is available
+if (MENU_CACHE_FOUND)
+  include_directories(${MENU_CACHE_INCLUDE_DIRS})
+  add_definitions(-DHAVE_MENU_CACHE=1)
+endif (MENU_CACHE_FOUND)
+
 set(lxqt-runner_H_FILES
     dialog.h
     commanditemmodel.h
@@ -61,6 +72,7 @@ set(lxqt-runner_LIBRARIES
     ${LXQT_GLOBALKEYS_LIBRARIES}
     ${LXQT_GLOBALKEYS_UI_LIBRARIES}
     ${QTXDG_LIBRARIES}
+    ${MENU_CACHE_LIBRARIES}
 )
 
 set(QT_USE_QTXML true)

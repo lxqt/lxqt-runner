@@ -4,11 +4,12 @@
  * Razor - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
- * Copyright: 2010-2011 Razor team
+ * Copyright: 2010-2013 Razor team
  * Authors:
  *   Alexander Sokoloff <sokoloff.a@gmail.com>
  *   Aaron Lewis <the.warl0ck.1989@gmail.com>
  *   Petr Vanek <petr@scribus.info>
+ *   Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
  *
  * This program or library is free software; you can redistribute it
  * and/or modify it under the terms of the GNU Lesser General Public
@@ -144,6 +145,23 @@ AppLinkItem::AppLinkItem(const QDomElement &element):
     QMetaObject::invokeMethod(this, "updateIcon", Qt::QueuedConnection);
 }
 
+#ifdef HAVE_MENU_CACHE
+AppLinkItem::AppLinkItem(MenuCacheApp* app):
+        CommandProviderItem()
+{
+    mIconName = menu_cache_item_get_icon(MENU_CACHE_ITEM(app));
+    mTitle = menu_cache_item_get_name(MENU_CACHE_ITEM(app));
+    mComment = menu_cache_item_get_comment(MENU_CACHE_ITEM(app));
+    mToolTip = mComment;
+    mCommand = menu_cache_app_get_exec(app);
+    mProgram = QFileInfo(mCommand).baseName().section(" ", 0, 0);
+    char* path = menu_cache_item_get_file_path(MENU_CACHE_ITEM(app));
+    mDesktopFile = path;
+    g_free(path);
+    QMetaObject::invokeMethod(this, "updateIcon", Qt::QueuedConnection);
+    // qDebug() << "FOUND: " << mIconName << ", " << mCommand;
+}
+#endif
 
 /************************************************
 
@@ -221,13 +239,22 @@ bool AppLinkItem::compare(const QRegExp &regExp) const
 
  ************************************************/
 AppLinkProvider::AppLinkProvider():
-        CommandProvider(),
-        mXdgMenu( new XdgMenu())
+        CommandProvider()
 {
+#ifdef HAVE_MENU_CACHE
+    menu_cache_init(0);
+    mMenuCache = menu_cache_lookup(XdgMenu::getMenuFileName().toLocal8Bit());
+    if(mMenuCache)
+        mMenuCacheNotify = menu_cache_add_reload_notify(mMenuCache, (MenuCacheReloadNotify)menuCacheReloadNotify, this);
+    else
+        mMenuCacheNotify = 0;
+#else
+    mXdgMenu = new XdgMenu();
     mXdgMenu->setEnvironments(QStringList() << "X-RAZOR" << "Razor");
     connect(mXdgMenu, SIGNAL(changed()), this, SLOT(update()));
     mXdgMenu->read(XdgMenu::getMenuFileName());
     update();
+#endif
 }
 
 
@@ -236,14 +263,31 @@ AppLinkProvider::AppLinkProvider():
  ************************************************/
 AppLinkProvider::~AppLinkProvider()
 {
+#ifdef HAVE_MENU_CACHE
+    if(mMenuCache)
+    {
+        menu_cache_remove_reload_notify(mMenuCache, mMenuCacheNotify);
+        menu_cache_unref(mMenuCache);
+    }
+#else
     delete mXdgMenu;
+#endif
 }
 
 
 /************************************************
 
  ************************************************/
-void doUpdate(const QDomElement &xml, QHash<QString, AppLinkItem*> &items)
+ #ifdef HAVE_MENU_CACHE
+
+void AppLinkProvider::menuCacheReloadNotify(MenuCache* cache, gpointer user_data)
+{
+    reinterpret_cast<AppLinkProvider*>(user_data)->update();
+}
+
+ #else // without menu-cache, use libqtxdg
+ 
+ void doUpdate(const QDomElement &xml, QHash<QString, AppLinkItem*> &items)
 {
     DomElementIterator it(xml, "");
     while (it.hasNext())
@@ -263,7 +307,7 @@ void doUpdate(const QDomElement &xml, QHash<QString, AppLinkItem*> &items)
         }
     }
 }
-
+#endif
 
 /************************************************
 
@@ -272,7 +316,25 @@ void AppLinkProvider::update()
 {
     emit aboutToBeChanged();
     QHash<QString, AppLinkItem*> newItems;
+
+#ifdef HAVE_MENU_CACHE
+    // libmenu-cache is available, use it to get cached app list
+    GSList* apps = menu_cache_list_all_apps(mMenuCache);
+    for(GSList* l = apps; l; l = l->next)
+    {
+        MenuCacheApp* app = MENU_CACHE_APP(l->data);
+        AppLinkItem *item = new AppLinkItem(app);
+        AppLinkItem *prevItem = newItems[item->command()];
+        if(prevItem)
+            delete prevItem; // delete previous item;
+        newItems.insert(item->command(), item);
+        menu_cache_item_unref(MENU_CACHE_ITEM(app));
+    }
+    g_slist_free(apps);
+#else
+    // use libqtxdg XdgMenu to get installed apps
     doUpdate(mXdgMenu->xml().documentElement(), newItems);
+#endif
     {
         QMutableListIterator<CommandProviderItem*> i(*this);
         while (i.hasNext()) {
