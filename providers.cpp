@@ -149,14 +149,15 @@ AppLinkItem::AppLinkItem(const QDomElement &element):
 AppLinkItem::AppLinkItem(MenuCacheApp* app):
         CommandProviderItem()
 {
-    mIconName = menu_cache_item_get_icon(MENU_CACHE_ITEM(app));
-    mTitle = menu_cache_item_get_name(MENU_CACHE_ITEM(app));
-    mComment = menu_cache_item_get_comment(MENU_CACHE_ITEM(app));
+    MenuCacheItem* item = MENU_CACHE_ITEM(app);
+    mIconName = QString::fromUtf8(menu_cache_item_get_icon(item));
+    mTitle = QString::fromUtf8(menu_cache_item_get_name(item));
+    mComment = QString::fromUtf8(menu_cache_item_get_comment(item));
     mToolTip = mComment;
     mCommand = menu_cache_app_get_exec(app);
     mProgram = QFileInfo(mCommand).baseName().section(" ", 0, 0);
     char* path = menu_cache_item_get_file_path(MENU_CACHE_ITEM(app));
-    mDesktopFile = path;
+    mDesktopFile = QString::fromLocal8Bit(path);
     g_free(path);
     QMetaObject::invokeMethod(this, "updateIcon", Qt::QueuedConnection);
     // qDebug() << "FOUND: " << mIconName << ", " << mCommand;
