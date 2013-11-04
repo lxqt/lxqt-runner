@@ -103,9 +103,9 @@ setByDefault(RUNNER_VBOX Yes )
 #qt4_add_translation(QM_FILES ${TS_FILES})
 #install(FILES ${QM_FILES} DESTINATION ${LXQT_TRANSLATIONS_DIR})
 
-# FIXME: we should deprecate RazorTranslate and use .tx scripts later
-include(RazorTranslate)
-razor_translate_ts(lxqt-runner_QM_FILES 
+# FIXME: we should deprecate LxQtTranslate and use .tx scripts later
+include(LxQtTranslate)
+lxqt_translate_ts(lxqt-runner_QM_FILES 
    SOURCES
        ${lxqt-runner_H_FILES}
        ${lxqt-runner_CPP_FILES} 

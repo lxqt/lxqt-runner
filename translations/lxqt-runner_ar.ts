@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>إعدادات مُطلق ريزر</translation>
     </message>
     <message>
@@ -45,11 +45,11 @@
         <translation>بادئ التطبيقات</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation>تهيئة مُطلق نظام ريزر</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
+        <source>Clear lxqt-runner History</source>
         <translation>مسح ذاكرة مُنفِّذ برامج ريزر</translation>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>الرِّياضيَّات</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
+        <source>LxQt Power Management</source>
         <translation>إدارة الطاقة لبيئة ريزر</translation>
     </message>
 </context>

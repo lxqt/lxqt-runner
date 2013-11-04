@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>Подешавања Рејзор-покретача</translation>
     </message>
     <message>
@@ -45,11 +45,11 @@
         <translation>Покретач програма</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation>Подеси Рејзор-покретача</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
+        <source>Clear lxqt-runner History</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>Математика</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
+        <source>LxQt Power Management</source>
         <translation type="unfinished"/>
     </message>
 </context>

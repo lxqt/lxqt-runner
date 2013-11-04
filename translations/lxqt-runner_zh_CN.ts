@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor启动器设置</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt启动器设置</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>应用程序启动器</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>配置Razor启动器</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>配置LxQt启动器</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>清空 razor-runner 历史</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>清空 lxqt-runner 历史</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>数学</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor 电源管理</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt 电源管理</translation>
     </message>
 </context>
 </TS>

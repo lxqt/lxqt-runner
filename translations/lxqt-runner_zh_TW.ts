@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor快速執行設定</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt快速執行設定</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>應用程式啟動器</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>設定Razor快速執行</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>設定LxQt快速執行</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>清除Razor快速執行的歷史紀錄</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>清除LxQt快速執行的歷史紀錄</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>數學</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor電源管理</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt電源管理</translation>
     </message>
 </context>
 </TS>

@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Ρυθμίσεις εκτελεστή Razor</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>Ρυθμίσεις εκτελεστή LxQt</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Εκκινητής εφαρμογής </translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Διαμόρφωση εκτελεστή razor</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Διαμόρφωση εκτελεστή lxqt</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Εκκαθάριση ιστορικού εκτελεστή razor</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Εκκαθάριση ιστορικού εκτελεστή lxqt</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Μαθηματικά</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Διαχείριση ενέργειας Razor</translation>
+        <source>LxQt Power Management</source>
+        <translation>Διαχείριση ενέργειας LxQt</translation>
     </message>
 </context>
 </TS>

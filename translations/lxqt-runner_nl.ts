@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor-uitvoeren Instellingen</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt-uitvoeren Instellingen</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Programma starter</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Configureer Razor-uitvoeren</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Configureer LxQt-uitvoeren</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Wis razor-runner Geschiedenis</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Wis lxqt-runner Geschiedenis</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Wiskundig</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor Energiebeheer</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt Energiebeheer</translation>
     </message>
 </context>
 </TS>

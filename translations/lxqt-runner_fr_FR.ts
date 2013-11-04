@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>Paramètres du lanceur de commandes</translation>
     </message>
     <message>
@@ -45,11 +45,11 @@
         <translation>Lanceur d&apos;application</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation>Configurer le lanceur de commandes</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
+        <source>Clear lxqt-runner History</source>
         <translation>Effacer l&apos;historique du lanceur de commandes</translation>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>Mathématiques</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
+        <source>LxQt Power Management</source>
         <translation>Gestion de l&apos;énergie</translation>
     </message>
 </context>

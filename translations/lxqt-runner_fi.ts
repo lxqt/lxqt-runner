@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razorin käynnistimen asetukset</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQtin käynnistimen asetukset</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Sovelluskäynnistin </translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Hallitse Razorin käynnistintä</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Hallitse LxQtin käynnistintä</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Tyhjennä Razor-käynnistimen historia</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Tyhjennä LxQt-käynnistimen historia</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematiikka</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razorin virranhallinta</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQtin virranhallinta</translation>
     </message>
 </context>
 </TS>

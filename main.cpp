@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -28,7 +28,7 @@
 
 #include <lxqt/lxqtapplication.h>
 // #include <LxQtTranslator>
-#include "razortranslate.h"
+#include "lxqttranslate.h"
 #include "dialog.h"
 
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     TRANSLATE_APP;
-    // FIXME: we should deprecate RazorTranslate
+    // FIXME: we should deprecate LxQtTranslate
     // LxQt::Translator::translateApplication("lxqt-runner");
 
     QWidget *hiddenPreviewParent = new QWidget(0, Qt::Tool);

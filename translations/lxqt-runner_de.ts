@@ -3,7 +3,7 @@
     <name>ConfigureDialog</name>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -56,7 +56,7 @@
     </message>
     <message>
         <location filename="../dialog.cpp" line="91"/>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation type="unfinished"/>
     </message>
     <message>

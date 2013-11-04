@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Setări razor-runner</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>Setări lxqt-runner</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Lansator de aplicații</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Configurare razor-runner</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Configurare lxqt-runner</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Curăță istoricul razor-runner</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Curăță istoricul lxqt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematică</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Gestiune alimentare Razor</translation>
+        <source>LxQt Power Management</source>
+        <translation>Gestiune alimentare LxQt</translation>
     </message>
 </context>
 </TS>

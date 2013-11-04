@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>Nastavení spouštěče programů</translation>
     </message>
     <message>
@@ -45,11 +45,11 @@
         <translation>Spouštěč programů</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation>Nastavit spouštěč programů</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
+        <source>Clear lxqt-runner History</source>
         <translation>Smazat historii spouštěče programů</translation>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>Matematika</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
+        <source>LxQt Power Management</source>
         <translation>Správa energie</translation>
     </message>
 </context>

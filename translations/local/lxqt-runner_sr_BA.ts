@@ -4,7 +4,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>Подешавања Рејзор-покретача</translation>
     </message>
     <message>
@@ -47,7 +47,7 @@
         <translation>Покретач програма</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
+        <source>Configure lxqt-runner</source>
         <translation>Подеси Рејзор-покретача</translation>
     </message>
     <message>

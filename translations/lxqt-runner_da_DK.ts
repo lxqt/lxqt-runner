@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
+        <source>LxQt-runner Settings</source>
         <translation>Programstarter Indstillinger</translation>
     </message>
     <message>
@@ -45,12 +45,12 @@
         <translation>Programstarter</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Indstil Razor programstarter</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Indstil LxQt programstarter</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Nulstil razor programstarter historik</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Nulstil lxqt programstarter historik</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematik</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor Strømstyring</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt Strømstyring</translation>
     </message>
 </context>
 </TS>

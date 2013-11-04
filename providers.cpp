@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2013 Razor team
@@ -251,7 +251,7 @@ AppLinkProvider::AppLinkProvider():
         mMenuCacheNotify = 0;
 #else
     mXdgMenu = new XdgMenu();
-    mXdgMenu->setEnvironments(QStringList() << "X-RAZOR" << "Razor");
+    mXdgMenu->setEnvironments(QStringList() << "X-LXQT" << "LxQt");
     connect(mXdgMenu, SIGNAL(changed()), this, SLOT(update()));
     mXdgMenu->read(XdgMenu::getMenuFileName());
     update();
@@ -417,7 +417,7 @@ unsigned int HistoryItem::rank(const QString &pattern) const
 HistoryProvider::HistoryProvider():
         CommandProvider()
 {
-    QString fileName = (XdgDirs::cacheHome() + "/razor-runner.history");
+    QString fileName = (XdgDirs::cacheHome() + "/lxqt-runner.history");
     mHistoryFile = new QSettings(fileName, QSettings::IniFormat);
     mHistoryFile->beginGroup("commands");
     for (uint i=0; i<MAX_HISTORY; ++i)
@@ -825,7 +825,7 @@ PowerProviderItem::PowerProviderItem(QAction *action)
 {
     mIcon = action->icon();
     mTitle = action->text();
-    mComment = QObject::tr("Razor Power Management");
+    mComment = QObject::tr("LxQt Power Management");
     mToolTip = mComment;
 }
 

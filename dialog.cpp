@@ -1,7 +1,7 @@
 /* BEGIN_COMMON_COPYRIGHT_HEADER
  * (c)LGPL2+
  *
- * Razor - a lightweight, Qt based, desktop toolset
+ * LXDE-Qt - a lightweight, Qt based, desktop toolset
  * http://razor-qt.org
  *
  * Copyright: 2010-2011 Razor team
@@ -93,11 +93,11 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
-    QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure razor-runner"), this);
+    QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure lxqt-runner"), this);
     connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
     addAction(a);
     
-    a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear razor-runner History"), this);
+    a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear lxqt-runner History"), this);
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 

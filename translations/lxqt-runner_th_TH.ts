@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>ค่าตั้งกล่องป้อนคำสั่ง-razor</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>ค่าตั้งกล่องป้อนคำสั่ง-lxqt</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>ปุ่มเรียกใช้งานโปรแกรม</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>ปรับแต่งกล่องป้อนคำสั่ง-razor</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>ปรับแต่งกล่องป้อนคำสั่ง-lxqt</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>ล้างประวัติกล่องป้อนคำสั่ง-razor</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>ล้างประวัติกล่องป้อนคำสั่ง-lxqt</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>การคำนวณเลข</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>การจัดการพลังงานของ Razor</translation>
+        <source>LxQt Power Management</source>
+        <translation>การจัดการพลังงานของ LxQt</translation>
     </message>
 </context>
 </TS>

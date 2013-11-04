@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor paleidiklio nuostatos</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt paleidiklio nuostatos</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Programų paleidiklis</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Konfigūruoti razor paleidiklį</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Konfigūruoti lxqt paleidiklį</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Išvalyti razor paleidiklio istoriją</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Išvalyti lxqt paleidiklio istoriją</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematika</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor energijos valdymas</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt energijos valdymas</translation>
     </message>
 </context>
 </TS>

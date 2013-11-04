@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor-runnerの設定</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt-runnerの設定</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>アプリケーションランチャ</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>razor-runnerを設定</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>lxqt-runnerを設定</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Razor-runnerの履歴を消去</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>LxQt-runnerの履歴を消去</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>計算</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor電源管理</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt電源管理</translation>
     </message>
 </context>
 </TS>

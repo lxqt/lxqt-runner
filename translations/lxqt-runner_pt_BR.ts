@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Configurações do executor do Razor</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>Configurações do executor do LxQt</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Lançador de aplicativo</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Configurar o executor do Razor</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Configurar o executor do LxQt</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Limpar o histórico do executor do Razor</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Limpar o histórico do executor do LxQt</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matemática</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Gerenciamento de energia do Razor</translation>
+        <source>LxQt Power Management</source>
+        <translation>Gerenciamento de energia do LxQt</translation>
     </message>
 </context>
 </TS>

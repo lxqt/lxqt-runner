@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor-çalıştırıcı Ayarları</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt-çalıştırıcı Ayarları</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Uygulama başlatıcı </translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Razor-çalıştırıcıyı yapılandır</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>LxQt-çalıştırıcıyı yapılandır</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Razor-çalıştırıcı geçmişini temizle</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>LxQt-çalıştırıcı geçmişini temizle</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>İşlemler</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor Güç Yönetimi</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt Güç Yönetimi</translation>
     </message>
 </context>
 </TS>

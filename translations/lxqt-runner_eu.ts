@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>Razor-runner Settings</source>
-        <translation>Razor-runner ezarpenak</translation>
+        <source>LxQt-runner Settings</source>
+        <translation>LxQt-runner ezarpenak</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -45,12 +45,12 @@
         <translation>Aplikazio-abiarazlea</translation>
     </message>
     <message>
-        <source>Configure razor-runner</source>
-        <translation>Konfiguratu razor-runner</translation>
+        <source>Configure lxqt-runner</source>
+        <translation>Konfiguratu lxqt-runner</translation>
     </message>
     <message>
-        <source>Clear razor-runner History</source>
-        <translation>Garbitu razor-runner historia</translation>
+        <source>Clear lxqt-runner History</source>
+        <translation>Garbitu lxqt-runner historia</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematikak</translation>
     </message>
     <message>
-        <source>Razor Power Management</source>
-        <translation>Razor energia-kudeaketa</translation>
+        <source>LxQt Power Management</source>
+        <translation>LxQt energia-kudeaketa</translation>
     </message>
 </context>
 </TS>
