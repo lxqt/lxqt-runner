@@ -71,7 +71,7 @@ QString expandCommand(const QString &command, QStringList *arguments=0)
     if (arguments)
     {
         for (size_t i = 1; i < words.we_wordc; i++)
-            *arguments << w[i];
+            *arguments << QString::fromLocal8Bit(w[i]);
     }
 
     wordfree(&words);
@@ -944,7 +944,8 @@ void ExternalProvider::readFromProcess()
     {
         if (ch == '\n') 
         {
-            mYamlParser->consumeLine(mBuffer);
+            QString textLine = QString::fromLocal8Bit(mBuffer);
+            mYamlParser->consumeLine(textLine);
             mBuffer.clear();
         }
         else 

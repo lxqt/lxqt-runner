@@ -367,7 +367,7 @@ private:
     QTextStream *mDataToProcess; 
     YamlParser *mYamlParser; 
 
-    QString mBuffer;
+    QByteArray mBuffer;
 };
 
 
