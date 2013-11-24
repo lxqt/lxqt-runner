@@ -283,6 +283,7 @@ AppLinkProvider::~AppLinkProvider()
 
 void AppLinkProvider::menuCacheReloadNotify(MenuCache* cache, gpointer user_data)
 {
+    // qDebug() << Q_FUNC_INFO;
     reinterpret_cast<AppLinkProvider*>(user_data)->update();
 }
 
@@ -344,6 +345,13 @@ void AppLinkProvider::update()
             if (newItem)
             {
                 *(item) = *newItem;  // Copy by value, not pointer!
+                // After the item is copied, the original "updateIcon" call queued
+                // on the newItem object is never called since the object iss going to
+                // be deleted. Hence we need to call it on the copied item manually.
+                // Otherwise the copied item will have no icon.
+                // FIXME: this is a dirty hack and it should be made cleaner later.
+                if(item->icon().isNull())
+		    QMetaObject::invokeMethod(item, "updateIcon", Qt::QueuedConnection);
                 delete newItem;
             }
             else
