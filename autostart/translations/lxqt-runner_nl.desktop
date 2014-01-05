@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Runner
+TryExec=lxqt-runner
+Exec=lxqt-runner
+OnlyShowIn=LxQt;
+X-LxQt-Module=true
+
+#TRANSLATIONS_DIR=translations
+
+
+# Translations
+Name[nl]=Starter
