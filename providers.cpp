@@ -288,7 +288,7 @@ void AppLinkProvider::menuCacheReloadNotify(MenuCache* cache, gpointer user_data
 }
 
  #else // without menu-cache, use libqtxdg
- 
+
  void doUpdate(const QDomElement &xml, QHash<QString, AppLinkItem*> &items)
 {
     DomElementIterator it(xml, "");
@@ -833,7 +833,7 @@ PowerProviderItem::PowerProviderItem(QAction *action)
 {
     mIcon = action->icon();
     mTitle = action->text();
-    mComment = QObject::tr("LxQt Power Management");
+    mComment = QObject::tr("Power Management");
     mToolTip = mComment;
 }
 
@@ -889,7 +889,7 @@ bool ExternalProviderItem::setData(QMap<QString,QString> & data)
     mComment = data["comment"];
     mToolTip = data["tooltip"];
     mCommand = data["command"];
-    if (data.contains("icon")) 
+    if (data.contains("icon"))
         mIcon = XdgIcon::fromTheme(data["icon"]);
 
     return true;
@@ -912,8 +912,8 @@ CommandProvider(), mName(name)
 {
     mExternalProcess = new QProcess(this);
     mYamlParser = new YamlParser();
-    connect(mYamlParser, SIGNAL(newListOfMaps(QList<QMap<QString, QString> >)), 
-            this,        SLOT(newListOfMaps(QList<QMap<QString, QString> >))); 
+    connect(mYamlParser, SIGNAL(newListOfMaps(QList<QMap<QString, QString> >)),
+            this,        SLOT(newListOfMaps(QList<QMap<QString, QString> >)));
 
     connect(mExternalProcess, SIGNAL(readyRead()), this, SLOT(readFromProcess()));
     mExternalProcess->start(externalProgram);
@@ -928,10 +928,10 @@ void ExternalProvider::setSearchTerm(const QString searchTerm)
 void ExternalProvider::newListOfMaps(QList<QMap<QString,QString> > maps)
 {
     emit aboutToBeChanged();
-    
+
     qDeleteAll(*this);
     clear();
-    
+
     QMap<QString, QString> map;
     foreach(map, maps)
     {
@@ -941,7 +941,7 @@ void ExternalProvider::newListOfMaps(QList<QMap<QString,QString> > maps)
         else
             delete item;
     }
-   
+
     emit changed();
 }
 
@@ -950,13 +950,13 @@ void ExternalProvider::readFromProcess()
     char ch;
     while (mExternalProcess->getChar(&ch))
     {
-        if (ch == '\n') 
+        if (ch == '\n')
         {
             QString textLine = QString::fromLocal8Bit(mBuffer);
             mYamlParser->consumeLine(textLine);
             mBuffer.clear();
         }
-        else 
+        else
         {
             mBuffer.append(ch);
         }
