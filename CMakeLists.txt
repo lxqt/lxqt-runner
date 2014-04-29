@@ -172,3 +172,14 @@ target_link_libraries(${PROJECT_NAME}  ${lxqt-runner_LIBRARIES} ${QT_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(FILES   ${CONFIG_FILES}    DESTINATION ${APP_SHARE_DIR})
+
+
+# building tarball with CPack -------------------------------------------------
+include (InstallRequiredSystemLibraries)
+set (CPACK_PACKAGE_VERSION_MAJOR ${LXQT_MAJOR_VERSION})
+set (CPACK_PACKAGE_VERSION_MINOR ${LXQT_MINOR_VERSION})
+set (CPACK_PACKAGE_VERSION_PATCH ${LXQT_PATCH_VERSION})
+set (CPACK_GENERATOR TBZ2)
+set (CPACK_SOURCE_GENERATOR TBZ2)
+set (CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
+include (CPack)
