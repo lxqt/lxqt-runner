@@ -3,7 +3,7 @@ Type=Application
 Name=Runner
 TryExec=lxqt-runner
 Exec=lxqt-runner
-OnlyShowIn=Razor;
-X-LxQt-Module=true
+OnlyShowIn=LXQt;
+X-LXQt-Module=true
 
 #TRANSLATIONS_DIR=translations
