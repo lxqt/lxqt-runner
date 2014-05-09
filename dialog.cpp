@@ -67,6 +67,7 @@ Dialog::Dialog(QWidget *parent) :
     mLockCascadeChanges(false),
     mConfigureDialog(0)
 {
+    setAttribute(Qt::WA_TranslucentBackground);
     ui->setupUi(this);
     setWindowTitle("LXDE-Qt Runner");
 
