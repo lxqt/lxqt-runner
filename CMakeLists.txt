@@ -21,9 +21,13 @@ include(${LXQT_GLOBALKEYS_UI_USE_FILE})
 
 # optionally use libmenu-cache from lxde to generate the application menu
 find_package(PkgConfig)
-pkg_check_modules(MENU_CACHE
-    libmenu-cache>=0.3.3
-)
+
+if (NOT WITHOUT_MENU_CACHE)
+  pkg_check_modules(MENU_CACHE
+      libmenu-cache>=0.3.3
+  )
+endif(NOT WITHOUT_MENU_CACHE)
+
 # if libmenu-cache is available
 if (MENU_CACHE_FOUND)
   include_directories(${MENU_CACHE_INCLUDE_DIRS})
