@@ -69,7 +69,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     setAttribute(Qt::WA_TranslucentBackground);
     ui->setupUi(this);
-    setWindowTitle("LXDE-Qt Runner");
+    setWindowTitle("LXQt Runner");
 
     connect(LxQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
 
@@ -94,11 +94,11 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
-    QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure lxqt-runner"), this);
+    QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure"), this);
     connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
     addAction(a);
     
-    a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear lxqt-runner History"), this);
+    a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear History"), this);
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 

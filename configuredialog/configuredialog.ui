@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>LxQt-runner Settings</string>
+   <string>Runner Settings</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

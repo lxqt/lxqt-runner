@@ -57,19 +57,19 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     connect(ui->buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(resetSettings()));
 
     // Position .................................
-    ui->positionCbx->addItem(tr("Top edge of screen"), QVariant(ConfigureDialog::PositionTop));
-    ui->positionCbx->addItem(tr("Center of screen"), QVariant(ConfigureDialog::PositionCenter));
+    ui->positionCbx->addItem(tr("Top edge of the screen"), QVariant(ConfigureDialog::PositionTop));
+    ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
     connect(ui->positionCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(positionCbxChanged(int)));
 
     // Monitor ..................................
     QDesktopWidget *desktop = qApp->desktop();
 
-    ui->monitorCbx->addItem(tr("Monitor where the mouse"), QVariant(0));
+    ui->monitorCbx->addItem(tr("Focused screen"), QVariant(0));
 
     int monCnt = desktop->screenCount();
     for (int i=0; i<monCnt; ++i)
     {
-        ui->monitorCbx->addItem(tr("Always on %1 monitor").arg(i+1), QVariant(i+1));
+        ui->monitorCbx->addItem(tr("Always on screen %1").arg(i+1), QVariant(i+1));
     }
     ui->monitorCbx->setEnabled(monCnt > 1);
     connect(ui->monitorCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(monitorCbxChanged(int)));
