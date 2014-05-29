@@ -15,7 +15,7 @@
     </message>
     <message>
         <source>Show on:</source>
-        <translation>Pokasz na:</translation>
+        <translation>Pokaż na:</translation>
     </message>
     <message>
         <source>Shortcut:</source>
@@ -23,7 +23,7 @@
     </message>
     <message>
         <source>Top edge of screen</source>
-        <translation>Góra ekarnu</translation>
+        <translation>Góra ekranu</translation>
     </message>
     <message>
         <source>Center of screen</source>
@@ -31,7 +31,7 @@
     </message>
     <message>
         <source>Monitor where the mouse</source>
-        <translation>Tam gdzie mysz</translation>
+        <translation>Tam, gdzie mysz</translation>
     </message>
     <message>
         <source>Always on %1 monitor</source>
@@ -42,7 +42,7 @@
     <name>Dialog</name>
     <message>
         <source>Application launcher </source>
-        <translation>Komenda</translation>
+        <translation>Wyzwalacz programu </translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
@@ -50,11 +50,11 @@
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Wyczyść Historię lxqt-runnera</translation>
+        <translation>Wyczyść historię lxqt-runnera</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation>Naciśnij &quot;%1&quot; aby zobaczyć okno.</translation>
+        <translation>Naciśnij &quot;%1&quot;, aby zobaczyć okno.</translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>LxQt Power Management</source>
-        <translation>Menadżer Zasilania LxQt</translation>
+        <translation>Zarządzanie zasilaniem LxQt</translation>
     </message>
 </context>
 </TS>
