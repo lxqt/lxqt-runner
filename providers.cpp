@@ -44,8 +44,8 @@
 #include <QtCore/QDir>
 #include <QtGui/QApplication>
 #include <QtGui/QAction>
-#include <lxqt/lxqtpowermanager.h>
-#include <lxqt/lxqtscreensaver.h>
+#include <LXQt/PowerManager>
+#include <LXQt/ScreenSaver>
 #include "providers.h"
 #include <lxqt-globalkeys/action.h>
 #include <wordexp.h>

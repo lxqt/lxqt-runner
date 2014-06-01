@@ -29,7 +29,7 @@
 #include "configuredialog.h"
 #include "ui_configuredialog.h"
 
-#include <lxqt/lxqtsettings.h>
+#include <LXQt/Settings>
 
 #include <QtCore/QSettings>
 #include <QtGui/QDesktopWidget>

@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "commanditemmodel.h"
-#include <lxqt/lxqtsettings.h>
+#include <LXQt/Settings>
 
 #include <qtxdg/xdgicon.h>
 #include <QtCore/QFileInfo>
