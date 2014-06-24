@@ -29,9 +29,9 @@
 #define COMMANDITEMMODEL_H
 
 #include <providers.h>
-#include <QtGui/QSortFilterProxyModel>
-#include <QtCore/QAbstractListModel>
-#include <QtCore/QVariant>
+#include <QSortFilterProxyModel>
+#include <QAbstractListModel>
+#include <QVariant>
 
 
 class CommandSourceItemModel: public QAbstractListModel

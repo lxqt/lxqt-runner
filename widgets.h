@@ -29,10 +29,10 @@
 #define WIDGETS_H
 
 
-#include <QtGui/QWidget>
-#include <QtGui/QComboBox>
-#include <QtGui/QListView>
-#include <QtGui/QStyledItemDelegate>
+#include <QWidget>
+#include <QComboBox>
+#include <QListView>
+#include <QStyledItemDelegate>
 
 class QEvent;
 

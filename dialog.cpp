@@ -33,21 +33,21 @@
 #include "configuredialog/configuredialog.h"
 
 #include <LXQt/Settings>
-#include <qtxdg/xdgicon.h>
-#include <lxqt-globalkeys.h>
+#include <XdgIcon>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
-
+#include <LXQtGlobalKeys/Action>
+#include <LXQtGlobalKeys/Client>
 #include <iostream>
-#include <QtCore/QDebug>
-#include <QtGui/QCloseEvent>
-#include <QtGui/QDesktopWidget>
-#include <QtCore/QProcess>
-#include <QtGui/QLineEdit>
-#include <QtGui/QAction>
-#include <QtGui/QMessageBox>
-#include <QtGui/QApplication>
-#include <QtGui/QMenu>
+#include <QDebug>
+#include <QCloseEvent>
+#include <QDesktopWidget>
+#include <QProcess>
+#include <QLineEdit>
+#include <QAction>
+#include <QMessageBox>
+#include <QApplication>
+#include <QMenu>
 
 #include <QScrollBar>
 // I hate a X11 heading files. As a result we have such nightmare.

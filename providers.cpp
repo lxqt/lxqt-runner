@@ -31,24 +31,28 @@
 
 #include "providers.h"
 #include "yamlparser.h"
-#include <qtxdg/xdgicon.h>
-#include <qtxdg/xdgdesktopfile.h>
-#include <qtxdg/xdgmenu.h>
-#include <qtxdg/xmlhelper.h>
-#include <qtxdg/xdgdirs.h>
+#include <XdgIcon>
+#include <XdgDesktopFile>
+#include <XdgMenu>
+#include <XmlHelper>
+#include <XdgDirs>
 
-#include <QtCore/QProcess>
-#include <QtCore/QtAlgorithms>
-#include <QtCore/QFileInfo>
-#include <QtCore/QSettings>
-#include <QtCore/QDir>
-#include <QtGui/QApplication>
-#include <QtGui/QAction>
+#include <QProcess>
+#include <QtAlgorithms>
+#include <QFileInfo>
+#include <QSettings>
+#include <QDir>
+#include <QApplication>
+#include <QAction>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
 #include "providers.h"
-#include <lxqt-globalkeys/action.h>
+#include <LXQtGlobalKeys/Action>
 #include <wordexp.h>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QStandardPaths>
+#endif
 
 #define MAX_HISTORY 100
 
@@ -621,10 +625,17 @@ unsigned int VirtualBoxItem::rank(const QString &pattern) const
     return stringRank(mTitle, pattern);
 }
 
+inline QString homeDir() {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    return QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+#else
+	return QDesktopServices::storageLocation (QDesktopServices::HomeLocation);
+#endif
+}
+
 ///////
 VirtualBoxProvider::VirtualBoxProvider():
-        virtualBoxConfig ( QDesktopServices::storageLocation (QDesktopServices::HomeLocation)
-                           + "/.VirtualBox/VirtualBox.xml")
+        virtualBoxConfig ( homeDir() + "/.VirtualBox/VirtualBox.xml")
 {
     fp.setFileName (virtualBoxConfig);
 

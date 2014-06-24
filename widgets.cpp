@@ -27,13 +27,13 @@
 
 #include "widgets.h"
 
-#include <QtGui/QMouseEvent>
-#include <QtCore/QDebug>
+#include <QMouseEvent>
+#include <QDebug>
 
 
-#include <QtGui/QTextDocument>
-#include <QtGui/QPainter>
-#include <QtGui/QAbstractTextDocumentLayout>
+#include <QTextDocument>
+#include <QPainter>
+#include <QAbstractTextDocumentLayout>
 
 
 

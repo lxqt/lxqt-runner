@@ -30,11 +30,11 @@
 #ifndef PROVIDERS_H
 #define PROVIDERS_H
 
-#include <QtCore/QList>
-#include <QtCore/QRegExp>
-#include <QtXml/QDomElement>
-#include <QtCore/QString>
-#include <QtGui/QIcon>
+#include <QList>
+#include <QRegExp>
+#include <QDomElement>
+#include <QString>
+#include <QIcon>
 
 #ifdef HAVE_MENU_CACHE
 #include <menu-cache/menu-cache.h>
@@ -260,10 +260,10 @@ public:
 };
 
 #ifdef VBOX_ENABLED
-#include <QtCore/QDateTime>
-#include <QtGui/QDesktopServices>
-#include <QtCore/QFileInfo>
-#include <QtCore/QMap>
+#include <QDateTime>
+#include <QDesktopServices>
+#include <QFileInfo>
+#include <QMap>
 
 class VirtualBoxItem: public CommandProviderItem
 {

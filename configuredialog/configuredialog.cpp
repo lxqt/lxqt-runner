@@ -31,13 +31,13 @@
 
 #include <LXQt/Settings>
 
-#include <QtCore/QSettings>
-#include <QtGui/QDesktopWidget>
-#include <QtGui/QComboBox>
-#include <QtCore/QDebug>
-#include <QtGui/QKeySequence>
-#include <QtGui/QPushButton>
-#include <QtGui/QCloseEvent>
+#include <QSettings>
+#include <QDesktopWidget>
+#include <QComboBox>
+#include <QDebug>
+#include <QKeySequence>
+#include <QPushButton>
+#include <QCloseEvent>
 #include <QAction>
 
 

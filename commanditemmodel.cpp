@@ -28,10 +28,10 @@
 #include "commanditemmodel.h"
 #include <LXQt/Settings>
 
-#include <qtxdg/xdgicon.h>
-#include <QtCore/QFileInfo>
-#include <QtCore/QProcess>
-#include <QtCore/QDebug>
+#include <XdgIcon>
+#include <QFileInfo>
+#include <QProcess>
+#include <QDebug>
 #include <limits.h>
 
 
@@ -43,6 +43,7 @@ CommandItemModel::CommandItemModel(QObject *parent) :
     mSourceModel(new CommandSourceItemModel(this)),
     mOnlyHistory(false)
 {
+	setDynamicSortFilter(false); // required in Qt5
     setSourceModel(mSourceModel);
 }
 
@@ -315,6 +316,8 @@ bool CommandSourceItemModel::isOutDated() const
  ************************************************/
 void CommandSourceItemModel::rebuild()
 {
+    emit layoutAboutToBeChanged();
+    // FIXME: is this implementation correct?
     QListIterator<CommandProvider*> i(mProviders);
     while (i.hasNext())
     {
@@ -327,8 +330,9 @@ void CommandSourceItemModel::rebuild()
 
 void CommandSourceItemModel::clearHistory()
 {
+    beginResetModel();
     mHistoryProvider->clearHistory();
-    reset();
+    endResetModel();
 }
 
 
