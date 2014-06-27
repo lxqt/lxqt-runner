@@ -198,6 +198,24 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
 {
     switch (event->key())
     {
+    case Qt::Key_N:
+        if (event->modifiers().testFlag(Qt::ControlModifier))
+        {
+            QKeyEvent ev(QEventKeyPress, Qt::Key_Down, Qt::NoModifier);
+            editKeyPressEvent(&ev);
+            return true;
+        }
+            return false;
+
+    case Qt::Key_P:
+        if (event->modifiers().testFlag(Qt::ControlModifier))
+        {
+            QKeyEvent ev(QEventKeyPress, Qt::Key_Up, Qt::NoModifier);
+            editKeyPressEvent(&ev);
+            return true;
+        }
+            return false;
+
     case Qt::Key_Up:
     case Qt::Key_PageUp:
         if (ui->commandEd->text().isEmpty() &&
