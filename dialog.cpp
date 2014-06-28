@@ -364,7 +364,7 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     if (mCommandItemModel->isOutDated())
         mCommandItemModel->rebuild();
 
-    QString trimmedText = text.trimmed();
+    QString trimmedText = text.simplified();
     mCommandItemModel->setCommand(trimmedText);
     mCommandItemModel->showOnlyHistory(onlyHistory);
     mCommandItemModel->setFilterWildcard(trimmedText);
