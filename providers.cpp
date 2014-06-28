@@ -86,14 +86,14 @@ bool startProcess(QString command)
 {
     //shell is required to run scripts without a hashbang.
     QString shell = getenv("SHELL");
+    if(shell.isEmpty()) {
+        shell = "/bin/sh";
+    }
+
     QStringList args;
     QString program  = expandCommand(command, &args);
     if (program.isEmpty())
         return false;
-
-    if(shell.isEmpty()) {
-        shell = "/bin/sh";
-    }
 
     return QProcess::startDetached(shell, QStringList() << program << args);
 }
