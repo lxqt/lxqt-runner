@@ -49,6 +49,10 @@
 #include <QApplication>
 #include <QMenu>
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+#include <QWindow>
+#endif
+
 #include <QScrollBar>
 // I hate a X11 heading files. As a result we have such nightmare.
 QEvent::Type QEventKeyPress=QEvent::KeyPress;
@@ -278,7 +282,12 @@ void Dialog::showHide()
         // in KWIN. So we use the native X11.
         //QApplication::setActiveWindow(this);
         //activateWindow();
-        LxQt::xfitMan().raiseWindow(this->effectiveWinId());
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        WId wid = windowHandle()->winId();
+#else
+        WId wid = effectiveWinId();
+#endif
+        LxQt::xfitMan().raiseWindow(wid);
     }
 }
 
