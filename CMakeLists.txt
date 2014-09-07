@@ -141,7 +141,6 @@ add_definitions(-Wall)
 find_package(X11 REQUIRED)
 include_directories(${X11_INCLUDE_DIR})
 
-set(LXQT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/lxqt)
 set(APP_SHARE_DIR ${LXQT_SHARE_DIR}/${PROJECT_NAME})
 
 #************************************************
