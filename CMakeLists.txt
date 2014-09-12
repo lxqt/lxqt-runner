@@ -4,33 +4,23 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 project(lxqt-runner)
 
-# Support Qt5
-option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
-if(USE_QT5)
-    cmake_minimum_required(VERSION 2.8.11)
-    find_package(Qt5Widgets REQUIRED)
-    find_package(Qt5Xml REQUIRED)
-    find_package(Qt5Script REQUIRED)
-    find_package(Qt5LinguistTools REQUIRED QUIET)
-    find_package(lxqt-qt5 REQUIRED)
-    find_package(Qt5Xdg REQUIRED)
-    find_package(lxqt-globalkeys-qt5 REQUIRED)
-    find_package(lxqt-globalkeys-ui-qt5 REQUIRED)
-    message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
-    set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
-else()
-    find_package(Qt4 REQUIRED QtCore QtGui QtXml QtScript)
-    include(${QT_USE_FILE})
-    find_package(LXQT REQUIRED)
-    find_package(QTXDG REQUIRED)
-    find_package(LXQT_GLOBALKEYS REQUIRED)
-    find_package(LXQT_GLOBALKEYS_UI REQUIRED)
-    message(STATUS "Building with Qt${QTVERSION}")
-    set(QTX_LIBRARIES ${QT_LIBRARIES})
-endif()
+
+cmake_minimum_required(VERSION 2.8.11)
+find_package(KF5WindowSystem REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Xml REQUIRED)
+find_package(Qt5Script REQUIRED)
+find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(lxqt-qt5 REQUIRED)
+find_package(Qt5Xdg REQUIRED)
+find_package(lxqt-globalkeys-qt5 REQUIRED)
+find_package(lxqt-globalkeys-ui-qt5 REQUIRED)
+message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
+set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
+
 include(${LXQT_USE_FILE})
 include(${QTXDG_USE_FILE})
 include(${LXQT_GLOBALKEYS_USE_FILE})
@@ -116,10 +106,10 @@ setByDefault(RUNNER_VBOX Yes )
 
 # FIXME: we should deprecate LxQtTranslate and use .tx scripts later
 include(LxQtTranslate)
-lxqt_translate_ts(lxqt-runner_QM_FILES 
+lxqt_translate_ts(lxqt-runner_QM_FILES
     SOURCES
         ${lxqt-runner_H_FILES}
-        ${lxqt-runner_CPP_FILES} 
+        ${lxqt-runner_CPP_FILES}
         ${lxqt-runner_UI_FILES}
     INSTALLATION_DIR
         ${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}
@@ -142,9 +132,6 @@ endif (NOT CMAKE_BUILD_TYPE)
 
 add_definitions(-Wall)
 
-find_package(X11 REQUIRED)
-include_directories(${X11_INCLUDE_DIR})
-
 set(LXQT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/lxqt)
 set(APP_SHARE_DIR ${LXQT_SHARE_DIR}/${PROJECT_NAME})
 
@@ -162,28 +149,23 @@ if (VBOXRUNNER_HEADLESS)
 endif (VBOXRUNNER_HEADLESS)
 
 if (RUNNER_VBOX)
-    set(QRC_FILES 
+    set(QRC_FILES
         ${QRC_FILES}
         virtualbox-icons.qrc
     )
     add_definitions(-DVBOX_ENABLED)
 endif (RUNNER_VBOX)
 
-if(USE_QT5)
-    qt5_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
-    qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
-else()
-    qt4_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
-    qt4_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
-endif()
+qt5_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
+qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
 
-add_executable(${PROJECT_NAME} 
-    ${lxqt-runner_CPP_FILES} 
-    ${lxqt-runner_UI_FILES} 
-    ${lxqt-runner_QRC_SOURCES} 
+add_executable(${PROJECT_NAME}
+    ${lxqt-runner_CPP_FILES}
+    ${lxqt-runner_UI_FILES}
+    ${lxqt-runner_QRC_SOURCES}
     ${lxqt-runner_QM_FILES})
 
-target_link_libraries(${PROJECT_NAME}  ${lxqt-runner_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}  ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 install(FILES   ${CONFIG_FILES}    DESTINATION ${APP_SHARE_DIR})

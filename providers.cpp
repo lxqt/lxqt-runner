@@ -49,10 +49,7 @@
 #include "providers.h"
 #include <LXQtGlobalKeys/Action>
 #include <wordexp.h>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QStandardPaths>
-#endif
 
 #define MAX_HISTORY 100
 
@@ -626,11 +623,7 @@ unsigned int VirtualBoxItem::rank(const QString &pattern) const
 }
 
 inline QString homeDir() {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     return QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
-#else
-	return QDesktopServices::storageLocation (QDesktopServices::HomeLocation);
-#endif
 }
 
 ///////

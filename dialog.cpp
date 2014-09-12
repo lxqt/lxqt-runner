@@ -38,7 +38,6 @@
 #include <LXQt/ScreenSaver>
 #include <LXQtGlobalKeys/Action>
 #include <LXQtGlobalKeys/Client>
-#include <iostream>
 #include <QDebug>
 #include <QCloseEvent>
 #include <QDesktopWidget>
@@ -48,15 +47,10 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QMenu>
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
 #include <QWindow>
-#endif
-
 #include <QScrollBar>
-// I hate a X11 heading files. As a result we have such nightmare.
-QEvent::Type QEventKeyPress=QEvent::KeyPress;
-#include <LXQt/XfitMan>
+
+#include <KF5/KWindowSystem/KWindowSystem>
 
 #define DEFAULT_SHORTCUT "Alt+F2"
 
@@ -71,21 +65,18 @@ Dialog::Dialog(QWidget *parent) :
     mLockCascadeChanges(false),
     mConfigureDialog(0)
 {
-    setAttribute(Qt::WA_TranslucentBackground);
     ui->setupUi(this);
     setWindowTitle("LXQt Runner");
+    setAttribute(Qt::WA_TranslucentBackground);
 
     connect(LxQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
-
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(hide()));
-
     connect(mSettings, SIGNAL(settingsChanged()), this, SLOT(applySettings()));
 
     ui->commandEd->installEventFilter(this);
 
     connect(ui->commandEd, SIGNAL(textChanged(QString)), this, SLOT(setFilter(QString)));
     connect(ui->commandEd, SIGNAL(returnPressed()), this, SLOT(runCommand()));
-
 
     mCommandItemModel = new CommandItemModel(this);
     ui->commandList->installEventFilter(this);
@@ -101,7 +92,7 @@ Dialog::Dialog(QWidget *parent) :
     QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure"), this);
     connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
     addAction(a);
-    
+
     a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear History"), this);
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
@@ -112,7 +103,7 @@ Dialog::Dialog(QWidget *parent) :
     addActions(mScreenSaver->availableActions());
 
     setContextMenuPolicy(Qt::ActionsContextMenu);
-    
+
     QMenu *menu = new QMenu(this);
     menu->addActions(actions());
     ui->actionButton->setMenu(menu);
@@ -156,7 +147,7 @@ void Dialog::closeEvent(QCloseEvent *event)
  ************************************************/
 QSize Dialog::sizeHint() const
 {
-    QSize size=QDialog::sizeHint();
+    QSize size = QDialog::sizeHint();
     size.setWidth(this->size().width());
     return size;
 }
@@ -176,7 +167,7 @@ void Dialog::resizeEvent(QResizeEvent *event)
  ************************************************/
 bool Dialog::eventFilter(QObject *object, QEvent *event)
 {
-    if (event->type() == QEventKeyPress) // QEvent::KeyPress
+    if (event->type() == QEvent::KeyPress)
     {
         QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
 
@@ -288,7 +279,7 @@ bool Dialog::listKeyPressEvent(QKeyEvent *event)
  ************************************************/
 void Dialog::showHide()
 {
-    if (isVisible() &&  isActiveWindow())
+    if (isVisible() && isActiveWindow())
     {
         hide();
     }
@@ -296,16 +287,8 @@ void Dialog::showHide()
     {
         realign();
         show();
-        // I do not know why but next 2 lines don't work
-        // in KWIN. So we use the native X11.
-        //QApplication::setActiveWindow(this);
-        //activateWindow();
-#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
-        WId wid = windowHandle()->winId();
-#else
-        WId wid = effectiveWinId();
-#endif
-        LxQt::xfitMan().raiseWindow(wid);
+        KWindowSystem::forceActiveWindow(windowHandle()->winId());
+        ui->commandEd->setFocus(Qt::ShortcutFocusReason);
     }
 }
 
@@ -318,9 +301,9 @@ void Dialog::realign()
     QRect desktop;
 
     if (mMonitor) // Show on the specified monitor.
-        desktop = LxQt::xfitMan().availableGeometry(mMonitor-1);
+        desktop = KWindowSystem::workArea(mMonitor);
     else         // Follow the mouse.
-        desktop = LxQt::xfitMan().availableGeometry(QCursor::pos());
+        desktop = KWindowSystem::workArea(QApplication::desktop()->screenNumber(QCursor::pos()));
 
 
     QRect rect = this->geometry();
@@ -351,10 +334,7 @@ void Dialog::applySettings()
     if (!mGlobalShortcut)
         mGlobalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/runner/show_hide_dialog", tr("Show/hide runner dialog"), this);
     else if (mGlobalShortcut->shortcut() != shortcut)
-    {
         mGlobalShortcut->changeShortcut(shortcut);
-//        std::cout << tr("Press \"%1\" to see dialog.").arg(shortcut.toString()).toLocal8Bit().constData() << std::endl;
-    }
 
     mShowOnTop = mSettings->value("dialog/show_on_top", true).toBool();
 
@@ -387,7 +367,7 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
  ************************************************/
 void Dialog::setFilter(const QString &text, bool onlyHistory)
 {
-    qDebug() << "Ind i setFilter..."; 
+    qDebug() << "Ind i setFilter...";
     if (mCommandItemModel->isOutDated())
         mCommandItemModel->rebuild();
 
@@ -410,7 +390,7 @@ void Dialog::dataChanged()
     {
         ui->commandList->hide();
     }
-    
+
     adjustSize();
 
 }
