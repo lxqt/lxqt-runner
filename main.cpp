@@ -27,8 +27,7 @@
 
 
 #include <LXQt/Application>
-// #include <LxQtTranslator>
-#include "lxqttranslate.h"
+#include <LXQt/Translator>
 #include "dialog.h"
 
 
@@ -37,9 +36,7 @@ int main(int argc, char *argv[])
     LxQt::Application a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
 
-    TRANSLATE_APP;
-    // FIXME: we should deprecate LxQtTranslate
-    // LxQt::Translator::translateApplication("lxqt-runner");
+    LxQt::Translator::translateApplication(QLatin1String(PROJECT_NAME));
 
     QWidget *hiddenPreviewParent = new QWidget(0, Qt::Tool);
     Dialog d(hiddenPreviewParent);

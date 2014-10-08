@@ -51,6 +51,8 @@ if (MENU_CACHE_FOUND)
     add_definitions(-DHAVE_MENU_CACHE=1)
 endif (MENU_CACHE_FOUND)
 
+add_definitions(-DPROJECT_NAME=\"${PROJECT_NAME}\")
+
 set(lxqt-runner_H_FILES
     dialog.h
     commanditemmodel.h
@@ -119,6 +121,8 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
         ${lxqt-runner_H_FILES}
         ${lxqt-runner_CPP_FILES} 
         ${lxqt-runner_UI_FILES}
+    INSTALLATION_DIR
+        ${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}
 )
 
 #************************************************
