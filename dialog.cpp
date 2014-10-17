@@ -192,7 +192,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
     case Qt::Key_N:
         if (event->modifiers().testFlag(Qt::ControlModifier))
         {
-            QKeyEvent ev(QEventKeyPress, Qt::Key_Down, Qt::NoModifier);
+            QKeyEvent ev(QEvent::KeyPress, Qt::Key_Down, Qt::NoModifier);
             editKeyPressEvent(&ev);
             return true;
         }
@@ -201,7 +201,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
     case Qt::Key_P:
         if (event->modifiers().testFlag(Qt::ControlModifier))
         {
-            QKeyEvent ev(QEventKeyPress, Qt::Key_Up, Qt::NoModifier);
+            QKeyEvent ev(QEvent::KeyPress, Qt::Key_Up, Qt::NoModifier);
             editKeyPressEvent(&ev);
             return true;
         }
