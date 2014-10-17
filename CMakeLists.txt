@@ -39,7 +39,7 @@ endif(NOT WITHOUT_MENU_CACHE)
 if (MENU_CACHE_FOUND)
     include_directories(${MENU_CACHE_INCLUDE_DIRS})
     add_definitions(-DHAVE_MENU_CACHE=1)
-endif (MENU_CACHE_FOUND)
+endif()
 
 add_definitions(-DPROJECT_NAME=\"${PROJECT_NAME}\")
 
@@ -80,22 +80,6 @@ set(lxqt-runner_LIBRARIES
     ${QTX_LIBRARIES}
 )
 
-macro( setByDefault VAR_NAME VAR_VALUE )
-    if (NOT DEFINED ${VAR_NAME})
-        set (${VAR_NAME} ${VAR_VALUE})
-    endif (NOT DEFINED ${VAR_NAME})
-endmacro()
-
-
-# *******************************************************************
-# What plugins will be built, by default.
-# You can enable/disable building of the plugin using cmake options.
-#    cmake -DRUNNER_MATH=Yes .. # Enable math plugin
-#    cmake -DRUNNER_MATH=No ..  # Disable math plugin
-
-setByDefault(RUNNER_MATH Yes )
-setByDefault(RUNNER_VBOX Yes )
-
 
 # Translations **********************************
 #file(GLOB TS_FILES
@@ -106,20 +90,18 @@ setByDefault(RUNNER_VBOX Yes )
 
 # FIXME: we should deprecate LxQtTranslate and use .tx scripts later
 include(LxQtTranslate)
-lxqt_translate_ts(lxqt-runner_QM_FILES
-    SOURCES
-        ${lxqt-runner_H_FILES}
-        ${lxqt-runner_CPP_FILES}
-        ${lxqt-runner_UI_FILES}
-    INSTALLATION_DIR
-        ${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}
+lxqt_translate_ts(lxqt-runner_QM_FILES SOURCES
+    ${lxqt-runner_H_FILES}
+    ${lxqt-runner_CPP_FILES}
+    ${lxqt-runner_UI_FILES}
+    INSTALLATION_DIR "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
 )
 
 #************************************************
 
 include_directories(
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${CMAKE_CURRENT_BINARY_DIR}
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+    "${CMAKE_CURRENT_BINARY_DIR}"
     ${LXQT_INCLUDE_DIRS}
     ${LXQT_GLOBALKEYS_INCLUDE_DIRS}
     ${LXQT_GLOBALKEYS_UI_INCLUDE_DIRS}
@@ -127,26 +109,35 @@ include_directories(
 )
 
 if(NOT CMAKE_BUILD_TYPE)
-    set( CMAKE_BUILD_TYPE Release )
-endif (NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 add_definitions(-Wall)
 
-set(LXQT_SHARE_DIR ${CMAKE_INSTALL_PREFIX}/share/lxqt)
-set(APP_SHARE_DIR ${LXQT_SHARE_DIR}/${PROJECT_NAME})
+set(LXQT_SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/lxqt")
+set(APP_SHARE_DIR "${LXQT_SHARE_DIR}/${PROJECT_NAME}")
 
 #************************************************
 
-if (RUNNER_MATH)
+if(NOT DEFINED RUNNER_MATH)
+    set(RUNNER_MATH Yes)
+endif()
+
+if(RUNNER_MATH)
     add_definitions(-DMATH_ENABLED)
-endif (RUNNER_MATH)
+endif(RUNNER_MATH)
 
 # *******************************************************************
 # Optional: start VBOX machines in headless mode,
 # instead of default window
-if (VBOXRUNNER_HEADLESS)
-	  add_definitions(-DVBOXRUNNER_HEADLESS)
-endif (VBOXRUNNER_HEADLESS)
+
+if(NOT DEFINED RUNNER_VBOX)
+    set(RUNNER_VBOX Yes)
+endif()
+
+if(VBOXRUNNER_HEADLESS)
+    add_definitions(-DVBOXRUNNER_HEADLESS)
+endif()
 
 if (RUNNER_VBOX)
     set(QRC_FILES
@@ -154,7 +145,7 @@ if (RUNNER_VBOX)
         virtualbox-icons.qrc
     )
     add_definitions(-DVBOX_ENABLED)
-endif (RUNNER_VBOX)
+endif()
 
 qt5_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
 qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
@@ -163,19 +154,20 @@ add_executable(${PROJECT_NAME}
     ${lxqt-runner_CPP_FILES}
     ${lxqt-runner_UI_FILES}
     ${lxqt-runner_QRC_SOURCES}
-    ${lxqt-runner_QM_FILES})
+    ${lxqt-runner_QM_FILES}
+)
 
-target_link_libraries(${PROJECT_NAME}  ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
+target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-install(FILES   ${CONFIG_FILES}    DESTINATION ${APP_SHARE_DIR})
+install(FILES ${CONFIG_FILES} DESTINATION ${APP_SHARE_DIR})
 
 # building tarball with CPack -------------------------------------------------
-include (InstallRequiredSystemLibraries)
-set (CPACK_PACKAGE_VERSION_MAJOR ${LXQT_MAJOR_VERSION})
-set (CPACK_PACKAGE_VERSION_MINOR ${LXQT_MINOR_VERSION})
-set (CPACK_PACKAGE_VERSION_PATCH ${LXQT_PATCH_VERSION})
-set (CPACK_GENERATOR TBZ2)
-set (CPACK_SOURCE_GENERATOR TBZ2)
-set (CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
-include (CPack)
+include(InstallRequiredSystemLibraries)
+set(CPACK_PACKAGE_VERSION_MAJOR ${LXQT_MAJOR_VERSION})
+set(CPACK_PACKAGE_VERSION_MINOR ${LXQT_MINOR_VERSION})
+set(CPACK_PACKAGE_VERSION_PATCH ${LXQT_PATCH_VERSION})
+set(CPACK_GENERATOR TBZ2)
+set(CPACK_SOURCE_GENERATOR TBZ2)
+set(CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
+include(CPack)
