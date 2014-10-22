@@ -112,6 +112,8 @@ Dialog::Dialog(QWidget *parent) :
 
     applySettings();
 
+    connect(QApplication::desktop(), SIGNAL(screenCountChanged(int)), SLOT(realign()));
+    connect(QApplication::desktop(), SIGNAL(workAreaResized(int)), SLOT(realign()));
     connect(mGlobalShortcut, SIGNAL(activated()), this, SLOT(showHide()));
     connect(mGlobalShortcut, SIGNAL(shortcutChanged(QString,QString)), this, SLOT(shortcutChanged(QString,QString)));
 
@@ -300,11 +302,11 @@ void Dialog::realign()
 {
     QRect desktop;
 
-    if (mMonitor) // Show on the specified monitor.
-        desktop = KWindowSystem::workArea(mMonitor);
-    else         // Follow the mouse.
-        desktop = KWindowSystem::workArea(QApplication::desktop()->screenNumber(QCursor::pos()));
+    int screen = mMonitor;
+    if (mMonitor < 0 || mMonitor > QApplication::desktop()->screenCount() - 1)
+        screen = QApplication::desktop()->screenNumber(QCursor::pos());
 
+    desktop = QApplication::desktop()->availableGeometry(screen).intersected(KWindowSystem::workArea(screen));
 
     QRect rect = this->geometry();
     rect.moveCenter(desktop.center());
@@ -338,7 +340,7 @@ void Dialog::applySettings()
 
     mShowOnTop = mSettings->value("dialog/show_on_top", true).toBool();
 
-    mMonitor = mSettings->value("dialog/monitor", 0).toInt();
+    mMonitor = mSettings->value("dialog/monitor", -1).toInt();
 
     realign();
     mSettings->sync();

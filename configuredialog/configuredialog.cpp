@@ -64,13 +64,12 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     // Monitor ..................................
     QDesktopWidget *desktop = qApp->desktop();
 
-    ui->monitorCbx->addItem(tr("Focused screen"), QVariant(0));
+    ui->monitorCbx->addItem(tr("Focused screen"), QVariant(-1));
 
     int monCnt = desktop->screenCount();
-    for (int i=0; i<monCnt; ++i)
-    {
-        ui->monitorCbx->addItem(tr("Always on screen %1").arg(i+1), QVariant(i+1));
-    }
+    for (int i = 0; i < monCnt; ++i)
+        ui->monitorCbx->addItem(tr("Always on screen %1").arg(i + 1), QVariant(i));
+
     ui->monitorCbx->setEnabled(monCnt > 1);
     connect(ui->monitorCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(monitorCbxChanged(int)));
 
@@ -94,7 +93,7 @@ void ConfigureDialog::settingsChanged()
     else
         ui->positionCbx->setCurrentIndex(1);
 
-    ui->monitorCbx->setCurrentIndex(mSettings->value("dialog/monitor", 0).toInt());
+    ui->monitorCbx->setCurrentIndex(mSettings->value("dialog/monitor", -1).toInt() + 1);
     ui->shortcutEd->setText(mSettings->value("dialog/shortcut", "Alt+F2").toString());
 }
 
@@ -142,7 +141,7 @@ void ConfigureDialog::positionCbxChanged(int index)
  ************************************************/
 void ConfigureDialog::monitorCbxChanged(int index)
 {
-    mSettings->setValue("dialog/monitor", index);
+    mSettings->setValue("dialog/monitor", index - 1);
 }
 
 

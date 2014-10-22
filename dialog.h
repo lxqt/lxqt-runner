@@ -81,11 +81,11 @@ private:
 
     ConfigureDialog *mConfigureDialog;
 
-    void realign();
     //! \brief handle various additional behaviours (math only for now)
     bool editEnterPressed();
 
 private slots:
+    void realign();
     void applySettings();
     void showHide();
     void setFilter(const QString &text, bool onlyHistory=false);
