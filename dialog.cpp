@@ -58,7 +58,7 @@
 
  ************************************************/
 Dialog::Dialog(QWidget *parent) :
-    QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
+    QDialog(parent, Qt::Tool | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
     mSettings(new LxQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
@@ -290,7 +290,7 @@ void Dialog::showHide()
         realign();
         show();
         KWindowSystem::forceActiveWindow(windowHandle()->winId());
-        ui->commandEd->setFocus(Qt::ShortcutFocusReason);
+        ui->commandEd->setFocus();
     }
 }
 
