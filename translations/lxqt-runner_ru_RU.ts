@@ -1,75 +1,98 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru_RU" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru_RU">
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>Настройки LxQt-runner</translation>
+        <location filename="../configuredialog/configuredialog.ui" line="14"/>
+        <source>Runner Settings</source>
+        <translation>Настройки ускорителя запуска</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
         <translation>Внешний вид</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
         <translation>Позиция:</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
         <translation>Показывать на:</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="56"/>
         <source>Shortcut:</source>
-        <translation>Горячая клавиша:</translation>
+        <translation>Сочетание клавиш:</translation>
     </message>
     <message>
-        <source>Top edge of screen</source>
-        <translation>Наверху экрана</translation>
+        <location filename="../configuredialog/configuredialog.cpp" line="60"/>
+        <source>Top edge of the screen</source>
+        <translation>Верхней границе экрана</translation>
     </message>
     <message>
-        <source>Center of screen</source>
+        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
+        <source>Center of the screen</source>
         <translation>В центре экрана</translation>
     </message>
     <message>
-        <source>Monitor where the mouse</source>
-        <translation>Монитор на котором мышь</translation>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <source>Focused screen</source>
+        <translation>Активном экране</translation>
     </message>
     <message>
-        <source>Always on %1 monitor</source>
-        <translation>Всегда на %1 мониторе</translation>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>Always on screen %1</source>
+        <translation>Всегда на %1 экране</translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <source>Reset</source>
+        <translation>Сброс</translation>
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
+        <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Запускалка програм</translation>
+        <translation>Ускоритель запуска программ </translation>
     </message>
     <message>
-        <source>Configure lxqt-runner</source>
-        <translation>Настроить lxqt-runner</translation>
+        <location filename="../dialog.cpp" line="92"/>
+        <source>Configure</source>
+        <translation>Настроить</translation>
     </message>
     <message>
-        <source>Clear lxqt-runner History</source>
-        <translation>Очистить историю lxqt-runner</translation>
+        <location filename="../dialog.cpp" line="96"/>
+        <source>Clear History</source>
+        <translation>Очистить историю</translation>
     </message>
     <message>
-        <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation>Нажмите &quot;%1&quot; чтобы увидеть диалог.</translation>
+        <location filename="../dialog.cpp" line="337"/>
+        <source>Show/hide runner dialog</source>
+        <translation>Показать/скрыть окно ускорителя</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../providers.cpp" line="388"/>
         <source>History</source>
         <translation>Из истории</translation>
     </message>
     <message>
+        <location filename="../providers.cpp" line="779"/>
         <source>Mathematics</source>
         <translation>Математика</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>Управление питанием LxQt</translation>
+        <location filename="../providers.cpp" line="840"/>
+        <source>Power Management</source>
+        <translation>Управление энергопотреблением</translation>
     </message>
 </context>
 </TS>
