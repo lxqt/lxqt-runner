@@ -81,20 +81,16 @@ set(lxqt-runner_LIBRARIES
 )
 
 
-# Translations **********************************
-#file(GLOB TS_FILES
-#    ${CMAKE_CURRENT_SOURCE_DIR}/translations/lxqt-runner_*.ts
-#)
-#qt4_add_translation(QM_FILES ${TS_FILES})
-#install(FILES ${QM_FILES} DESTINATION ${LXQT_TRANSLATIONS_DIR})
 
-# FIXME: we should deprecate LxQtTranslate and use .tx scripts later
-include(LxQtTranslate)
-lxqt_translate_ts(lxqt-runner_QM_FILES SOURCES
-    ${lxqt-runner_H_FILES}
-    ${lxqt-runner_CPP_FILES}
-    ${lxqt-runner_UI_FILES}
-    INSTALLATION_DIR "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
+include(LXQtTranslate)
+
+lxqt_translate_ts(lxqt-runner_QM_FILES
+    SOURCES
+        ${lxqt-runner_H_FILES}
+        ${lxqt-runner_CPP_FILES}
+        ${lxqt-runner_UI_FILES}
+    INSTALL_DIR
+        "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
 )
 
 #************************************************
