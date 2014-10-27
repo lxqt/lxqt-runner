@@ -9,6 +9,9 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 
 cmake_minimum_required(VERSION 2.8.11)
+
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
