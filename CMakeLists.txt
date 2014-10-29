@@ -1,7 +1,3 @@
-cmake_minimum_required(VERSION 2.8.9)
-# additional cmake files
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-
 project(lxqt-runner)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -44,7 +40,6 @@ if (MENU_CACHE_FOUND)
     add_definitions(-DHAVE_MENU_CACHE=1)
 endif()
 
-add_definitions(-DPROJECT_NAME=\"${PROJECT_NAME}\")
 
 set(lxqt-runner_H_FILES
     dialog.h
