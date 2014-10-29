@@ -27,7 +27,6 @@
 
 
 #include <LXQt/Application>
-#include <LXQt/Translator>
 #include "dialog.h"
 
 
@@ -35,8 +34,6 @@ int main(int argc, char *argv[])
 {
     LxQt::Application a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
-
-    LxQt::Translator::translateApplication(QLatin1String(PROJECT_NAME));
 
     QWidget *hiddenPreviewParent = new QWidget(0, Qt::Tool);
     Dialog d(hiddenPreviewParent);

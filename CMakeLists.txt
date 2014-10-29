@@ -96,6 +96,8 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
         "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
 )
 
+lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
+
 #************************************************
 
 include_directories(
@@ -154,6 +156,7 @@ add_executable(${PROJECT_NAME}
     ${lxqt-runner_UI_FILES}
     ${lxqt-runner_QRC_SOURCES}
     ${lxqt-runner_QM_FILES}
+    ${lxqt-runner_QM_LOADER}
 )
 
 target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
