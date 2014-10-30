@@ -1,76 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="en_US">
+<TS version="2.1">
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <location filename="../configuredialog/configuredialog.ui" line="14"/>
+        <source>Runner Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="56"/>
         <source>Shortcut:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Top edge of screen</source>
+        <location filename="../configuredialog/configuredialog.cpp" line="60"/>
+        <source>Top edge of the screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center of screen</source>
+        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
+        <source>Center of the screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Monitor where the mouse</source>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <source>Focused screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Always on %1 monitor</source>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>Always on screen %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
+        <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Configure lxqt-runner</source>
+        <location filename="../dialog.cpp" line="92"/>
+        <source>Configure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Clear lxqt-runner History</source>
+        <location filename="../dialog.cpp" line="96"/>
+        <source>Clear History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Press &quot;%1&quot; to see dialog.</source>
+        <location filename="../dialog.cpp" line="337"/>
+        <source>Show/hide runner dialog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../providers.cpp" line="388"/>
         <source>History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../providers.cpp" line="779"/>
         <source>Mathematics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
+        <location filename="../providers.cpp" line="840"/>
+        <source>Power Management</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

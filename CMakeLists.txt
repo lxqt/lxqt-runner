@@ -83,6 +83,7 @@ set(lxqt-runner_LIBRARIES
 include(LXQtTranslate)
 
 lxqt_translate_ts(lxqt-runner_QM_FILES
+    UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
     SOURCES
         ${lxqt-runner_H_FILES}
         ${lxqt-runner_CPP_FILES}
