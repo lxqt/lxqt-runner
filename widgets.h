@@ -69,17 +69,4 @@ public slots:
 };
 
 
-class HtmlDelegate : public QStyledItemDelegate
-{
-public:
-    HtmlDelegate(const QSize iconSize, QObject* parent = 0):
-        QStyledItemDelegate(parent),
-        mIconSize(iconSize)
-    {}
-    void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-private:
-    QSize mIconSize;
-};
-
-
 #endif // WIDGETS_H

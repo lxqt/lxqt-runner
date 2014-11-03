@@ -33,6 +33,7 @@
 #include "configuredialog/configuredialog.h"
 
 #include <LXQt/Settings>
+#include <LXQt/HtmlDelegate>
 #include <XdgIcon>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
@@ -86,7 +87,7 @@ Dialog::Dialog(QWidget *parent) :
     setFilter("");
     dataChanged();
 
-    ui->commandList->setItemDelegate(new HtmlDelegate(QSize(32, 32), ui->commandList));
+    ui->commandList->setItemDelegate(new LxQt::HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
     QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure"), this);

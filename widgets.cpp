@@ -93,58 +93,6 @@ CommandComboBox::CommandComboBox(QWidget *parent) :
 }
 
 
-
-/************************************************
-
- ************************************************/
-void HtmlDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
-{
-    if (!index.isValid())
-        return;
-
-    QStyleOptionViewItemV4 options = option;
-    initStyleOption(&options, index);
-
-    painter->save();
-
-    QTextDocument doc;
-    doc.setHtml(options.text);
-    QIcon icon = options.icon;
-
-    options.text = "";
-    options.icon = QIcon();
-    options.widget->style()->drawControl(QStyle::CE_ItemViewItem, &options, painter);
-
-    // Draw icon ................................
-    QSize iconSize = icon.actualSize(mIconSize);
-    painter->translate(options.rect.left(), options.rect.top());
-    QRect iconRect = QRect(4, 4, iconSize.width(), iconSize.height());
-
-    icon.paint(painter, iconRect);
-
-    doc.setTextWidth(options.rect.width() - mIconSize.width() - 10);
-
-    // shift text right to make icon visible
-    painter->translate(mIconSize.width() + 8, 0);
-    QRect clip(0, 0, options.rect.width()-mIconSize.width() - 10, options.rect.height());
-
-    painter->setClipRect(clip);
-
-    QAbstractTextDocumentLayout::PaintContext ctx;
-    if (option.state & QStyle::State_Selected)
-    {
-        QPalette::ColorGroup colorGroup =  (option.state & QStyle::State_Active) ? QPalette::Active : QPalette::Inactive;
-        ctx.palette.setColor(QPalette::Text, option.palette.color(colorGroup, QPalette::HighlightedText));
-    }
-
-    ctx.clip = clip;
-    doc.documentLayout()->draw(painter, ctx);
-
-    painter->restore();
-}
-
-
-
 /************************************************
 
  ************************************************/
@@ -153,4 +101,3 @@ CommandListView::CommandListView(QWidget *parent) :
 {
 
 }
-

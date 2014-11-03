@@ -1,10 +1,10 @@
+cmake_minimum_required(VERSION 2.8.11)
+
 project(lxqt-runner)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
-
-cmake_minimum_required(VERSION 2.8.11)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
@@ -97,8 +97,6 @@ lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 #************************************************
 
 include_directories(
-    "${CMAKE_CURRENT_SOURCE_DIR}"
-    "${CMAKE_CURRENT_BINARY_DIR}"
     ${LXQT_INCLUDE_DIRS}
     ${LXQT_GLOBALKEYS_INCLUDE_DIRS}
     ${LXQT_GLOBALKEYS_UI_INCLUDE_DIRS}
