@@ -83,6 +83,7 @@ private:
 
     //! \brief handle various additional behaviours (math only for now)
     bool editEnterPressed();
+    bool focusOutEvent(QFocusEvent* e);
 
 private slots:
     void realign();
