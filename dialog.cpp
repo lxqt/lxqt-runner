@@ -180,6 +180,11 @@ bool Dialog::eventFilter(QObject *object, QEvent *event)
         if (object == ui->commandList)
             return listKeyPressEvent(keyEvent);
     }
+    else if (event->type() == QEvent::FocusOut)
+    {
+        hide();
+        return true;
+    }
 
     return QDialog::eventFilter(object, event);
 }
