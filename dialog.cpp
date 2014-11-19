@@ -182,8 +182,7 @@ bool Dialog::eventFilter(QObject *object, QEvent *event)
     }
     else if (event->type() == QEvent::FocusOut)
     {
-        QFocusEvent *focusEvent = static_cast<QFocusEvent*>(event);
-        focusOutEvent(focusEvent);
+        hide();
         return true;
     }
 
@@ -433,14 +432,6 @@ void Dialog::showConfigDialog()
     if (!mConfigureDialog)
         mConfigureDialog = new ConfigureDialog(mSettings, DEFAULT_SHORTCUT, this);
     mConfigureDialog->exec();
-}
-
-/************************************************
-
- ************************************************/
-void Dialog::focusOutEvent(QFocusEvent *e)
-{
-    hide();
 }
 
 #undef DEFAULT_SHORTCUT
