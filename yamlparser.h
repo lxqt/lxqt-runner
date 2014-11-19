@@ -26,7 +26,6 @@ public:
  
 signals:
     void newListOfMaps(QList<QMap<QString, QString> > maps);
-   
     
 private:
     
@@ -48,4 +47,3 @@ private:
 };
 
 #endif	/* YAMLPARSER_H */
-

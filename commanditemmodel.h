@@ -103,6 +103,4 @@ private:
     bool mOnlyHistory;
 };
 
-
 #endif // COMMANDITEMMODEL_H
-

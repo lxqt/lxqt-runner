@@ -120,7 +120,6 @@ Dialog::Dialog(QWidget *parent) :
 
     resize(mSettings->value("dialog/width", 400).toInt(), size().height());
 
-
     // TEST
     connect(mCommandItemModel, SIGNAL(layoutChanged()), this, SLOT(dataChanged()));
 }
@@ -386,6 +385,9 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     mCommandItemModel->sort(0);
 }
 
+/************************************************
+
+ ************************************************/
 void Dialog::dataChanged()
 {
     if (mCommandItemModel->rowCount())
@@ -402,6 +404,7 @@ void Dialog::dataChanged()
     adjustSize();
 
 }
+
 
 /************************************************
 
@@ -421,7 +424,6 @@ void Dialog::runCommand()
     }
 
 }
-
 
 
 /************************************************

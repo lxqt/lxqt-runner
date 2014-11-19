@@ -27,7 +27,6 @@
 
 #include "commanditemmodel.h"
 #include <LXQt/Settings>
-
 #include <XdgIcon>
 #include <QFileInfo>
 #include <QProcess>
@@ -54,7 +53,6 @@ CommandItemModel::CommandItemModel(QObject *parent) :
 CommandItemModel::~CommandItemModel()
 {
 }
-
 
 
 /************************************************
@@ -93,6 +91,7 @@ void CommandItemModel::clearHistory()
     mSourceModel->clearHistory();
 }
 
+
 /************************************************
 
  ************************************************/
@@ -125,10 +124,14 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
 
     if (mOnlyHistory)
         return left.row() < right.row();
-        else
-           return QSortFilterProxyModel::lessThan(left, right); 
-    }
+    else
+        return QSortFilterProxyModel::lessThan(left, right);
+}
 
+
+/************************************************
+
+ ************************************************/
 int CommandItemModel::itemType(const QModelIndex &index) const
 {
     if (index.row() == mSourceModel->customCommandIndex().row())
@@ -138,6 +141,7 @@ int CommandItemModel::itemType(const QModelIndex &index) const
     else 
         return 3;
 }
+
 
 /************************************************
 
@@ -185,8 +189,6 @@ void CommandItemModel::rebuild()
 {
     mSourceModel->rebuild();
 }
-
-
 
 
 /************************************************
@@ -328,6 +330,10 @@ void CommandSourceItemModel::rebuild()
     emit layoutChanged();
 }
 
+
+/************************************************
+
+ ************************************************/
 void CommandSourceItemModel::clearHistory()
 {
     beginResetModel();
