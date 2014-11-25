@@ -239,6 +239,12 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
 
         qApp->sendEvent(ui->commandList, event);
         return true;
+
+    case Qt::Key_Tab:
+        const CommandProviderItem *command = mCommandItemModel->command(ui->commandList->currentIndex());
+        if (command)
+            ui->commandEd->setText(command->title());
+        return true;
     }
 
     return QDialog::eventFilter(ui->commandList, event);
