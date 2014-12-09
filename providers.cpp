@@ -214,8 +214,11 @@ unsigned int AppLinkItem::rank(const QString &pattern) const
  ************************************************/
 bool AppLinkItem::run() const
 {
-    XdgDesktopFile *desktop = XdgDesktopFileCache::getFile(mDesktopFile);
-    return desktop->startDetached();
+    XdgDesktopFile desktop;
+    if (desktop.load(mDesktopFile))
+        return desktop.startDetached();
+    else
+        return false;
 }
 
 
