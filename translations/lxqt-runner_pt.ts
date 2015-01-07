@@ -1,9 +1,11 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.0" language="pt">
 <context>
     <name>ConfigureDialog</name>
     <message>
         <source>LxQt-runner Settings</source>
-        <translation>Definições</translation>
+        <translation>Definições do LxQt-runner</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -23,7 +25,7 @@
     </message>
     <message>
         <source>Top edge of screen</source>
-        <translation>Limite superior do ecrã</translation>
+        <translation>Margem superior do ecrã</translation>
     </message>
     <message>
         <source>Center of screen</source>
@@ -31,7 +33,7 @@
     </message>
     <message>
         <source>Monitor where the mouse</source>
-        <translation>Monitor do rato</translation>
+        <translation>Monitor em que está o rato</translation>
     </message>
     <message>
         <source>Always on %1 monitor</source>
@@ -42,7 +44,7 @@
     <name>Dialog</name>
     <message>
         <source>Application launcher </source>
-        <translation>Lançador de aplicações</translation>
+        <translation>Lançador de aplicações </translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
@@ -50,11 +52,11 @@
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Apagar histórico</translation>
+        <translation>Limpar histórico do lxqt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation>Prima &quot;%1&quot; para abrir a caixa de diálogo</translation>
+        <translation>Prima &quot;%1&quot; para abrir a caixa de diálogo.</translation>
     </message>
 </context>
 <context>
@@ -69,7 +71,7 @@
     </message>
     <message>
         <source>LxQt Power Management</source>
-        <translation>Gestão de energia LxQt</translation>
+        <translation>Gestão de energia do LxQt</translation>
     </message>
 </context>
 </TS>
