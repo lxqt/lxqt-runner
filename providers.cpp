@@ -85,12 +85,18 @@ QString expandCommand(const QString &command, QStringList *arguments=0)
  ************************************************/
 bool startProcess(QString command)
 {
+    //shell is required to run scripts without a hashbang.
+    QString shell = getenv("SHELL");
+    if(shell.isEmpty()) {
+        shell = "/bin/sh";
+    }
+
     QStringList args;
     QString program  = expandCommand(command, &args);
     if (program.isEmpty())
         return false;
 
-    return QProcess::startDetached(program, args);
+    return QProcess::startDetached(shell, QStringList() << program << args);
 }
 
 
