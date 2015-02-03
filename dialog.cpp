@@ -51,7 +51,7 @@
 #include <QWindow>
 #include <QScrollBar>
 
-#include <KF5/KWindowSystem/KWindowSystem>
+#include <KWindowSystem/KWindowSystem>
 
 #define DEFAULT_SHORTCUT "Alt+F2"
 
