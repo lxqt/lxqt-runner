@@ -804,7 +804,8 @@ bool MathItem::compare(const QRegExp &regExp) const
     {
         s.chop(1);
         QScriptEngine myEngine;
-        QScriptValue res = myEngine.evaluate(s);
+        // s.replace(',','.') in order to support a comma as delimiter (e.g. 1,1+1 = 2.1)
+        QScriptValue res = myEngine.evaluate(s.replace(',','.'));
         if (res.isNumber())
         {
             MathItem *self=const_cast<MathItem*>(this);
