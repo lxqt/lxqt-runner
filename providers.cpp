@@ -89,8 +89,18 @@ bool startProcess(QString command)
     QString program  = expandCommand(command, &args);
     if (program.isEmpty())
         return false;
+    if (QProcess::startDetached(program, args))
+    {
+        return true;
+    } else
+    {
+        //fallback for executable script with no #!
+        //trying as in system(2)
+        args.prepend(program);
+        args.prepend(QStringLiteral("-c"));
+        return QProcess::startDetached(QStringLiteral("/bin/sh"), args);
+    }
 
-    return QProcess::startDetached(program, args);
 }
 
 
