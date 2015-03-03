@@ -269,7 +269,7 @@ class VirtualBoxItem: public CommandProviderItem
 {
 public:
   VirtualBoxItem(const QString & MachineName , const QIcon & Icon);
-  
+
   void setRDEPort (const QString & portNum);
   bool run() const;
   bool compare(const QRegExp &regExp) const;
@@ -284,7 +284,7 @@ public:
   VirtualBoxProvider ();
   void rebuild();
   bool isOutDated() const;
-  
+
 private:
   QFile fp;
   QMap<QString,QString> osIcons;
@@ -292,40 +292,6 @@ private:
   QDateTime timeStamp;
 };
 #endif
-
-
-class QAction;
-/*! Power management built in into runner
- */
-class PowerProviderItem : public CommandProviderItem
-{
-public:
-    PowerProviderItem(QAction *action);
-
-    bool run() const;
-    bool compare(const QRegExp &regExp) const;
-    unsigned int rank(const QString &pattern) const;
-private:
-    QAction *m_action;
-};
-
-namespace LxQt {
-    class PowerManager;
-    class ScreenSaver;
-}
-
-/*! Power management built in into runner
- */
-class PowerProvider: public CommandProvider
-{
-    Q_OBJECT
-public:
-    PowerProvider();
-
-private:
-    LxQt::PowerManager *m_power;
-    LxQt::ScreenSaver *m_screensaver;
-};
 
 class ExternalProviderItem: public CommandProviderItem
 {
@@ -338,7 +304,7 @@ public:
 
     bool run() const;
     bool compare(const QRegExp &regExp) const {return true;} // We leave the decision to the external process
-    unsigned int rank(const QString &pattern) const; 
+    unsigned int rank(const QString &pattern) const;
 
     QString mCommand;
 };
@@ -351,21 +317,21 @@ class ExternalProvider: public CommandProvider
 
 public:
     ExternalProvider(const QString name, const QString externalProgram);
-  
+
     void setSearchTerm(const QString searchTerm);
-    
+
 signals:
     void dataChanged();
 
 private slots:
     void readFromProcess();
     void newListOfMaps(QList<QMap<QString, QString> > maps);
-    
+
 private:
-    QString mName; 
+    QString mName;
     QProcess *mExternalProcess;
-    QTextStream *mDataToProcess; 
-    YamlParser *mYamlParser; 
+    QTextStream *mDataToProcess;
+    YamlParser *mYamlParser;
 
     QByteArray mBuffer;
 };

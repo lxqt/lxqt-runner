@@ -138,7 +138,7 @@ int CommandItemModel::itemType(const QModelIndex &index) const
         return 1;
     else if (index.row() < mSourceModel->externalProviderStartIndex().row())
         return 2;
-    else 
+    else
         return 3;
 }
 
@@ -214,14 +214,12 @@ CommandSourceItemModel::CommandSourceItemModel(QObject *parent) :
     mProviders.append(new VirtualBoxProvider());
 #endif
 
-    mProviders.append(new PowerProvider());
-
     rebuild();
     mExternalProviderStartIndex = index(rowCount(), 0);
 
     LxQt::Settings settings("lxqt-runner");
     int numExternalProviders = settings.beginReadArray("external providers");
-    for (int i = 0; i < numExternalProviders; i++) 
+    for (int i = 0; i < numExternalProviders; i++)
     {
         settings.setArrayIndex(i);
         qDebug() << "Adding external provider:" << settings.value("name") << settings.value("executable");
@@ -237,7 +235,7 @@ CommandSourceItemModel::CommandSourceItemModel(QObject *parent) :
         connect(provider, SIGNAL(changed()), this, SIGNAL(layoutChanged()));
         connect(provider, SIGNAL(aboutToBeChanged()), this, SIGNAL(layoutAboutToBeChanged()));
     }
-   
+
     rebuild();
 }
 
@@ -384,11 +382,11 @@ void CommandSourceItemModel::addHistoryCommand(const QString &command)
 
 
 /***********************************************
- 
+
  ***********************************************/
 void CommandSourceItemModel::setCommand(const QString& command)
 {
-    mCustomCommandProvider->setCommand(command); 
+    mCustomCommandProvider->setCommand(command);
     foreach (ExternalProvider* externalProvider, mExternalProviders)
     {
         externalProvider->setSearchTerm(command);

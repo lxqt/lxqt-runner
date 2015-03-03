@@ -843,54 +843,6 @@ MathProvider::MathProvider()
     append(new MathItem());
 }
 
-
-PowerProviderItem::PowerProviderItem(QAction *action)
-    : CommandProviderItem(),
-      m_action(action)
-{
-    mIcon = action->icon();
-    mTitle = action->text();
-    mComment = QObject::tr("Power Management");
-    mToolTip = mComment;
-}
-
-bool PowerProviderItem::run() const
-{
-    m_action->activate(QAction::Trigger);
-    return true;
-}
-
-bool PowerProviderItem::compare(const QRegExp &regExp) const
-{
-    if (regExp.isEmpty())
-        return false;
-
-    QRegExp re(regExp);
-
-    re.setCaseSensitivity(Qt::CaseInsensitive);
-    return mTitle.contains(re) ;
-}
-
-unsigned int PowerProviderItem::rank(const QString &pattern) const
-{
-    return stringRank(mTitle, pattern);
-}
-
-PowerProvider::PowerProvider() : CommandProvider()
-{
-    m_power = new LxQt::PowerManager(this);
-    foreach (QAction *a, m_power->availableActions())
-    {
-        append(new PowerProviderItem(a));
-    }
-
-    m_screensaver = new LxQt::ScreenSaver(this);
-    foreach (QAction *a, m_screensaver->availableActions())
-    {
-        append(new PowerProviderItem(a));
-    }
-}
-
 ExternalProviderItem::ExternalProviderItem()
 {
 }
