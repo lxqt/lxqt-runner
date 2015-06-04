@@ -59,7 +59,7 @@
 
  ************************************************/
 Dialog::Dialog(QWidget *parent) :
-    QDialog(parent, Qt::Tool | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
+    QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
     mSettings(new LxQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
@@ -117,6 +117,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(QApplication::desktop(), SIGNAL(workAreaResized(int)), SLOT(realign()));
     connect(mGlobalShortcut, SIGNAL(activated()), this, SLOT(showHide()));
     connect(mGlobalShortcut, SIGNAL(shortcutChanged(QString,QString)), this, SLOT(shortcutChanged(QString,QString)));
+    connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(onActiveWindowChanged(WId)));
 
     resize(mSettings->value("dialog/width", 400).toInt(), size().height());
 
@@ -140,7 +141,7 @@ Dialog::~Dialog()
 void Dialog::closeEvent(QCloseEvent *event)
 {
     hide();
-    event->ignore();
+    event->accept();
 }
 
 
@@ -178,11 +179,6 @@ bool Dialog::eventFilter(QObject *object, QEvent *event)
 
         if (object == ui->commandList)
             return listKeyPressEvent(keyEvent);
-    }
-    else if (event->type() == QEvent::FocusOut)
-    {
-        hide();
-        return true;
     }
 
     return QDialog::eventFilter(object, event);
@@ -372,6 +368,16 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
 
         mLockCascadeChanges = false;
     }
+}
+
+
+/************************************************
+
+ ************************************************/
+void Dialog::onActiveWindowChanged(WId id)
+{
+    if (isVisible() && id != winId())
+        showHide();
 }
 
 

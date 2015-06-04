@@ -81,9 +81,6 @@ private:
 
     ConfigureDialog *mConfigureDialog;
 
-    //! \brief handle various additional behaviours (math only for now)
-    bool editEnterPressed();
-
 private slots:
     void realign();
     void applySettings();
@@ -93,6 +90,7 @@ private slots:
     void runCommand();
     void showConfigDialog();
     void shortcutChanged(const QString &oldShortcut, const QString &newShortcut);
+    void onActiveWindowChanged(WId id);
 };
 
 #endif // DIALOG_H
