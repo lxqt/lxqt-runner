@@ -288,7 +288,9 @@ bool Dialog::listKeyPressEvent(QKeyEvent *event)
  ************************************************/
 void Dialog::showHide()
 {
-    if (isVisible() && isActiveWindow())
+    // Using KWindowSystem to detect the active window since
+    // QWidget::isActiveWindow is not working reliably.
+    if (isVisible() && (KWindowSystem::activeWindow() == winId()))
     {
         hide();
     }
