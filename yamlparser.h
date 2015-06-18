@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   YamlParser.h
  * Author: christian
  *
@@ -21,17 +21,17 @@ class YamlParser : public QObject
 public:
     YamlParser();
     virtual ~YamlParser();
-   
+
     void consumeLine(QString line);
- 
+
 signals:
     void newListOfMaps(QList<QMap<QString, QString> > maps);
-    
+
 private:
-    
+
     QList<QMap<QString, QString> > m_ListOfMaps;
 
-    enum 
+    enum
     {
         start,
         atdocumentstart,

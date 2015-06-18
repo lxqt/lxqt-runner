@@ -1,7 +1,7 @@
-/* 
+/*
  * File:   YamlParser.cpp
  * Author: christian
- * 
+ *
  * Created on 9. maj 2013, 13:13
  */
 
@@ -28,7 +28,7 @@ void YamlParser::consumeLine(QString line)
     static QRegExp continuation("(\\s*)(.*)");
     static QRegExp documentEnd("...\\s*");
     static QRegExp emptyLine("\\s*(#.*)?");
-  
+
     qDebug() << line;
 
     if (documentStart.exactMatch(line))
@@ -37,7 +37,7 @@ void YamlParser::consumeLine(QString line)
         state = atdocumentstart;
         m_CurrentIndent = -1;
     }
-    else if (state == error) 
+    else if (state == error)
     {
         // Skip
     }
@@ -45,7 +45,7 @@ void YamlParser::consumeLine(QString line)
     {
         // Skip
     }
-    else if ((state == atdocumentstart || state == inlist) && mapStart.exactMatch(line)) 
+    else if ((state == atdocumentstart || state == inlist) && mapStart.exactMatch(line))
     {
         m_ListOfMaps << QMap<QString, QString>();
         addEntryToCurrentMap(mapStart.cap(2), mapStart.cap(3));
@@ -66,7 +66,7 @@ void YamlParser::consumeLine(QString line)
         emit newListOfMaps(m_ListOfMaps);
         state = documentdone;
     }
-    else 
+    else
     {
         qWarning() << "Yaml parser could not read:" << line;
         state = error;

@@ -51,7 +51,7 @@ public:
     void addHistoryCommand(const QString &command);
 
     QString command() const { return mCustomCommandProvider->command(); }
-    void setCommand(const QString &command); 
+    void setCommand(const QString &command);
 
     QPersistentModelIndex customCommandIndex() const { return mCustomCommandIndex; }
     QPersistentModelIndex externalProviderStartIndex() const { return mExternalProviderStartIndex; }
