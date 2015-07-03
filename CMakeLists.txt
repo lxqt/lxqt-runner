@@ -14,16 +14,10 @@ find_package(Qt5Xml REQUIRED)
 find_package(Qt5Script REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt REQUIRED)
-find_package(Qt5Xdg REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
 find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
-
-include(${LXQT_USE_FILE})
-include(${QTXDG_USE_FILE})
-include(${LXQT_GLOBALKEYS_USE_FILE})
-include(${LXQT_GLOBALKEYS_UI_USE_FILE})
 
 # optionally use libmenu-cache from lxde to generate the application menu
 find_package(PkgConfig)
@@ -70,10 +64,9 @@ set(QRC_FILES
 )
 
 set(lxqt-runner_LIBRARIES
-    ${LXQT_LIBRARIES}
-    ${LXQT_GLOBALKEYS_LIBRARIES}
-    ${LXQT_GLOBALKEYS_UI_LIBRARIES}
-    ${QTXDG_LIBRARIES}
+    lxqt
+    lxqt-globalkeys
+    lxqt-globalkeys-ui
     ${MENU_CACHE_LIBRARIES}
     ${QTX_LIBRARIES}
 )
