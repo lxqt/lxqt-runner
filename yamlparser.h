@@ -6,7 +6,7 @@
  */
 
 #ifndef YAMLPARSER_H
-#define	YAMLPARSER_H
+#define YAMLPARSER_H
 
 #include <QObject>
 #include <QList>
@@ -46,4 +46,4 @@ private:
     void addEntryToCurrentMap(QString key, QString value);
 };
 
-#endif	/* YAMLPARSER_H */
+#endif /* YAMLPARSER_H */

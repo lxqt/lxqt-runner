@@ -42,7 +42,7 @@ CommandItemModel::CommandItemModel(QObject *parent) :
     mSourceModel(new CommandSourceItemModel(this)),
     mOnlyHistory(false)
 {
-	setDynamicSortFilter(false); // required in Qt5
+    setDynamicSortFilter(false); // required in Qt5
     setSourceModel(mSourceModel);
 }
 

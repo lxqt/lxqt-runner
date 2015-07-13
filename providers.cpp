@@ -365,7 +365,7 @@ void AppLinkProvider::update()
                 // Otherwise the copied item will have no icon.
                 // FIXME: this is a dirty hack and it should be made cleaner later.
                 if(item->icon().isNull())
-		    QMetaObject::invokeMethod(item, "updateIcon", Qt::QueuedConnection);
+                    QMetaObject::invokeMethod(item, "updateIcon", Qt::QueuedConnection);
                 delete newItem;
             }
             else
@@ -607,7 +607,7 @@ VirtualBoxItem::VirtualBoxItem(const QString & MachineName , const QIcon & Icon)
 
 void VirtualBoxItem::setRDEPort(const QString & portNum)
 {
-	m_rdePortNum = portNum;
+    m_rdePortNum = portNum;
 }
 
 bool VirtualBoxItem::run() const
