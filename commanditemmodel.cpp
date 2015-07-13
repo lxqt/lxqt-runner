@@ -43,6 +43,8 @@ CommandItemModel::CommandItemModel(QObject *parent) :
     mOnlyHistory(false)
 {
     setDynamicSortFilter(false); // required in Qt5
+    setFilterCaseSensitivity(Qt::CaseInsensitive);
+    setSortCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(mSourceModel);
 }
 

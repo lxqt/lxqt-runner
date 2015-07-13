@@ -240,11 +240,8 @@ bool AppLinkItem::compare(const QRegExp &regExp) const
     if (regExp.isEmpty())
         return false;
 
-    QRegExp re(regExp);
-
-    re.setCaseSensitivity(Qt::CaseInsensitive);
-    return mProgram.contains(re) ||
-           mTitle.contains(re) ;
+    return mProgram.contains(regExp) ||
+           mTitle.contains(regExp) ;
 }
 
 
@@ -417,10 +414,7 @@ bool HistoryItem::run() const
  ************************************************/
 bool HistoryItem::compare(const QRegExp &regExp) const
 {
-    QRegExp re(regExp);
-
-    re.setCaseSensitivity(Qt::CaseSensitive);
-    return mCommand.contains(re);
+    return mCommand.contains(regExp);
 }
 
 
@@ -625,9 +619,7 @@ bool VirtualBoxItem::run() const
 
 bool VirtualBoxItem::compare(const QRegExp &regExp) const
 {
-    QRegExp re(regExp);
-    re.setCaseSensitivity(Qt::CaseInsensitive);
-    return (! regExp.isEmpty() && -1 != re.indexIn (title ()));
+    return (! regExp.isEmpty() && -1 != regExp.indexIn (title ()));
 }
 
 unsigned int VirtualBoxItem::rank(const QString &pattern) const
