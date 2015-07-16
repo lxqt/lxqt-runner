@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
 project(lxqt-runner)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -135,12 +136,10 @@ if (RUNNER_VBOX)
     add_definitions(-DVBOX_ENABLED)
 endif()
 
-qt5_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
 qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
 
 add_executable(${PROJECT_NAME}
     ${lxqt-runner_CPP_FILES}
-    ${lxqt-runner_UI_FILES}
     ${lxqt-runner_QRC_SOURCES}
     ${lxqt-runner_QM_FILES}
     ${lxqt-runner_QM_LOADER}
