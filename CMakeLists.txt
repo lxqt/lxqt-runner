@@ -91,15 +91,6 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
 
 lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 
-#************************************************
-
-include_directories(
-    ${LXQT_INCLUDE_DIRS}
-    ${LXQT_GLOBALKEYS_INCLUDE_DIRS}
-    ${LXQT_GLOBALKEYS_UI_INCLUDE_DIRS}
-    ${QTXDG_INCLUDE_DIRS}
-)
-
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
