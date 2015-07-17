@@ -76,8 +76,6 @@ set(lxqt-runner_LIBRARIES
     ${QTX_LIBRARIES}
 )
 
-
-
 include(LXQtTranslate)
 
 lxqt_translate_ts(lxqt-runner_QM_FILES
@@ -97,10 +95,6 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_definitions(-Wall)
-
-
-#************************************************
-
 
 if (RUNNER_VBOX)
     list(APPEND QRC_FILES virtualbox-icons.qrc)
@@ -124,9 +118,15 @@ target_compile_definitions(${PROJECT_NAME}
     PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:HAVE_MENU_CACHE=1>"
 )
 
-target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
+target_link_libraries(${PROJECT_NAME}
+    ${lxqt-runner_LIBRARIES}
+    KF5::WindowSystem
+)
 
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+install(TARGETS
+    ${PROJECT_NAME}
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
 
 # building tarball with CPack -------------------------------------------------
 include(InstallRequiredSystemLibraries)
