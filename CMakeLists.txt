@@ -11,6 +11,7 @@ set(CMAKE_AUTORCC ON)
 include(CMakeDependentOption)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(RUNNER_MATH "Math operations support" ON)
 option(RUNNER_VBOX "Virtual Box support" ON)
 cmake_dependent_option(RUNNER_VBOX_HEADLESS
     "Use headless mode instead of default window" OFF
@@ -116,13 +117,7 @@ set(APP_SHARE_DIR "${LXQT_SHARE_DIR}/${PROJECT_NAME}")
 
 #************************************************
 
-if(NOT DEFINED RUNNER_MATH)
-    set(RUNNER_MATH Yes)
-endif()
 
-if(RUNNER_MATH)
-    add_definitions(-DMATH_ENABLED)
-endif(RUNNER_MATH)
 if (RUNNER_VBOX)
     list(APPEND QRC_FILES virtualbox-icons.qrc)
 endif()
@@ -135,6 +130,7 @@ add_executable(${PROJECT_NAME}
 )
 
 target_compile_definitions(${PROJECT_NAME}
+    PRIVATE "$<$<BOOL:${RUNNER_MATH}>:MATH_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
 )
