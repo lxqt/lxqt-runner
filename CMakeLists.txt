@@ -9,6 +9,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
 include(CMakeDependentOption)
+include(GNUInstallDirs)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" ON)
@@ -97,8 +98,6 @@ endif()
 
 add_definitions(-Wall)
 
-set(LXQT_SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/lxqt")
-set(APP_SHARE_DIR "${LXQT_SHARE_DIR}/${PROJECT_NAME}")
 
 #************************************************
 
@@ -127,8 +126,7 @@ target_compile_definitions(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
 
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-install(FILES ${CONFIG_FILES} DESTINATION ${APP_SHARE_DIR})
+install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 # building tarball with CPack -------------------------------------------------
 include(InstallRequiredSystemLibraries)
