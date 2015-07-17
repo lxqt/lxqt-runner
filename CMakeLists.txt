@@ -6,8 +6,16 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+include(CMakeDependentOption)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(RUNNER_VBOX "Virtual Box support" ON)
+cmake_dependent_option(RUNNER_VBOX_HEADLESS
+    "Use headless mode instead of default window" OFF
+    "RUNNER_VBOX" OFF
+)
 
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
@@ -115,34 +123,20 @@ endif()
 if(RUNNER_MATH)
     add_definitions(-DMATH_ENABLED)
 endif(RUNNER_MATH)
-
-# *******************************************************************
-# Optional: start VBOX machines in headless mode,
-# instead of default window
-
-if(NOT DEFINED RUNNER_VBOX)
-    set(RUNNER_VBOX Yes)
-endif()
-
-if(VBOXRUNNER_HEADLESS)
-    add_definitions(-DVBOXRUNNER_HEADLESS)
-endif()
-
 if (RUNNER_VBOX)
-    set(QRC_FILES
-        ${QRC_FILES}
-        virtualbox-icons.qrc
-    )
-    add_definitions(-DVBOX_ENABLED)
+    list(APPEND QRC_FILES virtualbox-icons.qrc)
 endif()
-
-qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
 
 add_executable(${PROJECT_NAME}
     ${lxqt-runner_CPP_FILES}
     ${lxqt-runner_QRC_SOURCES}
     ${lxqt-runner_QM_FILES}
     ${lxqt-runner_QM_LOADER}
+)
+
+target_compile_definitions(${PROJECT_NAME}
+    PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
+    PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
 )
 
 target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
