@@ -11,6 +11,7 @@ set(CMAKE_AUTORCC ON)
 include(CMakeDependentOption)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" ON)
 option(RUNNER_MATH "Math operations support" ON)
 option(RUNNER_VBOX "Virtual Box support" ON)
 cmake_dependent_option(RUNNER_VBOX_HEADLESS
@@ -29,21 +30,14 @@ find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
 
-# optionally use libmenu-cache from lxde to generate the application menu
-find_package(PkgConfig)
+if (USE_MENU_CACHE)
+    # optionally use libmenu-cache from lxde to generate the application menu
+    find_package(PkgConfig REQUIRED QUIET)
 
-if (NOT WITHOUT_MENU_CACHE)
-    pkg_check_modules(MENU_CACHE
+    pkg_check_modules(MENU_CACHE REQUIRED QUIET
         libmenu-cache>=0.3.3
     )
-endif(NOT WITHOUT_MENU_CACHE)
-
-# if libmenu-cache is available
-if (MENU_CACHE_FOUND)
-    include_directories(${MENU_CACHE_INCLUDE_DIRS})
-    add_definitions(-DHAVE_MENU_CACHE=1)
 endif()
-
 
 set(lxqt-runner_H_FILES
     dialog.h
@@ -129,10 +123,15 @@ add_executable(${PROJECT_NAME}
     ${lxqt-runner_QM_LOADER}
 )
 
+target_include_directories(${PROJECT_NAME}
+    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:${MENU_CACHE_INCLUDE_DIRS}>"
+)
+
 target_compile_definitions(${PROJECT_NAME}
     PRIVATE "$<$<BOOL:${RUNNER_MATH}>:MATH_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
+    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:HAVE_MENU_CACHE=1>"
 )
 
 target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
