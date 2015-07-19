@@ -108,7 +108,6 @@ Dialog::Dialog(QWidget *parent) :
     QMenu *menu = new QMenu(this);
     menu->addActions(actions());
     ui->actionButton->setMenu(menu);
-    ui->actionButton->setIcon(XdgIcon::fromTheme("configure"));
     // End of popup menu ........................
 
     applySettings();
