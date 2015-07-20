@@ -1,12 +1,24 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 
 project(lxqt-runner)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+include(CMakeDependentOption)
+include(GNUInstallDirs)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" ON)
+option(RUNNER_MATH "Math operations support" ON)
+option(RUNNER_VBOX "Virtual Box support" ON)
+cmake_dependent_option(RUNNER_VBOX_HEADLESS
+    "Use headless mode instead of default window" OFF
+    "RUNNER_VBOX" OFF
+)
 
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
@@ -19,21 +31,14 @@ find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
 
-# optionally use libmenu-cache from lxde to generate the application menu
-find_package(PkgConfig)
+if (USE_MENU_CACHE)
+    # optionally use libmenu-cache from lxde to generate the application menu
+    find_package(PkgConfig REQUIRED QUIET)
 
-if (NOT WITHOUT_MENU_CACHE)
-    pkg_check_modules(MENU_CACHE
+    pkg_check_modules(MENU_CACHE REQUIRED QUIET
         libmenu-cache>=0.3.3
     )
-endif(NOT WITHOUT_MENU_CACHE)
-
-# if libmenu-cache is available
-if (MENU_CACHE_FOUND)
-    include_directories(${MENU_CACHE_INCLUDE_DIRS})
-    add_definitions(-DHAVE_MENU_CACHE=1)
 endif()
-
 
 set(lxqt-runner_H_FILES
     dialog.h
@@ -71,8 +76,6 @@ set(lxqt-runner_LIBRARIES
     ${QTX_LIBRARIES}
 )
 
-
-
 include(LXQtTranslate)
 
 lxqt_translate_ts(lxqt-runner_QM_FILES
@@ -87,69 +90,44 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
 
 lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 
-#************************************************
-
-include_directories(
-    ${LXQT_INCLUDE_DIRS}
-    ${LXQT_GLOBALKEYS_INCLUDE_DIRS}
-    ${LXQT_GLOBALKEYS_UI_INCLUDE_DIRS}
-    ${QTXDG_INCLUDE_DIRS}
-)
-
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
 add_definitions(-Wall)
 
-set(LXQT_SHARE_DIR "${CMAKE_INSTALL_PREFIX}/share/lxqt")
-set(APP_SHARE_DIR "${LXQT_SHARE_DIR}/${PROJECT_NAME}")
-
-#************************************************
-
-if(NOT DEFINED RUNNER_MATH)
-    set(RUNNER_MATH Yes)
-endif()
-
-if(RUNNER_MATH)
-    add_definitions(-DMATH_ENABLED)
-endif(RUNNER_MATH)
-
-# *******************************************************************
-# Optional: start VBOX machines in headless mode,
-# instead of default window
-
-if(NOT DEFINED RUNNER_VBOX)
-    set(RUNNER_VBOX Yes)
-endif()
-
-if(VBOXRUNNER_HEADLESS)
-    add_definitions(-DVBOXRUNNER_HEADLESS)
-endif()
-
 if (RUNNER_VBOX)
-    set(QRC_FILES
-        ${QRC_FILES}
-        virtualbox-icons.qrc
-    )
-    add_definitions(-DVBOX_ENABLED)
+    list(APPEND QRC_FILES virtualbox-icons.qrc)
 endif()
-
-qt5_wrap_ui(lxqt-runner_UI_HEADERS ${lxqt-runner_UI_FILES})
-qt5_add_resources(lxqt-runner_QRC_SOURCES ${QRC_FILES})
 
 add_executable(${PROJECT_NAME}
     ${lxqt-runner_CPP_FILES}
-    ${lxqt-runner_UI_FILES}
     ${lxqt-runner_QRC_SOURCES}
     ${lxqt-runner_QM_FILES}
     ${lxqt-runner_QM_LOADER}
 )
 
-target_link_libraries(${PROJECT_NAME} ${lxqt-runner_LIBRARIES} KF5::WindowSystem)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:${MENU_CACHE_INCLUDE_DIRS}>"
+)
 
-install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
-install(FILES ${CONFIG_FILES} DESTINATION ${APP_SHARE_DIR})
+target_compile_definitions(${PROJECT_NAME}
+    PRIVATE "$<$<BOOL:${RUNNER_MATH}>:MATH_ENABLED>"
+    PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
+    PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
+    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:HAVE_MENU_CACHE=1>"
+)
+
+target_link_libraries(${PROJECT_NAME}
+    ${lxqt-runner_LIBRARIES}
+    KF5::WindowSystem
+)
+
+install(TARGETS
+    ${PROJECT_NAME}
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT Runtime
+)
 
 # building tarball with CPack -------------------------------------------------
 include(InstallRequiredSystemLibraries)

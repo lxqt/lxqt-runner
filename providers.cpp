@@ -613,7 +613,7 @@ void VirtualBoxItem::setRDEPort(const QString & portNum)
 bool VirtualBoxItem::run() const
 {
     QStringList arguments;
-#ifdef VBOXRUNNER_HEADLESS
+#ifdef VBOX_HEADLESS_ENABLED
     arguments << "-startvm" << title();
     return QProcess::startDetached ("VBoxHeadless" , arguments);
 #else
