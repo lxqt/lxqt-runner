@@ -387,7 +387,6 @@ void Dialog::onActiveWindowChanged(WId id)
  ************************************************/
 void Dialog::setFilter(const QString &text, bool onlyHistory)
 {
-    qDebug() << "Ind i setFilter...";
     if (mCommandItemModel->isOutDated())
         mCommandItemModel->rebuild();
 
