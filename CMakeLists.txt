@@ -29,6 +29,9 @@ find_package(lxqt REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
 find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
+
+include(LXQtCompilerSettings)
+
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
 
 if (USE_MENU_CACHE)
@@ -93,8 +96,6 @@ lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
-
-add_definitions(-Wall)
 
 if (RUNNER_VBOX)
     list(APPEND QRC_FILES virtualbox-icons.qrc)
