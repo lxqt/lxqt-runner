@@ -30,7 +30,7 @@ find_package(lxqt-globalkeys REQUIRED)
 find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
-include(LXQtCompilerSettings)
+include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
 
