@@ -4,7 +4,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>Подешавања Рејзор-покретача</translation>
     </message>
     <message>

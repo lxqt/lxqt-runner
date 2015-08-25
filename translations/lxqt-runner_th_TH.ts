@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>ค่าตั้งกล่องป้อนคำสั่ง-lxqt</translation>
     </message>
     <message>
@@ -68,8 +68,8 @@
         <translation>การคำนวณเลข</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>การจัดการพลังงานของ LxQt</translation>
+        <source>LXQt Power Management</source>
+        <translation>การจัดการพลังงานของ LXQt</translation>
     </message>
 </context>
 </TS>

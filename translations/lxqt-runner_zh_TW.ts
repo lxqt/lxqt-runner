@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>LxQt快速執行設定</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>LXQt快速執行設定</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -46,11 +46,11 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>設定LxQt快速執行</translation>
+        <translation>設定LXQt快速執行</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>清除LxQt快速執行的歷史紀錄</translation>
+        <translation>清除LXQt快速執行的歷史紀錄</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>數學</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQt電源管理</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQt電源管理</translation>
     </message>
 </context>
 </TS>

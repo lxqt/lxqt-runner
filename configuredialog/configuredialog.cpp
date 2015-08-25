@@ -49,7 +49,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     QDialog(parent),
     ui(new Ui::ConfigureDialog),
     mSettings(settings),
-    mOldSettings(new LxQt::SettingsCache(settings)),
+    mOldSettings(new LXQt::SettingsCache(settings)),
     mDefaultShortcut(defaultShortcut)
 {
     ui->setupUi(this);

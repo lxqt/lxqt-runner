@@ -3,7 +3,7 @@
     <name>ConfigureDialog</name>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation type="unfinished"/>
     </message>
     <message>

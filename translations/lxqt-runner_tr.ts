@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>LxQt-çalıştırıcı Ayarları</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>LXQt-çalıştırıcı Ayarları</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -46,11 +46,11 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>LxQt-çalıştırıcıyı yapılandır</translation>
+        <translation>LXQt-çalıştırıcıyı yapılandır</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>LxQt-çalıştırıcı geçmişini temizle</translation>
+        <translation>LXQt-çalıştırıcı geçmişini temizle</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>İşlemler</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQt Güç Yönetimi</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQt Güç Yönetimi</translation>
     </message>
 </context>
 </TS>

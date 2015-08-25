@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>Setări lxqt-runner</translation>
     </message>
     <message>
@@ -68,8 +68,8 @@
         <translation>Matematică</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>Gestiune alimentare LxQt</translation>
+        <source>LXQt Power Management</source>
+        <translation>Gestiune alimentare LXQt</translation>
     </message>
 </context>
 </TS>

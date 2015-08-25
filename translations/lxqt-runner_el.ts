@@ -4,8 +4,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>Ρυθμίσεις εκτελεστή LxQt</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>Ρυθμίσεις εκτελεστή LXQt</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -70,8 +70,8 @@
         <translation>Μαθηματικά</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>Διαχείριση ενέργειας LxQt</translation>
+        <source>LXQt Power Management</source>
+        <translation>Διαχείριση ενέργειας LXQt</translation>
     </message>
 </context>
 </TS>

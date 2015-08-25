@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>Programstarter Indstillinger</translation>
     </message>
     <message>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Indstil LxQt programstarter</translation>
+        <translation>Indstil LXQt programstarter</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
@@ -68,8 +68,8 @@
         <translation>Matematik</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQt Strømstyring</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQt Strømstyring</translation>
     </message>
 </context>
 </TS>

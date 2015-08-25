@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>LxQtin käynnistimen asetukset</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>LXQtin käynnistimen asetukset</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -46,11 +46,11 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Hallitse LxQtin käynnistintä</translation>
+        <translation>Hallitse LXQtin käynnistintä</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Tyhjennä LxQt-käynnistimen historia</translation>
+        <translation>Tyhjennä LXQt-käynnistimen historia</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>Matematiikka</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQtin virranhallinta</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQtin virranhallinta</translation>
     </message>
 </context>
 </TS>

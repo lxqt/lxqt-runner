@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>Nastavitve za LxQt-runner</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>Nastavitve za LXQt-runner</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -46,11 +46,11 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Nastavitve za LxQt-runner</translation>
+        <translation>Nastavitve za LXQt-runner</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Počisti zgodovino za LxQt-runner</translation>
+        <translation>Počisti zgodovino za LXQt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,7 +68,7 @@
         <translation>Matematika</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
+        <source>LXQt Power Management</source>
         <translation>Upravljanje z energijo</translation>
     </message>
 </context>

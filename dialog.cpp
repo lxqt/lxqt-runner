@@ -61,7 +61,7 @@
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
-    mSettings(new LxQt::Settings("lxqt-runner", this)),
+    mSettings(new LXQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
     mLockCascadeChanges(false),
     mConfigureDialog(0)
@@ -70,7 +70,7 @@ Dialog::Dialog(QWidget *parent) :
     setWindowTitle("LXQt Runner");
     setAttribute(Qt::WA_TranslucentBackground);
 
-    connect(LxQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
+    connect(LXQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(hide()));
     connect(mSettings, SIGNAL(settingsChanged()), this, SLOT(applySettings()));
 
@@ -87,7 +87,7 @@ Dialog::Dialog(QWidget *parent) :
     setFilter("");
     dataChanged();
 
-    ui->commandList->setItemDelegate(new LxQt::HtmlDelegate(QSize(32, 32), ui->commandList));
+    ui->commandList->setItemDelegate(new LXQt::HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
     QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure"), this);
@@ -98,9 +98,9 @@ Dialog::Dialog(QWidget *parent) :
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 
-    mPowerManager = new LxQt::PowerManager(this);
+    mPowerManager = new LXQt::PowerManager(this);
     addActions(mPowerManager->availableActions());
-    mScreenSaver = new LxQt::ScreenSaver(this);
+    mScreenSaver = new LXQt::ScreenSaver(this);
     addActions(mScreenSaver->availableActions());
 
     setContextMenuPolicy(Qt::ActionsContextMenu);

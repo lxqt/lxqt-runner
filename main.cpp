@@ -32,7 +32,7 @@
 
 int main(int argc, char *argv[])
 {
-    LxQt::Application a(argc, argv);
+    LXQt::Application a(argc, argv);
     a.setQuitOnLastWindowClosed(false);
 
     QWidget *hiddenPreviewParent = new QWidget(0, Qt::Tool);

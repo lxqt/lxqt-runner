@@ -219,7 +219,7 @@ CommandSourceItemModel::CommandSourceItemModel(QObject *parent) :
     rebuild();
     mExternalProviderStartIndex = index(rowCount(), 0);
 
-    LxQt::Settings settings("lxqt-runner");
+    LXQt::Settings settings("lxqt-runner");
     int numExternalProviders = settings.beginReadArray("external providers");
     for (int i = 0; i < numExternalProviders; i++)
     {

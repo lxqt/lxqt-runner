@@ -34,7 +34,7 @@ namespace Ui {
     class Dialog;
 }
 
-namespace LxQt {
+namespace LXQt {
     class Settings;
     class PowerManager;
     class ScreenSaver;
@@ -69,13 +69,13 @@ protected:
 
 private:
     Ui::Dialog *ui;
-    LxQt::Settings *mSettings;
+    LXQt::Settings *mSettings;
     GlobalKeyShortcut::Action *mGlobalShortcut;
     CommandItemModel *mCommandItemModel;
     bool mShowOnTop;
     int mMonitor;
-    LxQt::PowerManager *mPowerManager;
-    LxQt::ScreenSaver *mScreenSaver;
+    LXQt::PowerManager *mPowerManager;
+    LXQt::ScreenSaver *mScreenSaver;
 
     bool mLockCascadeChanges;
 

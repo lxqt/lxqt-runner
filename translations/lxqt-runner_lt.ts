@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>LxQt paleidiklio nuostatos</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>LXQt paleidiklio nuostatos</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -68,8 +68,8 @@
         <translation>Matematika</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQt energijos valdymas</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQt energijos valdymas</translation>
     </message>
 </context>
 </TS>

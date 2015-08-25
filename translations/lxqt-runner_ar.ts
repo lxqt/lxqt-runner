@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>إعدادات مُطلق ريزر</translation>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>الرِّياضيَّات</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
+        <source>LXQt Power Management</source>
         <translation>إدارة الطاقة لبيئة ريزر</translation>
     </message>
 </context>

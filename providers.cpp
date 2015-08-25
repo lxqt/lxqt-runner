@@ -262,7 +262,7 @@ AppLinkProvider::AppLinkProvider():
         mMenuCacheNotify = 0;
 #else
     mXdgMenu = new XdgMenu();
-    mXdgMenu->setEnvironments(QStringList() << "X-LXQT" << "LxQt");
+    mXdgMenu->setEnvironments(QStringList() << "X-LXQT" << "LXQt");
     connect(mXdgMenu, SIGNAL(changed()), this, SLOT(update()));
     mXdgMenu->read(XdgMenu::getMenuFileName());
     update();

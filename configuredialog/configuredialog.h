@@ -37,7 +37,7 @@ namespace Ui {
 
 class QSettings;
 
-namespace LxQt {
+namespace LXQt {
     class SettingsCache;
 }
 
@@ -61,7 +61,7 @@ protected:
 private:
     Ui::ConfigureDialog *ui;
     QSettings *mSettings;
-    LxQt::SettingsCache *mOldSettings;
+    LXQt::SettingsCache *mOldSettings;
     QString mDefaultShortcut;
 
 private slots:

@@ -2,7 +2,7 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
+        <source>LXQt-runner Settings</source>
         <translation>Подешавања Рејзор-покретача</translation>
     </message>
     <message>
@@ -68,7 +68,7 @@
         <translation>Математика</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
+        <source>LXQt Power Management</source>
         <translation type="unfinished"/>
     </message>
 </context>

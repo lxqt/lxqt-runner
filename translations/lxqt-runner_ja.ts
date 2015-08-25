@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>LxQt-runnerの設定</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>LXQt-runnerの設定</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -50,7 +50,7 @@
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>LxQt-runnerの履歴を消去</translation>
+        <translation>LXQt-runnerの履歴を消去</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -68,8 +68,8 @@
         <translation>計算</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>LxQt電源管理</translation>
+        <source>LXQt Power Management</source>
+        <translation>LXQt電源管理</translation>
     </message>
 </context>
 </TS>

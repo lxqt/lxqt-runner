@@ -2,8 +2,8 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LxQt-runner Settings</source>
-        <translation>Configuraciones de LxQt-Ejecutor</translation>
+        <source>LXQt-runner Settings</source>
+        <translation>Configuraciones de LXQt-Ejecutor</translation>
     </message>
     <message>
         <source>Appearance</source>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Configurar lanzador de LxQt</translation>
+        <translation>Configurar lanzador de LXQt</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
@@ -68,8 +68,8 @@
         <translation>Matematicas</translation>
     </message>
     <message>
-        <source>LxQt Power Management</source>
-        <translation>Manejador de energia de LxQt</translation>
+        <source>LXQt Power Management</source>
+        <translation>Manejador de energia de LXQt</translation>
     </message>
 </context>
 </TS>
