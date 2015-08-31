@@ -1,50 +1,57 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de">
 <context>
     <name>ConfigureDialog</name>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
-        <source>LXQt-runner Settings</source>
-        <translation type="unfinished"/>
+        <source>Runner Settings</source>
+        <translation>Anwendungsstarter-Einstellungen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation type="unfinished"/>
+        <translation>Aussehen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation type="unfinished"/>
+        <translation>Positionierung:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation type="unfinished"/>
+        <translation>Anzeigen auf:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="56"/>
         <source>Shortcut:</source>
-        <translation type="unfinished"/>
+        <translation>Tastenkürzel:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="70"/>
-        <source>Top edge of screen</source>
-        <translation type="unfinished"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="60"/>
+        <source>Top edge of the screen</source>
+        <translation>Bildschirmoberkante</translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
+        <source>Center of the screen</source>
+        <translation>Bildschirmmitte</translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <source>Focused screen</source>
+        <translation>Fokussierter Bildschirm</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
-        <source>Center of screen</source>
-        <translation type="unfinished"/>
+        <source>Always on screen %1</source>
+        <translation>Immer auf Bildschirm %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="77"/>
-        <source>Monitor where the mouse</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
-        <source>Always on %1 monitor</source>
-        <translation type="unfinished"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <source>Reset</source>
+        <translation>Zurücksetzen</translation>
     </message>
 </context>
 <context>
@@ -52,30 +59,35 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation type="unfinished"/>
+        <translation>Anwendungsstarter</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="91"/>
-        <source>Configure lxqt-runner</source>
-        <translation type="unfinished"/>
+        <location filename="../dialog.cpp" line="93"/>
+        <source>Configure</source>
+        <translation>Konfigurieren</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="296"/>
-        <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation type="unfinished"/>
+        <location filename="../dialog.cpp" line="97"/>
+        <source>Clear History</source>
+        <translation>Verlauf löschen</translation>
+    </message>
+    <message>
+        <location filename="../dialog.cpp" line="345"/>
+        <source>Show/hide runner dialog</source>
+        <translation>Dialog anzeigen/verstecken</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="221"/>
+        <location filename="../providers.cpp" line="398"/>
         <source>History</source>
-        <translation type="unfinished"/>
+        <translation>Verlauf</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="307"/>
+        <location filename="../providers.cpp" line="784"/>
         <source>Mathematics</source>
-        <translation type="unfinished"/>
+        <translation>Mathematik</translation>
     </message>
 </context>
 </TS>
