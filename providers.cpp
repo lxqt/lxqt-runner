@@ -57,7 +57,7 @@
 /************************************************
 
  ************************************************/
-QString expandCommand(const QString &command, QStringList *arguments=0)
+static QString expandCommand(const QString &command, QStringList *arguments=0)
 {
     QString program;
     wordexp_t words;
@@ -83,7 +83,35 @@ QString expandCommand(const QString &command, QStringList *arguments=0)
 /************************************************
 
  ************************************************/
-bool startProcess(QString command)
+static QString which(const QString &progName)
+{
+    if (progName.isEmpty())
+        return "";
+
+    if (progName.startsWith(QDir::separator()))
+    {
+        QFileInfo fileInfo(progName);
+        if (fileInfo.isExecutable() && fileInfo.isFile())
+            return fileInfo.absoluteFilePath();
+    }
+
+    QStringList dirs = QString(getenv("PATH")).split(":");
+
+    foreach (QString dir, dirs)
+    {
+        QFileInfo fileInfo(QDir(dir), progName);
+        if (fileInfo.isExecutable() && fileInfo.isFile())
+            return fileInfo.absoluteFilePath();
+    }
+
+    return "";
+}
+
+
+/************************************************
+
+ ************************************************/
+static bool startProcess(QString command)
 {
     QStringList args;
     QString program  = expandCommand(command, &args);
@@ -500,34 +528,6 @@ CustomCommandItem::CustomCommandItem(CustomCommandProvider *provider):
     mProvider(provider)
 {
     mIcon = XdgIcon::fromTheme("utilities-terminal");
-}
-
-
-/************************************************
-
- ************************************************/
-QString which(const QString &progName)
-{
-    if (progName.isEmpty())
-        return "";
-
-    if (progName.startsWith(QDir::separator()))
-    {
-        QFileInfo fileInfo(progName);
-        if (fileInfo.isExecutable() && fileInfo.isFile())
-            return fileInfo.absoluteFilePath();
-    }
-
-    QStringList dirs = QString(getenv("PATH")).split(":");
-
-    foreach (QString dir, dirs)
-    {
-        QFileInfo fileInfo(QDir(dir), progName);
-        if (fileInfo.isExecutable() && fileInfo.isFile())
-            return fileInfo.absoluteFilePath();
-    }
-
-    return "";
 }
 
 
