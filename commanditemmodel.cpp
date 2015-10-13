@@ -97,7 +97,7 @@ void CommandItemModel::clearHistory()
 /************************************************
 
  ************************************************/
-bool CommandItemModel::filterAcceptsRow(int sourceRow, const QModelIndex &/*sourceParent*/) const
+bool CommandItemModel::filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const
 {
     QRegExp re(filterRegExp());
 
@@ -109,7 +109,23 @@ bool CommandItemModel::filterAcceptsRow(int sourceRow, const QModelIndex &/*sour
     if (!item)
         return false;
 
-    return item->compare(re);
+    bool accept = item->compare(re);
+    if (accept)
+    {
+        //check if CustomCommand can be filtered out (equivalent app link is shown)
+        const CustomCommandItem * cust_i = qobject_cast<const CustomCommandItem *>(item);
+        if (nullptr != cust_i)
+        {
+            for (int i = mSourceModel->rowCount(sourceParent); 0 <= i; --i)
+            {
+                const AppLinkItem * app_i = qobject_cast<const AppLinkItem *>(mSourceModel->command(i));
+                if (nullptr != app_i && cust_i->exec() == app_i->exec() && app_i->compare(re))
+                    return false;
+            }
+        }
+    }
+
+    return accept;
 }
 
 

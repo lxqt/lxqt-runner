@@ -121,6 +121,7 @@ public:
     bool run() const;
     bool compare(const QRegExp &regExp) const;
     QString command() const { return mCommand; }
+    QString exec() const { return mExec; }
 
     void operator=(const AppLinkItem &other);
 
@@ -128,9 +129,12 @@ public:
 private slots:
     void updateIcon();
 private:
+    void initExec();
+private:
     QString mDesktopFile;
     QString mIconName;
     QString mCommand;
+    QString mExec; //!< the expanded executable (full path) from desktop file Exec key
     QString mProgram;
 };
 
@@ -201,6 +205,8 @@ class CustomCommandProvider;
 
 class CustomCommandItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
     CustomCommandItem(CustomCommandProvider *provider);
 
@@ -209,10 +215,12 @@ public:
 
     QString command() const { return mCommand; }
     void setCommand(const QString &command);
+    QString exec() const { return mExec; }
 
     virtual unsigned int rank(const QString &pattern) const;
 private:
     QString mCommand;
+    QString mExec; //!< the expanded executable (full path)
     CustomCommandProvider *mProvider;
 };
 
