@@ -1,75 +1,129 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pt_BR" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pt_BR">
 <context>
     <name>ConfigureDialog</name>
     <message>
         <source>LXQt-runner Settings</source>
-        <translation>Configurações do executor do LXQt</translation>
+        <translation type="vanished">Configurações do executor do LXQt</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="14"/>
+        <source>Runner Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
         <translation>Aparência</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
         <translation>Posicionamento:</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
         <translation>Exibir em:</translation>
     </message>
     <message>
+        <location filename="../configuredialog/configuredialog.ui" line="56"/>
         <source>Shortcut:</source>
         <translation>Atalho:</translation>
     </message>
     <message>
         <source>Top edge of screen</source>
-        <translation>Borda superior da tela</translation>
+        <translation type="vanished">Borda superior da tela</translation>
     </message>
     <message>
         <source>Center of screen</source>
-        <translation>Centro da tela</translation>
+        <translation type="vanished">Centro da tela</translation>
     </message>
     <message>
         <source>Monitor where the mouse</source>
-        <translation>Onde o mouse estiver no monitor</translation>
+        <translation type="vanished">Onde o mouse estiver no monitor</translation>
     </message>
     <message>
         <source>Always on %1 monitor</source>
-        <translation>Sempre no monitor %1</translation>
+        <translation type="vanished">Sempre no monitor %1</translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="60"/>
+        <source>Top edge of the screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
+        <source>Center of the screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <source>Focused screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>Always on screen %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <source>Reset</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Dialog</name>
     <message>
+        <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
         <translation>Lançador de aplicativo</translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Configurar o executor do LXQt</translation>
+        <translation type="vanished">Configurar o executor do LXQt</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Limpar o histórico do executor do LXQt</translation>
+        <translation type="vanished">Limpar o histórico do executor do LXQt</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation>Pressione &quot;%1&quot; para ver o diálogo.</translation>
+        <translation type="vanished">Pressione &quot;%1&quot; para ver o diálogo.</translation>
+    </message>
+    <message>
+        <location filename="../dialog.cpp" line="93"/>
+        <source>Configure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialog.cpp" line="97"/>
+        <source>Clear History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../dialog.cpp" line="345"/>
+        <source>Show/hide runner dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../providers.cpp" line="443"/>
         <source>History</source>
         <translation>Histórico</translation>
     </message>
     <message>
+        <location filename="../providers.cpp" line="801"/>
         <source>Mathematics</source>
         <translation>Matemática</translation>
     </message>
     <message>
         <source>LXQt Power Management</source>
-        <translation>Gerenciamento de energia do LXQt</translation>
+        <translation type="vanished">Gerenciamento de energia do LXQt</translation>
     </message>
 </context>
 </TS>

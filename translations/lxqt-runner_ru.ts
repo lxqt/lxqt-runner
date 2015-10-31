@@ -62,17 +62,17 @@
         <translation>Ускоритель запуска программ </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="92"/>
+        <location filename="../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation>Настроить</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="96"/>
+        <location filename="../dialog.cpp" line="97"/>
         <source>Clear History</source>
         <translation>Очистить историю</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="337"/>
+        <location filename="../dialog.cpp" line="345"/>
         <source>Show/hide runner dialog</source>
         <translation>Показать/скрыть окно ускорителя</translation>
     </message>
@@ -80,19 +80,18 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="388"/>
+        <location filename="../providers.cpp" line="443"/>
         <source>History</source>
         <translation>Из истории</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="779"/>
+        <location filename="../providers.cpp" line="801"/>
         <source>Mathematics</source>
         <translation>Математика</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="840"/>
         <source>Power Management</source>
-        <translation>Управление энергопотреблением</translation>
+        <translation type="vanished">Управление энергопотреблением</translation>
     </message>
 </context>
 </TS>

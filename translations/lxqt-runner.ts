@@ -62,17 +62,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="92"/>
+        <location filename="../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="96"/>
+        <location filename="../dialog.cpp" line="97"/>
         <source>Clear History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="337"/>
+        <location filename="../dialog.cpp" line="345"/>
         <source>Show/hide runner dialog</source>
         <translation type="unfinished"></translation>
     </message>
@@ -80,18 +80,13 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="388"/>
+        <location filename="../providers.cpp" line="443"/>
         <source>History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="779"/>
+        <location filename="../providers.cpp" line="801"/>
         <source>Mathematics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../providers.cpp" line="840"/>
-        <source>Power Management</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

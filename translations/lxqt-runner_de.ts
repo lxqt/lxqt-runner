@@ -80,12 +80,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="398"/>
+        <location filename="../providers.cpp" line="443"/>
         <source>History</source>
         <translation>Verlauf</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="784"/>
+        <location filename="../providers.cpp" line="801"/>
         <source>Mathematics</source>
         <translation>Mathematik</translation>
     </message>
