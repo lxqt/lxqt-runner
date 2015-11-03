@@ -10,7 +10,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni LXQt-runner</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -42,7 +42,7 @@
     </message>
     <message>
         <source>Monitor where the mouse</source>
-        <translation type="vanished">Vedi dove è il mouse</translation>
+        <translation type="vanished">Alla posizione del mouse</translation>
     </message>
     <message>
         <source>Always on %1 monitor</source>
@@ -51,27 +51,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Bordo superiore dello schermo</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro dello schermo</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Schermo attivo</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sempre sullo schermo %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristina</translation>
     </message>
 </context>
 <context>
@@ -87,7 +87,7 @@
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation type="vanished">Cancella la cronologia di lxqt-runner</translation>
+        <translation type="vanished">Cancella la cronologia di LXQt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
@@ -96,17 +96,17 @@
     <message>
         <location filename="../dialog.cpp" line="93"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulisci cronologia</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="345"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra/nascondi dialogo</translation>
     </message>
 </context>
 <context>
