@@ -50,6 +50,7 @@
 #include <QMenu>
 #include <QWindow>
 #include <QScrollBar>
+#include <QTimer>
 
 #include <KWindowSystem/KWindowSystem>
 
@@ -58,11 +59,12 @@
 /************************************************
 
  ************************************************/
-Dialog::Dialog(QWidget *parent) :
+Dialog::Dialog(bool oneShotShow, QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
     mSettings(new LXQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
+    mOneShotShow(oneShotShow),
     mLockCascadeChanges(false),
     mConfigureDialog(0)
 {
@@ -122,6 +124,8 @@ Dialog::Dialog(QWidget *parent) :
 
     // TEST
     connect(mCommandItemModel, SIGNAL(layoutChanged()), this, SLOT(dataChanged()));
+    if (mOneShotShow)
+        QTimer::singleShot(0, this, &QDialog::show);
 }
 
 
@@ -279,6 +283,13 @@ bool Dialog::listKeyPressEvent(QKeyEvent *event)
     }
 
     return QDialog::eventFilter(ui->commandEd, event);
+}
+
+void Dialog::hideEvent(QHideEvent * event)
+{
+    QDialog::hideEvent(event);
+    if (mOneShotShow)
+        close();
 }
 
 
