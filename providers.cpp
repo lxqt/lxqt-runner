@@ -817,17 +817,24 @@ bool MathItem::run() const
  ************************************************/
 bool MathItem::compare(const QRegExp &regExp) const
 {
-    QString s = regExp.pattern().trimmed();
+    QString originalInput = regExp.pattern().trimmed();
+    QString s = originalInput;
 
     if (s.endsWith("="))
     {
         s.chop(1);
         QScriptEngine myEngine;
-        QScriptValue res = myEngine.evaluate(s);
+        // s.replace(',','.') in order to support a comma as delimiter (e.g. 1,1+1 = 2,1)
+        QScriptValue res = myEngine.evaluate(s.replace(',','.'));
         if (res.isNumber())
         {
             MathItem *self=const_cast<MathItem*>(this);
-            self->mTitle = s + " = " + res.toString();
+            QString result = res.toString();
+            // If the initial input contained a comma: display the result with a comma as well
+            if(originalInput.contains(','))
+                result.replace('.',',');
+            originalInput.chop(1);      // remove the equal sign
+            self->mTitle = originalInput + " = " + result;
             return true;
         }
     }
