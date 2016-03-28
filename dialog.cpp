@@ -229,9 +229,13 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
            )
         {
             setFilter("", true);
+
+            // set focus to the list so that it highlights the first item correctly,
+            // and then set it back to the textfield, where it belongs
+            ui->commandList->setFocus();
+            ui->commandEd->setFocus();
             return true;
         }
-
         qApp->sendEvent(ui->commandList, event);
         return true;
 
@@ -394,7 +398,11 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     mCommandItemModel->setCommand(trimmedText);
     mCommandItemModel->showOnlyHistory(onlyHistory);
     mCommandItemModel->setFilterRegExp(trimmedText);
-    mCommandItemModel->sort(0);
+    mCommandItemModel->invalidate();
+
+    // tidy up layout and select first item
+    ui->commandList->doItemsLayout();
+    ui->commandList->setCurrentIndex(mCommandItemModel->index(0, 0));
 }
 
 /************************************************
