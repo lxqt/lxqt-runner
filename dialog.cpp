@@ -84,7 +84,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->setModel(mCommandItemModel);
     ui->commandList->setEditTriggers(QAbstractItemView::NoEditTriggers);
     connect(ui->commandList, SIGNAL(clicked(QModelIndex)), this, SLOT(runCommand()));
-    setFilter("");
+    setFilter(QString());
     dataChanged();
 
     ui->commandList->setItemDelegate(new LXQt::HtmlDelegate(QSize(32, 32), ui->commandList));
@@ -216,7 +216,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
             ui->commandList->currentIndex().row() == 0
            )
         {
-            setFilter("", false);
+            setFilter(QString(), false);
             return true;
         }
         qApp->sendEvent(ui->commandList, event);
@@ -228,7 +228,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
             ui->commandList->isHidden()
            )
         {
-            setFilter("", true);
+            setFilter(QString(), true);
 
             // set focus to the list so that it highlights the first item correctly,
             // and then set it back to the textfield, where it belongs

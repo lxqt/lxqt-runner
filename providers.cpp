@@ -63,7 +63,7 @@ static QString expandCommand(const QString &command, QStringList *arguments=0)
     wordexp_t words;
 
     if (wordexp(command.toLocal8Bit().data(), &words, 0) != 0)
-        return "";
+        return QString();
 
     char **w;
     w = words.we_wordv;
@@ -86,7 +86,7 @@ static QString expandCommand(const QString &command, QStringList *arguments=0)
 static QString which(const QString &progName)
 {
     if (progName.isEmpty())
-        return "";
+        return QString();
 
     if (progName.startsWith(QDir::separator()))
     {
@@ -95,16 +95,16 @@ static QString which(const QString &progName)
             return fileInfo.absoluteFilePath();
     }
 
-    QStringList dirs = QString(getenv("PATH")).split(":");
+    const QStringList dirs = QString(getenv("PATH")).split(":");
 
-    foreach (QString dir, dirs)
+    foreach (const QString &dir, dirs)
     {
         QFileInfo fileInfo(QDir(dir), progName);
         if (fileInfo.isExecutable() && fileInfo.isFile())
             return fileInfo.absoluteFilePath();
     }
 
-    return "";
+    return QString();
 }
 
 
@@ -347,7 +347,7 @@ void AppLinkProvider::menuCacheReloadNotify(MenuCache* cache, gpointer user_data
 
  void doUpdate(const QDomElement &xml, QHash<QString, AppLinkItem*> &items)
 {
-    DomElementIterator it(xml, "");
+    DomElementIterator it(xml, QString());
     while (it.hasNext())
     {
         QDomElement e = it.next();
@@ -561,7 +561,7 @@ void CustomCommandItem::setCommand(const QString &command)
     if (!mExec.isEmpty())
         mComment = QString("%1 %2").arg(mExec, command.section(' ', 1));
     else
-        mComment = "";
+        mComment = QString();
 
 }
 
