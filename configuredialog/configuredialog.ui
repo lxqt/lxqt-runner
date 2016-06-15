@@ -40,6 +40,13 @@
       <item row="1" column="1">
        <widget class="QComboBox" name="monitorCbx"/>
       </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="historyCb">
+        <property name="text">
+         <string>Show history first</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

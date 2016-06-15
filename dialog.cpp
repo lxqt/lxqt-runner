@@ -354,6 +354,8 @@ void Dialog::applySettings()
 
     mMonitor = mSettings->value("dialog/monitor", -1).toInt();
 
+    mCommandItemModel->showHistoryFirst(mSettings->value("dialog/history_first", true).toBool());
+
     realign();
     mSettings->sync();
 }

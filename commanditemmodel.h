@@ -86,6 +86,8 @@ public:
     bool isShowOnlyHistory() const { return mOnlyHistory; }
     void showOnlyHistory(bool onlyHistory) { mOnlyHistory = onlyHistory; }
 
+    void showHistoryFirst(bool first = true);
+
     QString command() const { return mSourceModel->command(); }
     void setCommand(const QString &command) { mSourceModel->setCommand(command); }
 
@@ -101,6 +103,7 @@ private:
     int itemType(const QModelIndex &index) const;
     CommandSourceItemModel *mSourceModel;
     bool mOnlyHistory;
+    bool mShowHistoryFirst; //!< flag for history items to be shown first/last
 };
 
 #endif // COMMANDITEMMODEL_H

@@ -40,12 +40,13 @@
 CommandItemModel::CommandItemModel(QObject *parent) :
     QSortFilterProxyModel(parent),
     mSourceModel(new CommandSourceItemModel(this)),
-    mOnlyHistory(false)
+    mOnlyHistory(false),
+    mShowHistoryFirst(true)
 {
-    setDynamicSortFilter(false); // required in Qt5
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortCaseSensitivity(Qt::CaseInsensitive);
     setSourceModel(mSourceModel);
+    sort(0);
 }
 
 
@@ -142,8 +143,25 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
 
     if (mOnlyHistory)
         return left.row() < right.row();
-    else
-        return QSortFilterProxyModel::lessThan(left, right);
+
+    HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(mSourceModel->command(left));
+    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(mSourceModel->command(right));
+    if (nullptr != i_left && nullptr == i_right)
+        return mShowHistoryFirst;
+    if (nullptr == i_left && nullptr != i_right)
+        return !mShowHistoryFirst;
+    if (nullptr != i_left && nullptr != i_right)
+    {
+        QRegExp re(filterRegExp());
+        //Note: -1 should not be returned if the item passed the filter previously
+        const int pos_left = re.indexIn(i_left->command());
+        const int pos_right = re.indexIn(i_right->command());
+        Q_ASSERT(-1 != pos_left && -1 != pos_right);
+        return pos_left < pos_right
+            || (pos_left == pos_right && QSortFilterProxyModel::lessThan(left, right));
+    }
+
+    return QSortFilterProxyModel::lessThan(left, right);
 }
 
 
@@ -199,6 +217,15 @@ QModelIndex CommandItemModel::appropriateItem(const QString &pattern) const
     return res;
 }
 
+
+/************************************************
+
+ ************************************************/
+void CommandItemModel::showHistoryFirst(bool first/* = true*/)
+{
+    mShowHistoryFirst = first;
+    invalidate();
+}
 
 /************************************************
 

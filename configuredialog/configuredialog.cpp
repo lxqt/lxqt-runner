@@ -80,6 +80,8 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     connect(ui->shortcutEd->addMenuAction(tr("Reset")), SIGNAL(triggered()), this, SLOT(shortcutReset()));
 
     settingsChanged();
+
+    connect(ui->historyCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue("dialog/history_first", checked); });
 }
 
 
@@ -95,6 +97,7 @@ void ConfigureDialog::settingsChanged()
 
     ui->monitorCbx->setCurrentIndex(mSettings->value("dialog/monitor", -1).toInt() + 1);
     ui->shortcutEd->setText(mSettings->value("dialog/shortcut", "Alt+F2").toString());
+    ui->historyCb->setChecked(mSettings->value("dialog/history_first", true).toBool());
 }
 
 
