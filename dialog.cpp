@@ -384,7 +384,7 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
 void Dialog::onActiveWindowChanged(WId id)
 {
     if (isVisible() && id != winId())
-        showHide();
+        hide();
 }
 
 
