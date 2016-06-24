@@ -4,10 +4,6 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LXQt-runner Settings</source>
-        <translation type="vanished">Impostazioni di LXQt-runner</translation>
-    </message>
-    <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
         <translation>Impostazioni LXQt-runner</translation>
@@ -28,25 +24,14 @@
         <translation>Mostra su:</translation>
     </message>
     <message>
-        <location filename="../../configuredialog/configuredialog.ui" line="56"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="46"/>
+        <source>Show history first</source>
+        <translation>Mostra prima la cronologia</translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Shortcut:</source>
         <translation>Scorciatoia:</translation>
-    </message>
-    <message>
-        <source>Top edge of screen</source>
-        <translation type="vanished">Bordo superiore dello schermo</translation>
-    </message>
-    <message>
-        <source>Center of screen</source>
-        <translation type="vanished">Centro dello schermo</translation>
-    </message>
-    <message>
-        <source>Monitor where the mouse</source>
-        <translation type="vanished">Alla posizione del mouse</translation>
-    </message>
-    <message>
-        <source>Always on %1 monitor</source>
-        <translation type="vanished">Sempre sul monitor %1</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
@@ -82,18 +67,6 @@
         <translation>Lanciatore di applicazioni </translation>
     </message>
     <message>
-        <source>Configure lxqt-runner</source>
-        <translation type="vanished">Configura LXQt-runner</translation>
-    </message>
-    <message>
-        <source>Clear lxqt-runner History</source>
-        <translation type="vanished">Cancella la cronologia di LXQt-runner</translation>
-    </message>
-    <message>
-        <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation type="vanished">Premi &quot;%1&quot; per vedere la finestra di dialogo.</translation>
-    </message>
-    <message>
         <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation>Configura</translation>
@@ -121,9 +94,5 @@
         <source>Mathematics</source>
         <translation>Matematica</translation>
     </message>
-    <message>
-        <source>LXQt Power Management</source>
-        <translation type="vanished">Gestione energetica di LXQt</translation>
-    </message>
-</context>
+    </context>
 </TS>
