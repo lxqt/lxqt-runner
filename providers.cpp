@@ -789,8 +789,7 @@ bool VirtualBoxProvider::isOutDated() const
 
 
 #ifdef MATH_ENABLED
-#include <QtScript/QScriptEngine>
-#include <QtScript/QScriptValue>
+#include <QJSEngine>
 
 /************************************************
 
@@ -822,8 +821,8 @@ bool MathItem::compare(const QRegExp &regExp) const
     if (s.endsWith("="))
     {
         s.chop(1);
-        QScriptEngine myEngine;
-        QScriptValue res = myEngine.evaluate(s);
+        QJSEngine myEngine;
+        QJSValue res = myEngine.evaluate(s);
         if (res.isNumber())
         {
             MathItem *self=const_cast<MathItem*>(this);
