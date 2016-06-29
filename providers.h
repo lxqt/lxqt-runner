@@ -264,6 +264,7 @@ public:
     virtual unsigned int rank(const QString &pattern) const;
 private:
     QScopedPointer<mu::Parser> mParser;
+    mutable QString mCachedInput;
 };
 
 
