@@ -245,6 +245,11 @@ private:
 
 
 
+#ifdef MATH_ENABLED
+namespace mu
+{
+    class Parser;
+}
 /************************************************
  * Mathematics
  ************************************************/
@@ -252,10 +257,13 @@ class MathItem: public CommandProviderItem
 {
 public:
     MathItem();
+    ~MathItem();
 
     bool run() const;
     bool compare(const QRegExp &regExp) const;
     virtual unsigned int rank(const QString &pattern) const;
+private:
+    QScopedPointer<mu::Parser> mParser;
 };
 
 
@@ -266,6 +274,7 @@ public:
     MathProvider();
     //virtual ~MathProvider();
 };
+#endif
 
 #ifdef VBOX_ENABLED
 #include <QDateTime>

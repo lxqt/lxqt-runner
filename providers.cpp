@@ -789,17 +789,25 @@ bool VirtualBoxProvider::isOutDated() const
 
 
 #ifdef MATH_ENABLED
-#include <QtScript/QScriptEngine>
-#include <QtScript/QScriptValue>
+#include <muParser.h>
 
 /************************************************
 
  ************************************************/
 MathItem::MathItem():
-        CommandProviderItem()
+        CommandProviderItem(),
+        mParser{new mu::Parser}
 {
     mToolTip =QObject::tr("Mathematics");
     mIcon = XdgIcon::fromTheme("accessories-calculator");
+}
+
+
+/************************************************
+
+ ************************************************/
+MathItem::~MathItem()
+{
 }
 
 
@@ -822,13 +830,14 @@ bool MathItem::compare(const QRegExp &regExp) const
     if (s.endsWith("="))
     {
         s.chop(1);
-        QScriptEngine myEngine;
-        QScriptValue res = myEngine.evaluate(s);
-        if (res.isNumber())
+        try
         {
-            MathItem *self=const_cast<MathItem*>(this);
-            self->mTitle = s + " = " + res.toString();
+            mParser->SetExpr(s.toStdString());
+            const_cast<MathItem*>(this)->mTitle = s + "=" + QLocale::system().toString(mParser->Eval());
             return true;
+        } catch (const mu::Parser::exception_type & e)
+        {
+            //don't do anything, return false -> no result will be showed
         }
     }
 

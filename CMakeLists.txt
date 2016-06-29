@@ -23,7 +23,6 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
-find_package(Qt5Script REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
@@ -32,16 +31,22 @@ message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
-set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
+set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml)
+
+if (USE_MENU_CACHE OR RUNNER_MATH)
+    find_package(PkgConfig REQUIRED QUIET)
+endif ()
 
 if (USE_MENU_CACHE)
     # optionally use libmenu-cache from lxde to generate the application menu
-    find_package(PkgConfig REQUIRED QUIET)
-
     pkg_check_modules(MENU_CACHE REQUIRED QUIET
         libmenu-cache>=0.3.3
     )
 endif()
+
+if (RUNNER_MATH)
+    pkg_check_modules(MUPARSER REQUIRED QUIET muparser)
+endif ()
 
 set(lxqt-runner_H_FILES
     dialog.h
@@ -77,6 +82,7 @@ set(lxqt-runner_LIBRARIES
     lxqt-globalkeys-ui
     ${MENU_CACHE_LIBRARIES}
     ${QTX_LIBRARIES}
+    ${MUPARSER_LDFLAGS}
 )
 
 include(LXQtTranslate)
@@ -116,8 +122,13 @@ add_executable(${PROJECT_NAME}
     ${lxqt-runner_QM_LOADER}
 )
 
+if (RUNNER_MATH)
+    lxqt_enable_target_exceptions("${PROJECT_NAME}" PRIVATE)
+endif ()
+
 target_include_directories(${PROJECT_NAME}
     PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:${MENU_CACHE_INCLUDE_DIRS}>"
+    PRIVATE "$<$<BOOL:${MUPARSER_FOUND}>:${MUPARSER_INCLUDE_DIRS}>"
 )
 
 target_compile_definitions(${PROJECT_NAME}
