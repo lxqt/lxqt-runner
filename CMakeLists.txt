@@ -23,7 +23,6 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
-find_package(Qt5Script REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
@@ -32,7 +31,7 @@ message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
-set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml Qt5::Script)
+set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml)
 
 if (USE_MENU_CACHE)
     # optionally use libmenu-cache from lxde to generate the application menu
