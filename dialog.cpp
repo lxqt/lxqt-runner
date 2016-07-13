@@ -64,6 +64,7 @@ Dialog::Dialog(QWidget *parent) :
     mSettings(new LXQt::Settings("lxqt-runner", this)),
     mGlobalShortcut(0),
     mLockCascadeChanges(false),
+    mDesktopChanged(false),
     mConfigureDialog(0)
 {
     ui->setupUi(this);
@@ -117,6 +118,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(mGlobalShortcut, SIGNAL(activated()), this, SLOT(showHide()));
     connect(mGlobalShortcut, SIGNAL(shortcutChanged(QString,QString)), this, SLOT(shortcutChanged(QString,QString)));
     connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(onActiveWindowChanged(WId)));
+    connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
 
     resize(mSettings->value("dialog/width", 400).toInt(), size().height());
 
@@ -301,7 +303,7 @@ void Dialog::showHide()
     {
         realign();
         show();
-        KWindowSystem::forceActiveWindow(windowHandle()->winId());
+        KWindowSystem::forceActiveWindow(winId());
         ui->commandEd->setFocus();
     }
 }
@@ -383,8 +385,35 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
  ************************************************/
 void Dialog::onActiveWindowChanged(WId id)
 {
-    if (isVisible() && id != winId())
-        hide();
+    if (isVisible() && 0 != id && id != winId())
+    {
+        if (mDesktopChanged)
+        {
+            mDesktopChanged = false;
+            KWindowSystem::forceActiveWindow(winId());
+        } else
+        {
+            hide();
+        }
+    }
+}
+
+
+/************************************************
+
+ ************************************************/
+void Dialog::onCurrentDesktopChanged(int screen)
+{
+    if (isVisible())
+    {
+        KWindowSystem::setOnDesktop(winId(), screen);
+        KWindowSystem::forceActiveWindow(winId());
+        //Note: workaround for changing desktop while runner is shown
+        // The KWindowSystem::forceActiveWindow may fail to correctly activate runner if there
+        // are any other windows on the new desktop (probably because of the sequence while WM
+        // changes the virtual desktop (change desktop and activate any of the windows on it))
+        mDesktopChanged = true;
+    }
 }
 
 

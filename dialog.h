@@ -78,6 +78,7 @@ private:
     LXQt::ScreenSaver *mScreenSaver;
 
     bool mLockCascadeChanges;
+    bool mDesktopChanged; //!< \note flag for changing desktop & activation workaround
 
     ConfigureDialog *mConfigureDialog;
 
@@ -91,6 +92,7 @@ private slots:
     void showConfigDialog();
     void shortcutChanged(const QString &oldShortcut, const QString &newShortcut);
     void onActiveWindowChanged(WId id);
+    void onCurrentDesktopChanged(int desktop);
 };
 
 #endif // DIALOG_H
