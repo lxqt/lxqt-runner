@@ -256,6 +256,10 @@ public:
     bool run() const;
     bool compare(const QRegExp &regExp) const;
     virtual unsigned int rank(const QString &pattern) const;
+
+private:
+    mutable QString mCachedInput;
+    mutable QString mCachedResult;
 };
 
 

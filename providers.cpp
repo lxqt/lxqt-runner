@@ -789,8 +789,6 @@ bool VirtualBoxProvider::isOutDated() const
 
 
 #ifdef MATH_ENABLED
-#include <QtScript/QScriptEngine>
-#include <QtScript/QScriptValue>
 
 /************************************************
 
@@ -818,20 +816,38 @@ bool MathItem::run() const
 bool MathItem::compare(const QRegExp &regExp) const
 {
     QString s = regExp.pattern().trimmed();
-
     if (s.endsWith("="))
     {
         s.chop(1);
-        QScriptEngine myEngine;
-        QScriptValue res = myEngine.evaluate(s);
-        if (res.isNumber())
+        QString res;
+
+        if (s == mCachedInput)
+        {
+            res = mCachedResult;
+        }
+        else
+        {
+            QProcess bc;
+            bc.start(QStringLiteral("bc"), // call the external calculator tool "bc" to do the actual math
+                     QStringList() << QStringLiteral("-l")); // add -l option to turn on built-in functions
+            s += "\n"; // bc requires that each command ends with a "\n"
+            bc.write(s.toLatin1());
+            bc.closeWriteChannel();
+            bc.waitForFinished();
+            res = QString::fromUtf8(bc.readAllStandardOutput().trimmed()); // trim trailing spaces
+
+            // cache the most recent calculation result to avoid duplicated calculations
+            mCachedInput = s;
+            mCachedResult = res;
+        }
+
+        if (!res.isEmpty())
         {
             MathItem *self=const_cast<MathItem*>(this);
-            self->mTitle = s + " = " + res.toString();
+            self->mTitle = s + " = " + res;
             return true;
         }
     }
-
     return false;
 }
 
