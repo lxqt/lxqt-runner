@@ -5,12 +5,12 @@
     <name>ConfigureDialog</name>
     <message>
         <source>LXQt-runner Settings</source>
-        <translation type="vanished">Ρυθμίσεις εκτελεστή LXQt</translation>
+        <translation>Ρυθμίσεις εκτελεστή LXQt</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις εκτελεστή</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -51,27 +51,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνω άκρο της οθόνης</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Κέντρο της οθόνης</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενεργή οθόνη</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Πάντα στην οθόνη «%1»</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαναφορά</translation>
     </message>
 </context>
 <context>
@@ -79,34 +79,34 @@
     <message>
         <location filename="../../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Εκκινητής εφαρμογής </translation>
+        <translation>Εκτέλεση εφαρμογών </translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation type="vanished">Διαμόρφωση εκτελεστή lxqt</translation>
+        <translation>Διαμόρφωση του εκτελεστή lxqt-runner</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation type="vanished">Εκκαθάριση ιστορικού εκτελεστή lxqt</translation>
+        <translation>Εκκαθάριση του ιστορικού του εκτελεστή lxqt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation type="vanished">Πιέστε &quot;%1&quot; για εμφάνιση διαλόγου.</translation>
+        <translation>Πιέστε «%1» για εμφάνιση του διαλόγου.</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαμόρφωση</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκκαθάριση του ιστορικού</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="349"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση/απόκρυψη του διαλόγου του εκτελεστή</translation>
     </message>
 </context>
 <context>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../../providers.cpp" line="443"/>
         <source>History</source>
-        <translation>Ιστορία</translation>
+        <translation>Ιστορικό</translation>
     </message>
     <message>
         <location filename="../../providers.cpp" line="801"/>
@@ -123,7 +123,7 @@
     </message>
     <message>
         <source>LXQt Power Management</source>
-        <translation type="vanished">Διαχείριση ενέργειας LXQt</translation>
+        <translation>Διαχείριση ενέργειας του LXQt</translation>
     </message>
 </context>
 </TS>
