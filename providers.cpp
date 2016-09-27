@@ -885,6 +885,8 @@ MathProvider::MathProvider()
     append(new MathItem());
 }
 
+#endif
+
 ExternalProviderItem::ExternalProviderItem()
 {
 }
@@ -974,4 +976,3 @@ void ExternalProvider::readFromProcess()
     }
 }
 
-#endif
