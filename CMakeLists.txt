@@ -1,15 +1,10 @@
 cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
-
 project(lxqt-runner)
-
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
 
 include(CMakeDependentOption)
 include(GNUInstallDirs)
+
+set(LXQTBT_MINIMUM_VERSION "0.1.0")
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" ON)
@@ -20,16 +15,28 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
     "RUNNER_VBOX" OFF
 )
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
 find_package(lxqt-globalkeys-ui REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
+include(LXQtTranslate)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml)
 
@@ -85,7 +92,6 @@ set(lxqt-runner_LIBRARIES
     ${MUPARSER_LDFLAGS}
 )
 
-include(LXQtTranslate)
 
 lxqt_translate_ts(lxqt-runner_QM_FILES
     UPDATE_TRANSLATIONS ${UPDATE_TRANSLATIONS}
@@ -107,9 +113,6 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
 
 lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
 
 if (RUNNER_VBOX)
     list(APPEND QRC_FILES virtualbox-icons.qrc)
