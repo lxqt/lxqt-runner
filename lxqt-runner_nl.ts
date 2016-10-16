@@ -4,13 +4,9 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <source>LXQt-runner Settings</source>
-        <translation type="vanished">LXQt-uitvoeren Instellingen</translation>
-    </message>
-    <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen van Uitvoerder</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -20,58 +16,42 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>Positionering:</translation>
+        <translation>Plaatsing:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>Toon op:</translation>
+        <translation>Tonen op:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="56"/>
         <source>Shortcut:</source>
-        <translation>Snelkoppeling:</translation>
-    </message>
-    <message>
-        <source>Top edge of screen</source>
-        <translation type="vanished">Bovenkant van het scherm</translation>
-    </message>
-    <message>
-        <source>Center of screen</source>
-        <translation type="vanished">Midden van het scherm</translation>
-    </message>
-    <message>
-        <source>Monitor where the mouse</source>
-        <translation type="vanished">Check positie van de muis</translation>
-    </message>
-    <message>
-        <source>Always on %1 monitor</source>
-        <translation type="vanished">Altijd op %1 monitor</translation>
+        <translation>Sneltoets:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Bovenrand van beeldscherm</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Midden van beeldscherm</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Scherpgesteld scherm</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Altijd op scherm %1</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Terugzetten</translation>
     </message>
 </context>
 <context>
@@ -79,34 +59,22 @@
     <message>
         <location filename="../../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Programma starter</translation>
-    </message>
-    <message>
-        <source>Configure lxqt-runner</source>
-        <translation type="vanished">Configureer LXQt-uitvoeren</translation>
-    </message>
-    <message>
-        <source>Clear lxqt-runner History</source>
-        <translation type="vanished">Wis lxqt-runner Geschiedenis</translation>
-    </message>
-    <message>
-        <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation type="vanished">Toets &quot;%1&quot; om dialoog te zien.</translation>
+        <translation>Toepassingenstarter</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellen</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschiedenis wissen</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="349"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Toon/verberg de Uitvoerder-dialoog</translation>
     </message>
 </context>
 <context>
@@ -119,11 +87,7 @@
     <message>
         <location filename="../../providers.cpp" line="801"/>
         <source>Mathematics</source>
-        <translation>Wiskundig</translation>
-    </message>
-    <message>
-        <source>LXQt Power Management</source>
-        <translation type="vanished">LXQt Energiebeheer</translation>
+        <translation>Wiskunde</translation>
     </message>
 </context>
 </TS>
