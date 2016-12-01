@@ -8,6 +8,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+set(REQUIRED_MENUCACHE_VERSION "0.3.3")
+
 include(CMakeDependentOption)
 include(GNUInstallDirs)
 
@@ -39,9 +41,7 @@ endif ()
 
 if (USE_MENU_CACHE)
     # optionally use libmenu-cache from lxde to generate the application menu
-    pkg_check_modules(MENU_CACHE REQUIRED QUIET
-        libmenu-cache>=0.3.3
-    )
+    find_package(MenuCache "${REQUIRED_MENUCACHE_VERSION}" REQUIRED)
 endif()
 
 if (RUNNER_MATH)
@@ -80,7 +80,7 @@ set(lxqt-runner_LIBRARIES
     lxqt
     lxqt-globalkeys
     lxqt-globalkeys-ui
-    ${MENU_CACHE_LIBRARIES}
+    ${MENUCACHE_LIBRARIES}
     ${QTX_LIBRARIES}
     ${MUPARSER_LDFLAGS}
 )
@@ -127,7 +127,7 @@ if (RUNNER_MATH)
 endif ()
 
 target_include_directories(${PROJECT_NAME}
-    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:${MENU_CACHE_INCLUDE_DIRS}>"
+    PRIVATE "$<$<BOOL:${MENUCACHE_FOUND}>:${MENUCACHE_INCLUDE_DIRS}>"
     PRIVATE "$<$<BOOL:${MUPARSER_FOUND}>:${MUPARSER_INCLUDE_DIRS}>"
 )
 
@@ -135,7 +135,7 @@ target_compile_definitions(${PROJECT_NAME}
     PRIVATE "$<$<BOOL:${RUNNER_MATH}>:MATH_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
-    PRIVATE "$<$<BOOL:${MENU_CACHE_FOUND}>:HAVE_MENU_CACHE=1>"
+    PRIVATE "$<$<BOOL:${MENUCACHE_FOUND}>:HAVE_MENU_CACHE=1>"
 )
 
 target_link_libraries(${PROJECT_NAME}
