@@ -37,7 +37,7 @@
 #include <QIcon>
 
 #ifdef HAVE_MENU_CACHE
-#include <menu-cache/menu-cache.h>
+#include <menu-cache.h>
 #endif
 
 #define MAX_RANK 0xFFFF
