@@ -246,15 +246,13 @@ private:
 
 
 #ifdef MATH_ENABLED
-namespace mu
-{
-    class Parser;
-}
 /************************************************
  * Mathematics
  ************************************************/
 class MathItem: public CommandProviderItem
 {
+public:
+    class Parser;
 public:
     MathItem();
     ~MathItem();
@@ -263,7 +261,7 @@ public:
     bool compare(const QRegExp &regExp) const;
     virtual unsigned int rank(const QString &pattern) const;
 private:
-    QScopedPointer<mu::Parser> mParser;
+    QScopedPointer<Parser> mParser;
     mutable QString mCachedInput;
 };
 

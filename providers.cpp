@@ -791,12 +791,33 @@ bool VirtualBoxProvider::isOutDated() const
 #ifdef MATH_ENABLED
 #include <muParser.h>
 
+class MathItem::Parser : public mu::Parser
+{
+public:
+    static void initLocale()
+    {
+        try
+        {
+            // use the system's locale instead of the "C"
+            s_locale = std::locale{""};
+        } catch (const std::runtime_error & e)
+        {
+            qWarning().noquote() << "Unable to set locale for Math, " << e.what();
+        }
+    }
+};
+static void muParserInitLocale()
+{
+    MathItem::Parser::initLocale();
+}
+Q_COREAPP_STARTUP_FUNCTION(muParserInitLocale);
+
 /************************************************
 
  ************************************************/
 MathItem::MathItem():
         CommandProviderItem(),
-        mParser{new mu::Parser}
+        mParser{new Parser}
 {
     mToolTip =QObject::tr("Mathematics");
     mIcon = XdgIcon::fromTheme("accessories-calculator");
