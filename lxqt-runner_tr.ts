@@ -10,7 +10,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalıştırıcı Ayarları</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -51,12 +51,12 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekranın üst köşesi</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekranın merkezi</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Her zaman %1 ekranında</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Sıfırla</translation>
     </message>
 </context>
 <context>
@@ -96,17 +96,17 @@
     <message>
         <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Yapılandır</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçmişi Temizle</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="349"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Çalıştırıcı penceresini göster/gizle</translation>
     </message>
 </context>
 <context>
