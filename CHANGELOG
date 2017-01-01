@@ -1,7 +1,17 @@
 
-lxqt-runner-0.11.0 / 2016-09-24
+lxqt-runner-0.11.1 / 2017-01-01
 ===============================
 
+  * MathItem: Honor system locale (#52)
+  * Use the new MenuCache configuration CMake module
+  * Fixes FTBFS when libmenu-cache was installed to non-standard location
+  * Remove cpack (#49)
+  * - Fix endif placement when test for MATH library.
+
+0.11.0 / 2016-09-24
+===================
+
+  * Release 0.11.0: Add changelog
   * Add README.md
   * Math: Enhance evaluation logic
   * Math: Use libmuparser for math evaluation
