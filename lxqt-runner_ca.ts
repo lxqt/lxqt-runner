@@ -46,7 +46,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>Sempre a la panalla %1</translation>
+        <translation>Sempre a la pantalla %1</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
