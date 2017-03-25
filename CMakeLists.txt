@@ -148,3 +148,6 @@ install(TARGETS
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
     COMPONENT Runtime
 )
+
+# merged from lxqt-common
+add_subdirectory(autostart)
