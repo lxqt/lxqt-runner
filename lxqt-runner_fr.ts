@@ -4,59 +4,95 @@
 <context>
     <name>ConfigureDialog</name>
     <message>
-        <location filename="../../configuredialog.ui" line="14"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
         <translation>Paramétrage de lxqt-runner</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.ui" line="20"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
         <translation>Apparence</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.ui" line="26"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
         <translation>Position :</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.ui" line="36"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
         <translation>Montrer au :</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.ui" line="46"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
         <translation>Afficher d&apos;abord l&apos;historique</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.ui" line="63"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Shortcut:</source>
         <translation>Raccourci :</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.cpp" line="60"/>
+        <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
         <translation>Le bord supérieur de l&apos;écran</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.cpp" line="61"/>
+        <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
         <translation>Le centre de l&apos;écran</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.cpp" line="67"/>
+        <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
         <translation>Écran ayant le focus</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.cpp" line="71"/>
+        <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
         <translation>Toujours sur l&apos;écran %1</translation>
     </message>
     <message>
-        <location filename="../../configuredialog.cpp" line="80"/>
+        <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
         <translation>Réinitialiser</translation>
+    </message>
+</context>
+<context>
+    <name>Dialog</name>
+    <message>
+        <location filename="../../dialog.ui" line="26"/>
+        <source>Application launcher </source>
+        <translation>Lanceur d&apos;application</translation>
+    </message>
+    <message>
+        <location filename="../../dialog.cpp" line="94"/>
+        <source>Configure</source>
+        <translation>Configurer</translation>
+    </message>
+    <message>
+        <location filename="../../dialog.cpp" line="98"/>
+        <source>Clear History</source>
+        <translation>Effacer l&apos;historique</translation>
+    </message>
+    <message>
+        <location filename="../../dialog.cpp" line="351"/>
+        <source>Show/hide runner dialog</source>
+        <translation>Afficher/cacher le dialogue du lanceur</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../../providers.cpp" line="443"/>
+        <source>History</source>
+        <translation>Historique</translation>
+    </message>
+    <message>
+        <location filename="../../providers.cpp" line="822"/>
+        <source>Mathematics</source>
+        <translation>Mathématiques</translation>
     </message>
 </context>
 </TS>
