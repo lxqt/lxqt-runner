@@ -42,15 +42,15 @@
 
 
 
+const QKeySequence ConfigureDialog::DEFAULT_SHORTCUT{Qt::ALT + Qt::Key_F2};
 /************************************************
 
  ************************************************/
-ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShortcut, QWidget *parent) :
+ConfigureDialog::ConfigureDialog(QSettings *settings, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ConfigureDialog),
     mSettings(settings),
-    mOldSettings(new LXQt::SettingsCache(settings)),
-    mDefaultShortcut(defaultShortcut)
+    mOldSettings(new LXQt::SettingsCache(settings))
 {
     ui->setupUi(this);
 
@@ -75,9 +75,10 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
 
 
     // Shortcut .................................
-    connect(ui->shortcutEd, SIGNAL(shortcutGrabbed(QString)), this, SLOT(shortcutChanged(QString)));
+    connect(ui->shortcutEd, &QKeySequenceEdit::editingFinished, this, &ConfigureDialog::shortcutChanged);
 
-    connect(ui->shortcutEd->addMenuAction(tr("Reset")), SIGNAL(triggered()), this, SLOT(shortcutReset()));
+    //TODO:?
+    //connect(ui->shortcutEd->addMenuAction(tr("Reset")), SIGNAL(triggered()), this, SLOT(shortcutReset()));
 
     settingsChanged();
 
@@ -96,7 +97,7 @@ void ConfigureDialog::settingsChanged()
         ui->positionCbx->setCurrentIndex(1);
 
     ui->monitorCbx->setCurrentIndex(mSettings->value("dialog/monitor", -1).toInt() + 1);
-    ui->shortcutEd->setText(mSettings->value("dialog/shortcut", "Alt+F2").toString());
+    ui->shortcutEd->setKeySequence(mSettings->value("dialog/shortcut", DEFAULT_SHORTCUT).toString());
     ui->historyCb->setChecked(mSettings->value("dialog/history_first", true).toBool());
 }
 
@@ -114,10 +115,31 @@ ConfigureDialog::~ConfigureDialog()
 /************************************************
 
  ************************************************/
-void ConfigureDialog::shortcutChanged(const QString &text)
+void ConfigureDialog::shortcutChanged()
 {
-    ui->shortcutEd->setText(text);
-    mSettings->setValue("dialog/shortcut", text);
+    QKeySequence shortcut = ui->shortcutEd->keySequence();
+    if (shortcut.isEmpty())
+        shortcut = mSettings->value("dialog/shortcut", DEFAULT_SHORTCUT).toString();
+    else
+    {
+        // use only the first key (+modifiers)
+        if (shortcut.count() > 1)
+            shortcut = shortcut[0];
+
+        const int modifiers = shortcut[0] & Qt::MODIFIER_MASK;
+        const int key = shortcut[0] & ~Qt::MODIFIER_MASK;
+        // do not allow plain printable keys
+        if (modifiers
+                && !(modifiers == Qt::SHIFT && key > Qt::Key_Space && key <= Qt::Key_AsciiTilde))
+        {
+            mSettings->setValue("dialog/shortcut", shortcut);
+        } else
+        {
+            shortcut = mSettings->value("dialog/shortcut", DEFAULT_SHORTCUT).toString();
+        }
+    }
+    ui->shortcutEd->setKeySequence(shortcut);
+    ui->shortcutEd->clearFocus();
 }
 
 
@@ -126,7 +148,8 @@ void ConfigureDialog::shortcutChanged(const QString &text)
  ************************************************/
 void ConfigureDialog::shortcutReset()
 {
-    shortcutChanged(mDefaultShortcut);
+    ui->shortcutEd->setKeySequence(DEFAULT_SHORTCUT);
+    shortcutChanged();
 }
 
 

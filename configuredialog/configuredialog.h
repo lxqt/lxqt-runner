@@ -51,8 +51,9 @@ public:
         PositionCenter
     };
 
+    static const QKeySequence DEFAULT_SHORTCUT;
 
-    explicit ConfigureDialog(QSettings *settings, const QString &defaultShortcut, QWidget *parent = 0);
+    explicit ConfigureDialog(QSettings *settings, QWidget *parent = 0);
     ~ConfigureDialog();
 
 protected:
@@ -62,10 +63,9 @@ private:
     Ui::ConfigureDialog *ui;
     QSettings *mSettings;
     LXQt::SettingsCache *mOldSettings;
-    QString mDefaultShortcut;
 
 private slots:
-    void shortcutChanged(const QString &text);
+    void shortcutChanged();
     void shortcutReset();
     void settingsChanged();
     void positionCbxChanged(int index);

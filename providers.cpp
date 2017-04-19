@@ -43,11 +43,9 @@
 #include <QSettings>
 #include <QDir>
 #include <QApplication>
-#include <QAction>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
 #include "providers.h"
-#include <LXQtGlobalKeys/Action>
 #include <wordexp.h>
 #include <QStandardPaths>
 

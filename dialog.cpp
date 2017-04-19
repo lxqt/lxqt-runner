@@ -37,8 +37,7 @@
 #include <XdgIcon>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
-#include <LXQtGlobalKeys/Action>
-#include <LXQtGlobalKeys/Client>
+#include <KGlobalAccel>
 #include <QDebug>
 #include <QCloseEvent>
 #include <QDesktopWidget>
@@ -53,7 +52,6 @@
 
 #include <KWindowSystem/KWindowSystem>
 
-#define DEFAULT_SHORTCUT "Alt+F2"
 
 /************************************************
 
@@ -62,7 +60,7 @@ Dialog::Dialog(QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
     mSettings(new LXQt::Settings("lxqt-runner", this)),
-    mGlobalShortcut(0),
+    mGlobalShortcut(new QAction("lxqt-runner action", this)),
     mLockCascadeChanges(false),
     mDesktopChanged(false),
     mConfigureDialog(0)
@@ -111,12 +109,15 @@ Dialog::Dialog(QWidget *parent) :
     ui->actionButton->setMenu(menu);
     // End of popup menu ........................
 
+    mGlobalShortcut->setObjectName("show_hide_dialog");
+    mGlobalShortcut->setProperty("componentName", "org.lxqt.runner");
+    mGlobalShortcut->setProperty("componentDisplayName", tr("Show/hide runner dialog"));
     applySettings();
 
     connect(QApplication::desktop(), SIGNAL(screenCountChanged(int)), SLOT(realign()));
     connect(QApplication::desktop(), SIGNAL(workAreaResized(int)), SLOT(realign()));
-    connect(mGlobalShortcut, SIGNAL(activated()), this, SLOT(showHide()));
-    connect(mGlobalShortcut, SIGNAL(shortcutChanged(QString,QString)), this, SLOT(shortcutChanged(QString,QString)));
+    connect(mGlobalShortcut, &QAction::triggered, this, &Dialog::showHide);
+    connect(KGlobalAccel::self(), &KGlobalAccel::globalShortcutChanged, this, &Dialog::shortcutChanged);
     connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(onActiveWindowChanged(WId)));
     connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
 
@@ -343,14 +344,10 @@ void Dialog::applySettings()
         return;
 
     // Shortcut .................................
-    QString shortcut = mSettings->value("dialog/shortcut", DEFAULT_SHORTCUT).toString();
+    QKeySequence shortcut = mSettings->value("dialog/shortcut", ConfigureDialog::DEFAULT_SHORTCUT).toString();
     if (shortcut.isEmpty())
-        shortcut = DEFAULT_SHORTCUT;
-
-    if (!mGlobalShortcut)
-        mGlobalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/runner/show_hide_dialog", tr("Show/hide runner dialog"), this);
-    else if (mGlobalShortcut->shortcut() != shortcut)
-        mGlobalShortcut->changeShortcut(shortcut);
+        shortcut = ConfigureDialog::DEFAULT_SHORTCUT;
+    KGlobalAccel::self()->setShortcut(mGlobalShortcut, {shortcut}, KGlobalAccel::NoAutoloading);
 
     mShowOnTop = mSettings->value("dialog/show_on_top", true).toBool();
 
@@ -366,9 +363,9 @@ void Dialog::applySettings()
 /************************************************
 
  ************************************************/
-void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newShortcut)
+void Dialog::shortcutChanged(QAction * action, const QKeySequence & newShortcut)
 {
-    if (!newShortcut.isEmpty())
+    if (mGlobalShortcut == action && !newShortcut.isEmpty())
     {
         mLockCascadeChanges = true;
 
@@ -483,8 +480,6 @@ void Dialog::runCommand()
 void Dialog::showConfigDialog()
 {
     if (!mConfigureDialog)
-        mConfigureDialog = new ConfigureDialog(mSettings, DEFAULT_SHORTCUT, this);
+        mConfigureDialog = new ConfigureDialog(mSettings, this);
     mConfigureDialog->exec();
 }
-
-#undef DEFAULT_SHORTCUT
