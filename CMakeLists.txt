@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(REQUIRED_MENUCACHE_VERSION "0.3.3")
+set(REQUIRED_MENUCACHE_VERSION "1.1.0")
 
 include(CMakeDependentOption)
 include(GNUInstallDirs)
