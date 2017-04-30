@@ -7,7 +7,7 @@ lxqt_translate_desktop(DESKTOP_FILES
     SOURCES
         ${DESKTOP_FILES_IN}
 )
-add_custom_target(autostart_desktop_files ALL DEPENDS ${DESKTOP_FILES})
+add_custom_target(lxq_runner_autostart_desktop_files ALL DEPENDS ${DESKTOP_FILES})
 #************************************************
 
 install(FILES
