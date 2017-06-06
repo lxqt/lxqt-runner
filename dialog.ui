@@ -151,9 +151,12 @@
     </widget>
    </item>
    <item>
-    <widget class="QListView" name="commandList">
+    <widget class="MyListView" name="commandList">
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
      </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
@@ -169,6 +172,11 @@
    <extends>QWidget</extends>
    <header>widgets.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyListView</class>
+   <extends>QListView</extends>
+   <header>mylistview.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

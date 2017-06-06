@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>312</width>
-    <height>248</height>
+    <height>278</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,17 +40,37 @@
       <item row="1" column="1">
        <widget class="QComboBox" name="monitorCbx"/>
       </item>
-      <item row="3" column="0" colspan="2">
+      <item row="4" column="0" colspan="2">
        <widget class="QCheckBox" name="historyFirstCb">
         <property name="text">
          <string>Show history first</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="2">
+      <item row="3" column="0" colspan="2">
        <widget class="QCheckBox" name="historyUseCb">
         <property name="text">
          <string>Store/show history</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="toolTip">
+         <string>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop's height and width.</string>
+        </property>
+        <property name="text">
+         <string>Show list with:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="listShownItemsSB">
+        <property name="suffix">
+         <string> item(s)</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
         </property>
        </widget>
       </item>

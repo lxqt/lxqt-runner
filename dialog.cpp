@@ -358,6 +358,7 @@ void Dialog::applySettings()
 
     mCommandItemModel->setUseHistory(mSettings->value("dialog/history_use", true).toBool());
     mCommandItemModel->showHistoryFirst(mSettings->value("dialog/history_first", true).toBool());
+    ui->commandList->setShownCount(mSettings->value("dialog/list_shown_items", 4).toInt());
 
     realign();
     mSettings->sync();
