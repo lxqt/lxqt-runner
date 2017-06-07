@@ -37,9 +37,9 @@
 /************************************************
 
  ************************************************/
-CommandItemModel::CommandItemModel(QObject *parent) :
+CommandItemModel::CommandItemModel(bool useHistory, QObject *parent) :
     QSortFilterProxyModel(parent),
-    mSourceModel(new CommandSourceItemModel(this)),
+    mSourceModel(new CommandSourceItemModel(useHistory, this)),
     mOnlyHistory(false),
     mShowHistoryFirst(true)
 {
@@ -234,17 +234,21 @@ void CommandItemModel::rebuild()
 /************************************************
 
  ************************************************/
-CommandSourceItemModel::CommandSourceItemModel(QObject *parent) :
-    QAbstractListModel(parent)
+CommandSourceItemModel::CommandSourceItemModel(bool useHistory, QObject *parent) :
+    QAbstractListModel(parent),
+    mHistoryProvider(nullptr)
 {
     mCustomCommandProvider = new CustomCommandProvider;
     mProviders.append(mCustomCommandProvider);
     rebuild();
     mCustomCommandIndex = index(0, 0);
 
-    mHistoryProvider = new HistoryProvider();
-    mProviders.append(mHistoryProvider);
-    mCustomCommandProvider->setHistoryProvider(mHistoryProvider);
+    if (useHistory)
+    {
+        mHistoryProvider = new HistoryProvider();
+        mProviders.append(mHistoryProvider);
+        mCustomCommandProvider->setHistoryProvider(mHistoryProvider);
+    }
 
     mProviders.append(new AppLinkProvider());
 #ifdef MATH_ENABLED
@@ -374,9 +378,16 @@ void CommandSourceItemModel::rebuild()
  ************************************************/
 void CommandSourceItemModel::clearHistory()
 {
-    beginResetModel();
-    mHistoryProvider->clearHistory();
-    endResetModel();
+    if (mHistoryProvider)
+    {
+        beginResetModel();
+        mHistoryProvider->clearHistory();
+        endResetModel();
+    } else
+    {
+        QScopedPointer<HistoryProvider> history_p{new HistoryProvider};
+        history_p->clearHistory();
+    }
 }
 
 
@@ -422,4 +433,31 @@ void CommandSourceItemModel::setCommand(const QString& command)
     {
         externalProvider->setSearchTerm(command);
     }
+}
+
+
+/***********************************************
+
+ ***********************************************/
+void CommandSourceItemModel::setUseHistory(bool useHistory)
+{
+    const bool now_using_history = mHistoryProvider != nullptr;
+    if (now_using_history == useHistory)
+        return;
+    beginResetModel();
+    if (now_using_history)
+    {
+        mProviders.removeAll(mHistoryProvider);
+        mCustomCommandProvider->setHistoryProvider(nullptr);
+        delete mHistoryProvider;
+        mHistoryProvider = nullptr;
+    } else
+    {
+        mHistoryProvider = new HistoryProvider;
+        mProviders.append(mHistoryProvider);
+        mCustomCommandProvider->setHistoryProvider(mHistoryProvider);
+        connect(mHistoryProvider, SIGNAL(changed()), this, SIGNAL(layoutChanged()));
+        connect(mHistoryProvider, SIGNAL(aboutToBeChanged()), this, SIGNAL(layoutAboutToBeChanged()));
+    }
+    endResetModel();
 }

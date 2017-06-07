@@ -38,7 +38,7 @@ class CommandSourceItemModel: public QAbstractListModel
 {
     Q_OBJECT
 public:
-    explicit CommandSourceItemModel(QObject *parent = 0);
+    explicit CommandSourceItemModel(bool useHistory, QObject *parent = 0);
     virtual ~CommandSourceItemModel();
 
     int rowCount(const QModelIndex &parent=QModelIndex()) const;
@@ -53,6 +53,10 @@ public:
 
     QPersistentModelIndex customCommandIndex() const { return mCustomCommandIndex; }
     QPersistentModelIndex externalProviderStartIndex() const { return mExternalProviderStartIndex; }
+
+    /*! Flag if the history should be shown/stored
+     */
+    void setUseHistory(bool useHistory);
 public slots:
     void rebuild();
     void clearHistory();
@@ -71,7 +75,7 @@ class CommandItemModel: public QSortFilterProxyModel
 {
     Q_OBJECT
 public:
-    explicit CommandItemModel(QObject *parent = 0);
+    explicit CommandItemModel(bool useHistory, QObject *parent = 0);
     virtual ~CommandItemModel();
 
     bool isOutDated() const;
@@ -83,6 +87,10 @@ public:
     void showOnlyHistory(bool onlyHistory) { mOnlyHistory = onlyHistory; }
 
     void showHistoryFirst(bool first = true);
+
+    /*! Flag if the history should be shown/stored
+     */
+    inline void setUseHistory(bool useHistory) { mSourceModel->setUseHistory(useHistory); }
 
     QString command() const { return mSourceModel->command(); }
     void setCommand(const QString &command) { mSourceModel->setCommand(command); }
