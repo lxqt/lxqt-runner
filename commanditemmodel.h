@@ -48,8 +48,6 @@ public:
     const CommandProviderItem *command(const QModelIndex &index) const;
     const CommandProviderItem *command(int row) const;
 
-    void addHistoryCommand(const QString &command);
-
     QString command() const { return mCustomCommandProvider->command(); }
     void setCommand(const QString &command);
 
@@ -78,8 +76,6 @@ public:
 
     bool isOutDated() const;
     const CommandProviderItem *command(const QModelIndex &index) const;
-
-    void addHistoryCommand(const QString &command);
 
     QModelIndex  appropriateItem(const QString &pattern) const;
 

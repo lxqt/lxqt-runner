@@ -84,11 +84,6 @@ const CommandProviderItem *CommandItemModel::command(const QModelIndex &index) c
 /************************************************
 
  ************************************************/
-void CommandItemModel::addHistoryCommand(const QString &command)
-{
-    mSourceModel->addHistoryCommand(command);
-}
-
 void CommandItemModel::clearHistory()
 {
     mSourceModel->clearHistory();
@@ -414,15 +409,6 @@ const CommandProviderItem *CommandSourceItemModel::command(const QModelIndex &in
         return 0;
 
     return command(index.row());
-}
-
-
-/************************************************
-
- ************************************************/
-void CommandSourceItemModel::addHistoryCommand(const QString &command)
-{
-    mHistoryProvider->AddCommand(command);
 }
 
 
