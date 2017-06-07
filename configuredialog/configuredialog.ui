@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>312</width>
-    <height>222</height>
+    <height>248</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,10 +40,17 @@
       <item row="1" column="1">
        <widget class="QComboBox" name="monitorCbx"/>
       </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QCheckBox" name="historyCb">
+      <item row="3" column="0" colspan="2">
+       <widget class="QCheckBox" name="historyFirstCb">
         <property name="text">
          <string>Show history first</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="historyUseCb">
+        <property name="text">
+         <string>Store/show history</string>
         </property>
        </widget>
       </item>
@@ -157,6 +164,22 @@
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>historyUseCb</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>historyFirstCb</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>114</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>143</y>
     </hint>
    </hints>
   </connection>
