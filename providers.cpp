@@ -810,7 +810,7 @@ static void muParserInitLocale()
 {
     MathItem::Parser::initLocale();
 }
-Q_COREAPP_STARTUP_FUNCTION(muParserInitLocale);
+Q_COREAPP_STARTUP_FUNCTION(muParserInitLocale)
 
 /************************************************
 
