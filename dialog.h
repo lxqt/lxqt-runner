@@ -43,11 +43,7 @@ namespace LXQt {
 class CommandListView;
 class CommandItemModel;
 class ConfigureDialog;
-
-namespace GlobalKeyShortcut
-{
-class Action;
-}
+class QAction;
 
 
 class Dialog : public QDialog
@@ -70,7 +66,7 @@ protected:
 private:
     Ui::Dialog *ui;
     LXQt::Settings *mSettings;
-    GlobalKeyShortcut::Action *mGlobalShortcut;
+    QAction *mGlobalShortcut;
     CommandItemModel *mCommandItemModel;
     bool mShowOnTop;
     int mMonitor;
@@ -90,7 +86,7 @@ private slots:
     void dataChanged();
     void runCommand();
     void showConfigDialog();
-    void shortcutChanged(const QString &oldShortcut, const QString &newShortcut);
+    void shortcutChanged(QAction * action, const QKeySequence & newShortcut);
     void onActiveWindowChanged(WId id);
     void onCurrentDesktopChanged(int desktop);
 };

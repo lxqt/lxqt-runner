@@ -65,17 +65,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="ShortcutSelector" name="shortcutEd">
-         <property name="minimumSize">
-          <size>
-           <width>81</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
+        <widget class="QKeySequenceEdit" name="shortcutEd"/>
        </item>
       </layout>
      </item>
@@ -119,13 +109,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>ShortcutSelector</class>
-   <extends>QToolButton</extends>
-   <header location="global">LXQtGlobalKeysUi/ShortcutSelector</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>

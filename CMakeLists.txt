@@ -27,8 +27,7 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 find_package(lxqt REQUIRED)
-find_package(lxqt-globalkeys REQUIRED)
-find_package(lxqt-globalkeys-ui REQUIRED)
+find_package(KF5GlobalAccel REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
@@ -82,8 +81,7 @@ set(QRC_FILES
 
 set(lxqt-runner_LIBRARIES
     lxqt
-    lxqt-globalkeys
-    lxqt-globalkeys-ui
+    KF5::GlobalAccel
     ${MENUCACHE_LIBRARIES}
     ${QTX_LIBRARIES}
     ${MUPARSER_LDFLAGS}
