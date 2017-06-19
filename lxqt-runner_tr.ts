@@ -61,7 +61,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaklanmış ekran</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
