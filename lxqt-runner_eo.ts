@@ -28,7 +28,32 @@
         <translation>Montri en:</translation>
     </message>
     <message>
-        <location filename="../../configuredialog/configuredialog.ui" line="56"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="46"/>
+        <source>Show history first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="53"/>
+        <source>Store/show history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="60"/>
+        <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="63"/>
+        <source>Show list with:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="70"/>
+        <source> item(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
         <translation>Klavkombino:</translation>
     </message>
@@ -90,17 +115,17 @@
         <translation type="vanished">Alkalku &quot;%1&quot; por montri dialogon.</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="93"/>
+        <location filename="../../dialog.cpp" line="94"/>
         <source>Configure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="97"/>
+        <location filename="../../dialog.cpp" line="98"/>
         <source>Clear History</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="349"/>
+        <location filename="../../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
         <translation type="unfinished"></translation>
     </message>
@@ -113,7 +138,7 @@
         <translation>Historio</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="801"/>
+        <location filename="../../providers.cpp" line="822"/>
         <source>Mathematics</source>
         <translation>Matematiko</translation>
     </message>

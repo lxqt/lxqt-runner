@@ -5,7 +5,7 @@
     <name>ConfigureDialog</name>
     <message>
         <source>LXQt-runner Settings</source>
-        <translation>Definições do LXQt-runner</translation>
+        <translation type="vanished">Definições do LXQt-runner</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
@@ -28,25 +28,50 @@
         <translation>Mostrar:</translation>
     </message>
     <message>
-        <location filename="../../configuredialog/configuredialog.ui" line="56"/>
+        <location filename="../../configuredialog/configuredialog.ui" line="46"/>
+        <source>Show history first</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="53"/>
+        <source>Store/show history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="60"/>
+        <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="63"/>
+        <source>Show list with:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="70"/>
+        <source> item(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
         <translation>Atalho:</translation>
     </message>
     <message>
         <source>Top edge of screen</source>
-        <translation>Margem superior do ecrã</translation>
+        <translation type="vanished">Margem superior do ecrã</translation>
     </message>
     <message>
         <source>Center of screen</source>
-        <translation>Centro do ecrã</translation>
+        <translation type="vanished">Centro do ecrã</translation>
     </message>
     <message>
         <source>Monitor where the mouse</source>
-        <translation>Monitor em que está o rato</translation>
+        <translation type="vanished">Monitor em que está o rato</translation>
     </message>
     <message>
         <source>Always on %1 monitor</source>
-        <translation>Sempre no monitor %1</translation>
+        <translation type="vanished">Sempre no monitor %1</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
@@ -83,28 +108,28 @@
     </message>
     <message>
         <source>Configure lxqt-runner</source>
-        <translation>Configurar lxqt-runner</translation>
+        <translation type="vanished">Configurar lxqt-runner</translation>
     </message>
     <message>
         <source>Clear lxqt-runner History</source>
-        <translation>Limpar histórico do lxqt-runner</translation>
+        <translation type="vanished">Limpar histórico do lxqt-runner</translation>
     </message>
     <message>
         <source>Press &quot;%1&quot; to see dialog.</source>
-        <translation>Prima &quot;%1&quot; para abrir a caixa de diálogo.</translation>
+        <translation type="vanished">Prima &quot;%1&quot; para abrir a caixa de diálogo.</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="93"/>
+        <location filename="../../dialog.cpp" line="94"/>
         <source>Configure</source>
         <translation>Configurar</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="97"/>
+        <location filename="../../dialog.cpp" line="98"/>
         <source>Clear History</source>
         <translation>Limpar histórico</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="349"/>
+        <location filename="../../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostrar/ocultar caixa de diálogo</translation>
     </message>
@@ -117,13 +142,13 @@
         <translation>Histórico</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="801"/>
+        <location filename="../../providers.cpp" line="822"/>
         <source>Mathematics</source>
         <translation>Matemática</translation>
     </message>
     <message>
         <source>LXQt Power Management</source>
-        <translation>Gestão de energia do LXQt</translation>
+        <translation type="vanished">Gestão de energia do LXQt</translation>
     </message>
 </context>
 </TS>
