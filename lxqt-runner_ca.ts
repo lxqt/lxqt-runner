@@ -26,27 +26,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra primer l&apos;historial</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Emmagatzema/mostra l&apos;historial</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: La mida dels estris de nivell alt està limitada a 2/3 de l&apos;alçada i l&apos;amplada de l&apos;escriptori.</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra la llista amb:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> ítem(s)</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="90"/>
