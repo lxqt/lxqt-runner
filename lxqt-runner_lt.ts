@@ -26,27 +26,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Iš pradžių, rodyti istoriją</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Saugoti/rodyti istoriją</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Pastaba&lt;/b&gt;: Aukščiausio lygio valdiklių dydis yra apribotas iki 2/3 darbalaukio aukščio ir pločio.</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rodyti sąrašą su:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> elementais(-ų)</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="90"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Programų leistukas</translation>
+        <translation>Programų leistukas </translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="94"/>
