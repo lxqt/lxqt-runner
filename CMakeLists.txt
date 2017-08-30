@@ -25,7 +25,7 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 find_package(KF5WindowSystem REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 find_package(Qt5Xml REQUIRED)
-find_package(Qt5LinguistTools REQUIRED QUIET)
+find_package(Qt5LinguistTools REQUIRED)
 find_package(lxqt REQUIRED)
 find_package(lxqt-globalkeys REQUIRED)
 find_package(lxqt-globalkeys-ui REQUIRED)
@@ -40,7 +40,7 @@ add_definitions("-DLXQT_RUNNER_VERSION=\"${LXQT_RUNNER_VERSION}\"")
 set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml)
 
 if (USE_MENU_CACHE OR RUNNER_MATH)
-    find_package(PkgConfig REQUIRED QUIET)
+    find_package(PkgConfig REQUIRED)
 endif ()
 
 if (USE_MENU_CACHE)
@@ -49,7 +49,7 @@ if (USE_MENU_CACHE)
 endif()
 
 if (RUNNER_MATH)
-    pkg_check_modules(MUPARSER REQUIRED QUIET muparser)
+    pkg_check_modules(MUPARSER REQUIRED muparser)
 endif ()
 
 set(lxqt-runner_H_FILES
