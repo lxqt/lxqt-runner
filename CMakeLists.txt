@@ -49,7 +49,7 @@ if (USE_MENU_CACHE)
 endif()
 
 if (RUNNER_MATH)
-    pkg_check_modules(MUPARSER REQUIRED QUIET muparser)
+    pkg_check_modules(MUPARSER REQUIRED muparser)
 endif ()
 
 set(lxqt-runner_H_FILES
