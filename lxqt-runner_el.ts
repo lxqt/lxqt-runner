@@ -30,27 +30,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση του ιστορικού πρώτα</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποθήκευση/Εμφάνιση ιστορικού</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Σημείωση&lt;/b&gt;: Το μέγεθος των γραφικών συστατικών ανώτατου επιπέδου περιορίζεται στα 2/3 του ύψους και πλάτους της επιφάνειας εργασίας.</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση της λίστας με:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> αντικείμενο(α)</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="90"/>
