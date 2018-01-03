@@ -274,7 +274,7 @@ CommandSourceItemModel::CommandSourceItemModel(bool useHistory, QObject *parent)
     }
     settings.endArray();
 
-    foreach(CommandProvider* provider, mProviders)
+    for(const CommandProvider* provider : qAsConst(mProviders))
     {
         connect(provider, SIGNAL(changed()), this, SIGNAL(layoutChanged()));
         connect(provider, SIGNAL(aboutToBeChanged()), this, SIGNAL(layoutAboutToBeChanged()));
@@ -300,7 +300,7 @@ CommandSourceItemModel::~CommandSourceItemModel()
 int CommandSourceItemModel::rowCount(const QModelIndex& /*parent*/) const
 {
     int ret=0;
-    foreach(CommandProvider* provider, mProviders)
+    for(const CommandProvider* provider : qAsConst(mProviders))
         ret += provider->count();
 
     return ret;
@@ -429,7 +429,7 @@ const CommandProviderItem *CommandSourceItemModel::command(const QModelIndex &in
 void CommandSourceItemModel::setCommand(const QString& command)
 {
     mCustomCommandProvider->setCommand(command);
-    foreach (ExternalProvider* externalProvider, mExternalProviders)
+    for (ExternalProvider* const externalProvider : qAsConst(mExternalProviders))
     {
         externalProvider->setSearchTerm(command);
     }
