@@ -97,7 +97,7 @@ static QString which(const QString &progName)
 
     const QStringList dirs = QString(getenv("PATH")).split(":");
 
-    foreach (const QString &dir, dirs)
+    for (const QString &dir : dirs)
     {
         QFileInfo fileInfo(QDir(dir), progName);
         if (fileInfo.isExecutable() && fileInfo.isFile())
@@ -968,8 +968,7 @@ void ExternalProvider::newListOfMaps(QList<QMap<QString,QString> > maps)
     qDeleteAll(*this);
     clear();
 
-    QMap<QString, QString> map;
-    foreach(map, maps)
+    for(auto map : qAsConst(maps))
     {
         ExternalProviderItem *item  = new ExternalProviderItem();
         if (item->setData(map))
