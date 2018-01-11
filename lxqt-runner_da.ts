@@ -105,12 +105,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../providers.cpp" line="443"/>
+        <location filename="../../providers.cpp" line="445"/>
         <source>History</source>
         <translation>Historik</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="822"/>
+        <location filename="../../providers.cpp" line="824"/>
         <source>Mathematics</source>
         <translation>Matematik</translation>
     </message>
