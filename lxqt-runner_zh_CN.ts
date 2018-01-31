@@ -10,7 +10,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>启动器设置</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -30,27 +30,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>首先显示历史</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>收起/显示历史</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>列表显示:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> 个项目</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="90"/>
@@ -76,27 +76,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>屏幕顶部</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>屏幕中央</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>当前屏幕</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>总是显示在屏幕 %1 上</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>重置</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>应用程序启动器</translation>
+        <translation>应用程序启动器 </translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
@@ -121,17 +121,17 @@
     <message>
         <location filename="../../dialog.cpp" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>配置</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>清除历史</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>显示/隐藏对话框</translation>
     </message>
 </context>
 <context>
