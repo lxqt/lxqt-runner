@@ -31,7 +31,6 @@
 
 #include "providers.h"
 #include "yamlparser.h"
-#include <XdgIcon>
 #include <XdgDesktopFile>
 #include <XdgMenu>
 #include <XmlHelper>
@@ -214,7 +213,7 @@ void AppLinkItem::updateIcon()
 //    qDebug() << hex << this;
 //    qDebug() << Q_FUNC_INFO;
     if (mIcon.isNull())
-        mIcon = XdgIcon::fromTheme(mIconName);
+        mIcon = QIcon::fromTheme(mIconName);
 //    qDebug() << "*****************************************";
 }
 
@@ -440,7 +439,7 @@ void AppLinkProvider::update()
 HistoryItem::HistoryItem(const QString &command):
         CommandProviderItem()
 {
-    mIcon = XdgIcon::defaultApplicationIcon();
+    mIcon = QIcon::fromTheme(QLatin1String("application-x-executable"));
     mTitle = command;
     mComment = QObject::tr("History");
     mCommand = command;
@@ -546,7 +545,7 @@ CustomCommandItem::CustomCommandItem(CustomCommandProvider *provider):
     CommandProviderItem(),
     mProvider(provider)
 {
-    mIcon = XdgIcon::fromTheme("utilities-terminal");
+    mIcon = QIcon::fromTheme("utilities-terminal");
 }
 
 
@@ -822,7 +821,7 @@ MathItem::MathItem():
         mParser{new Parser}
 {
     mToolTip =QObject::tr("Mathematics");
-    mIcon = XdgIcon::fromTheme("accessories-calculator");
+    mIcon = QIcon::fromTheme("accessories-calculator");
 }
 
 
@@ -926,7 +925,7 @@ bool ExternalProviderItem::setData(QMap<QString,QString> & data)
     mToolTip = data["tooltip"];
     mCommand = data["command"];
     if (data.contains("icon"))
-        mIcon = XdgIcon::fromTheme(data["icon"]);
+        mIcon = QIcon::fromTheme(data["icon"]);
 
     return true;
 }

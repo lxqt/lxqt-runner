@@ -34,7 +34,6 @@
 
 #include <LXQt/Settings>
 #include <LXQt/HtmlDelegate>
-#include <XdgIcon>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
 #include <LXQtGlobalKeys/Action>
@@ -91,11 +90,11 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->setItemDelegate(new LXQt::HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
-    QAction *a = new QAction(XdgIcon::fromTheme("configure"), tr("Configure"), this);
+    QAction *a = new QAction(QIcon::fromTheme("configure"), tr("Configure"), this);
     connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
     addAction(a);
 
-    a = new QAction(XdgIcon::fromTheme("edit-clear-history"), tr("Clear History"), this);
+    a = new QAction(QIcon::fromTheme("edit-clear-history"), tr("Clear History"), this);
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 
