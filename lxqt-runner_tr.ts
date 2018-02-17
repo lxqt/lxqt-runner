@@ -119,17 +119,17 @@
         <translation type="vanished">Diyaloğu görmek için &quot;%1&quot; üzerine basın</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="94"/>
+        <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation>Yapılandır</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="98"/>
+        <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
         <translation>Geçmişi Temizle</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="351"/>
+        <location filename="../../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
         <translation>Çalıştırıcı penceresini göster/gizle</translation>
     </message>
@@ -137,12 +137,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../providers.cpp" line="445"/>
+        <location filename="../../providers.cpp" line="444"/>
         <source>History</source>
         <translation>Geçmiş</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="824"/>
+        <location filename="../../providers.cpp" line="823"/>
         <source>Mathematics</source>
         <translation>İşlemler</translation>
     </message>

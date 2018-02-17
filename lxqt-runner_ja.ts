@@ -119,17 +119,17 @@
         <translation type="vanished">ダイアログを見るには&quot;%1&quot;を押してください。</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="94"/>
+        <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="98"/>
+        <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
         <translation>履歴を消去</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="351"/>
+        <location filename="../../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
         <translation>runnnerのダイアログを表示する/隠す</translation>
     </message>
@@ -137,12 +137,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../providers.cpp" line="445"/>
+        <location filename="../../providers.cpp" line="444"/>
         <source>History</source>
         <translation>履歴</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="824"/>
+        <location filename="../../providers.cpp" line="823"/>
         <source>Mathematics</source>
         <translation>計算</translation>
     </message>

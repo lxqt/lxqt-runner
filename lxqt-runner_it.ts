@@ -87,17 +87,17 @@
         <translation>Lanciatore di applicazioni </translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="94"/>
+        <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
         <translation>Configura</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="98"/>
+        <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
         <translation>Pulisci cronologia</translation>
     </message>
     <message>
-        <location filename="../../dialog.cpp" line="351"/>
+        <location filename="../../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostra/nascondi la finestra di runner</translation>
     </message>
@@ -105,12 +105,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../providers.cpp" line="445"/>
+        <location filename="../../providers.cpp" line="444"/>
         <source>History</source>
         <translation>Cronologia</translation>
     </message>
     <message>
-        <location filename="../../providers.cpp" line="824"/>
+        <location filename="../../providers.cpp" line="823"/>
         <source>Mathematics</source>
         <translation>Matematica</translation>
     </message>
