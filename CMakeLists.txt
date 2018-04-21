@@ -14,7 +14,7 @@ include(CMakeDependentOption)
 include(GNUInstallDirs)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" ON)
+option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" OFF)
 option(RUNNER_MATH "Math operations support" ON)
 option(RUNNER_VBOX "Virtual Box support" ON)
 cmake_dependent_option(RUNNER_VBOX_HEADLESS
