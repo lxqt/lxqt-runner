@@ -10,7 +10,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración del lanzador de aplicaciones</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -30,32 +30,32 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar primero el historial</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar/mostrar el historial</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: El tamaño de las miniaplicaciones de nivel superior está restringido a 2/3 del alto y ancho del escritorio.</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar lista con:</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> elemento(s)</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation>Acceso directo</translation>
+        <translation>Atajo:</translation>
     </message>
     <message>
         <source>Top edge of screen</source>
@@ -76,27 +76,27 @@
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Borde superior de la pantalla</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Centro de la pantalla</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Pantalla activa</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Siempre en la pantalla %1</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reiniciar</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="../../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Lanzador de aplicaciones</translation>
+        <translation>Lanzador de aplicaciones </translation>
     </message>
     <message>
         <source>Configure lxqt-runner</source>
@@ -121,17 +121,17 @@
     <message>
         <location filename="../../dialog.cpp" line="93"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar el historial</translation>
     </message>
     <message>
         <location filename="../../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar/ocultar el diálogo del lanzador de aplicaciones</translation>
     </message>
 </context>
 <context>
