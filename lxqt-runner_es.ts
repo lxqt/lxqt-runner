@@ -10,7 +10,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Configuración del lanzador de aplicaciones</translation>
+        <translation>Configuración del Lanzador de aplicaciones</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="20"/>
@@ -40,7 +40,7 @@
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Nota&lt;/b&gt;: El tamaño de las miniaplicaciones de nivel superior está restringido a 2/3 del alto y ancho del escritorio.</translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: El tamaño de los controles de nivel superior está restringido a 2/3 del alto y ancho del escritorio.</translation>
     </message>
     <message>
         <location filename="../../configuredialog/configuredialog.ui" line="63"/>
