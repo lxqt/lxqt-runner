@@ -1,7 +1,20 @@
 
-lxqt-runner-0.12.0 / 2017-10-21
+lxqt-runner-0.13.0 / 2018-05-21
 ===============================
 
+  * Spanish translation update
+  * CMake: Prevent in-source builds
+  * USE_MENU_CACHE default OFF
+  * fix razor-qt -> lxqt and http -> https
+  * Fixed mentions of LXDE
+  * runner: Use the QIcon::fromTheme()
+  * Drop Qt foreach
+  * AppLinkItem: Make genericName searchable
+
+0.12.0 / 2017-10-21
+===================
+
+  * Release 0.12.0: Update changelog
   * Set patch version
   * Don't export github templates
   * Update CMakeLists.txt
@@ -95,7 +108,7 @@ lxqt-runner-0.12.0 / 2017-10-21
   * Avoid hiding the dialog on opening the menu
   * Remove the provider for power actions
   * fallback for executing scripts w/o #!
-  * rempove KF5/ prefix from include    as done in lxqt/liblxqt/pull/36
+  * rempove KF5/ prefix from include    as done in lxde/liblxqt/pull/36
 
 0.9.0 / 2015-01-29
 ==================
@@ -108,7 +121,7 @@ lxqt-runner-0.12.0 / 2017-10-21
   * uniform coding style
   * Hide on loosing focus
   * Update lxqt-runner_pl_PL.ts
-  * Fixes lxqt/lxqt#347. HtmlDelegate on runner's list.
+  * Fixes lxde/lxqt#347. HtmlDelegate on runner's list.
   * Makes the UPDATE_TRANSLATIONS option actually work.
   * Cleans up CMakeLists.txt a little bit
   * Uses the new liblxqt modules to handle translations
@@ -119,10 +132,10 @@ lxqt-runner-0.12.0 / 2017-10-21
   * Fixes dialog type, alt+tab won't focus it
   * Fix QDesktopWidget::availableGeometry() vs KWindowSystem::workArea() bug
   * CMakeLists cleanups
-  * Fixes lxqt/lxqt#311, FTBFS
+  * Fixes lxde/lxde-qt#311, FTBFS
   * Port lxqt-runner to KWindowSystem. Purge Qt 4.
   * Add Ctrl-p and Ctrl-n movement shortcuts.
-  * Trim input text. Fixes lxqt/lxqt#139
+  * Trim input text. Fixes lxde/lxde-qt#139
 
 0.8.0 / 2014-10-08
 ==================
