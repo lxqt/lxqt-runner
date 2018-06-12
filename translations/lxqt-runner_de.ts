@@ -26,7 +26,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige den Verlauf als Erstes</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
