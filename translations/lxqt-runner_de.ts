@@ -11,7 +11,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation>Aussehen</translation>
+        <translation>Erscheinungsbild</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
-        <translation>Dialog anzeigen/verstecken</translation>
+        <translation>Zeige/verberge Runnerdialog</translation>
     </message>
 </context>
 <context>
