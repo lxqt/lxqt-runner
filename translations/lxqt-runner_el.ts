@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Ρυθμίσεις εκτελεστή</translation>
+        <translation>Ρυθμίσεις lxqt-runner</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>Εμφάνιση της λίστας με:</translation>
+        <translation>Εμφάνιση κατάστιχου με:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>Πάντα στην οθόνη «%1»</translation>
+        <translation>Πάντα στην οθόνη %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Εκτέλεση εφαρμογών </translation>
+        <translation>Εκτελεστής εφαρμογών </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="93"/>
