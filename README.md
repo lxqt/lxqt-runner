@@ -32,3 +32,11 @@ The keyboard shortcut to launch the GUI can be configured in "Global Actions Man
 The GUI comes with a configuration dialogue to customize settings like the position where it's displayed. It's accessible from a menu that's in turn opened by an icon left of the one to close the GUI, "arrow down" in screenshot above.
 
 To launch an application corresponding strings need to be filed in the form, next a selection can be made from a list presenting matches. Items to shut down or restart the system and so on are provided by the menu featuring the configuration dialogue as well.
+
+
+
+### Translation (Weblate)
+
+<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-runner/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-runner/multi-auto.svg" alt="Translation status" />
+</a>
