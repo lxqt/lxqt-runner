@@ -26,27 +26,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejprve zobrazit historii</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložit/zobrazit historii</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Upozornění&lt;/b&gt;: Velikost obslužných prvků nahoře je omezena na The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit seznam s:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> položek</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
