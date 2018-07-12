@@ -43,6 +43,7 @@
 #include <QDir>
 #include <QApplication>
 #include <QAction>
+#include <LXQt/Globals>
 #include <LXQt/PowerManager>
 #include <LXQt/ScreenSaver>
 #include "providers.h"
@@ -94,7 +95,7 @@ static QString which(const QString &progName)
             return fileInfo.absoluteFilePath();
     }
 
-    const QStringList dirs = QString(getenv("PATH")).split(":");
+    const QStringList dirs = QFile::decodeName(qgetenv("PATH")).split(QL1C(':'));
 
     for (const QString &dir : dirs)
     {
@@ -124,8 +125,8 @@ static bool startProcess(QString command)
         //fallback for executable script with no #!
         //trying as in system(2)
         args.prepend(program);
-        args.prepend(QStringLiteral("-c"));
-        return QProcess::startDetached(QStringLiteral("/bin/sh"), args);
+        args.prepend(QSL("-c"));
+        return QProcess::startDetached(QSL("/bin/sh"), args);
     }
 
 }
@@ -173,13 +174,13 @@ CommandProvider::~CommandProvider()
 AppLinkItem::AppLinkItem(const QDomElement &element):
         CommandProviderItem()
 {
-    mIconName = element.attribute("icon");
-    mTitle = element.attribute("title");
-    mComment = element.attribute("genericName");
-    mToolTip = element.attribute("comment");
-    mCommand = element.attribute("exec");
-    mProgram = QFileInfo(element.attribute("exec")).baseName().section(" ", 0, 0);
-    mDesktopFile = element.attribute("desktopFile");
+    mIconName = element.attribute(QLatin1String("icon"));
+    mTitle = element.attribute(QLatin1String("title"));
+    mComment = element.attribute(QSL("genericName"));
+    mToolTip = element.attribute(QLatin1String("comment"));
+    mCommand = element.attribute(QL1S("exec"));
+    mProgram = QFileInfo(element.attribute(QL1S("exec"))).baseName().section(QL1C(' '), 0, 0);
+    mDesktopFile = element.attribute(QSL("desktopFile"));
     initExec();
     QMetaObject::invokeMethod(this, "updateIcon", Qt::QueuedConnection);
 }
@@ -193,8 +194,8 @@ AppLinkItem::AppLinkItem(MenuCacheApp* app):
     mTitle = QString::fromUtf8(menu_cache_item_get_name(item));
     mComment = QString::fromUtf8(menu_cache_app_get_generic_name(app));
     mToolTip = QString::fromUtf8(menu_cache_item_get_comment(item));
-    mCommand = menu_cache_app_get_exec(app);
-    mProgram = QFileInfo(mCommand).baseName().section(" ", 0, 0);
+    mCommand = QString::fromUtf8(menu_cache_app_get_exec(app));
+    mProgram = QFileInfo(mCommand).baseName().section(QL1C(' '), 0, 0);
     char* path = menu_cache_item_get_file_path(MENU_CACHE_ITEM(app));
     mDesktopFile = QString::fromLocal8Bit(path);
     g_free(path);
@@ -282,11 +283,11 @@ bool AppLinkItem::compare(const QRegExp &regExp) const
  ************************************************/
 void AppLinkItem::initExec()
 {
-    static const QRegExp split_re{QStringLiteral("\\s")};
+    static const QRegExp split_re{QSL("\\s")};
     XdgDesktopFile desktop;
     if (desktop.load(mDesktopFile))
     {
-        QStringList cmd = desktop.value(QStringLiteral("Exec")).toString().split(split_re);
+        QStringList cmd = desktop.value(QSL("Exec")).toString().split(split_re);
         if (0 < cmd.size())
             mExec = which(expandCommand(cmd[0]));
     }
@@ -301,14 +302,14 @@ AppLinkProvider::AppLinkProvider():
 {
 #ifdef HAVE_MENU_CACHE
     menu_cache_init(0);
-    mMenuCache = menu_cache_lookup(XdgMenu::getMenuFileName().toLocal8Bit());
+    mMenuCache = menu_cache_lookup(XdgMenu::getMenuFileName().toLocal8Bit().constData());
     if(mMenuCache)
         mMenuCacheNotify = menu_cache_add_reload_notify(mMenuCache, (MenuCacheReloadNotify)menuCacheReloadNotify, this);
     else
         mMenuCacheNotify = 0;
 #else
     mXdgMenu = new XdgMenu();
-    mXdgMenu->setEnvironments(QStringList() << "X-LXQT" << "LXQt");
+    mXdgMenu->setEnvironments(QStringList() << QSL("X-LXQT") << QSL("LXQt"));
     connect(mXdgMenu, SIGNAL(changed()), this, SLOT(update()));
     mXdgMenu->read(XdgMenu::getMenuFileName());
     update();
@@ -354,11 +355,11 @@ void AppLinkProvider::menuCacheReloadNotify(MenuCache* cache, gpointer user_data
         QDomElement e = it.next();
 
         // Build submenu ........................
-        if (e.tagName() == "Menu")
+        if (e.tagName() == QL1S("Menu"))
             doUpdate(e, items);
 
         //Build application link ................
-        else if (e.tagName() == "AppLink")
+        else if (e.tagName() == QL1S("AppLink"))
         {
             AppLinkItem *item = new AppLinkItem(e);
             delete items[item->command()]; // delete previous item;
@@ -479,12 +480,12 @@ unsigned int HistoryItem::rank(const QString &pattern) const
 HistoryProvider::HistoryProvider():
         CommandProvider()
 {
-    QString fileName = (XdgDirs::cacheHome() + "/lxqt-runner.history");
+    QString fileName = (XdgDirs::cacheHome() + QSL("/lxqt-runner.history"));
     mHistoryFile = new QSettings(fileName, QSettings::IniFormat);
-    mHistoryFile->beginGroup("commands");
+    mHistoryFile->beginGroup(QSL("commands"));
     for (uint i=0; i<MAX_HISTORY; ++i)
     {
-        QString key = QString("%1").arg(i, 3, 10, QChar('0'));
+        QString key = QString::fromLatin1("%1").arg(i, 3, 10, QL1C('0'));
         if (mHistoryFile->contains(key))
         {
             HistoryItem *item = new HistoryItem(mHistoryFile->value(key).toString());
@@ -527,7 +528,7 @@ void HistoryProvider::AddCommand(const QString &command)
     mHistoryFile->clear();
     for (int i=0; i<qMin(length(), MAX_HISTORY); ++i)
     {
-        QString key = QString("%1").arg(i, 3, 10, QChar('0'));
+        QString key = QString::fromLatin1("%1").arg(i, 3, 10, QL1C('0'));
         mHistoryFile->setValue(key, static_cast<HistoryItem*>(at(i))->command());
     }
 }
@@ -545,7 +546,7 @@ CustomCommandItem::CustomCommandItem(CustomCommandProvider *provider):
     CommandProviderItem(),
     mProvider(provider)
 {
-    mIcon = QIcon::fromTheme("utilities-terminal");
+    mIcon = QIcon::fromTheme(QSL("utilities-terminal"));
 }
 
 
@@ -560,7 +561,7 @@ void CustomCommandItem::setCommand(const QString &command)
     mExec = which(expandCommand(command));
 
     if (!mExec.isEmpty())
-        mComment = QString("%1 %2").arg(mExec, command.section(' ', 1));
+        mComment = QString::fromLatin1("%1 %2").arg(mExec, command.section(QL1C(' '), 1));
     else
         mComment = QString();
 
@@ -626,11 +627,11 @@ bool VirtualBoxItem::run() const
 {
     QStringList arguments;
 #ifdef VBOX_HEADLESS_ENABLED
-    arguments << "-startvm" << title();
-    return QProcess::startDetached ("VBoxHeadless" , arguments);
+    arguments << QSL("-startvm") << title();
+    return QProcess::startDetached (QSL("VBoxHeadless") , arguments);
 #else
-    arguments << "startvm" << title();
-    return QProcess::startDetached ("VBoxManage" , arguments);
+    arguments << QSL("startvm") << title();
+    return QProcess::startDetached (QSL("VBoxManage") , arguments);
 #endif
 
 }
@@ -651,7 +652,7 @@ inline QString homeDir() {
 
 ///////
 VirtualBoxProvider::VirtualBoxProvider():
-        virtualBoxConfig ( homeDir() + "/.VirtualBox/VirtualBox.xml")
+        virtualBoxConfig ( homeDir() + QSL("/.VirtualBox/VirtualBox.xml"))
 {
     fp.setFileName (virtualBoxConfig);
 
@@ -722,7 +723,7 @@ VirtualBoxProvider::VirtualBoxProvider():
 
     for (size_t n = 0; n < sizeof (kOSTypeIcons) / sizeof(kOSTypeIcons[0]); ++ n)
     {
-        osIcons.insert (kOSTypeIcons [n][0], (kOSTypeIcons [n][1]));
+        osIcons.insert (QL1S(kOSTypeIcons [n][0]), (QL1S(kOSTypeIcons [n][1])));
     }
 }
 
@@ -735,11 +736,11 @@ void VirtualBoxProvider::rebuild()
         return;
     }
 
-    QDomNodeList _dnlist = d.elementsByTagName( "MachineEntry" );
+    QDomNodeList _dnlist = d.elementsByTagName( QSL("MachineEntry") );
     for ( int i = 0; i < _dnlist.count(); i++ )
     {
         const QDomNode & node = _dnlist.at( i );
-        const QString & ref = node.toElement().attribute( "src" );
+        const QString & ref = node.toElement().attribute( QSL("src") );
         if ( ref.isEmpty() )
         {
             qDebug() << "MachineEntry with no src attribute";
@@ -755,23 +756,23 @@ void VirtualBoxProvider::rebuild()
             continue;
         }
 
-        QDomNodeList _mlist = mspec.elementsByTagName( "Machine" );
+        QDomNodeList _mlist = mspec.elementsByTagName( QSL("Machine") );
         for ( int j = 0; j < _mlist.count(); j++ )
         {
          QDomNode mnode = _mlist.at( j );
 
-         QString type = mnode.toElement().attribute( "OSType" );
+         QString type = mnode.toElement().attribute( QSL("OSType") );
          VirtualBoxItem *virtualBoxItem = new VirtualBoxItem
             (
-             mnode.toElement().attribute( "name" ) ,
-             QIcon ( osIcons.value (type , ":/vbox-icons/os_other.png") )
+             mnode.toElement().attribute( QSL("name") ) ,
+             QIcon ( osIcons.value (type , QSL(":/vbox-icons/os_other.png")) )
             );
 
-         const QDomNodeList & rdeportConfig = mnode.toElement().elementsByTagName("VRDEProperties");
+         const QDomNodeList & rdeportConfig = mnode.toElement().elementsByTagName(QSL("VRDEProperties"));
          if ( ! rdeportConfig.isEmpty() )
          {
             QDomNode portNode = rdeportConfig.at(0).firstChild();
-            virtualBoxItem->setRDEPort( portNode.toElement().attribute("value") );
+            virtualBoxItem->setRDEPort( portNode.toElement().attribute(QSL("value")) );
          }
 
          append ( virtualBoxItem );
@@ -821,7 +822,7 @@ MathItem::MathItem():
         mParser{new Parser}
 {
     mToolTip =QObject::tr("Mathematics");
-    mIcon = QIcon::fromTheme("accessories-calculator");
+    mIcon = QIcon::fromTheme(QSL("accessories-calculator"));
 }
 
 
@@ -850,12 +851,12 @@ bool MathItem::compare(const QRegExp &regExp) const
     QString s = regExp.pattern().trimmed();
 
     bool is_math = false;
-    if (s.startsWith('='))
+    if (s.startsWith(QLatin1Char('=')))
     {
         is_math = true;
         s.remove(0, 1);
     }
-    if (s.endsWith("="))
+    if (s.endsWith(QLatin1Char('=')))
     {
         is_math = true;
         s.chop(1);
@@ -875,7 +876,7 @@ bool MathItem::compare(const QRegExp &regExp) const
                 try
                 {
                     mParser->SetExpr(s.toStdString());
-                    self->mTitle = s + "=" + QLocale::system().toString(mParser->Eval());
+                    self->mTitle = s + QL1C('=') + QLocale::system().toString(mParser->Eval());
                     break;
                 } catch (const mu::Parser::exception_type & e)
                 {
@@ -915,17 +916,17 @@ ExternalProviderItem::ExternalProviderItem()
 
 bool ExternalProviderItem::setData(QMap<QString,QString> & data)
 {
-    if (! (data.contains("title") && data.contains("command")))
+    if (! (data.contains(QL1S("title")) && data.contains(QL1S("dialog/monitor"))))
     {
         return false;
     }
 
-    mTitle = data["title"];
-    mComment = data["comment"];
-    mToolTip = data["tooltip"];
-    mCommand = data["command"];
-    if (data.contains("icon"))
-        mIcon = QIcon::fromTheme(data["icon"]);
+    mTitle = data[QLatin1String("title")];
+    mComment = data[QLatin1String("comment")];
+    mToolTip = data[QSL("tooltip")];
+    mCommand = data[QL1S("dialog/monitor")];
+    if (data.contains(QL1S("icon")))
+        mIcon = QIcon::fromTheme(data[QL1S("icon")]);
 
     return true;
 }
@@ -957,7 +958,8 @@ CommandProvider(), mName(name)
 void ExternalProvider::setSearchTerm(const QString searchTerm)
 {
     mExternalProcess->write(searchTerm.toUtf8());
-    mExternalProcess->write(QString("\n").toUtf8());
+    mExternalProcess->write(QBAL("\n"));
+//    mExternalProcess->write(QString("\n").toUtf8());
 }
 
 void ExternalProvider::newListOfMaps(QList<QMap<QString,QString> > maps)

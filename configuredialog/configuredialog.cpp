@@ -29,6 +29,7 @@
 #include "configuredialog.h"
 #include "ui_configuredialog.h"
 
+#include <LXQt/Globals>
 #include <LXQt/Settings>
 
 #include <QSettings>
@@ -81,9 +82,9 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
 
     settingsChanged();
 
-    connect(ui->historyUseCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue("dialog/history_use", checked); });
-    connect(ui->historyFirstCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue("dialog/history_first", checked); });
-    connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), [this] (int i) { mSettings->setValue("dialog/list_shown_items", i); });
+    connect(ui->historyUseCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_use"), checked); });
+    connect(ui->historyFirstCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_first"), checked); });
+    connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), [this] (int i) { mSettings->setValue(QL1S("dialog/list_shown_items"), i); });
 }
 
 
@@ -92,18 +93,18 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
  ************************************************/
 void ConfigureDialog::settingsChanged()
 {
-    if (mSettings->value("dialog/show_on_top", true).toBool())
+    if (mSettings->value(QL1S("dialog/show_on_top"), true).toBool())
         ui->positionCbx->setCurrentIndex(0);
     else
         ui->positionCbx->setCurrentIndex(1);
 
-    ui->monitorCbx->setCurrentIndex(mSettings->value("dialog/monitor", -1).toInt() + 1);
-    ui->shortcutEd->setText(mSettings->value("dialog/shortcut", "Alt+F2").toString());
-    const bool history_use = mSettings->value("dialog/history_use", true).toBool();
+    ui->monitorCbx->setCurrentIndex(mSettings->value(QL1S("dialog/monitor"), -1).toInt() + 1);
+    ui->shortcutEd->setText(mSettings->value(QL1S("dialog/shortcut"), QL1S("Alt+F2")).toString());
+    const bool history_use = mSettings->value(QL1S("dialog/history_use"), true).toBool();
     ui->historyUseCb->setChecked(history_use);
-    ui->historyFirstCb->setChecked(mSettings->value("dialog/history_first", true).toBool());
+    ui->historyFirstCb->setChecked(mSettings->value(QL1S("dialog/history_first"), true).toBool());
     ui->historyFirstCb->setEnabled(history_use);
-    ui->listShownItemsSB->setValue(mSettings->value("dialog/list_shown_items", 4).toInt());
+    ui->listShownItemsSB->setValue(mSettings->value(QL1S("dialog/list_shown_items"), 4).toInt());
 }
 
 
@@ -123,7 +124,7 @@ ConfigureDialog::~ConfigureDialog()
 void ConfigureDialog::shortcutChanged(const QString &text)
 {
     ui->shortcutEd->setText(text);
-    mSettings->setValue("dialog/shortcut", text);
+    mSettings->setValue(QL1S("dialog/shortcut"), text);
 }
 
 
@@ -141,7 +142,7 @@ void ConfigureDialog::shortcutReset()
  ************************************************/
 void ConfigureDialog::positionCbxChanged(int index)
 {
-    mSettings->setValue("dialog/show_on_top", index == 0);
+    mSettings->setValue(QL1S("dialog/show_on_top"), index == 0);
 }
 
 
@@ -150,7 +151,7 @@ void ConfigureDialog::positionCbxChanged(int index)
  ************************************************/
 void ConfigureDialog::monitorCbxChanged(int index)
 {
-    mSettings->setValue("dialog/monitor", index - 1);
+    mSettings->setValue(QL1S("dialog/monitor"), index - 1);
 }
 
 

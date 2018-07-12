@@ -32,6 +32,7 @@
 #include "commanditemmodel.h"
 #include "configuredialog/configuredialog.h"
 
+#include <LXQt/Globals>
 #include <LXQt/Settings>
 #include <LXQt/HtmlDelegate>
 #include <LXQt/PowerManager>
@@ -60,14 +61,14 @@
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
     ui(new Ui::Dialog),
-    mSettings(new LXQt::Settings("lxqt-runner", this)),
+    mSettings(new LXQt::Settings(QSL("lxqt-runner"), this)),
     mGlobalShortcut(0),
     mLockCascadeChanges(false),
     mDesktopChanged(false),
     mConfigureDialog(0)
 {
     ui->setupUi(this);
-    setWindowTitle("LXQt Runner");
+    setWindowTitle(QSL("LXQt Runner"));
     setAttribute(Qt::WA_TranslucentBackground);
 
     connect(LXQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
@@ -79,7 +80,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(ui->commandEd, SIGNAL(textChanged(QString)), this, SLOT(setFilter(QString)));
     connect(ui->commandEd, SIGNAL(returnPressed()), this, SLOT(runCommand()));
 
-    mCommandItemModel = new CommandItemModel(mSettings->value("dialog/history_use", true).toBool(), this);
+    mCommandItemModel = new CommandItemModel(mSettings->value(QL1S("dialog/history_use"), true).toBool(), this);
     ui->commandList->installEventFilter(this);
     ui->commandList->setModel(mCommandItemModel);
     ui->commandList->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -90,11 +91,11 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->setItemDelegate(new LXQt::HtmlDelegate(QSize(32, 32), ui->commandList));
 
     // Popup menu ...............................
-    QAction *a = new QAction(QIcon::fromTheme("configure"), tr("Configure"), this);
+    QAction *a = new QAction(QIcon::fromTheme(QSL("configure")), tr("Configure"), this);
     connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
     addAction(a);
 
-    a = new QAction(QIcon::fromTheme("edit-clear-history"), tr("Clear History"), this);
+    a = new QAction(QIcon::fromTheme(QSL("edit-clear-history")), tr("Clear History"), this);
     connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
     addAction(a);
 
@@ -119,7 +120,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(onActiveWindowChanged(WId)));
     connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
 
-    resize(mSettings->value("dialog/width", 400).toInt(), size().height());
+    resize(mSettings->value(QL1S("dialog/width"), 400).toInt(), size().height());
 
     // TEST
     connect(mCommandItemModel, SIGNAL(layoutChanged()), this, SLOT(dataChanged()));
@@ -161,7 +162,7 @@ QSize Dialog::sizeHint() const
  ************************************************/
 void Dialog::resizeEvent(QResizeEvent *event)
 {
-    mSettings->setValue("dialog/width", size().width());
+    mSettings->setValue(QL1S("dialog/width"), size().width());
 }
 
 
@@ -342,22 +343,22 @@ void Dialog::applySettings()
         return;
 
     // Shortcut .................................
-    QString shortcut = mSettings->value("dialog/shortcut", DEFAULT_SHORTCUT).toString();
+    QString shortcut = mSettings->value(QL1S("dialog/shortcut"), QL1S(DEFAULT_SHORTCUT)).toString();
     if (shortcut.isEmpty())
-        shortcut = DEFAULT_SHORTCUT;
+        shortcut = QL1S(DEFAULT_SHORTCUT);
 
     if (!mGlobalShortcut)
-        mGlobalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, "/runner/show_hide_dialog", tr("Show/hide runner dialog"), this);
+        mGlobalShortcut = GlobalKeyShortcut::Client::instance()->addAction(shortcut, QSL("/runner/show_hide_dialog"), tr("Show/hide runner dialog"), this);
     else if (mGlobalShortcut->shortcut() != shortcut)
         mGlobalShortcut->changeShortcut(shortcut);
 
-    mShowOnTop = mSettings->value("dialog/show_on_top", true).toBool();
+    mShowOnTop = mSettings->value(QL1S("dialog/show_on_top"), true).toBool();
 
-    mMonitor = mSettings->value("dialog/monitor", -1).toInt();
+    mMonitor = mSettings->value(QL1S("dialog/monitor"), -1).toInt();
 
-    mCommandItemModel->setUseHistory(mSettings->value("dialog/history_use", true).toBool());
-    mCommandItemModel->showHistoryFirst(mSettings->value("dialog/history_first", true).toBool());
-    ui->commandList->setShownCount(mSettings->value("dialog/list_shown_items", 4).toInt());
+    mCommandItemModel->setUseHistory(mSettings->value(QL1S("dialog/history_use"), true).toBool());
+    mCommandItemModel->showHistoryFirst(mSettings->value(QL1S("dialog/history_first"), true).toBool());
+    ui->commandList->setShownCount(mSettings->value(QL1S("dialog/list_shown_items"), 4).toInt());
 
     realign();
     mSettings->sync();
@@ -373,7 +374,7 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
     {
         mLockCascadeChanges = true;
 
-        mSettings->setValue("dialog/shortcut", newShortcut);
+        mSettings->setValue(QL1S("dialog/shortcut"), newShortcut);
         mSettings->sync();
 
         mLockCascadeChanges = false;
@@ -484,7 +485,7 @@ void Dialog::runCommand()
 void Dialog::showConfigDialog()
 {
     if (!mConfigureDialog)
-        mConfigureDialog = new ConfigureDialog(mSettings, DEFAULT_SHORTCUT, this);
+        mConfigureDialog = new ConfigureDialog(mSettings, QL1S(DEFAULT_SHORTCUT), this);
     mConfigureDialog->exec();
 }
 
