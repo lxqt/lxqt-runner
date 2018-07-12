@@ -29,6 +29,8 @@
 #include <QRegExp>
 #include <QDebug>
 
+#include <LXQt/Globals>
+
 #include "yamlparser.h"
 
 YamlParser::YamlParser()
@@ -42,12 +44,12 @@ YamlParser::~YamlParser()
 
 void YamlParser::consumeLine(QString line)
 {
-    static QRegExp documentStart("---\\s*(\\[\\]\\s*)?");
-    static QRegExp mapStart("(-\\s*)(\\w*)\\s*:(.*)$");
-    static QRegExp mapEntry("(\\s*)(\\w*)\\s*:(.*)");
-    static QRegExp continuation("(\\s*)(.*)");
-    static QRegExp documentEnd("...\\s*");
-    static QRegExp emptyLine("\\s*(#.*)?");
+    static QRegExp documentStart(QSL("---\\s*(\\[\\]\\s*)?"));
+    static QRegExp mapStart(QSL("(-\\s*)(\\w*)\\s*:(.*)$"));
+    static QRegExp mapEntry(QSL("(\\s*)(\\w*)\\s*:(.*)"));
+    static QRegExp continuation(QSL("(\\s*)(.*)"));
+    static QRegExp documentEnd(QSL("...\\s*"));
+    static QRegExp emptyLine(QSL("\\s*(#.*)?"));
 
     qDebug() << line;
 

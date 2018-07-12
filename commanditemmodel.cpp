@@ -26,6 +26,8 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "commanditemmodel.h"
+
+#include <LXQt/Globals>
 #include <LXQt/Settings>
 #include <XdgIcon>
 #include <QFileInfo>
@@ -261,14 +263,14 @@ CommandSourceItemModel::CommandSourceItemModel(bool useHistory, QObject *parent)
     rebuild();
     mExternalProviderStartIndex = index(rowCount(), 0);
 
-    LXQt::Settings settings("lxqt-runner");
-    int numExternalProviders = settings.beginReadArray("external providers");
+    LXQt::Settings settings(QSL("lxqt-runner"));
+    int numExternalProviders = settings.beginReadArray(QSL("external providers"));
     for (int i = 0; i < numExternalProviders; i++)
     {
         settings.setArrayIndex(i);
-        qDebug() << "Adding external provider:" << settings.value("name") << settings.value("executable");
-        ExternalProvider* externalProvider = new ExternalProvider(settings.value("name").toString(),
-                                                                  settings.value("executable").toString());
+        qDebug() << "Adding external provider:" << settings.value(QL1S("name")) << settings.value(QL1S("executable"));
+        ExternalProvider* externalProvider = new ExternalProvider(settings.value(QL1S("name")).toString(),
+                                                                  settings.value(QL1S("executable")).toString());
         mProviders.append(externalProvider);
         mExternalProviders.append(externalProvider);
     }
@@ -325,7 +327,7 @@ QVariant CommandSourceItemModel::data(const QModelIndex &index, int role) const
     switch (role)
     {
     case Qt::DisplayRole:
-        return QString("<b>%1</b><br>\n%2\n").arg(item->title(), item->comment());
+        return QString::fromLatin1("<b>%1</b><br>\n%2\n").arg(item->title(), item->comment());
 
     case Qt::DecorationRole:
         return item->icon();
