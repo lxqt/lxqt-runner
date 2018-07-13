@@ -21,12 +21,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>Ukázat na:</translation>
+        <translation>Zobrazovat na:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>Nejprve zobrazit historii</translation>
+        <translation>Nejprve zobrazovat historii</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
-        <translation>Ukázat/Skrýt dialog spouštěče programů</translation>
+        <translation>Ukázat/skrýt dialog spouštěče programů</translation>
     </message>
 </context>
 <context>
