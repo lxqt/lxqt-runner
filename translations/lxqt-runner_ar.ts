@@ -21,32 +21,32 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>أظهر على:</translation>
+        <translation>اعرض على:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>اعرض التأريخ أولا</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>خزّن/اعرض التأريخ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;لاحظ&lt;/b&gt;: مقاس الودجات ذات المستوى الأعلى محدّد ليكون ثُلثي ارتفاع سطح المكتب وعرضه.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>اعرض القائمة وفيها:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> من العناصر</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,22 +56,22 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation>أعلى حافّة الشّاشة</translation>
+        <translation>أعلى حافة الشاشة</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation>وسط الشّاشة</translation>
+        <translation>وسط الشاشة</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation>الشّاشة الحاليّة</translation>
+        <translation>الشاشة الحالية</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>الشّاشة %1 دائمًا</translation>
+        <translation>الشاشة %1 دائما</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>مُطلق التّطبيقات </translation>
+        <translation>مُطلق التطبيقات </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="93"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../dialog.cpp" line="97"/>
         <source>Clear History</source>
-        <translation>امح التّأريخ</translation>
+        <translation>امسح التأريخ</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
-        <translation>أظهر/أخف حواريّ المُطلق</translation>
+        <translation>اعرض/أخفِ حواريّ المُطلق</translation>
     </message>
 </context>
 <context>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="444"/>
         <source>History</source>
-        <translation>التّأريخ</translation>
+        <translation>التأريخ</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="823"/>
         <source>Mathematics</source>
-        <translation>الرّياضيّات</translation>
+        <translation>الرياضيات</translation>
     </message>
 </context>
 </TS>
