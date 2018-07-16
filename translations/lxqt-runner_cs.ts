@@ -36,7 +36,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Upozornění&lt;/b&gt;: Velikost obslužných prvků nahoře je omezena na 2/3 výšky a šířky plochy.</translation>
+        <translation>&lt;b&gt;Upozornění&lt;/b&gt;: Velikost obslužných prvků v nejvyšší úrovni je omezena na 2/3 výšky a šířky plochy.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Spouštěč programů </translation>
+        <translation>Spouštěč aplikací </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="93"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="350"/>
         <source>Show/hide runner dialog</source>
-        <translation>Ukázat/skrýt dialog spouštěče programů</translation>
+        <translation>Zobrazit/skrýt dialog spouštěče programů</translation>
     </message>
 </context>
 <context>
