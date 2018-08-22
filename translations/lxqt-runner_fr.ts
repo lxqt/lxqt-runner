@@ -31,7 +31,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Sauvegarder/Montrer l&apos;historique</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Montrer la liste avec :</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> entrée(s)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,12 +56,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="60"/>
         <source>Top edge of the screen</source>
-        <translation>Le bord supérieur de l&apos;écran</translation>
+        <translation>Bord supérieur de l&apos;écran</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Center of the screen</source>
-        <translation>Le centre de l&apos;écran</translation>
+        <translation>Centre de l&apos;écran</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
