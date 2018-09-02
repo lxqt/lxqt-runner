@@ -54,27 +54,27 @@
         <translation>Atalho:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="60"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
         <translation>Canto superior da tela</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="61"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
         <translation>Centro da tela</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
         <translation>Tela focada</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
         <translation>Sempre na tela %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
         <translation>Reiniciar</translation>
     </message>
@@ -87,17 +87,17 @@
         <translation>Lançador de aplicativo </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="93"/>
+        <location filename="../dialog.cpp" line="94"/>
         <source>Configure</source>
         <translation>Configurar</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="97"/>
+        <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
         <translation>Limpar histórico</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="350"/>
+        <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
         <translation>Exibir/ocultar diálogo do Runner</translation>
     </message>
@@ -105,12 +105,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="444"/>
+        <location filename="../providers.cpp" line="445"/>
         <source>History</source>
         <translation>Histórico</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="823"/>
+        <location filename="../providers.cpp" line="824"/>
         <source>Mathematics</source>
         <translation>Matemática</translation>
     </message>
