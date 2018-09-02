@@ -26,27 +26,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Сначала показать историю</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Хранить и показывать историю</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Внимание&lt;/b&gt;: Размер виджетов верхнего уровня ограничен 2/3 высоты и ширины рабочего стола.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Показывать список с</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> элементами</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
