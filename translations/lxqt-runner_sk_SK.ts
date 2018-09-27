@@ -16,7 +16,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>Pozícia:</translation>
+        <translation>Poloha:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> </translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation>Skratka:</translation>
+        <translation>Klávesová skratka:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Spúšťač aplikácií</translation>
+        <translation>Spúšťač aplikácií </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="94"/>
