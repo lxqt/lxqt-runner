@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavenia Runneru</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -26,27 +26,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Históriu zobrazovať na začiatku</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložiť/zobraziť históriu</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Upozornenie:&lt;/b&gt; Veľkosť top-level widgetov je obmedzená na 2/3 výšky a šírky pracovnej plochy.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet položiek v zozname:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> </translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,27 +56,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Horný okraj obrazovky</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Stred obrazovky</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálna obrazovka</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vždy na obrazovke %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrušiť zmeny</translation>
     </message>
 </context>
 <context>
@@ -89,17 +89,17 @@
     <message>
         <location filename="../dialog.cpp" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastaviť</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazať históriu</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť/skryť okno Runneru</translation>
     </message>
 </context>
 <context>
