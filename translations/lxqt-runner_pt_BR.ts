@@ -26,17 +26,17 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>Exibir histórico primeiro</translation>
+        <translation>Exibir o histórico primeiro</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Guardar/exibir histórico</translation>
+        <translation>Armazenar/exibir histórico</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Nota&lt;/b&gt;: O tamanho dos widgets de primeiro plano são limitados a 2/3 da altura e largura da área de trabalho.</translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: O tamanho dos widgets de primeiro plano são limitados a 2/3 da altura e largura das Áreas de trabalho.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
