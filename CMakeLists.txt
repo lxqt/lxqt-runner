@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
-
 project(lxqt-runner)
+# CMP0000 - A minimum required CMake version must be specified.
+# Note that the command invocation must appear in the CMakeLists.txt
+# file itself; a call in an included file is not sufficient.
+cmake_minimum_required(VERSION 3.6.2 FATAL_ERROR)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -106,10 +108,6 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
 )
 
 lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
-
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
 
 if (RUNNER_VBOX)
     list(APPEND QRC_FILES virtualbox-icons.qrc)
