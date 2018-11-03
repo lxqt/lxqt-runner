@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitve zaganjalnika</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -21,32 +21,32 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>Pokaži na:</translation>
+        <translation>Prikaži na:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Najprej pokaži zgodovino</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Hrani/pokaži zgodovino</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Opomba&lt;/b&gt;: velikost zaganjalnika je omejena na 2/3 višine in širine namizja.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>V seznamu pokaži:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> element(ov)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,27 +56,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Zgornji rob zaslona</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Sredina zaslona</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivnem zaslonu</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zmeraj na zaslonu %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponastavi</translation>
     </message>
 </context>
 <context>
@@ -89,17 +89,17 @@
     <message>
         <location filename="../dialog.cpp" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavi</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Počisti zgodovino</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaži/skrij zaganjalnik programov</translation>
     </message>
 </context>
 <context>
