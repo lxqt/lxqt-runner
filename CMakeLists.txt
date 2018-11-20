@@ -155,5 +155,10 @@ install(TARGETS
     COMPONENT Runtime
 )
 
-# merged from lxqt-common
+install(FILES
+    man/lxqt-runner.1
+    DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
+    COMPONENT Runtime
+)
+
 add_subdirectory(autostart)
