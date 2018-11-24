@@ -6,77 +6,77 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation></translation>
+        <translation>Axustes do iniciador de aplicacións</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation></translation>
+        <translation>Aparencia</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation></translation>
+        <translation>Posicionamento:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation></translation>
+        <translation>Amosar en:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation></translation>
+        <translation>Amosar primeiro o historial</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation></translation>
+        <translation>Gardar/amosar o historial</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: O tamaño dos trebellos do nivel superior está restrinxido a 2/3 da altura e largura do escritorio.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation></translation>
+        <translation>Amosar a lista con:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation></translation>
+        <translation> elemento(s)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation></translation>
+        <translation>Atallo:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation></translation>
+        <translation>Bordo superior da pantalla</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation></translation>
+        <translation>Centro da pantalla</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation></translation>
+        <translation>Pantalla en foco</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation></translation>
+        <translation>Sempre na pantalla %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation></translation>
+        <translation>Reiniciar</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation></translation>
+        <translation>Iniciador de aplicacións </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="94"/>
         <source>Configure</source>
-        <translation></translation>
+        <translation>Configurar</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation></translation>
+        <translation>Limpar o historial</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation></translation>
+        <translation>Amosar/agachar o diálogo do iniciador de aplicacións</translation>
     </message>
 </context>
 <context>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation></translation>
+        <translation>Historial</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="824"/>
         <source>Mathematics</source>
-        <translation></translation>
+        <translation>Matemáticas</translation>
     </message>
 </context>
 </TS>
