@@ -9,7 +9,7 @@ lxqt-runner-0.14.0 / 2018-05-21
     - set cmake_minimum_required to 3.1.0
     - removed locale compile definitons
     - installed man page
-  * Moved translations from lxqt-l10n back to compton-conf
+  * Moved translations from lxqt-l10n back to lxqt-runner
     - removed obsolete translation fuctionality
 
 lxqt-runner-0.13.0 / 2018-05-21
