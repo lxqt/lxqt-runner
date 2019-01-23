@@ -1,6 +1,6 @@
 
-lxqt-runner-0.14.0 / 2018-12-01
-========================================
+lxqt-runner-0.14.0 / 2019-01-25
+===============================
 
   * Bumped version to 0.14.0
   * Don't use automatic string conversions
@@ -25,8 +25,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * Drop Qt foreach
   * AppLinkItem: Make genericName searchable
 
-0.12.0 / 2017-10-21
-===================
+lxqt-runner-0.12.0 / 2017-10-21
+===============================
 
   * Release 0.12.0: Update changelog
   * Set patch version
@@ -57,8 +57,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * Support lxqt-session and add necessary xdg autostart desktop entry files.
   * Bump year
 
-0.11.1 / 2017-01-01
-===================
+lxqt-runner-0.11.1 / 2017-01-01
+===============================
 
   * Release 0.11.1: Update changelog
   * MathItem: Honor system locale (#52)
@@ -67,8 +67,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * Remove cpack (#49)
   * - Fix endif placement when test for MATH library.
 
-0.11.0 / 2016-09-24
-===================
+lxqt-runner-0.11.0 / 2016-09-24
+===============================
 
   * Release 0.11.0: Add changelog
   * Add README.md
@@ -89,8 +89,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * upd: lxqt-runner_hu.ts
   * Update lxqt-runner_it.ts
 
-0.10.0 / 2015-10-31
-===================
+lxqt-runner-0.10.0 / 2015-10-31
+===============================
 
   * Fix license file
   * Update translations
@@ -124,8 +124,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * fallback for executing scripts w/o #!
   * rempove KF5/ prefix from include    as done in lxde/liblxqt/pull/36
 
-0.9.0 / 2015-01-29
-==================
+lxqt-runner-0.9.0 / 2015-01-29
+==============================
 
   * Sets the command list to use alternating row colors
   * Portuguese update
@@ -151,8 +151,8 @@ lxqt-runner-0.13.0 / 2018-05-21
   * Add Ctrl-p and Ctrl-n movement shortcuts.
   * Trim input text. Fixes lxde/lxde-qt#139
 
-0.8.0 / 2014-10-08
-==================
+lxqt-runner-0.8.0 / 2014-10-08
+==============================
 
   * Adapt to the translation infrastructure
   * Use QWindow::windowHandle()->winId() to replace QWidget::winId() due to a bug of Qt5.
@@ -162,13 +162,13 @@ lxqt-runner-0.13.0 / 2018-05-21
   * cmake option to build without menu-cache even if it is installed
   * Update dialog.cpp
 
-0.7.0 / 2014-05-07
-==================
+lxqt-runner-0.7.0 / 2014-05-07
+==============================
 
   * Update COPYING
 
-0.6.99 / 2014-05-01
-===================
+lxqt-runner-0.6.99 / 2014-05-01
+===============================
 
   * Update man page
   * Update AUTHORS
