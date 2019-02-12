@@ -31,7 +31,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Tallenna ja näytä historia</translation>
+        <translation>Säilytä/näytä historia</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
