@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistimen asetukset</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -26,27 +26,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä historia ensin</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna ja näytä historia</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Huomautus:&lt;/b&gt; Päätason elementtien maksimikoko on 2/3 työpöydän leveydestä ja korkeudesta.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ehdotukset:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> kohde(tta)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,27 +56,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Ylhäällä</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskellä</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiivisella näytöllä</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Aina näytöllä %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Palauta</translation>
     </message>
 </context>
 <context>
@@ -89,17 +89,17 @@
     <message>
         <location filename="../dialog.cpp" line="94"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä historia</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä/piilota käynnistin</translation>
     </message>
 </context>
 <context>
