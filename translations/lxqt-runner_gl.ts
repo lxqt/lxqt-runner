@@ -76,7 +76,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation>Reiniciar</translation>
+        <translation>Restabelecer</translation>
     </message>
 </context>
 <context>
