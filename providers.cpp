@@ -875,12 +875,14 @@ bool MathItem::compare(const QRegExp &regExp) const
             {
                 try
                 {
+                    mParser->SetArgSep(';'); // we dont use args, we can set it to something not equal ','
                     mParser->SetExpr(s.toStdString());
                     self->mTitle = s + QL1C('=') + QLocale::system().toString(mParser->Eval());
                     break;
                 } catch (const mu::Parser::exception_type & e)
                 {
-                    //don't do anything, return false -> no result will be showed
+                   qDebug().nospace() << "exception expr: " << e.GetExpr().c_str() << ", msg: " << e.GetMsg().c_str();
+                   // just print a bug if not yet solved , return false -> no result will be showed
                 }
             }
         }
