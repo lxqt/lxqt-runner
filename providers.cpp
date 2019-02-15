@@ -793,26 +793,47 @@ bool VirtualBoxProvider::isOutDated() const
 #ifdef MATH_ENABLED
 #include <muParser.h>
 
-class MathItem::Parser : public mu::Parser
+class MathItem::Parser : private mu::Parser
 {
 public:
-    static void initLocale()
+    Parser()
+        : mLocale(QLocale::system())
     {
         try
         {
             // use the system's locale instead of the "C"
-            s_locale = std::locale{""};
+            const std::locale loc{""};
+            auto && numpunct = std::use_facet<std::numpunct<mu::char_type>>(loc);
+            SetDecSep(numpunct.decimal_point());
+            SetThousandsSep(0); // means no grouping for muparser API
+
+            const char arg_sep = GetArgSep();
+            if (numpunct.decimal_point() == arg_sep)
+            {
+                if (arg_sep == ',')
+                    SetArgSep(';');
+                else
+                    SetArgSep(',');
+            }
         } catch (const std::runtime_error & e)
         {
             qWarning().noquote() << "Unable to set locale for Math, " << e.what();
         }
+
+        // do not group in output
+        mLocale.setNumberOptions(mLocale.numberOptions() | QLocale::OmitGroupSeparator);
     }
+
+
+    QString evalString(const QString & s)
+    {
+        SetExpr(s.toStdString());
+        return mLocale.toString(Eval()); // can throw
+    }
+
+private:
+    QLocale mLocale;
 };
-static void muParserInitLocale()
-{
-    MathItem::Parser::initLocale();
-}
-Q_COREAPP_STARTUP_FUNCTION(muParserInitLocale)
 
 /************************************************
 
@@ -875,8 +896,7 @@ bool MathItem::compare(const QRegExp &regExp) const
             {
                 try
                 {
-                    mParser->SetExpr(s.toStdString());
-                    self->mTitle = s + QL1C('=') + QLocale::system().toString(mParser->Eval());
+                    self->mTitle = s + QL1C('=') + mParser->evalString(s);
                     break;
                 } catch (const mu::Parser::exception_type & e)
                 {
