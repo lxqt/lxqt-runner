@@ -31,17 +31,17 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Sauvegarder/Montrer l&apos;historique</translation>
+        <translation>Enregistrer/Montrer l&apos;historique</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Note&lt;/b&gt;: La taille des widgets de niveau supérieur est limitée à 2/3 de la hauteur et de la largeur du bureau.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>Montrer la liste avec :</translation>
+        <translation>Afficher une liste comportant :</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Lanceur d&apos;application</translation>
+        <translation>Lanceur d&apos;application </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="94"/>
