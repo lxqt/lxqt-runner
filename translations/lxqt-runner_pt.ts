@@ -36,7 +36,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Noto&lt;/b&gt;: o tamanho dos widgets do nível superior está restringido a 2/3 da altura e da largura da área de trabalho.</translation>
+        <translation>&lt;b&gt;Nota&lt;/b&gt;: o tamanho dos widgets de nível superior está restringido a 2/3 da altura e da largura da área de trabalho.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
