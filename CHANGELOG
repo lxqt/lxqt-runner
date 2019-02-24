@@ -2,7 +2,7 @@ lxqt-runner-0.14.1 / 2019-02-24
 ===============================
 
   * MathItem: Use documented API of muparser and check for possible ArgSep()
-    and DecSep() conflict. Also do not use gouping for output values.
+    and DecSep() conflict. Also do not use grouping for output values.
   * Updated translations
   * Note for packagers: lxqt-runner now depends on liblxqt >= 0.14.1
 
