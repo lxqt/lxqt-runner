@@ -28,6 +28,7 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 set(KF5_MINIMUM_VERSION "5.36.0")
 set(LIBMENUCACHE_MINIMUM_VERSION "1.1.0")
 set(LXQT_MINIMUM_VERSION "0.14.1")
+set(LXQT_GLOBALKEYS_MINIMUM_VERSION "0.14.1")
 set(QT_MINIMUM_VERSION "5.7.1")
 
 find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
@@ -35,8 +36,7 @@ find_package(Qt5Xml ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
-find_package(lxqt-globalkeys ${LXQT_MINIMUM_VERSION} REQUIRED)
-find_package(lxqt-globalkeys-ui ${LXQT_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt-globalkeys-ui ${LXQT_GLOBALKEYS_MINIMUM_VERSION} REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 include(LXQtPreventInSourceBuilds)
