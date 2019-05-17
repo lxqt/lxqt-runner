@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation>Amosar/agachar o diálogo do iniciador de aplicativos</translation>
+        <translation>Amosar/agochar o diálogo do iniciador de aplicativos</translation>
     </message>
 </context>
 <context>
