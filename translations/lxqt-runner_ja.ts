@@ -31,17 +31,17 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>履歴の保管/表示</translation>
+        <translation>履歴の保管/表示をする</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;注意&lt;/b&gt;: ウィジェットの大きさはデスクトップの高さ及び幅の2/3に制限されます。</translation>
+        <translation>&lt;b&gt;注意&lt;/b&gt;: ウィジェットのサイズはデスクトップの高さ及び幅の 2/3 に制限されます。</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>リストを表示:</translation>
+        <translation>リストの表示:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
@@ -56,22 +56,22 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>スクリーンの上端</translation>
+        <translation>画面の上端</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>スクリーンの中央</translation>
+        <translation>画面の中央</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation>フォーカスされたスクリーン</translation>
+        <translation>フォーカスされた画面</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation>常にスクリーン %1 に表示</translation>
+        <translation>常に画面 %1 に表示</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../dialog.cpp" line="98"/>
         <source>Clear History</source>
-        <translation>履歴を消去</translation>
+        <translation>履歴の消去</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="351"/>
         <source>Show/hide runner dialog</source>
-        <translation>runnnerのダイアログを表示する/隠す</translation>
+        <translation>Runnner のダイアログを表示する/隠す</translation>
     </message>
 </context>
 <context>
