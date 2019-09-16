@@ -75,10 +75,18 @@ Dialog::Dialog(QWidget *parent) :
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(hide()));
     connect(mSettings, SIGNAL(settingsChanged()), this, SLOT(applySettings()));
 
+    mSearchTimer.setSingleShot(true);
+    connect(&mSearchTimer, &QTimer::timeout, ui->commandEd, [this] {
+        setFilter(ui->commandEd->text());
+    });
+    mSearchTimer.setInterval(350); // typing speed (not very fast)
+
     ui->commandEd->installEventFilter(this);
 
-    connect(ui->commandEd, SIGNAL(textChanged(QString)), this, SLOT(setFilter(QString)));
-    connect(ui->commandEd, SIGNAL(returnPressed()), this, SLOT(runCommand()));
+    connect(ui->commandEd, &QLineEdit::textChanged, [this] (QString const &) {
+        mSearchTimer.start();
+    });
+    connect(ui->commandEd, &QLineEdit::returnPressed, this, &Dialog::runCommand);
 
     mCommandItemModel = new CommandItemModel(mSettings->value(QL1S("dialog/history_use"), true).toBool(), this);
     ui->commandList->installEventFilter(this);
@@ -92,11 +100,11 @@ Dialog::Dialog(QWidget *parent) :
 
     // Popup menu ...............................
     QAction *a = new QAction(QIcon::fromTheme(QSL("configure")), tr("Configure"), this);
-    connect(a, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
+    connect(a, &QAction::triggered, this, &Dialog::showConfigDialog);
     addAction(a);
 
     a = new QAction(QIcon::fromTheme(QSL("edit-clear-history")), tr("Clear History"), this);
-    connect(a, SIGNAL(triggered()), mCommandItemModel, SLOT(clearHistory()));
+    connect(a, &QAction::triggered, mCommandItemModel, &CommandItemModel::clearHistory);
     addAction(a);
 
     mPowerManager = new LXQt::PowerManager(this);
@@ -115,15 +123,15 @@ Dialog::Dialog(QWidget *parent) :
 
     connect(QApplication::desktop(), SIGNAL(screenCountChanged(int)), SLOT(realign()));
     connect(QApplication::desktop(), SIGNAL(workAreaResized(int)), SLOT(realign()));
-    connect(mGlobalShortcut, SIGNAL(activated()), this, SLOT(showHide()));
-    connect(mGlobalShortcut, SIGNAL(shortcutChanged(QString,QString)), this, SLOT(shortcutChanged(QString,QString)));
-    connect(KWindowSystem::self(), SIGNAL(activeWindowChanged(WId)), this, SLOT(onActiveWindowChanged(WId)));
+    connect(mGlobalShortcut, &GlobalKeyShortcut::Action::activated, this, &Dialog::showHide);
+    connect(mGlobalShortcut, &GlobalKeyShortcut::Action::shortcutChanged, this, &Dialog::shortcutChanged);
+    connect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
     connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
 
     resize(mSettings->value(QL1S("dialog/width"), 400).toInt(), size().height());
 
     // TEST
-    connect(mCommandItemModel, SIGNAL(layoutChanged()), this, SLOT(dataChanged()));
+    connect(mCommandItemModel, &CommandItemModel::layoutChanged, this, &Dialog::dataChanged);
 }
 
 
