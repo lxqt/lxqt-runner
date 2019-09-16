@@ -29,6 +29,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QTimer>
 
 namespace Ui {
     class Dialog;
@@ -81,6 +82,8 @@ private:
     bool mDesktopChanged; //!< \note flag for changing desktop & activation workaround
 
     ConfigureDialog *mConfigureDialog;
+
+    QTimer mSearchTimer;
 
 private slots:
     void realign();
