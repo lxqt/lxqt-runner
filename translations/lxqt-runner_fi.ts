@@ -87,17 +87,17 @@
         <translation>Sovelluskäynnistin </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="94"/>
+        <location filename="../dialog.cpp" line="102"/>
         <source>Configure</source>
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="98"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Clear History</source>
         <translation>Tyhjennä historia</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="351"/>
+        <location filename="../dialog.cpp" line="359"/>
         <source>Show/hide runner dialog</source>
         <translation>Näytä/piilota käynnistin</translation>
     </message>
@@ -110,7 +110,7 @@
         <translation>Historia</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="824"/>
+        <location filename="../providers.cpp" line="845"/>
         <source>Mathematics</source>
         <translation>Matematiikka</translation>
     </message>

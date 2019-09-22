@@ -87,17 +87,17 @@
         <translation>Εκτελεστής εφαρμογών </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="94"/>
+        <location filename="../dialog.cpp" line="102"/>
         <source>Configure</source>
         <translation>Διαμόρφωση</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="98"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Clear History</source>
         <translation>Εκκαθάριση του ιστορικού</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="351"/>
+        <location filename="../dialog.cpp" line="359"/>
         <source>Show/hide runner dialog</source>
         <translation>Εμφάνιση/απόκρυψη του διαλόγου του εκτελεστή</translation>
     </message>
@@ -110,7 +110,7 @@
         <translation>Ιστορικό</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="824"/>
+        <location filename="../providers.cpp" line="845"/>
         <source>Mathematics</source>
         <translation>Μαθηματικά</translation>
     </message>
