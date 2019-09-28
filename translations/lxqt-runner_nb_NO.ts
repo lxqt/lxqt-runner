@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Hurtigkjørerinnstillinger</translation>
+        <translation>Innstillinger for programstarter</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>Posisjon:</translation>
+        <translation>Plassering:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
@@ -26,12 +26,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>Vis tidligere kjørte</translation>
+        <translation>Vis historikk først</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Lagre og vis tidligere kjørte</translation>
+        <translation>Lagre/vis historikk</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
@@ -46,17 +46,17 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> ting</translation>
+        <translation> element(er)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation>Snarevei:</translation>
+        <translation>Tastatursnarevei:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Langs toppen av skjermen</translation>
+        <translation>Øverste kant på skjermen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation>Fokusert skjerm</translation>
+        <translation>Skjerm som har fokus</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Programkjører </translation>
+        <translation>Programstarter </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="102"/>
@@ -94,12 +94,12 @@
     <message>
         <location filename="../dialog.cpp" line="106"/>
         <source>Clear History</source>
-        <translation>Slett tidligere kjørte</translation>
+        <translation>Slett historikk</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="359"/>
         <source>Show/hide runner dialog</source>
-        <translation>Vis/skjul hurtigkjører</translation>
+        <translation>Vis/skjul programstarter</translation>
     </message>
 </context>
 <context>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation>Tidligere kjørte</translation>
+        <translation>Historikk</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="845"/>
