@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Axustes do iniciador de aplicativos</translation>
+        <translation>Axustes do lanzador de aplicacións</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Iniciador de aplicativos </translation>
+        <translation>Lanzador de aplicacións </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="102"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="359"/>
         <source>Show/hide runner dialog</source>
-        <translation>Amosar/agochar o diálogo do iniciador de aplicativos</translation>
+        <translation>Amosar/agochar o diálogo do lanzador de aplicacións</translation>
     </message>
 </context>
 <context>
