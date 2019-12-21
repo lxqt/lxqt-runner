@@ -39,9 +39,11 @@
 #include <LXQt/ScreenSaver>
 #include <LXQtGlobalKeys/Action>
 #include <LXQtGlobalKeys/Client>
+
+#include <QApplication>
 #include <QDebug>
 #include <QCloseEvent>
-#include <QDesktopWidget>
+#include <QGuiApplication>
 #include <QProcess>
 #include <QLineEdit>
 #include <QAction>
@@ -49,6 +51,7 @@
 #include <QApplication>
 #include <QMenu>
 #include <QWindow>
+#include <QScreen>
 #include <QScrollBar>
 
 #include <KWindowSystem/KWindowSystem>
@@ -121,8 +124,13 @@ Dialog::Dialog(QWidget *parent) :
 
     applySettings();
 
-    connect(QApplication::desktop(), SIGNAL(screenCountChanged(int)), SLOT(realign()));
-    connect(QApplication::desktop(), SIGNAL(workAreaResized(int)), SLOT(realign()));
+    // screen updates
+    connect(qApp, &QApplication::screenAdded, this, &Dialog::realign);
+    connect(qApp, &QApplication::screenRemoved, this, &Dialog::realign);
+    const auto primaryScreen = QGuiApplication::primaryScreen();
+    if (primaryScreen != nullptr)
+        connect(primaryScreen, &QScreen::availableGeometryChanged, this, &Dialog::realign);
+
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::activated, this, &Dialog::showHide);
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::shortcutChanged, this, &Dialog::shortcutChanged);
     connect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
@@ -324,11 +332,14 @@ void Dialog::realign()
 {
     QRect desktop;
 
-    int screen = mMonitor;
-    if (mMonitor < 0 || mMonitor > QApplication::desktop()->screenCount() - 1)
-        screen = QApplication::desktop()->screenNumber(QCursor::pos());
+    int screenNumber = mMonitor;
+    const auto screens = QGuiApplication::screens();
+    if (mMonitor < 0 || mMonitor > screens.size() - 1) {
+        const auto screen = QGuiApplication::screenAt(QCursor::pos());
+        screenNumber = screen ? screens.indexOf(screen) : 0;
+    }
 
-    desktop = QApplication::desktop()->availableGeometry(screen).intersected(KWindowSystem::workArea(screen));
+    desktop = screens.at(screenNumber)->availableGeometry().intersected(KWindowSystem::workArea(screenNumber));
 
     QRect rect = this->geometry();
     rect.moveCenter(desktop.center());
