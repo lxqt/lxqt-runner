@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Futtató beállítás</translation>
+        <translation>Futtató beállítások</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation>Fókuszált képernyőn</translation>
+        <translation type="unfinished">Mindig a használt képernyőn</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Alkalmazás futtató </translation>
+        <translation>Alkalmazás indító </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="102"/>
