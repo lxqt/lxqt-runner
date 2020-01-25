@@ -31,7 +31,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Előzmények mentése/mutatása</translation>
+        <translation>Előzmények mentése/megjelenítése</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
