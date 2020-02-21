@@ -41,42 +41,42 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť zoznam s:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> položkami</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation type="unfinished"></translation>
+        <translation>Klávesová skratka:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Horný okraj obrazovky</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Stred obrazovky</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="68"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuálna obrazovka</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="72"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vždy na obrazovke %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="81"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrátiť zmeny</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation type="unfinished"></translation>
+        <translation>Spúšťač aplikácií </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="102"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavenia</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="106"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazať históriu</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="359"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť/skryť Runner</translation>
     </message>
 </context>
 <context>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>História</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="845"/>
         <source>Mathematics</source>
-        <translation type="unfinished"></translation>
+        <translation>Matematika</translation>
     </message>
 </context>
 </TS>
