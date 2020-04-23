@@ -1,3 +1,9 @@
+lxqt-runner-0.15.0 / 2020-04-23
+===============================
+  * cmake: Enhance lxqt-globalkeys minimum required version.
+  * Smoother search.
+  * Removed deprecated QDesktopWidget.
+
 lxqt-runner-0.14.1 / 2019-02-24
 ===============================
 
