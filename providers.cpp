@@ -584,7 +584,7 @@ bool CustomCommandItem::run() const
 /************************************************
 
  ************************************************/
-bool CustomCommandItem::compare(const QRegExp &regExp) const
+bool CustomCommandItem::compare(const QRegExp & /*regExp*/) const
 {
     return !mComment.isEmpty();
 }
@@ -593,7 +593,7 @@ bool CustomCommandItem::compare(const QRegExp &regExp) const
 /************************************************
 
  ************************************************/
-unsigned int CustomCommandItem::rank(const QString &pattern) const
+unsigned int CustomCommandItem::rank(const QString & /*pattern*/) const
 {
     return 0;
 }
