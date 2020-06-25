@@ -972,7 +972,7 @@ CommandProvider(), mName(name)
             this,        SLOT(newListOfMaps(QList<QMap<QString, QString> >)));
 
     connect(mExternalProcess, SIGNAL(readyRead()), this, SLOT(readFromProcess()));
-    mExternalProcess->start(externalProgram);
+    mExternalProcess->start(externalProgram, QStringList());
 }
 
 void ExternalProvider::setSearchTerm(const QString searchTerm)
