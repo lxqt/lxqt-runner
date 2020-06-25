@@ -33,7 +33,7 @@
 #include <LXQt/Settings>
 
 #include <QSettings>
-#include <QDesktopWidget>
+#include <QGuiApplication>
 #include <QComboBox>
 #include <QDebug>
 #include <QKeySequence>
@@ -63,11 +63,10 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     connect(ui->positionCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(positionCbxChanged(int)));
 
     // Monitor ..................................
-    QDesktopWidget *desktop = qApp->desktop();
 
     ui->monitorCbx->addItem(tr("Focused screen"), QVariant(-1));
 
-    int monCnt = desktop->screenCount();
+    const int monCnt = QGuiApplication::screens().size();
     for (int i = 0; i < monCnt; ++i)
         ui->monitorCbx->addItem(tr("Always on screen %1").arg(i + 1), QVariant(i));
 
