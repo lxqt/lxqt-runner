@@ -319,7 +319,7 @@ public:
     bool setData(QMap<QString, QString> & data);
 
     bool run() const;
-    bool compare(const QRegExp &regExp) const {return true;} // We leave the decision to the external process
+    bool compare(const QRegExp & /*regExp*/) const {return true;} // We leave the decision to the external process
     unsigned int rank(const QString &pattern) const;
 
     QString mCommand;
