@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Lansator de aplicații</translation>
+        <translation>Lansator de aplicații </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="102"/>
