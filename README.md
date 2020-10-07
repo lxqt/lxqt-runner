@@ -37,6 +37,6 @@ To launch an application corresponding strings need to be filed in the form, nex
 
 ### Translation (Weblate)
 
-<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-runner/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-runner/multi-auto.svg" alt="Translation status" />
+<a href="https://translate.lxqt-project.org/projects/lxqt-desktop/lxqt-runner/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/lxqt-runner/multi-auto.svg" alt="Translation status" />
 </a>
