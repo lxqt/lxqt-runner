@@ -33,10 +33,13 @@ The GUI comes with a configuration dialogue to customize settings like the posit
 
 To launch an application corresponding strings need to be filed in the form, next a selection can be made from a list presenting matches. Items to shut down or restart the system and so on are provided by the menu featuring the configuration dialogue as well.
 
+### Translation
 
-
-### Translation (Weblate)
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-desktop/lxqt-runner/)
 
 <a href="https://translate.lxqt-project.org/projects/lxqt-desktop/lxqt-runner/">
 <img src="https://translate.lxqt-project.org/widgets/lxqt-desktop/-/lxqt-runner/multi-auto.svg" alt="Translation status" />
 </a>
+
+
+
