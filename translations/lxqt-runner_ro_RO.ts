@@ -64,17 +64,17 @@
         <translation>Centrul ecranului</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="68"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
         <translation>Ecran focalizat</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="72"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
         <translation>Întotdeauna pe ecran %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="81"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
         <translation>Resetează</translation>
     </message>
@@ -87,17 +87,17 @@
         <translation>Lansator de aplicații </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="102"/>
+        <location filename="../dialog.cpp" line="105"/>
         <source>Configure</source>
         <translation>Configurează</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
         <translation>Șterge istoricul</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="359"/>
+        <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
         <translation>Afișează/ascunde dialogul lansatorului</translation>
     </message>

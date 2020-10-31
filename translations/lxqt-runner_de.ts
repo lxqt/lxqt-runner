@@ -64,17 +64,17 @@
         <translation>Bildschirmmitte</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="68"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
         <translation>Fokussierter Bildschirm</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="72"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
         <translation>Immer auf Bildschirm %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="81"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
         <translation>Zurücksetzen</translation>
     </message>
@@ -87,17 +87,17 @@
         <translation>Anwendungsstarter </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="102"/>
+        <location filename="../dialog.cpp" line="105"/>
         <source>Configure</source>
         <translation>Konfigurieren</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
         <translation>Verlauf löschen</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="359"/>
+        <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
         <translation>Zeige/verberge Runnerdialog</translation>
     </message>

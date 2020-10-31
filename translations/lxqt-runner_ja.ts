@@ -64,17 +64,17 @@
         <translation>画面の中央</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="68"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
         <translation>フォーカスされた画面</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="72"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
         <translation>常に画面 %1 に表示</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="81"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
@@ -87,17 +87,17 @@
         <translation>アプリケーションランチャ </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="102"/>
+        <location filename="../dialog.cpp" line="105"/>
         <source>Configure</source>
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
         <translation>履歴の消去</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="359"/>
+        <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
         <translation>Runnner のダイアログを表示する/隠す</translation>
     </message>

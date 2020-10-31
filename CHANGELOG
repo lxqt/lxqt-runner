@@ -1,3 +1,9 @@
+lxqt-runner-0.16.0 / 2020-11-01
+===============================
+  * Don't use QProcess deprecates methods.
+  * Silenced the warnings about unused function parameters.
+  * Drop the obsolete classs QDesktopWidget.
+
 lxqt-runner-0.15.0 / 2020-04-23
 ===============================
   * cmake: Enhance lxqt-globalkeys minimum required version.

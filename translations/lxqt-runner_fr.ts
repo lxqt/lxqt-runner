@@ -64,17 +64,17 @@
         <translation>Centre de l&apos;écran</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="68"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
         <translation>Écran ayant le focus</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="72"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
         <translation>Toujours sur l&apos;écran %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="81"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
         <translation>Réinitialiser</translation>
     </message>
@@ -87,17 +87,17 @@
         <translation>Lanceur d&apos;application </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="102"/>
+        <location filename="../dialog.cpp" line="105"/>
         <source>Configure</source>
         <translation>Configurer</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
         <translation>Effacer l&apos;historique</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="359"/>
+        <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
         <translation>Afficher/cacher le dialogue du lanceur</translation>
     </message>
