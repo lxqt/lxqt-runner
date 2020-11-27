@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
-        <translation>Runnner のダイアログを表示する/隠す</translation>
+        <translation>Runner ダイアログの表示/非表示</translation>
     </message>
 </context>
 <context>

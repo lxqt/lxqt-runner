@@ -36,7 +36,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation></translation>
+        <translation>&lt;b&gt;注意&lt;/b&gt;: 顶层小工具的大小限制在桌面长和宽的 2/3 。</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
