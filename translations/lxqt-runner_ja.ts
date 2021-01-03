@@ -26,12 +26,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>最初に履歴を表示する</translation>
+        <translation>履歴を最初に表示する</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>履歴の保管/表示をする</translation>
+        <translation>履歴の記録/表示をする</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>リストの表示:</translation>
+        <translation>表示するリスト:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>アプリケーションランチャ </translation>
+        <translation>アプリケーションランチャー </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
