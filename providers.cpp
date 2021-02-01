@@ -792,6 +792,7 @@ bool VirtualBoxProvider::isOutDated() const
 
 #ifdef MATH_ENABLED
 #include <muParser.h>
+#include <QClipboard>
 
 class MathItem::Parser : private mu::Parser
 {
@@ -842,7 +843,7 @@ MathItem::MathItem():
         CommandProviderItem(),
         mParser{new Parser}
 {
-    mToolTip =QObject::tr("Mathematics");
+    mToolTip = QObject::tr("Copy calculation result to clipboard");
     mIcon = QIcon::fromTheme(QSL("accessories-calculator"));
 }
 
@@ -860,6 +861,8 @@ MathItem::~MathItem()
  ************************************************/
 bool MathItem::run() const
 {
+    int posResult = mTitle.indexOf(QL1C('=')) + 1;
+    QApplication::clipboard()->setText(mTitle.mid(posResult));
     return false;
 }
 
