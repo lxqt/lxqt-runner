@@ -46,7 +46,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> 項目</translation>
+        <translation> 個のアイテム</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
