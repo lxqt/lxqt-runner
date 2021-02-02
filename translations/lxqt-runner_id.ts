@@ -110,9 +110,9 @@
         <translation>Riwayat</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="845"/>
-        <source>Mathematics</source>
-        <translation>Matematika</translation>
+        <location filename="../providers.cpp" line="846"/>
+        <source>Copy calculation result to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
