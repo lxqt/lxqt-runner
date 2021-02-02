@@ -110,9 +110,9 @@
         <translation>Historio</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="845"/>
-        <source>Mathematics</source>
-        <translation>Matematiko</translation>
+        <location filename="../providers.cpp" line="846"/>
+        <source>Copy calculation result to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

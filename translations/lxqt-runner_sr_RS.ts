@@ -110,9 +110,9 @@
         <translation>Историјат</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="845"/>
-        <source>Mathematics</source>
-        <translation>Математика</translation>
+        <location filename="../providers.cpp" line="846"/>
+        <source>Copy calculation result to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
