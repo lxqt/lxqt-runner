@@ -46,12 +46,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> элементами</translation>
+        <translation> элемент(ами)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation>Сочетание клавиш:</translation>
+        <translation>Ярлык:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Ускоритель запуска программ </translation>
+        <translation>Средство запуска приложений </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation>Из истории</translation>
+        <translation>История</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать результат расчета в буфер обмена</translation>
     </message>
 </context>
 </TS>
