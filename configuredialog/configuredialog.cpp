@@ -55,12 +55,12 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
 {
     ui->setupUi(this);
 
-    connect(ui->buttonBox->button(QDialogButtonBox::Reset), SIGNAL(clicked()), this, SLOT(resetSettings()));
+    connect(ui->buttonBox->button(QDialogButtonBox::Reset), &QPushButton::clicked, this, &ConfigureDialog::resetSettings);
 
     // Position .................................
     ui->positionCbx->addItem(tr("Top edge of the screen"), QVariant(ConfigureDialog::PositionTop));
     ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
-    connect(ui->positionCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(positionCbxChanged(int)));
+    connect(ui->positionCbx,  QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConfigureDialog::positionCbxChanged);
 
     // Monitor ..................................
 
@@ -71,19 +71,19 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
         ui->monitorCbx->addItem(tr("Always on screen %1").arg(i + 1), QVariant(i));
 
     ui->monitorCbx->setEnabled(monCnt > 1);
-    connect(ui->monitorCbx, SIGNAL(currentIndexChanged(int)), this, SLOT(monitorCbxChanged(int)));
+    connect(ui->monitorCbx, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConfigureDialog::monitorCbxChanged);
 
 
     // Shortcut .................................
-    connect(ui->shortcutEd, SIGNAL(shortcutGrabbed(QString)), this, SLOT(shortcutChanged(QString)));
+    connect(ui->shortcutEd, &ShortcutSelector::shortcutGrabbed, this, &ConfigureDialog::shortcutChanged);
 
-    connect(ui->shortcutEd->addMenuAction(tr("Reset")), SIGNAL(triggered()), this, SLOT(shortcutReset()));
+    connect(ui->shortcutEd->addMenuAction(tr("Reset")), &QAction::triggered, this, &ConfigureDialog::shortcutReset);
 
     settingsChanged();
 
-    connect(ui->historyUseCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_use"), checked); });
-    connect(ui->historyFirstCb, &QAbstractButton::toggled, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_first"), checked); });
-    connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), [this] (int i) { mSettings->setValue(QL1S("dialog/list_shown_items"), i); });
+    connect(ui->historyUseCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_use"), checked); });
+    connect(ui->historyFirstCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_first"), checked); });
+    connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, [this] (int i) { mSettings->setValue(QL1S("dialog/list_shown_items"), i); });
 }
 
 

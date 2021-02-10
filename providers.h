@@ -30,6 +30,7 @@
 #ifndef PROVIDERS_H
 #define PROVIDERS_H
 
+#include <QAbstractItemModel>
 #include <QList>
 #include <QRegExp>
 #include <QDomElement>
@@ -48,6 +49,7 @@
 class CommandProviderItem: public QObject
 {
     Q_OBJECT
+
 public:
     CommandProviderItem(): QObject() {}
     virtual ~CommandProviderItem() {}
@@ -91,6 +93,7 @@ protected:
 class CommandProvider: public QObject, public QList<CommandProviderItem*>
 {
     Q_OBJECT
+
 public:
     CommandProvider();
     virtual ~CommandProvider();
@@ -99,8 +102,8 @@ public:
     virtual bool isOutDated() const { return false; }
 
 signals:
-    void aboutToBeChanged();
-    void changed();
+    void aboutToBeChanged(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoLayoutChangeHint);
+    void changed(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoLayoutChangeHint);
 };
 
 
@@ -111,6 +114,7 @@ signals:
 class AppLinkItem: public CommandProviderItem
 {
     Q_OBJECT
+
 public:
     AppLinkItem(const QDomElement &element);
 
@@ -143,6 +147,7 @@ class XdgMenu;
 class AppLinkProvider: public CommandProvider
 {
     Q_OBJECT
+
 public:
     AppLinkProvider();
     virtual ~AppLinkProvider();
@@ -167,6 +172,8 @@ private:
 
 class HistoryItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
     HistoryItem(const QString &command);
 
@@ -185,6 +192,8 @@ private:
 class QSettings;
 class HistoryProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     HistoryProvider();
     virtual ~HistoryProvider();
@@ -229,6 +238,8 @@ private:
 class QSettings;
 class CustomCommandProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     CustomCommandProvider();
 
@@ -251,6 +262,8 @@ private:
  ************************************************/
 class MathItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
     class Parser;
 public:
@@ -269,6 +282,8 @@ private:
 
 class MathProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     MathProvider();
     //virtual ~MathProvider();
@@ -283,6 +298,8 @@ public:
 
 class VirtualBoxItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
   VirtualBoxItem(const QString & MachineName , const QIcon & Icon);
 
@@ -296,6 +313,8 @@ private:
 
 class VirtualBoxProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
   VirtualBoxProvider ();
   void rebuild();

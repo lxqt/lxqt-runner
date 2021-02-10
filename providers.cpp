@@ -310,7 +310,7 @@ AppLinkProvider::AppLinkProvider():
 #else
     mXdgMenu = new XdgMenu();
     mXdgMenu->setEnvironments(QStringList() << QSL("X-LXQT") << QSL("LXQt"));
-    connect(mXdgMenu, SIGNAL(changed()), this, SLOT(update()));
+    connect(mXdgMenu, &XdgMenu::changed, this, &AppLinkProvider::update);
     mXdgMenu->read(XdgMenu::getMenuFileName());
     update();
 #endif
@@ -971,10 +971,9 @@ CommandProvider(), mName(name)
 {
     mExternalProcess = new QProcess(this);
     mYamlParser = new YamlParser();
-    connect(mYamlParser, SIGNAL(newListOfMaps(QList<QMap<QString, QString> >)),
-            this,        SLOT(newListOfMaps(QList<QMap<QString, QString> >)));
+    connect(mYamlParser, &YamlParser::newListOfMaps, this, &ExternalProvider::newListOfMaps);
 
-    connect(mExternalProcess, SIGNAL(readyRead()), this, SLOT(readFromProcess()));
+    connect(mExternalProcess, &QProcess::readyRead, this, &ExternalProvider::readFromProcess);
     mExternalProcess->start(externalProgram, QStringList());
 }
 
