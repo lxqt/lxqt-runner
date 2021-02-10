@@ -82,7 +82,7 @@ Dialog::Dialog(QWidget *parent) :
     connect(&mSearchTimer, &QTimer::timeout, ui->commandEd, [this] {
         setFilter(ui->commandEd->text());
     });
-    mSearchTimer.setInterval(350); // typing speed (not very fast)
+    mSearchTimer.setInterval(250); // typing speed (not very fast)
 
     ui->commandEd->installEventFilter(this);
 
@@ -229,6 +229,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
 
     case Qt::Key_Up:
     case Qt::Key_PageUp:
+    case Qt::Key_Home:
         if (ui->commandEd->text().isEmpty() &&
             ui->commandList->isVisible() &&
             ui->commandList->currentIndex().row() == 0
@@ -242,6 +243,7 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
 
     case Qt::Key_Down:
     case Qt::Key_PageDown:
+    case Qt::Key_End:
         if (ui->commandEd->text().isEmpty() &&
             ui->commandList->isHidden()
            )
@@ -464,7 +466,10 @@ void Dialog::dataChanged()
 {
     if (mCommandItemModel->rowCount())
     {
-       ui->commandList->setCurrentIndex(mCommandItemModel->appropriateItem(mCommandItemModel->command()));
+        // set the current item if not existing
+        if(!ui->commandList->currentIndex().isValid())
+            ui->commandList->setCurrentIndex(mCommandItemModel->appropriateItem(mCommandItemModel->command()));
+        // show the list if it's hidden and scroll to the current item
         ui->commandList->scrollTo(ui->commandList->currentIndex());
         ui->commandList->show();
     }
