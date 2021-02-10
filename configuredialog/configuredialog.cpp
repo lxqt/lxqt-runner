@@ -60,7 +60,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     // Position .................................
     ui->positionCbx->addItem(tr("Top edge of the screen"), QVariant(ConfigureDialog::PositionTop));
     ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
-    connect(ui->positionCbx,  QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConfigureDialog::positionCbxChanged);
+    connect(ui->positionCbx,  qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureDialog::positionCbxChanged);
 
     // Monitor ..................................
 
@@ -71,7 +71,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
         ui->monitorCbx->addItem(tr("Always on screen %1").arg(i + 1), QVariant(i));
 
     ui->monitorCbx->setEnabled(monCnt > 1);
-    connect(ui->monitorCbx, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ConfigureDialog::monitorCbxChanged);
+    connect(ui->monitorCbx, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureDialog::monitorCbxChanged);
 
 
     // Shortcut .................................

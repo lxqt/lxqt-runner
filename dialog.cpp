@@ -74,7 +74,7 @@ Dialog::Dialog(QWidget *parent) :
     setWindowTitle(QSL("LXQt Runner"));
     setAttribute(Qt::WA_TranslucentBackground);
 
-    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, QOverload<>::of(&Dialog::update));
+    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, qOverload<>(&Dialog::update));
     connect(ui->closeButton, &QToolButton::clicked, this, &Dialog::hide);
     connect(mSettings, &LXQt::Settings::settingsChanged, this, &Dialog::applySettings);
 
