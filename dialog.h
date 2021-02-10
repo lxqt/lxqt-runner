@@ -86,6 +86,7 @@ private:
     QTimer mSearchTimer;
 
 private slots:
+    void reload();
     void realign();
     void applySettings();
     void showHide();
