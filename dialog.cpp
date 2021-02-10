@@ -74,7 +74,7 @@ Dialog::Dialog(QWidget *parent) :
     setWindowTitle(QSL("LXQt Runner"));
     setAttribute(Qt::WA_TranslucentBackground);
 
-    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, &Dialog::reload);
+    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, QOverload<>::of(&Dialog::update));
     connect(ui->closeButton, &QToolButton::clicked, this, &Dialog::hide);
     connect(mSettings, &LXQt::Settings::settingsChanged, this, &Dialog::applySettings);
 
@@ -506,15 +506,6 @@ void Dialog::showConfigDialog()
     if (!mConfigureDialog)
         mConfigureDialog = new ConfigureDialog(mSettings, QL1S(DEFAULT_SHORTCUT), this);
     mConfigureDialog->exec();
-}
-
-
-/************************************************
-
- ************************************************/
-void Dialog::reload()
-{
-    update(frameGeometry());
 }
 
 #undef DEFAULT_SHORTCUT
