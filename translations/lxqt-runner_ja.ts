@@ -31,7 +31,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>履歴の記録/表示をする</translation>
+        <translation>履歴を記録/表示する</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
