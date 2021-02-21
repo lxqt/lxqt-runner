@@ -74,9 +74,9 @@ Dialog::Dialog(QWidget *parent) :
     setWindowTitle(QSL("LXQt Runner"));
     setAttribute(Qt::WA_TranslucentBackground);
 
-    connect(LXQt::Settings::globalSettings(), SIGNAL(iconThemeChanged()), this, SLOT(update()));
-    connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(hide()));
-    connect(mSettings, SIGNAL(settingsChanged()), this, SLOT(applySettings()));
+    connect(LXQt::Settings::globalSettings(), &LXQt::GlobalSettings::iconThemeChanged, this, qOverload<>(&Dialog::update));
+    connect(ui->closeButton, &QToolButton::clicked, this, &Dialog::hide);
+    connect(mSettings, &LXQt::Settings::settingsChanged, this, &Dialog::applySettings);
 
     mSearchTimer.setSingleShot(true);
     connect(&mSearchTimer, &QTimer::timeout, ui->commandEd, [this] {
@@ -86,7 +86,7 @@ Dialog::Dialog(QWidget *parent) :
 
     ui->commandEd->installEventFilter(this);
 
-    connect(ui->commandEd, &QLineEdit::textChanged, [this] (QString const &) {
+    connect(ui->commandEd, &QLineEdit::textChanged, this, [this] (QString const &) {
         mSearchTimer.start();
     });
     connect(ui->commandEd, &QLineEdit::returnPressed, this, &Dialog::runCommand);
@@ -95,7 +95,7 @@ Dialog::Dialog(QWidget *parent) :
     ui->commandList->installEventFilter(this);
     ui->commandList->setModel(mCommandItemModel);
     ui->commandList->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    connect(ui->commandList, SIGNAL(clicked(QModelIndex)), this, SLOT(runCommand()));
+    connect(ui->commandList, &MyListView::clicked, this, &Dialog::runCommand);
     setFilter(QString());
     dataChanged();
 

@@ -48,6 +48,7 @@
 class CommandProviderItem: public QObject
 {
     Q_OBJECT
+
 public:
     CommandProviderItem(): QObject() {}
     virtual ~CommandProviderItem() {}
@@ -91,6 +92,7 @@ protected:
 class CommandProvider: public QObject, public QList<CommandProviderItem*>
 {
     Q_OBJECT
+
 public:
     CommandProvider();
     virtual ~CommandProvider();
@@ -111,6 +113,7 @@ signals:
 class AppLinkItem: public CommandProviderItem
 {
     Q_OBJECT
+
 public:
     AppLinkItem(const QDomElement &element);
 
@@ -143,6 +146,7 @@ class XdgMenu;
 class AppLinkProvider: public CommandProvider
 {
     Q_OBJECT
+
 public:
     AppLinkProvider();
     virtual ~AppLinkProvider();
@@ -167,6 +171,8 @@ private:
 
 class HistoryItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
     HistoryItem(const QString &command);
 
@@ -185,6 +191,8 @@ private:
 class QSettings;
 class HistoryProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     HistoryProvider();
     virtual ~HistoryProvider();
@@ -229,6 +237,8 @@ private:
 class QSettings;
 class CustomCommandProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     CustomCommandProvider();
 
@@ -251,6 +261,8 @@ private:
  ************************************************/
 class MathItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
     class Parser;
 public:
@@ -269,6 +281,8 @@ private:
 
 class MathProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
     MathProvider();
     //virtual ~MathProvider();
@@ -283,6 +297,8 @@ public:
 
 class VirtualBoxItem: public CommandProviderItem
 {
+    Q_OBJECT
+
 public:
   VirtualBoxItem(const QString & MachineName , const QIcon & Icon);
 
@@ -296,6 +312,8 @@ private:
 
 class VirtualBoxProvider: public CommandProvider
 {
+    Q_OBJECT
+
 public:
   VirtualBoxProvider ();
   void rebuild();

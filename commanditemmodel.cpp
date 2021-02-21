@@ -278,8 +278,8 @@ CommandSourceItemModel::CommandSourceItemModel(bool useHistory, QObject *parent)
 
     for(const CommandProvider* provider : qAsConst(mProviders))
     {
-        connect(provider, SIGNAL(changed()), this, SIGNAL(layoutChanged()));
-        connect(provider, SIGNAL(aboutToBeChanged()), this, SIGNAL(layoutAboutToBeChanged()));
+        connect(provider, &CommandProvider::changed,          this, [this] { emit layoutChanged(); } );
+        connect(provider, &CommandProvider::aboutToBeChanged, this, [this] { emit layoutAboutToBeChanged(); } );
     }
 
     rebuild();
@@ -458,8 +458,8 @@ void CommandSourceItemModel::setUseHistory(bool useHistory)
         mHistoryProvider = new HistoryProvider;
         mProviders.append(mHistoryProvider);
         mCustomCommandProvider->setHistoryProvider(mHistoryProvider);
-        connect(mHistoryProvider, SIGNAL(changed()), this, SIGNAL(layoutChanged()));
-        connect(mHistoryProvider, SIGNAL(aboutToBeChanged()), this, SIGNAL(layoutAboutToBeChanged()));
+        connect(mHistoryProvider, &HistoryProvider::changed,          this, [this] { emit layoutChanged(); } );
+        connect(mHistoryProvider, &HistoryProvider::aboutToBeChanged, this, [this] { emit layoutAboutToBeChanged(); } );
     }
     endResetModel();
 }

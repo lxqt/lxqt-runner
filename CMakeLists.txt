@@ -88,10 +88,6 @@ set(lxqt-runner_UI_FILES
     configuredialog/configuredialog.ui
 )
 
-set(QRC_FILES
-
-)
-
 set(lxqt-runner_LIBRARIES
     lxqt
     lxqt-globalkeys
