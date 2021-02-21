@@ -861,8 +861,12 @@ MathItem::~MathItem()
  ************************************************/
 bool MathItem::run() const
 {
-    int posResult = mTitle.indexOf(QL1C('=')) + 1;
-    QApplication::clipboard()->setText(mTitle.mid(posResult));
+    int posResult = mTitle.indexOf(QL1C('='));
+    if (posResult > -1 && posResult < mTitle.size() - 1)
+    {
+        QApplication::clipboard()->setText(mTitle.mid(posResult + 1));
+        return true;
+    }
     return false;
 }
 
