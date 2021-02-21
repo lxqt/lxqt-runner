@@ -102,8 +102,8 @@ public:
     virtual bool isOutDated() const { return false; }
 
 signals:
-    void aboutToBeChanged(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoLayoutChangeHint);
-    void changed(const QList<QPersistentModelIndex> &parents = QList<QPersistentModelIndex>(), QAbstractItemModel::LayoutChangeHint hint = QAbstractItemModel::NoLayoutChangeHint);
+    void aboutToBeChanged();
+    void changed();
 };
 
 

@@ -278,8 +278,8 @@ CommandSourceItemModel::CommandSourceItemModel(bool useHistory, QObject *parent)
 
     for(const CommandProvider* provider : qAsConst(mProviders))
     {
-        connect(provider, &CommandProvider::changed,          this, &CommandSourceItemModel::layoutChanged);
-        connect(provider, &CommandProvider::aboutToBeChanged, this, &CommandSourceItemModel::layoutAboutToBeChanged);
+        connect(provider, &CommandProvider::changed,          this, &CommandSourceItemModel::slotLayoutChanged);
+        connect(provider, &CommandProvider::aboutToBeChanged, this, &CommandSourceItemModel::slotLayoutAboutToBeChanged);
     }
 
     rebuild();
@@ -458,8 +458,22 @@ void CommandSourceItemModel::setUseHistory(bool useHistory)
         mHistoryProvider = new HistoryProvider;
         mProviders.append(mHistoryProvider);
         mCustomCommandProvider->setHistoryProvider(mHistoryProvider);
-        connect(mHistoryProvider, &HistoryProvider::changed,          this, &CommandSourceItemModel::layoutChanged);
-        connect(mHistoryProvider, &HistoryProvider::aboutToBeChanged, this, &CommandSourceItemModel::layoutAboutToBeChanged);
+        connect(mHistoryProvider, &HistoryProvider::changed,          this, &CommandSourceItemModel::slotLayoutChanged);
+        connect(mHistoryProvider, &HistoryProvider::aboutToBeChanged, this, &CommandSourceItemModel::slotLayoutAboutToBeChanged);
     }
     endResetModel();
+}
+
+/***********************************************
+
+ ***********************************************/
+void CommandSourceItemModel::slotLayoutChanged()
+{
+    emit layoutChanged();
+}
+
+
+void CommandSourceItemModel::slotLayoutAboutToBeChanged()
+{
+    emit layoutAboutToBeChanged();
 }

@@ -60,6 +60,8 @@ public:
 public slots:
     void rebuild();
     void clearHistory();
+    void slotLayoutChanged();
+    void slotLayoutAboutToBeChanged();
 
 private:
     QList<CommandProvider*> mProviders;
