@@ -28,7 +28,8 @@
 #ifndef COMMANDITEMMODEL_H
 #define COMMANDITEMMODEL_H
 
-#include <providers.h>
+#include "providers.h"
+
 #include <QSortFilterProxyModel>
 #include <QAbstractListModel>
 #include <QVariant>
@@ -37,6 +38,7 @@
 class CommandSourceItemModel: public QAbstractListModel
 {
     Q_OBJECT
+
 public:
     explicit CommandSourceItemModel(bool useHistory, QObject *parent = 0);
     virtual ~CommandSourceItemModel();
@@ -57,11 +59,10 @@ public:
     /*! Flag if the history should be shown/stored
      */
     void setUseHistory(bool useHistory);
+
 public slots:
     void rebuild();
     void clearHistory();
-    void slotLayoutChanged();
-    void slotLayoutAboutToBeChanged();
 
 private:
     QList<CommandProvider*> mProviders;
@@ -76,6 +77,7 @@ private:
 class CommandItemModel: public QSortFilterProxyModel
 {
     Q_OBJECT
+
 public:
     explicit CommandItemModel(bool useHistory, QObject *parent = 0);
     virtual ~CommandItemModel();

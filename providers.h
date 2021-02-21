@@ -30,7 +30,6 @@
 #ifndef PROVIDERS_H
 #define PROVIDERS_H
 
-#include <QAbstractItemModel>
 #include <QList>
 #include <QRegExp>
 #include <QDomElement>
