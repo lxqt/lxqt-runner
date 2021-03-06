@@ -323,6 +323,7 @@ void Dialog::showHide()
         show();
         KWindowSystem::forceActiveWindow(winId());
         ui->commandEd->setFocus();
+        ui->commandEd->selectAll();
     }
 }
 
@@ -497,7 +498,8 @@ void Dialog::runCommand()
     if (res)
     {
         hide();
-        ui->commandEd->clear();
+        if (!qobject_cast<const MathItem*>(command)) // don't clear math results
+            ui->commandEd->clear();
     }
 
 }
