@@ -21,7 +21,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>Montrer au :</translation>
+        <translation>Afficher sur :</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
