@@ -6,12 +6,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Instellingen van Uitvoerder</translation>
+        <translation>Instellingen van uitvoerder</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation>Uiterlijk</translation>
+        <translation>Vormgeving</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
@@ -26,27 +26,27 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>Toon geschiedenis eerst</translation>
+        <translation>Geschiedenis bovenaan tonen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Geschiedenis opslaan/tonen</translation>
+        <translation>Geschiedenis bewaren/tonen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Let op&lt;/b&gt;: de grootte van de topniveau-minitoepassingen is beperkt tot 2/3 van de hoogte en breedte van het bureaublad.</translation>
+        <translation>&lt;b&gt;Let op&lt;/b&gt;: de grootte van widgets op het bovenste niveau is beperkt tot 2/3 van de hoogte en breedte van het bureaublad.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>Toon lijst met:</translation>
+        <translation>Lijst tonen met:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> element(en)</translation>
+        <translation> item(s)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Bovenrand van beeldscherm</translation>
+        <translation>Bovenste rand van beeldscherm</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation>Scherpgesteld scherm</translation>
+        <translation>Actief scherm</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation>Terugzetten</translation>
+        <translation>Standaardwaarden</translation>
     </message>
 </context>
 <context>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Toepassingenstarter </translation>
+        <translation>Programmastarter </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
-        <translation>Toon/verberg de Uitvoerder-dialoog</translation>
+        <translation>Uitvoerdervenster tonen/verbergen</translation>
     </message>
 </context>
 <context>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Berekening kopiëren naar klembord</translation>
     </message>
 </context>
 </TS>
