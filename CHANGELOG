@@ -1,3 +1,11 @@
+lxqt-runner-0.17.0 / 2021-04-15
+===============================
+  * Prevent selection jumps in the dropdown list.
+  * Activated `Home` and `End` in the dropdown list.
+  * Copy the calculation result to clipboard.
+  * Completely moved to Qt5 signal/slot syntax.
+  * Select the calculation result on showing lxqt-runner.
+
 lxqt-runner-0.16.0 / 2020-11-01
 ===============================
   * Don't use QProcess deprecates methods.
