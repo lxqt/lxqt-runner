@@ -57,7 +57,7 @@ endif ()
 
 if (USE_MENU_CACHE)
     # optionally use libmenu-cache from lxde to generate the application menu
-    find_package(MenuCache "$(LIBMENUCACHE_MINIMUM_VERSION}" REQUIRED)
+    find_package(MenuCache "${LIBMENUCACHE_MINIMUM_VERSION}" REQUIRED)
 endif()
 
 if (RUNNER_MATH)
