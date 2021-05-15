@@ -141,8 +141,11 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     if (mOnlyHistory)
         return left.row() < right.row();
 
-    HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(mSourceModel->command(left));
-    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(mSourceModel->command(right));
+    const auto leftItem = mSourceModel->command(left);
+    const auto righItem = mSourceModel->command(right);
+
+    HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(leftItem);
+    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(righItem);
     if (nullptr != i_left && nullptr == i_right)
         return mShowHistoryFirst;
     if (nullptr == i_left && nullptr != i_right)
@@ -156,6 +159,14 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
         Q_ASSERT(-1 != pos_left && -1 != pos_right);
         return pos_left < pos_right
             || (pos_left == pos_right && QSortFilterProxyModel::lessThan(left, right));
+    }
+
+    // compare visible names
+    if (leftItem != nullptr && righItem != nullptr)
+    {
+        int comp = leftItem->title().compare(righItem->title());
+        if (comp != 0)
+            return comp < 0;
     }
 
     return QSortFilterProxyModel::lessThan(left, right);
