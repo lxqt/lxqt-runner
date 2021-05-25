@@ -112,7 +112,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>계산 결과를 클립 보드에 복사</translation>
     </message>
 </context>
 </TS>
