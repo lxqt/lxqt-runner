@@ -141,8 +141,8 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     const auto leftItem = mSourceModel->command(left);
     const auto righItem = mSourceModel->command(right);
 
-    HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(leftItem);
-    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(righItem);
+    auto i_left = qobject_cast<HistoryItem const *>(leftItem);
+    auto i_right = qobject_cast<HistoryItem const *>(righItem);
     if (nullptr != i_left && nullptr == i_right)
         return mShowHistoryFirst;
     if (nullptr == i_left && nullptr != i_right)
@@ -151,8 +151,8 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     {
         QRegExp re(filterRegExp());
         //Note: -1 should not be returned if the item passed the filter previously
-        const int pos_left = re.indexIn(i_left->command());
-        const int pos_right = re.indexIn(i_right->command());
+        int pos_left = re.indexIn(i_left->command());
+        int pos_right = re.indexIn(i_right->command());
         Q_ASSERT(-1 != pos_left && -1 != pos_right);
         return pos_left < pos_right
             || (pos_left == pos_right && QSortFilterProxyModel::lessThan(left, right));
