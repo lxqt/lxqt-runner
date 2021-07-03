@@ -40,7 +40,6 @@ class YamlParser : public QObject
     Q_OBJECT
 public:
     YamlParser();
-    virtual ~YamlParser();
 
     void consumeLine(QString line);
 
