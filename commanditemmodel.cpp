@@ -104,14 +104,11 @@ bool CommandItemModel::filterAcceptsRow(int sourceRow, const QModelIndex &source
 
     const CommandProviderItem *item = mSourceModel->command(sourceRow);
 
-    if (!item)
-        return false;
-
-    bool accept = item->compare(re);
+    bool accept = item != nullptr && item->compare(re);
     if (accept)
     {
         //check if CustomCommand can be filtered out (equivalent app link is shown)
-        const CustomCommandItem * cust_i = qobject_cast<const CustomCommandItem *>(item);
+        auto cust_i = qobject_cast<const CustomCommandItem *>(item);
         if (nullptr != cust_i)
         {
             for (int i = mSourceModel->rowCount(sourceParent); 0 <= i; --i)
