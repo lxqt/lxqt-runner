@@ -177,10 +177,9 @@ int CommandItemModel::itemType(const QModelIndex &index) const
 {
     if (index.row() == mSourceModel->customCommandIndex().row())
         return 1;
-    else if (index.row() < mSourceModel->externalProviderStartIndex().row())
+    if (index.row() < mSourceModel->externalProviderStartIndex().row())
         return 2;
-    else
-        return 3;
+    return 3;
 }
 
 
