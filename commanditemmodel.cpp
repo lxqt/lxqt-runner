@@ -327,7 +327,7 @@ QVariant CommandSourceItemModel::data(const QModelIndex &index, int role) const
     if (index.row() >= rowCount())
         return QVariant();
 
-    const CommandProviderItem *item = command(index);
+    auto item = command(index);
     if (!item)
         return QVariant();
 
