@@ -56,17 +56,17 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Gornjem rubu ekrana</translation>
+        <translation>Gornji rub ekrana</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>Sredini ekrana</translation>
+        <translation>Sredina ekrana</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation>Fokusiranom ekranu</translation>
+        <translation>Aktivan ekran</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiraj rezultat izračuna u međuspremnik</translation>
     </message>
 </context>
 </TS>
