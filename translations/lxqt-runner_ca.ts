@@ -112,7 +112,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copia el resultat del càlcul al porta-retalls</translation>
     </message>
 </context>
 </TS>
