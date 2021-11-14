@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Nastavení spouštěče programů</translation>
+        <translation>Nastavení spouštěče</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation>Nastavit znovu</translation>
+        <translation>Vrátit na výchozí hodnoty</translation>
     </message>
 </context>
 <context>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="370"/>
         <source>Show/hide runner dialog</source>
-        <translation>Zobrazit/skrýt dialog spouštěče programů</translation>
+        <translation>Zobrazit/skrýt dialog spouštěče</translation>
     </message>
 </context>
 <context>
