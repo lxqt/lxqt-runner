@@ -176,9 +176,10 @@ QSize Dialog::sizeHint() const
 /************************************************
 
  ************************************************/
-void Dialog::resizeEvent(QResizeEvent * /*event*/)
+void Dialog::resizeEvent(QResizeEvent *event)
 {
-    mSettings->setValue(QL1S("dialog/width"), size().width());
+    if (event->spontaneous())
+        mSettings->setValue(QL1S("dialog/width"), size().width());
 }
 
 
