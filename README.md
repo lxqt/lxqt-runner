@@ -31,7 +31,7 @@ Launching binary `lxqt-runner` as LXQt Module can be adjusted from section "Basi
 
 The keyboard shortcut to launch the GUI can be configured either in "Configure" in the lxqt-runner menu or in "Global Actions Manager" (binary `lxqt-config-globalkeyshortcuts`) of [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys).
 
-In the configuration dialogue it's also possible to customize settings like the position where it's displayed, how many items to show and wether to use and save a history.
+In the configuration dialogue it's also possible to customize settings like the position where it's displayed, how many items to show and whether to use and save a history.
 
 To launch an application corresponding strings need to be filed in the form, next a selection can be made from a list presenting matches. Items to shut down or restart the system and so on are provided by the menu featuring the configuration dialogue as well.
 
