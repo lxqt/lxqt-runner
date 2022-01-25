@@ -97,7 +97,7 @@
         <translation>Limpar o historial</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Amosar/agochar o diálogo do lanzador de aplicacións</translation>
     </message>

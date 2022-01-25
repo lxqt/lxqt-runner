@@ -97,7 +97,7 @@
         <translation>사용 기록 지우기</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>러너 대화 상장 보이기/숨기기</translation>
     </message>

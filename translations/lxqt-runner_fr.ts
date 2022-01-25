@@ -97,7 +97,7 @@
         <translation>Effacer l&apos;historique</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Afficher/cacher le dialogue du lanceur</translation>
     </message>

@@ -97,7 +97,7 @@
         <translation>Vaciar histórico</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostrar/ocultar el diálogo del iniciador de aplicaciones</translation>
     </message>
