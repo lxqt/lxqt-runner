@@ -97,7 +97,7 @@
         <translation>Vyprázdnit historii</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Zobrazit/skrýt dialog spouštěče</translation>
     </message>

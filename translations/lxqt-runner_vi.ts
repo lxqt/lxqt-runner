@@ -97,7 +97,7 @@
         <translation>Xóa Lịch sử</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Hiện/ẩn hộp thoại trình chạy</translation>
     </message>

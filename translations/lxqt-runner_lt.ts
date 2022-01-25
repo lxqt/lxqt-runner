@@ -97,7 +97,7 @@
         <translation>Išvalyti istoriją</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Rodyti/slėpti paleidiklio dialogą</translation>
     </message>

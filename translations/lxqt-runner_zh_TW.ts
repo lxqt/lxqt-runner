@@ -97,7 +97,7 @@
         <translation>清除歷史紀錄</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>顯示/隱藏啟動器對話框</translation>
     </message>

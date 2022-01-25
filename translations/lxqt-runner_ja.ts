@@ -97,7 +97,7 @@
         <translation>履歴の消去</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="370"/>
+        <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
         <translation>Runner ダイアログの表示/非表示</translation>
     </message>
