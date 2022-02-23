@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>애플리케이션 런처 </translation>
+        <translation>응용 프로그램 실행도구 </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -112,7 +112,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>계산 결과를 클립 보드에 복사</translation>
+        <translation>클립보드에 계산 결과 복사</translation>
     </message>
 </context>
 </TS>
