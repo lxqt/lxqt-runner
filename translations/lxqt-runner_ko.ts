@@ -6,47 +6,47 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>러너 설정</translation>
+        <translation>실행도구 설정</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation>꾸미기</translation>
+        <translation>모양새</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>위치:</translation>
+        <translation>위치 지정:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>보이기:</translation>
+        <translation>표시 대상:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>기록 먼저 보이기</translation>
+        <translation>기록 먼저 표시</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>기록 저장하기/보이기</translation>
+        <translation>기록 저장/표시</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;알림&lt;/b&gt;: 최상위 위젯의 크기는 데스크톱의 높이와 너비의 2/3로 제한됩니다.</translation>
+        <translation>&lt;b&gt;참고&lt;/b&gt;: 최상위 위젯의 크기는 바탕 화면 높이와 너비의 2/3로 제한됩니다.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>목록과 함께 보이기:</translation>
+        <translation>다음으로 목록 표시:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
         <source> item(s)</source>
-        <translation> 개(s)</translation>
+        <translation> 개 항목</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>항상 화면 %1에</translation>
+        <translation>항상 %1 화면에 표시</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation>초기화</translation>
+        <translation>재설정</translation>
     </message>
 </context>
 <context>
@@ -84,22 +84,22 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>응용 프로그램 실행도구 </translation>
+        <translation>응용프로그램 실행도구 </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
         <source>Configure</source>
-        <translation>설정</translation>
+        <translation>구성하기</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
-        <translation>사용 기록 지우기</translation>
+        <translation>기록 지우기</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="374"/>
         <source>Show/hide runner dialog</source>
-        <translation>러너 대화 상장 보이기/숨기기</translation>
+        <translation>실행도구 대화창 표시/숨김</translation>
     </message>
 </context>
 <context>
