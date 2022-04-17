@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="th_TH">
+<TS version="2.1" language="hi">
 <context>
     <name>ConfigureDialog</name>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>रनर सेटिंग</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation>รูปลักษณ์</translation>
+        <translation>रूप-रंग</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>ตำแหน่ง:</translation>
+        <translation>स्थिति निर्धारण :</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Show on:</source>
-        <translation>แสดงบน:</translation>
+        <translation>इस पर दिखाएं :</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>पहले इतिहास दिखाएं</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="90"/>
         <source>Shortcut:</source>
-        <translation>ปุ่มลัด:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>กลางหน้าจอ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>ปุ่มเรียกใช้งานโปรแกรม</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
-        <translation>ล้างประวัติ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="374"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation>ประวัติ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>ลอกผลคำนวณใส่คลิปบอร์ด</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
