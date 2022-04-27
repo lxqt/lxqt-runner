@@ -64,6 +64,7 @@ public:
 protected:
     void closeEvent(QCloseEvent *event);
     void resizeEvent(QResizeEvent *event);
+    void moveEvent(QMoveEvent *event);
     bool eventFilter(QObject *object, QEvent *event);
     bool editKeyPressEvent(QKeyEvent *event);
     bool listKeyPressEvent(QKeyEvent *event);

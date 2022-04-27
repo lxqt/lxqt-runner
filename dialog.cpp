@@ -186,6 +186,20 @@ void Dialog::resizeEvent(QResizeEvent *event)
 /************************************************
 
  ************************************************/
+void Dialog::moveEvent(QMoveEvent *event)
+{
+    // Note: For some reason the dialog gets repositioned by "outer world" (VM?) to
+    // wrong position (0,0). The root cause of this move is yet unknown and
+    // this is a workaround to avoid wong position of the window.
+    if (event->spontaneous())
+        QTimer::singleShot(0, this, &Dialog::realign);
+    return QDialog::moveEvent(event);
+}
+
+
+/************************************************
+
+ ************************************************/
 bool Dialog::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::KeyPress)
