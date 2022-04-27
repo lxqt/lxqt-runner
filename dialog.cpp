@@ -133,8 +133,6 @@ Dialog::Dialog(QWidget *parent) :
 
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::activated, this, &Dialog::showHide);
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::shortcutChanged, this, &Dialog::shortcutChanged);
-    connect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
-    connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
 
     resize(mSettings->value(QL1S("dialog/width"), 400).toInt(), size().height());
 
@@ -194,6 +192,28 @@ void Dialog::moveEvent(QMoveEvent *event)
     if (event->spontaneous())
         QTimer::singleShot(0, this, &Dialog::realign);
     return QDialog::moveEvent(event);
+}
+
+
+/************************************************
+
+ ************************************************/
+void Dialog::showEvent(QShowEvent *event)
+{
+    connect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
+    connect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
+    return QDialog::showEvent(event);
+}
+
+
+/************************************************
+
+ ************************************************/
+void Dialog::hideEvent(QHideEvent *event)
+{
+    QDialog::hideEvent(event);
+    disconnect(KWindowSystem::self(), &KWindowSystem::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
+    disconnect(KWindowSystem::self(), &KWindowSystem::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
 }
 
 
@@ -397,7 +417,6 @@ void Dialog::applySettings()
     mCommandItemModel->showHistoryFirst(mSettings->value(QL1S("dialog/history_first"), true).toBool());
     ui->commandList->setShownCount(mSettings->value(QL1S("dialog/list_shown_items"), 4).toInt());
 
-    realign();
     mSettings->sync();
 }
 
