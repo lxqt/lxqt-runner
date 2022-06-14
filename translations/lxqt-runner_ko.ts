@@ -26,22 +26,22 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>기록 먼저 표시</translation>
+        <translation>내역 먼저 표시하기</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>기록 저장/표시</translation>
+        <translation>내역 보관/표시하기</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;참고&lt;/b&gt;: 최상위 위젯의 크기는 바탕 화면 높이와 너비의 2/3로 제한됩니다.</translation>
+        <translation>&lt;b&gt;참고&lt;/b&gt;: 최상위 위젯의 크기는 바탕화면 높이와 너비의 2/3으로 제한됩니다.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="63"/>
         <source>Show list with:</source>
-        <translation>다음으로 목록 표시:</translation>
+        <translation>다음으로 목록 표시하기:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="70"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation>포커스 된 화면</translation>
+        <translation>초점이 맞춰진 화면</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
@@ -84,7 +84,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>응용프로그램 실행도구 </translation>
+        <translation>응용프로그램 실행 프로그램 </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -94,7 +94,7 @@
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
-        <translation>기록 지우기</translation>
+        <translation>내역 비우기</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="374"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation>기록</translation>
+        <translation>내역</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>클립보드에 계산 결과 복사</translation>
+        <translation>클립보드에 계산 결과 복사하기</translation>
     </message>
 </context>
 </TS>
