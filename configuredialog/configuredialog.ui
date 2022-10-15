@@ -74,6 +74,13 @@
         </property>
        </widget>
       </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QCheckBox" name="clearCb">
+        <property name="text">
+         <string>Clear input on launching</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>

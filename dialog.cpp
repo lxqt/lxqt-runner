@@ -411,6 +411,8 @@ void Dialog::applySettings()
 
     mShowOnTop = mSettings->value(QL1S("dialog/show_on_top"), true).toBool();
 
+    mClearOnRunning = mSettings->value(QL1S("dialog/clear_on_running"), true).toBool();
+
     mMonitor = mSettings->value(QL1S("dialog/monitor"), -1).toInt();
 
     mCommandItemModel->setUseHistory(mSettings->value(QL1S("dialog/history_use"), true).toBool());
@@ -532,8 +534,11 @@ void Dialog::runCommand()
     if (res)
     {
         hide();
-        if (!qobject_cast<const MathItem*>(command)) // don't clear math results
+        if (mClearOnRunning
+            && !qobject_cast<const MathItem*>(command)) // don't clear math results
+        {
             ui->commandEd->clear();
+        }
     }
 
 }
