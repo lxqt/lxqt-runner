@@ -83,6 +83,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
 
     connect(ui->historyUseCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_use"), checked); });
     connect(ui->historyFirstCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_first"), checked); });
+    connect(ui->clearCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/clear_on_running"), checked); });
     connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, [this] (int i) { mSettings->setValue(QL1S("dialog/list_shown_items"), i); });
 }
 
@@ -103,6 +104,7 @@ void ConfigureDialog::settingsChanged()
     ui->historyUseCb->setChecked(history_use);
     ui->historyFirstCb->setChecked(mSettings->value(QL1S("dialog/history_first"), true).toBool());
     ui->historyFirstCb->setEnabled(history_use);
+    ui->clearCb->setChecked(mSettings->value(QL1S("dialog/clear_on_running"), true).toBool());
     ui->listShownItemsSB->setValue(mSettings->value(QL1S("dialog/list_shown_items"), 4).toInt());
 }
 

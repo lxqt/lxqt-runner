@@ -77,6 +77,7 @@ private:
     GlobalKeyShortcut::Action *mGlobalShortcut;
     CommandItemModel *mCommandItemModel;
     bool mShowOnTop;
+    bool mClearOnRunning;
     int mMonitor;
     LXQt::PowerManager *mPowerManager;
     LXQt::ScreenSaver *mScreenSaver;
