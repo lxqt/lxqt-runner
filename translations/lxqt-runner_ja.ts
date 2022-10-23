@@ -49,7 +49,12 @@
         <translation> 個のアイテム</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="90"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <source>Clear input on launching</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Shortcut:</source>
         <translation>ショートカット:</translation>
     </message>
@@ -97,7 +102,7 @@
         <translation>履歴の消去</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="374"/>
+        <location filename="../dialog.cpp" line="408"/>
         <source>Show/hide runner dialog</source>
         <translation>Runner ダイアログの表示/非表示</translation>
     </message>

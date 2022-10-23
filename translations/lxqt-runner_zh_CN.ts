@@ -49,7 +49,12 @@
         <translation> 个项目</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="90"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <source>Clear input on launching</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Shortcut:</source>
         <translation>快捷键:</translation>
     </message>
@@ -97,7 +102,7 @@
         <translation>清除历史</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="374"/>
+        <location filename="../dialog.cpp" line="408"/>
         <source>Show/hide runner dialog</source>
         <translation>显示/隐藏对话框</translation>
     </message>
