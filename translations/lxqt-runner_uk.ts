@@ -51,12 +51,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>Очищувати поле під час запуску</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Shortcut:</source>
-        <translation>Клавіатурне скорочення:</translation>
+        <translation>Комбінація клавіш:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>Центр екрану</translation>
+        <translation>Центр екрана</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
