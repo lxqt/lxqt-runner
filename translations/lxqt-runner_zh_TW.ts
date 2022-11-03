@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>啟動時清空輸入框</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>複製計算結果到剪貼簿</translation>
     </message>
 </context>
 </TS>

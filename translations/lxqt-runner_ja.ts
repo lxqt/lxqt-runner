@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>起動時に入力をクリアする</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>

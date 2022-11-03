@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκκαθάριση της καταχώρησης κατά την εκκίνηση</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>
