@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>Очищать поле при запуске</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>
