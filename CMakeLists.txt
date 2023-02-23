@@ -112,7 +112,7 @@ lxqt_translate_ts(lxqt-runner_QM_FILES
 lxqt_app_translation_loader(lxqt-runner_QM_LOADER ${PROJECT_NAME})
 
 if (RUNNER_VBOX)
-    list(APPEND QRC_FILES virtualbox-icons.qrc)
+    list(APPEND lxqt-runner_QRC_SOURCES virtualbox-icons.qrc)
 endif()
 
 add_executable(${PROJECT_NAME}

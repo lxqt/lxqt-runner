@@ -707,7 +707,7 @@ VirtualBoxProvider::VirtualBoxProvider():
         {"Ubuntu_64",       ":/vbox-icons/os_ubuntu_64.png"},
         {"Xandros",         ":/vbox-icons/os_xandros.png"},
         {"Xandros_64",      ":/vbox-icons/os_xandros_64.png"},
-        {"Linux",           ":/vbox-icons/os_linux_other.png"},
+        {"Linux",           ":/vbox-icons/os_linux.png"},
         {"FreeBSD",         ":/vbox-icons/os_freebsd.png"},
         {"FreeBSD_64",      ":/vbox-icons/os_freebsd_64.png"},
         {"OpenBSD",         ":/vbox-icons/os_openbsd.png"},
@@ -716,8 +716,8 @@ VirtualBoxProvider::VirtualBoxProvider():
         {"NetBSD_64",       ":/vbox-icons/os_netbsd_64.png"},
         {"Solaris",         ":/vbox-icons/os_solaris.png"},
         {"Solaris_64",      ":/vbox-icons/os_solaris_64.png"},
-        {"OpenSolaris",     ":/vbox-icons/os_opensolaris.png"},
-        {"OpenSolaris_64",  ":/vbox-icons/os_opensolaris_64.png"},
+        {"OpenSolaris",     ":/vbox-icons/os_oraclesolaris.png"},
+        {"OpenSolaris_64",  ":/vbox-icons/os_oraclesolaris_64.png"},
         {"QNX",             ":/vbox-icons/os_qnx.png"},
     };
 
