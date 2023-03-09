@@ -62,7 +62,7 @@
 
  ************************************************/
 Dialog::Dialog(QWidget *parent) :
-    QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint),
+    QDialog(parent, Qt::Dialog | Qt::WindowStaysOnTopHint | Qt::CustomizeWindowHint | Qt::FramelessWindowHint),
     ui(new Ui::Dialog),
     mSettings(new LXQt::Settings(QSL("lxqt-runner"), this)),
     mGlobalShortcut(0),
