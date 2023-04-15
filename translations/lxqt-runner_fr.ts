@@ -26,12 +26,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="46"/>
         <source>Show history first</source>
-        <translation>Afficher d&apos;abord l&apos;historique</translation>
+        <translation>Afficher d’abord l’historique</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="53"/>
         <source>Store/show history</source>
-        <translation>Enregistrer/Montrer l&apos;historique</translation>
+        <translation>Enregistrer/Montrer l’historique</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Clear input on launching</source>
-        <translation>Effacer l&apos;entrée au lancement</translation>
+        <translation>Effacer l’entrée au lancement</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="97"/>
@@ -61,12 +61,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Bord supérieur de l&apos;écran</translation>
+        <translation>Bord supérieur de l’écran</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>Centre de l&apos;écran</translation>
+        <translation>Centre de l’écran</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>Toujours sur l&apos;écran %1</translation>
+        <translation>Toujours sur l’écran %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
@@ -89,7 +89,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Lanceur d&apos;application </translation>
+        <translation>Lanceur d’application </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="105"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Clear History</source>
-        <translation>Effacer l&apos;historique</translation>
+        <translation>Effacer l’historique</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="408"/>
