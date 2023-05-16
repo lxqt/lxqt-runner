@@ -382,8 +382,9 @@ void Dialog::realign()
     QRect rect = this->geometry();
     rect.moveCenter(desktop.center());
 
+    int topGap = desktop.height() / 3;
     if (mShowOnTop)
-        rect.moveTop(desktop.top());
+        rect.moveTop(desktop.center().y() - topGap );
     else
         rect.moveTop(desktop.center().y() - ui->panel->sizeHint().height());
 

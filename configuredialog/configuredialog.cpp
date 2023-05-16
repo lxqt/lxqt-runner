@@ -58,7 +58,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     connect(ui->buttonBox->button(QDialogButtonBox::Reset), &QPushButton::clicked, this, &ConfigureDialog::resetSettings);
 
     // Position .................................
-    ui->positionCbx->addItem(tr("Top edge of the screen"), QVariant(ConfigureDialog::PositionTop));
+    ui->positionCbx->addItem(tr("Upper part of the screen"), QVariant(ConfigureDialog::PositionTop));
     ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
     connect(ui->positionCbx,  qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureDialog::positionCbxChanged);
 
