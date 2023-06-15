@@ -40,7 +40,7 @@
 #include <QPushButton>
 #include <QCloseEvent>
 #include <QAction>
-
+#include <QScreen>
 
 
 /************************************************
@@ -84,7 +84,8 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     connect(ui->historyUseCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_use"), checked); });
     connect(ui->historyFirstCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/history_first"), checked); });
     connect(ui->clearCb, &QAbstractButton::toggled, this, [this] (bool checked) { mSettings->setValue(QL1S("dialog/clear_on_running"), checked); });
-    connect(ui->listShownItemsSB, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, [this] (int i) { mSettings->setValue(QL1S("dialog/list_shown_items"), i); });
+    connect(ui->marginSB, &QAbstractSpinBox::editingFinished, this, [this] { mSettings->setValue(QL1S("dialog/top_margin"), ui->marginSB->value()); });
+    connect(ui->listShownItemsSB, &QAbstractSpinBox::editingFinished, this, [this] { mSettings->setValue(QL1S("dialog/list_shown_items"), ui->listShownItemsSB->value()); });
 }
 
 
@@ -94,9 +95,19 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
 void ConfigureDialog::settingsChanged()
 {
     if (mSettings->value(QL1S("dialog/show_on_top"), true).toBool())
+    {
         ui->positionCbx->setCurrentIndex(0);
+        ui->marginSB->setEnabled(true);
+    }
     else
+    {
         ui->positionCbx->setCurrentIndex(1);
+        ui->marginSB->setEnabled(false);
+    }
+
+    if (QScreen *s = QApplication::primaryScreen())
+        ui->marginSB->setMaximum(s->availableGeometry().height());
+    ui->marginSB->setValue(mSettings->value(QL1S("dialog/top_margin"), 0).toInt());
 
     ui->monitorCbx->setCurrentIndex(mSettings->value(QL1S("dialog/monitor"), -1).toInt() + 1);
     ui->shortcutEd->setText(mSettings->value(QL1S("dialog/shortcut"), QL1S("Alt+F2")).toString());
@@ -144,6 +155,7 @@ void ConfigureDialog::shortcutReset()
 void ConfigureDialog::positionCbxChanged(int index)
 {
     mSettings->setValue(QL1S("dialog/show_on_top"), index == 0);
+    ui->marginSB->setEnabled(index == 0);
 }
 
 
