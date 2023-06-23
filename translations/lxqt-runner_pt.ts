@@ -20,41 +20,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
+        <source>Top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="43"/>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
         <translation>Mostrar:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="46"/>
+        <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
         <translation>Mostrar histórico primeiro</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="53"/>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
         <translation>Guardar/mostrar histórico</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Nota&lt;/b&gt;: o tamanho dos widgets de nível superior está restringido a 2/3 da altura e da largura do ambiente de trabalho.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="63"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
         <translation>Mostrar lista com:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="70"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
         <translation> itens</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
         <translation>Limpar entrada ao iniciar</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
         <translation>Atalho:</translation>
     </message>
@@ -92,17 +102,17 @@
         <translation>Lançador de aplicações </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="105"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
         <translation>Configurar</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="109"/>
+        <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
         <translation>Limpar histórico</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="408"/>
+        <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostrar/ocultar caixa de diálogo</translation>
     </message>

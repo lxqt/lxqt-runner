@@ -20,41 +20,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
+        <source>Top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="43"/>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
         <translation>Pokaż na:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="46"/>
+        <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
         <translation>Pokaż historię na początku</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="53"/>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
         <translation>Przechowuj/wyświetlaj historię</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Informacja&lt;/b&gt;: Rozmiar najwyżej umieszczonych widżetów może wynosić maksymalnie ⅔ wysokości i szerokości pulpitu.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="63"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
         <translation>Liczba wyświetlanych elementów:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="70"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
         <translation>Wyczyść wejście podczas uruchamiania</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
         <translation>Skrót:</translation>
     </message>
@@ -92,17 +102,17 @@
         <translation>Wyzwalacz programu </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="105"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
         <translation>Konfiguruj</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="109"/>
+        <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
         <translation>Wyczyść historię</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="408"/>
+        <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
         <translation>Pokaż/ukryj okno programu</translation>
     </message>
