@@ -384,7 +384,7 @@ void Dialog::realign()
     rect.moveCenter(desktop.center());
 
     if (mShowOnTop)
-        rect.moveTop(desktop.top());
+        rect.moveTop(desktop.top() + qMin(mTopMargin, desktop.height() - ui->panel->sizeHint().height()));
     else
         rect.moveTop(desktop.center().y() - ui->panel->sizeHint().height());
 
@@ -411,6 +411,7 @@ void Dialog::applySettings()
         mGlobalShortcut->changeShortcut(shortcut);
 
     mShowOnTop = mSettings->value(QL1S("dialog/show_on_top"), true).toBool();
+    mTopMargin = qMax(mSettings->value(QL1S("dialog/top_margin"), 0).toInt(), 0);
 
     mClearOnRunning = mSettings->value(QL1S("dialog/clear_on_running"), true).toBool();
 
