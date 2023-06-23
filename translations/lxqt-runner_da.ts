@@ -20,41 +20,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
+        <source>Top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="43"/>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
         <translation>Vis på:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="46"/>
+        <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
         <translation>Vis historik først</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="53"/>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
         <translation>Gem/vis historik</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Bemærk&lt;/b&gt;: Størrelsen af top-niveau widgets er begrænset til 2/3 af skrivebordets højde og bredde.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="63"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
         <translation>Vis liste med:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="70"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
         <translation> post(er)</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
         <translation>Ryd input ved opstart</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
         <translation>Genvej:</translation>
     </message>
@@ -92,17 +102,17 @@
         <translation>Programstarter </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="105"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
         <translation>Konfigurér</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="109"/>
+        <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
         <translation>Ryd historik</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="408"/>
+        <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
         <translation>Vis/skjul runner-dialog</translation>
     </message>

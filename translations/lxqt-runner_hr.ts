@@ -20,41 +20,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
+        <source>Top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="43"/>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
         <translation>Prikaži na:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="46"/>
+        <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
         <translation>Najprije prikaži povijest</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="53"/>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
         <translation>Spremi/prikaži povijest</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Napomena&lt;/b&gt;: Veličina programčića najviše razine ograničena je na 2/3 visine i širine radne površine.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="63"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
         <translation>Prikaži popis s:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="70"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
         <translation> stavke(i)</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
         <translation>Izbriši unos pri pokretanju</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
         <translation>Prečac:</translation>
     </message>
@@ -92,17 +102,17 @@
         <translation>Pokretač programa </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="105"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
         <translation>Konfiguriraj</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="109"/>
+        <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
         <translation>Izbriši povijest</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="408"/>
+        <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
         <translation>Prikaži/sakrij dijalog pokretača</translation>
     </message>

@@ -20,41 +20,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
+        <source>Top margin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="43"/>
+        <source> px</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
         <translation>Kde zobrazovať:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="46"/>
+        <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
         <translation>Históriu zobrazovať na začiatku</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="53"/>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
         <translation>Uložiť/zobraziť históriu</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Upozornenie:&lt;/b&gt; Veľkosť top-level widgetov je obmedzená na 2/3 výšky a šírky pracovnej plochy.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="63"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
         <translation>Počet položiek v zozname:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="70"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
         <translation> položky</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
         <translation>Vymazať vstup pri spustení</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
         <translation>Klávesová skratka:</translation>
     </message>
@@ -92,17 +102,17 @@
         <translation>Spúšťač aplikácií </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="105"/>
+        <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
         <translation>Nastaviť</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="109"/>
+        <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
         <translation>Vymazať históriu</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="408"/>
+        <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
         <translation>Zobraziť/skryť okno Runneru</translation>
     </message>
