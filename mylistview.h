@@ -42,7 +42,7 @@ public:
     }
 
 protected:
-    virtual QSize viewportSizeHint() const override
+    QSize viewportSizeHint() const override
     {
         QAbstractItemModel * m = model();
         if (m == nullptr)

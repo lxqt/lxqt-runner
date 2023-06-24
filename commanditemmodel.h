@@ -41,10 +41,10 @@ class CommandSourceItemModel: public QAbstractListModel
 
 public:
     explicit CommandSourceItemModel(bool useHistory, QObject *parent = 0);
-    virtual ~CommandSourceItemModel();
+    ~CommandSourceItemModel() override;
 
-    int rowCount(const QModelIndex &parent=QModelIndex()) const;
-    QVariant data(const QModelIndex &index, int role=Qt::DisplayRole) const;
+    int rowCount(const QModelIndex &parent=QModelIndex()) const override;
+    QVariant data(const QModelIndex &index, int role=Qt::DisplayRole) const override;
 
     bool isOutDated() const;
     const CommandProviderItem *command(const QModelIndex &index) const;
@@ -80,7 +80,7 @@ class CommandItemModel: public QSortFilterProxyModel
 
 public:
     explicit CommandItemModel(bool useHistory, QObject *parent = 0);
-    virtual ~CommandItemModel();
+    ~CommandItemModel() override;
 
     bool isOutDated() const;
     const CommandProviderItem *command(const QModelIndex &index) const;
@@ -104,8 +104,8 @@ public slots:
     void clearHistory();
 
 protected:
-    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const;
-    bool lessThan(const QModelIndex &left, const QModelIndex &right) const;
+    bool filterAcceptsRow(int sourceRow, const QModelIndex &sourceParent) const override;
+    bool lessThan(const QModelIndex &left, const QModelIndex &right) const override;
 
 private:
     int itemType(const QModelIndex &index) const;

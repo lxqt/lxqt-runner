@@ -51,7 +51,6 @@ class CommandProviderItem: public QObject
 
 public:
     CommandProviderItem(): QObject() {}
-    virtual ~CommandProviderItem() {}
 
     virtual bool run() const = 0;
     virtual bool compare(const QRegExp &regExp) const = 0;
@@ -95,7 +94,7 @@ class CommandProvider: public QObject, public QList<CommandProviderItem*>
 
 public:
     CommandProvider();
-    virtual ~CommandProvider();
+    ~CommandProvider() override;
 
     virtual void rebuild() {}
     virtual bool isOutDated() const { return false; }
@@ -149,7 +148,7 @@ class AppLinkProvider: public CommandProvider
 
 public:
     AppLinkProvider();
-    virtual ~AppLinkProvider();
+    ~AppLinkProvider() override;
 
 private slots:
     void update();
@@ -195,7 +194,7 @@ class HistoryProvider: public CommandProvider
 
 public:
     HistoryProvider();
-    virtual ~HistoryProvider();
+    ~HistoryProvider() override;
 
     void AddCommand(const QString &command);
     void clearHistory();
@@ -218,14 +217,14 @@ class CustomCommandItem: public CommandProviderItem
 public:
     CustomCommandItem(CustomCommandProvider *provider);
 
-    bool run() const;
-    bool compare(const QRegExp &regExp) const;
+    bool run() const override;
+    bool compare(const QRegExp &regExp) const override;
 
     QString command() const { return mCommand; }
     void setCommand(const QString &command);
     QString exec() const { return mExec; }
 
-    virtual unsigned int rank(const QString &pattern) const;
+    unsigned int rank(const QString &pattern) const override;
 private:
     QString mCommand;
     QString mExec; //!< the expanded executable (full path)
@@ -269,9 +268,9 @@ public:
     MathItem();
     ~MathItem();
 
-    bool run() const;
-    bool compare(const QRegExp &regExp) const;
-    virtual unsigned int rank(const QString &pattern) const;
+    bool run() const override;
+    bool compare(const QRegExp &regExp) const override;
+    unsigned int rank(const QString &pattern) const override;
 private:
     QScopedPointer<Parser> mParser;
     mutable QString mCachedInput;
@@ -285,7 +284,7 @@ class MathProvider: public CommandProvider
 
 public:
     MathProvider();
-    //virtual ~MathProvider();
+    //~MathProvider() override;
 };
 #endif
 
@@ -303,9 +302,9 @@ public:
   VirtualBoxItem(const QString & MachineName , const QIcon & Icon);
 
   void setRDEPort (const QString & portNum);
-  bool run() const;
-  bool compare(const QRegExp &regExp) const;
-  virtual unsigned int rank(const QString &pattern) const;
+  bool run() const override;
+  bool compare(const QRegExp &regExp) const override;
+  unsigned int rank(const QString &pattern) const override;
 private:
   QString m_rdePortNum;
 };

@@ -38,10 +38,6 @@ YamlParser::YamlParser()
     state = start;
 }
 
-YamlParser::~YamlParser()
-{
-}
-
 void YamlParser::consumeLine(QString line)
 {
     static QRegExp documentStart(QSL("---\\s*(\\[\\]\\s*)?"));

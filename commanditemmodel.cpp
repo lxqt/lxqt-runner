@@ -104,14 +104,11 @@ bool CommandItemModel::filterAcceptsRow(int sourceRow, const QModelIndex &source
 
     const CommandProviderItem *item = mSourceModel->command(sourceRow);
 
-    if (!item)
-        return false;
-
-    bool accept = item->compare(re);
+    bool accept = item != nullptr && item->compare(re);
     if (accept)
     {
         //check if CustomCommand can be filtered out (equivalent app link is shown)
-        const CustomCommandItem * cust_i = qobject_cast<const CustomCommandItem *>(item);
+        auto cust_i = qobject_cast<const CustomCommandItem *>(item);
         if (nullptr != cust_i)
         {
             for (int i = mSourceModel->rowCount(sourceParent); 0 <= i; --i)
@@ -144,8 +141,8 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     const auto leftItem = mSourceModel->command(left);
     const auto righItem = mSourceModel->command(right);
 
-    HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(leftItem);
-    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(righItem);
+    auto i_left = qobject_cast<HistoryItem const *>(leftItem);
+    auto i_right = qobject_cast<HistoryItem const *>(righItem);
     if (nullptr != i_left && nullptr == i_right)
         return mShowHistoryFirst;
     if (nullptr == i_left && nullptr != i_right)
@@ -154,8 +151,8 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     {
         QRegExp re(filterRegExp());
         //Note: -1 should not be returned if the item passed the filter previously
-        const int pos_left = re.indexIn(i_left->command());
-        const int pos_right = re.indexIn(i_right->command());
+        int pos_left = re.indexIn(i_left->command());
+        int pos_right = re.indexIn(i_right->command());
         Q_ASSERT(-1 != pos_left && -1 != pos_right);
         return pos_left < pos_right
             || (pos_left == pos_right && QSortFilterProxyModel::lessThan(left, right));
@@ -180,10 +177,9 @@ int CommandItemModel::itemType(const QModelIndex &index) const
 {
     if (index.row() == mSourceModel->customCommandIndex().row())
         return 1;
-    else if (index.row() < mSourceModel->externalProviderStartIndex().row())
+    if (index.row() < mSourceModel->externalProviderStartIndex().row())
         return 2;
-    else
-        return 3;
+    return 3;
 }
 
 
@@ -331,7 +327,7 @@ QVariant CommandSourceItemModel::data(const QModelIndex &index, int role) const
     if (index.row() >= rowCount())
         return QVariant();
 
-    const CommandProviderItem *item = command(index);
+    auto item = command(index);
     if (!item)
         return QVariant();
 
