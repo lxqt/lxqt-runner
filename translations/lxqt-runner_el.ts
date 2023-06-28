@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Ρυθμίσεις lxqt-runner</translation>
+        <translation>Ρυθμίσεις του εκτελεστή</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -21,12 +21,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Επάνω περιθώριο</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> εικ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
-        <translation>Αποθήκευση/Εμφάνιση ιστορικού</translation>
+        <translation>Αποθήκευση/εμφάνιση του ιστορικού</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="74"/>
