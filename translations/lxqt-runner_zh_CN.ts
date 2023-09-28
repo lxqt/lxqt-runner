@@ -61,7 +61,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
-        <translation>启动时清空输入框</translation>
+        <translation>启动时清空输入</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="111"/>
