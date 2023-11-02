@@ -1,3 +1,8 @@
+lxqt-runner-1.4.0 / 2023-11-05
+===============================
+ * An option is added for the top margin.
+ * Ported deprecated KWindowSystem methods.
+
 lxqt-runner-1.3.0 / 2023-04-15
 ===============================
  * Updated VirtualBox icons for license compatibility.
