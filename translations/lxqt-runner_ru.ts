@@ -21,12 +21,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Верхний отступ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> пкс</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
