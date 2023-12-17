@@ -70,6 +70,7 @@ protected:
     bool eventFilter(QObject *object, QEvent *event);
     bool editKeyPressEvent(QKeyEvent *event);
     bool listKeyPressEvent(QKeyEvent *event);
+    bool event(QEvent *event);
 
 private:
     Ui::Dialog *ui;
