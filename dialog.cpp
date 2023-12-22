@@ -556,4 +556,19 @@ void Dialog::showConfigDialog()
     mConfigureDialog->exec();
 }
 
+
+/************************************************
+
+ ************************************************/
+bool Dialog::event(QEvent *event)
+{
+    // On Wayland, the workaround related to mDesktopChanged does not make sense because
+    // we cannot activate any window. So, we just hide the window on deactivation.
+    if (event->type() == QEvent::WindowDeactivate && QGuiApplication::platformName() != QSL("xcb"))
+    {
+        hide();
+    }
+    return QDialog::event(event);
+}
+
 #undef DEFAULT_SHORTCUT
