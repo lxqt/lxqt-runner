@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="eu">
+<TS version="2.1" language="pa">
 <context>
     <name>ConfigureDialog</name>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>ਰਨਰ ਸੈਟਿੰਗਾਂ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation>Itxura</translation>
+        <translation>ਦਿ਼ਖ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>Posizioa:</translation>
+        <translation>ਸਥਿਤੀ:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation>Goiko marjina</translation>
+        <translation>ਸਿਖਰਲਾ ਫਾਸਲਾ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation> px</translation>
+        <translation> ਪਿਕਸਲ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Show on:</source>
-        <translation>Erakutsi hemen:</translation>
+        <translation>ਵੇਖਾਓ:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="60"/>
         <source>Show history first</source>
-        <translation>Erakutsi historia lehenik</translation>
+        <translation>ਅਤੀਤ ਪਹਿਲਾਂ ਵੇਖਾਓ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Store/show history</source>
-        <translation>Gorde/ikusi historia</translation>
+        <translation>ਅਤੀਤ ਸੰਭਾਲੋ/ਵੇਖਾਓ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="74"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Oharra&lt;/b&gt;: Goi mailako widgeten tamaina mahaigainaren altuera eta zabaleraren 2/3era mugatua dago.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
-        <translation>Erakutsi zerrenda honekin:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
-        <translation> elementua(k)</translation>
+        <translation> ਆਈਟਮਾਂ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
-        <translation>Garbitu sarrera abiarazteko</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Shortcut:</source>
-        <translation>Lasterbidea:</translation>
+        <translation>ਸ਼ਾਰਟਕੱਟ:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Pantailaren goiko ertza</translation>
+        <translation>ਸਕਰੀਨ ਦਾ ਉੱਪਰਲੇ ਕੋਨਾ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>Pantailaren erdigunea</translation>
+        <translation>ਸਕਰੀਨ ਦੇ ਸੈਂਟਰ ਵਿੱਚ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="67"/>
         <source>Focused screen</source>
-        <translation>Enfokatutako pantaila</translation>
+        <translation>ਫੋਕਸ ਕੀਤੀ ਸਕਰੀਨ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>Always on screen %1</source>
-        <translation>Beti %1 pantailan</translation>
+        <translation>ਹਮੇਸ਼ਾ %1 ਸਕੀਰਨ ਉੱਤੇ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="80"/>
         <source>Reset</source>
-        <translation>Berrezarri</translation>
+        <translation>ਮੁੜ-ਸੈੱਟ ਕਰੋ</translation>
     </message>
 </context>
 <context>
@@ -99,22 +99,22 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Aplikazio-abiarazlea </translation>
+        <translation>ਐਪਲੀਕੇਸ਼ਨ ਲਾਂਚਰ </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="106"/>
         <source>Configure</source>
-        <translation>Konfiguratu</translation>
+        <translation>ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="110"/>
         <source>Clear History</source>
-        <translation>Garbitu historia</translation>
+        <translation>ਅਤੀਤ ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
-        <translation>Erakutsi/ezkutatu krunner-en elkarrizketa-koadroa</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -122,12 +122,12 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation>Historia</translation>
+        <translation>ਅਤੀਤ</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>Kopiatu kalkuluaren emaitza arbelean</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
