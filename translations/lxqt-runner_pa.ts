@@ -51,7 +51,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>ਇਸ ਨਾਲ ਸੂਚੀ ਵੇਖਾਓ:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>ਲਾਂਚ ਕਰਨ ਸਮੇਂ ਇਨਪੁੱਟ ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="111"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>ਰਨਰ ਡਾਈਲਾਗ ਵੇਖਾਓ/ਓਹਲੇ</translation>
     </message>
 </context>
 <context>
