@@ -21,12 +21,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Batas atas</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> pixel</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="94"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>Membersihkan input ketika membuka</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="111"/>
