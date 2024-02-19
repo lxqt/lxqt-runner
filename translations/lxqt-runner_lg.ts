@@ -122,7 +122,7 @@
     <message>
         <location filename="../providers.cpp" line="445"/>
         <source>History</source>
-        <translation type="unfinished"></translation>
+        <translation>Ebyatandikibwa</translation>
     </message>
     <message>
         <location filename="../providers.cpp" line="846"/>
