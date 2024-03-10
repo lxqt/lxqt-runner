@@ -266,9 +266,9 @@ bool AppLinkItem::run() const
 /************************************************
 
  ************************************************/
-bool AppLinkItem::compare(const QRegExp &regExp) const
+bool AppLinkItem::compare(const QRegularExpression &regExp) const
 {
-    if (regExp.isEmpty())
+    if (regExp.pattern().isEmpty())
         return false;
 
     return mProgram.contains(regExp)
@@ -283,7 +283,7 @@ bool AppLinkItem::compare(const QRegExp &regExp) const
  ************************************************/
 void AppLinkItem::initExec()
 {
-    static const QRegExp split_re{QSL("\\s")};
+    static const QRegularExpression split_re{QSL("\\s")};
     XdgDesktopFile desktop;
     if (desktop.load(mDesktopFile))
     {
@@ -459,7 +459,7 @@ bool HistoryItem::run() const
 /************************************************
 
  ************************************************/
-bool HistoryItem::compare(const QRegExp &regExp) const
+bool HistoryItem::compare(const QRegularExpression &regExp) const
 {
     return mCommand.contains(regExp);
 }
@@ -584,7 +584,7 @@ bool CustomCommandItem::run() const
 /************************************************
 
  ************************************************/
-bool CustomCommandItem::compare(const QRegExp & /*regExp*/) const
+bool CustomCommandItem::compare(const QRegularExpression & /*regExp*/) const
 {
     return !mComment.isEmpty();
 }
@@ -636,9 +636,9 @@ bool VirtualBoxItem::run() const
 
 }
 
-bool VirtualBoxItem::compare(const QRegExp &regExp) const
+bool VirtualBoxItem::compare(const QRegularExpression &regExp) const
 {
-    return (! regExp.isEmpty() && -1 != regExp.indexIn (title ()));
+    return (!regExp.pattern().isEmpty() && -1 != title().indexOf(regExp));
 }
 
 unsigned int VirtualBoxItem::rank(const QString &pattern) const
@@ -874,7 +874,7 @@ bool MathItem::run() const
 /************************************************
 
  ************************************************/
-bool MathItem::compare(const QRegExp &regExp) const
+bool MathItem::compare(const QRegularExpression &regExp) const
 {
     QString s = regExp.pattern().trimmed();
 
@@ -995,7 +995,7 @@ void ExternalProvider::newListOfMaps(QList<QMap<QString,QString> > maps)
     qDeleteAll(*this);
     clear();
 
-    for(auto map : qAsConst(maps))
+    for(auto map : std::as_const(maps))
     {
         ExternalProviderItem *item  = new ExternalProviderItem();
         if (item->setData(map))

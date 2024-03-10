@@ -25,19 +25,21 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 )
 
 # Minimum Versions
-set(KF5_MINIMUM_VERSION "5.101.0")
+set(KF6_MINIMUM_VERSION "6.0.0")
 set(LIBMENUCACHE_MINIMUM_VERSION "1.1.0")
-set(LXQT_MINIMUM_VERSION "1.4.0")
-set(LXQT_GLOBALKEYS_MINIMUM_VERSION "1.4.0")
-set(QT_MINIMUM_VERSION "5.15.0")
+set(LXQT_MINIMUM_VERSION "2.0.0")
+set(LXQT_GLOBALKEYS_MINIMUM_VERSION "2.0.0")
+set(QT_MINIMUM_VERSION "6.6.0")
+set(SHELLQT_MINIMUM_VERSION "6.0.0")
 
-find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5Xml ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
-find_package(KF5WindowSystem ${KF5_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6Xml ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt6LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(KF6WindowSystem ${KF6_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt-globalkeys-ui ${LXQT_GLOBALKEYS_MINIMUM_VERSION} REQUIRED)
-message(STATUS "Building with Qt${Qt5Core_VERSION}")
+find_package(LayerShellQt ${SHELLQT_MINIMUM_VERSION} REQUIRED)
+message(STATUS "Building with Qt${Qt6Core_VERSION}")
 
 include(LXQtPreventInSourceBuilds)
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
@@ -49,7 +51,7 @@ add_definitions(
     "-DLXQT_RUNNER_VERSION=\"${LXQT_RUNNER_VERSION}\""
 )
 
-set(QTX_LIBRARIES Qt5::Widgets Qt5::Xml)
+set(QTX_LIBRARIES Qt6::Widgets Qt6::Xml)
 
 if (USE_MENU_CACHE OR RUNNER_MATH)
     find_package(PkgConfig REQUIRED)
@@ -140,7 +142,8 @@ target_compile_definitions(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     ${lxqt-runner_LIBRARIES}
-    KF5::WindowSystem
+    KF6::WindowSystem
+    LayerShellQtInterface
 )
 
 install(TARGETS

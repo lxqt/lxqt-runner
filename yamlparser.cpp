@@ -26,7 +26,7 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include <QIODevice>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDebug>
 
 #include <LXQt/Globals>
@@ -42,18 +42,21 @@ YamlParser::~YamlParser()
 {
 }
 
-void YamlParser::consumeLine(QString line)
+void YamlParser::consumeLine(const QString &line)
 {
-    static QRegExp documentStart(QSL("---\\s*(\\[\\]\\s*)?"));
-    static QRegExp mapStart(QSL("(-\\s*)(\\w*)\\s*:(.*)$"));
-    static QRegExp mapEntry(QSL("(\\s*)(\\w*)\\s*:(.*)"));
-    static QRegExp continuation(QSL("(\\s*)(.*)"));
-    static QRegExp documentEnd(QSL("...\\s*"));
-    static QRegExp emptyLine(QSL("\\s*(#.*)?"));
+    static QRegularExpression documentStart(QSL("---\\s*(\\[\\]\\s*)?"));
+    static QRegularExpression mapStart(QSL("(-\\s*)(\\w*)\\s*:(.*)$"));
+    static QRegularExpression mapEntry(QSL("(\\s*)(\\w*)\\s*:(.*)"));
+    static QRegularExpression continuation(QSL("(\\s*)(.*)"));
+    static QRegularExpression documentEnd(QSL("...\\s*"));
+    static QRegularExpression emptyLine(QSL("\\s*(#.*)?"));
 
-    qDebug() << line;
+    QString anchoredLine = QRegularExpression::anchoredPattern(line);
+    QRegularExpressionMatch regexMatch;
 
-    if (documentStart.exactMatch(line))
+    //qDebug() << line;
+
+    if (documentStart.match(anchoredLine).hasMatch())
     {
         m_ListOfMaps.clear();
         state = atdocumentstart;
@@ -63,26 +66,31 @@ void YamlParser::consumeLine(QString line)
     {
         // Skip
     }
-    else if (emptyLine.exactMatch(line))
+    else if (emptyLine.match(anchoredLine).hasMatch())
     {
         // Skip
     }
-    else if ((state == atdocumentstart || state == inlist) && mapStart.exactMatch(line))
+    else if ((state == atdocumentstart || state == inlist)
+             && (regexMatch = mapStart.match(anchoredLine)).hasMatch())
     {
         m_ListOfMaps << QMap<QString, QString>();
-        addEntryToCurrentMap(mapStart.cap(2), mapStart.cap(3));
-        m_CurrentIndent = mapStart.cap(1).size();
+        addEntryToCurrentMap(regexMatch.captured(2), regexMatch.captured(3));
+        m_CurrentIndent = regexMatch.captured(1).size();
         state = inlist;
     }
-    else if (state == inlist && mapEntry.exactMatch(line) && mapEntry.cap(1).size() == m_CurrentIndent)
+    else if (state == inlist
+             && (regexMatch = mapEntry.match(anchoredLine)).hasMatch()
+             && regexMatch.captured(1).size() == m_CurrentIndent)
     {
-        addEntryToCurrentMap(mapEntry.cap(2), mapEntry.cap(3));
+        addEntryToCurrentMap(regexMatch.captured(2), regexMatch.captured(3));
     }
-    else if (state == inlist && continuation.exactMatch(line) && continuation.cap(1).size() > m_CurrentIndent)
+    else if (state == inlist
+             && (regexMatch = continuation.match(anchoredLine)).hasMatch()
+             && regexMatch.captured(1).size() > m_CurrentIndent)
     {
-        m_ListOfMaps.last()[m_LastKey].append(continuation.cap(2));
+        m_ListOfMaps.last()[m_LastKey].append(regexMatch.captured(2));
     }
-    else if ((state == atdocumentstart || state == inlist) && documentEnd.exactMatch(line))
+    else if ((state == atdocumentstart || state == inlist) && documentEnd.match(anchoredLine).hasMatch())
     {
         qDebug() << "emitting:" << m_ListOfMaps;
         emit newListOfMaps(m_ListOfMaps);
