@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Ustawienia Runnera</translation>
+        <translation>Ustawienia menedżera uruchamiania</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source> item(s)</source>
-        <translation></translation>
+        <translation> element(y)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="94"/>
@@ -99,7 +99,7 @@
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Wyzwalacz programu </translation>
+        <translation>Wyzwalacz programów </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="106"/>
