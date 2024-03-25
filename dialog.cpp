@@ -54,8 +54,11 @@
 #include <QScreen>
 #include <QScrollBar>
 
-#include <KWindowSystem/KWindowSystem>
-#include <KWindowSystem/KX11Extras>
+#include <KWindowSystem>
+#include <KX11Extras>
+
+#include <LayerShellQt/Shell>
+#include <LayerShellQt/Window>
 
 #define DEFAULT_SHORTCUT "Alt+F2"
 
@@ -201,9 +204,43 @@ void Dialog::moveEvent(QMoveEvent *event)
  ************************************************/
 void Dialog::showEvent(QShowEvent *event)
 {
-    connect(KX11Extras::self(), &KX11Extras::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
-    connect(KX11Extras::self(), &KX11Extras::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
-    return QDialog::showEvent(event);
+    if (QGuiApplication::platformName() == QSL("wayland"))
+    {
+        winId();
+        if (QWindow *win = windowHandle())
+        {
+            if (LayerShellQt::Window* layershell = LayerShellQt::Window::get(win))
+            {
+                layershell->setLayer(LayerShellQt::Window::Layer::LayerTop);
+                layershell->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
+                LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop};
+                layershell->setAnchors(anchors);
+                if (mShowOnTop)
+                {
+                    layershell->setMargins(QMargins(0, mTopMargin, 0, 0));
+                }
+                else
+                {
+                    int screenNumber = mMonitor;
+                    const auto screens = QGuiApplication::screens();
+                    if (mMonitor < 0 || mMonitor > screens.size() - 1)
+                    {
+                        const auto screen = QGuiApplication::screenAt(QCursor::pos());
+                        screenNumber = screen ? screens.indexOf(screen) : 0;
+                    }
+                    QRect desktop = screens.at(screenNumber)->availableGeometry();
+                    int topMargin = desktop.center().y() - ui->panel->sizeHint().height();
+                    layershell->setMargins(QMargins(0, topMargin, 0, 0));
+                }
+            }
+        }
+    }
+    else
+    {
+        connect(KX11Extras::self(), &KX11Extras::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
+        connect(KX11Extras::self(), &KX11Extras::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
+    }
+    QDialog::showEvent(event);
 }
 
 
@@ -245,6 +282,14 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
 {
     switch (event->key())
     {
+    case Qt::Key_Escape:
+        if (QGuiApplication::platformName() == QSL("wayland"))
+        {
+            hide(); // if the dialog is closed, the shell properties will not be effective the next time
+            return true;
+        }
+        break;
+
     case Qt::Key_N:
         if (event->modifiers().testFlag(Qt::ControlModifier))
         {
@@ -490,7 +535,7 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     QString trimmedText = text.simplified();
     mCommandItemModel->setCommand(trimmedText);
     mCommandItemModel->showOnlyHistory(onlyHistory);
-    mCommandItemModel->setFilterRegExp(trimmedText);
+    mCommandItemModel->setFilterRegularExpression(trimmedText);
     mCommandItemModel->invalidate();
 
     // tidy up layout and select first item

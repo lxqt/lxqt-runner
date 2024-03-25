@@ -31,7 +31,7 @@
 #define PROVIDERS_H
 
 #include <QList>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QDomElement>
 #include <QString>
 #include <QIcon>
@@ -54,7 +54,7 @@ public:
     virtual ~CommandProviderItem() {}
 
     virtual bool run() const = 0;
-    virtual bool compare(const QRegExp &regExp) const = 0;
+    virtual bool compare(const QRegularExpression &regExp) const = 0;
 
     /// Returns the item's icon.
     QIcon icon() const { return mIcon; }
@@ -122,7 +122,7 @@ public:
 #endif
 
     bool run() const;
-    bool compare(const QRegExp &regExp) const;
+    bool compare(const QRegularExpression &regExp) const;
     QString command() const { return mCommand; }
     QString exec() const { return mExec; }
 
@@ -177,7 +177,7 @@ public:
     HistoryItem(const QString &command);
 
     bool run() const;
-    bool compare(const QRegExp &regExp) const;
+    bool compare(const QRegularExpression &regExp) const;
 
     QString command() const { return mCommand; }
     virtual unsigned int rank(const QString &pattern) const;
@@ -219,7 +219,7 @@ public:
     CustomCommandItem(CustomCommandProvider *provider);
 
     bool run() const;
-    bool compare(const QRegExp &regExp) const;
+    bool compare(const QRegularExpression &regExp) const;
 
     QString command() const { return mCommand; }
     void setCommand(const QString &command);
@@ -270,7 +270,7 @@ public:
     ~MathItem();
 
     bool run() const;
-    bool compare(const QRegExp &regExp) const;
+    bool compare(const QRegularExpression &regExp) const;
     virtual unsigned int rank(const QString &pattern) const;
 private:
     QScopedPointer<Parser> mParser;
@@ -304,7 +304,7 @@ public:
 
   void setRDEPort (const QString & portNum);
   bool run() const;
-  bool compare(const QRegExp &regExp) const;
+  bool compare(const QRegularExpression &regExp) const;
   virtual unsigned int rank(const QString &pattern) const;
 private:
   QString m_rdePortNum;
@@ -337,7 +337,7 @@ public:
     bool setData(QMap<QString, QString> & data);
 
     bool run() const;
-    bool compare(const QRegExp & /*regExp*/) const {return true;} // We leave the decision to the external process
+    bool compare(const QRegularExpression & /*regExp*/) const {return true;} // We leave the decision to the external process
     unsigned int rank(const QString &pattern) const;
 
     QString mCommand;

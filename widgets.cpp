@@ -60,18 +60,18 @@ void HorizSizeGrip::mouseMoveEvent(QMouseEvent *event)
     }
 
     QRect rect = parent->geometry();
-    int delta = event->globalPos().x() - rect.center().x();
+    int delta = event->globalPosition().x() - rect.center().x();
 
     bool isLeft = pos().x() < parent->size().width() - geometry().right();
     if (isLeft)
     {
-        rect.setLeft(event->globalPos().x());
+        rect.setLeft(event->globalPosition().x());
         rect.setRight(parent->geometry().center().x() - delta);
     }
     else
     {
         rect.setLeft(parent->geometry().center().x() - delta);
-        rect.setRight(event->globalPos().x());
+        rect.setRight(event->globalPosition().x());
     }
 
     if (rect.width() < parent->minimumWidth() ||

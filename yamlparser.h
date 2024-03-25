@@ -42,7 +42,7 @@ public:
     YamlParser();
     virtual ~YamlParser();
 
-    void consumeLine(QString line);
+    void consumeLine(const QString &line);
 
 signals:
     void newListOfMaps(QList<QMap<QString, QString> > maps);
