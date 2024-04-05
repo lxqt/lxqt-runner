@@ -26,7 +26,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation> пкс</translation>
+        <translation> пикс</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
