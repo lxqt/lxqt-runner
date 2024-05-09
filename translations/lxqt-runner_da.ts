@@ -21,7 +21,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Topmargen</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
