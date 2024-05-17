@@ -14,12 +14,12 @@ Technically it consists of a single binary `lxqt-runner`. The binary is run in a
 
 ### Compiling source code
 
-Runtime dependencies are [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys), muparser, KWindowSystem, and optionally menu-cache.  
-Additional build dependencies are CMake and optionally Git to pull latest VCS checkouts.  
+Runtime dependencies are [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys), muparser, KWindowSystem, and optionally menu-cache.
+Additional build dependencies are CMake and optionally Git to pull latest VCS checkouts.
 
-Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.  
+Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.
 
-To build run `make`, to install `make install` which accepts variable `DESTDIR` as usual.  
+To build run `make`, to install `make install` which accepts variable `DESTDIR` as usual.
 
 ### Binary packages
 
@@ -30,6 +30,8 @@ Official binary packages are provided by all major Linux and BSD distributions. 
 Launching binary `lxqt-runner` as LXQt Module can be adjusted from section "Basic Settings" in configuration dialogue "LXQt Session Settings" (binary `lxqt-config-session`) of [lxqt-session](https://github.com/lxqt/lxqt-session).
 
 The keyboard shortcut to launch the GUI can be configured either in "Configure" in the lxqt-runner menu or in "Global Actions Manager" (binary `lxqt-config-globalkeyshortcuts`) of [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys).
+
+**Note:** As `lxqt-globalkeysd` is not yet supported on Wayland, a keyboard shortcut for `lxqt-runner` should be added in the compositor settings.
 
 In the configuration dialogue it's also possible to customize settings like the position where it's displayed, how many items to show and whether to use and save a history.
 
