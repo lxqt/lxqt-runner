@@ -14,7 +14,7 @@ Technically it consists of a single binary `lxqt-runner`. The binary is run in a
 
 ### Compiling source code
 
-Runtime dependencies are [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys), muparser, KWindowSystem, and optionally menu-cache.  
+Runtime dependencies are [lxqt-globalkeys](https://github.com/lxqt/lxqt-globalkeys), muparser, KWindowSystem, layer-shell-qt and optionally menu-cache.  
 Additional build dependencies are CMake and optionally Git to pull latest VCS checkouts.  
 
 Code configuration is handled by CMake. CMake variable `CMAKE_INSTALL_PREFIX` has to be set to `/usr` on most operating systems.  
