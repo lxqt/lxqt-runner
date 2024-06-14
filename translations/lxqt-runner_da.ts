@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Indstillinger for runner</translation>
+        <translation>Indstillinger for Programstarter</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> px</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../dialog.cpp" line="409"/>
         <source>Show/hide runner dialog</source>
-        <translation>Vis/skjul runner-dialog</translation>
+        <translation>Vis/skjul Programstarter-dialog</translation>
     </message>
 </context>
 <context>
