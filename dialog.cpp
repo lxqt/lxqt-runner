@@ -215,20 +215,30 @@ void Dialog::showEvent(QShowEvent *event)
                 layershell->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
                 LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop};
                 layershell->setAnchors(anchors);
+
+                QScreen *screen = nullptr;
+                const auto screens = QGuiApplication::screens();
+                if (mMonitor >= 0 && mMonitor < screens.size())
+                    screen = screens.at(mMonitor);
+                if (screen)
+                {
+                    win->setScreen(screen);
+                    layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromQWindow);
+                }
+                else
+                { // the screen is not set by us; leave it to the compositor
+                    layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromCompositor);
+                    // get the screen that the compositor chooses
+                    screen = windowHandle()->screen();
+                }
+
                 if (mShowOnTop)
                 {
                     layershell->setMargins(QMargins(0, mTopMargin, 0, 0));
                 }
-                else
+                else if (screen)
                 {
-                    int screenNumber = mMonitor;
-                    const auto screens = QGuiApplication::screens();
-                    if (mMonitor < 0 || mMonitor > screens.size() - 1)
-                    {
-                        const auto screen = QGuiApplication::screenAt(QCursor::pos());
-                        screenNumber = screen ? screens.indexOf(screen) : 0;
-                    }
-                    QRect desktop = screens.at(screenNumber)->availableGeometry();
+                    QRect desktop = screen->availableGeometry();
                     int topMargin = desktop.center().y() - ui->panel->sizeHint().height();
                     layershell->setMargins(QMargins(0, topMargin, 0, 0));
                 }
