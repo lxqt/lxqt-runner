@@ -214,6 +214,7 @@ void Dialog::showEvent(QShowEvent *event)
                 layershell->setLayer(LayerShellQt::Window::Layer::LayerTop);
                 layershell->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
                 LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop};
+                layershell->setScope(QStringLiteral("launcher"));
                 layershell->setAnchors(anchors);
 
                 QScreen *screen = nullptr;
