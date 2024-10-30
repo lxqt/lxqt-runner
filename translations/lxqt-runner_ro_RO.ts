@@ -102,17 +102,17 @@
         <translation>Lansator de aplicații </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
         <translation>Configurează</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="110"/>
+        <location filename="../dialog.cpp" line="113"/>
         <source>Clear History</source>
         <translation>Șterge istoricul</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="409"/>
+        <location filename="../dialog.cpp" line="465"/>
         <source>Show/hide runner dialog</source>
         <translation>Afișează/ascunde dialogul lansatorului</translation>
     </message>
