@@ -102,17 +102,17 @@
         <translation>مُطلق التطبيقات </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
         <translation>اضبط</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="110"/>
+        <location filename="../dialog.cpp" line="113"/>
         <source>Clear History</source>
         <translation>امسح التأريخ</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="409"/>
+        <location filename="../dialog.cpp" line="465"/>
         <source>Show/hide runner dialog</source>
         <translation>اعرض/أخفِ حواريّ المُطلق</translation>
     </message>

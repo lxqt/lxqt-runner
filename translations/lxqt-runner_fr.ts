@@ -102,17 +102,17 @@
         <translation>Lanceur d&apos;application </translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="106"/>
+        <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
         <translation>Configurer</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="110"/>
+        <location filename="../dialog.cpp" line="113"/>
         <source>Clear History</source>
         <translation>Effacer l&apos;historique</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="409"/>
+        <location filename="../dialog.cpp" line="465"/>
         <source>Show/hide runner dialog</source>
         <translation>Afficher/cacher le dialogue du lanceur</translation>
     </message>
