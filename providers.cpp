@@ -268,7 +268,7 @@ bool AppLinkItem::run() const
  ************************************************/
 bool AppLinkItem::compare(const QRegularExpression &regExp) const
 {
-    if (regExp.pattern().isEmpty())
+    if (!regExp.isValid() || regExp.pattern().isEmpty())
         return false;
 
     return mProgram.contains(regExp)
@@ -461,7 +461,7 @@ bool HistoryItem::run() const
  ************************************************/
 bool HistoryItem::compare(const QRegularExpression &regExp) const
 {
-    return mCommand.contains(regExp);
+    return regExp.isValid() && mCommand.contains(regExp);
 }
 
 
@@ -638,7 +638,7 @@ bool VirtualBoxItem::run() const
 
 bool VirtualBoxItem::compare(const QRegularExpression &regExp) const
 {
-    return (!regExp.pattern().isEmpty() && -1 != title().indexOf(regExp));
+    return (regExp.isValid() && !regExp.pattern().isEmpty() && -1 != title().indexOf(regExp));
 }
 
 unsigned int VirtualBoxItem::rank(const QString &pattern) const
@@ -876,6 +876,9 @@ bool MathItem::run() const
  ************************************************/
 bool MathItem::compare(const QRegularExpression &regExp) const
 {
+    if (!regExp.isValid())
+        return false;
+
     QString s = regExp.pattern().trimmed();
 
     bool is_math = false;
