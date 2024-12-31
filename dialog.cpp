@@ -546,7 +546,8 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     QString trimmedText = text.simplified();
     mCommandItemModel->setCommand(trimmedText);
     mCommandItemModel->showOnlyHistory(onlyHistory);
-    mCommandItemModel->setFilterRegularExpression(trimmedText);
+    QRegularExpression regExp(trimmedText);
+    mCommandItemModel->setFilterRegularExpression(regExp.isValid() ? regExp : QRegularExpression());
     mCommandItemModel->invalidate();
 
     // tidy up layout and select first item
