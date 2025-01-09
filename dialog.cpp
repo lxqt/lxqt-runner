@@ -128,12 +128,15 @@ Dialog::Dialog(QWidget *parent) :
 
     applySettings();
 
-    // screen updates
-    connect(qApp, &QApplication::screenAdded, this, &Dialog::realign);
-    connect(qApp, &QApplication::screenRemoved, this, &Dialog::realign);
-    const auto primaryScreen = QGuiApplication::primaryScreen();
-    if (primaryScreen != nullptr)
-        connect(primaryScreen, &QScreen::availableGeometryChanged, this, &Dialog::realign);
+    if (QGuiApplication::platformName() == QSL("xcb"))
+    {
+        // screen updates
+        connect(qApp, &QApplication::screenAdded, this, &Dialog::realign);
+        connect(qApp, &QApplication::screenRemoved, this, &Dialog::realign);
+        const auto primaryScreen = QGuiApplication::primaryScreen();
+        if (primaryScreen != nullptr)
+            connect(primaryScreen, &QScreen::availableGeometryChanged, this, &Dialog::realign);
+    }
 
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::activated, this, &Dialog::showHide);
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::shortcutChanged, this, &Dialog::shortcutChanged);
@@ -190,11 +193,14 @@ void Dialog::resizeEvent(QResizeEvent *event)
  ************************************************/
 void Dialog::moveEvent(QMoveEvent *event)
 {
-    // Note: For some reason the dialog gets repositioned by "outer world" (VM?) to
-    // wrong position (0,0). The root cause of this move is yet unknown and
-    // this is a workaround to avoid wong position of the window.
-    if (event->spontaneous())
-        QTimer::singleShot(0, this, &Dialog::realign);
+    if (QGuiApplication::platformName() == QSL("xcb"))
+    {
+        // NOTE: For some reason, the dialog may get repositioned under X11 by "outer world"
+        // (VM?) to wrong position (0,0). The root cause of this is yet unknown, and this is
+        // a workaround to avoid a wong position for the window.
+        if (event->spontaneous())
+            QTimer::singleShot(0, this, &Dialog::realign);
+    }
     return QDialog::moveEvent(event);
 }
 
@@ -261,8 +267,11 @@ void Dialog::showEvent(QShowEvent *event)
 void Dialog::hideEvent(QHideEvent *event)
 {
     QDialog::hideEvent(event);
-    disconnect(KX11Extras::self(), &KX11Extras::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
-    disconnect(KX11Extras::self(), &KX11Extras::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
+    if (QGuiApplication::platformName() == QSL("xcb"))
+    {
+        disconnect(KX11Extras::self(), &KX11Extras::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
+        disconnect(KX11Extras::self(), &KX11Extras::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
+    }
 }
 
 
@@ -403,6 +412,11 @@ bool Dialog::listKeyPressEvent(QKeyEvent *event)
  ************************************************/
 void Dialog::showHide()
 {
+    if (QGuiApplication::platformName() != QSL("xcb"))
+    {
+        return;
+    }
+
     // Using KWindowSystem to detect the active window since
     // QWidget::isActiveWindow is not working reliably.
     if (isVisible() && (KX11Extras::activeWindow() == winId()))
@@ -423,6 +437,7 @@ void Dialog::showHide()
 /************************************************
 
  ************************************************/
+ // Called only on X11.
 void Dialog::realign()
 {
     QRect desktop;
@@ -501,6 +516,7 @@ void Dialog::shortcutChanged(const QString &/*oldShortcut*/, const QString &newS
 /************************************************
 
  ************************************************/
+// Called only on X11.
 void Dialog::onActiveWindowChanged(WId id)
 {
     if (isVisible() && 0 != id && id != winId())
@@ -520,6 +536,7 @@ void Dialog::onActiveWindowChanged(WId id)
 /************************************************
 
  ************************************************/
+// Called only on X11.
 void Dialog::onCurrentDesktopChanged(int screen)
 {
     if (isVisible())
