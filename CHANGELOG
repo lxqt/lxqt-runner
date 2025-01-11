@@ -1,3 +1,8 @@
+lxqt-runner-2.1.1 / 2025-01-11
+===============================
+ * Suppressed new Qt warnings for invalid QRegularExpression.
+ * Fixed a new crash on closing Runner on Wayland.
+
 lxqt-runner-2.1.0 / 2024-11-05
 ===============================
  * Updated `README.md`.
