@@ -563,7 +563,7 @@ void Dialog::setFilter(const QString &text, bool onlyHistory)
     QString trimmedText = text.simplified();
     mCommandItemModel->setCommand(trimmedText);
     mCommandItemModel->showOnlyHistory(onlyHistory);
-    QRegularExpression regExp(trimmedText);
+    QRegularExpression regExp(trimmedText, QRegularExpression::CaseInsensitiveOption);
     mCommandItemModel->setFilterRegularExpression(regExp.isValid() ? regExp : QRegularExpression());
     mCommandItemModel->invalidate();
 
