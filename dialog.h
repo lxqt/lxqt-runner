@@ -81,6 +81,7 @@ private:
     int mTopMargin;
     bool mClearOnRunning;
     int mMonitor;
+    QString mScreenName;
     LXQt::PowerManager *mPowerManager;
     LXQt::ScreenSaver *mScreenSaver;
 
