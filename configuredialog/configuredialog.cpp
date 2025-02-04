@@ -60,7 +60,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     // Position .................................
     ui->positionCbx->addItem(tr("Top edge of the screen"), QVariant(ConfigureDialog::PositionTop));
     ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
-    connect(ui->positionCbx,  qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureDialog::positionCbxChanged);
+    connect(ui->positionCbx, &QComboBox::currentIndexChanged, this, &ConfigureDialog::positionCbxChanged);
 
     // Monitor ..................................
 
@@ -71,7 +71,7 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
         ui->monitorCbx->addItem(tr("Always on screen %1").arg(i + 1), QVariant(i));
 
     ui->monitorCbx->setEnabled(monCnt > 1);
-    connect(ui->monitorCbx, qOverload<int>(&QComboBox::currentIndexChanged), this, &ConfigureDialog::monitorCbxChanged);
+    connect(ui->monitorCbx, &QComboBox::currentIndexChanged, this, &ConfigureDialog::monitorCbxChanged);
 
 
     // Shortcut .................................
@@ -109,7 +109,31 @@ void ConfigureDialog::settingsChanged()
         ui->marginSB->setMaximum(s->availableGeometry().height());
     ui->marginSB->setValue(mSettings->value(QL1S("dialog/top_margin"), 0).toInt());
 
-    ui->monitorCbx->setCurrentIndex(mSettings->value(QL1S("dialog/monitor"), -1).toInt() + 1);
+    const auto screens = QGuiApplication::screens();
+    if (QGuiApplication::platformName() == QSL("wayland"))
+    {
+        QString screenName = mSettings->value(QL1S("dialog/screen_name")).toString();
+        int waylandMonitor = -1;
+        for (int i = 0; i < screens.size(); ++i)
+        {
+            if (screens.at(i)->name() == screenName)
+            {
+                waylandMonitor = i;
+                break;
+            }
+        }
+        ui->monitorCbx->setCurrentIndex(waylandMonitor + 1);
+    }
+    else
+    {
+        int X11Monitor = mSettings->value(QL1S("dialog/monitor"), -1).toInt();
+        if (X11Monitor >= screens.size())
+        {
+            X11Monitor = -1;
+        }
+        ui->monitorCbx->setCurrentIndex(X11Monitor + 1);
+    }
+
     ui->shortcutEd->setText(mSettings->value(QL1S("dialog/shortcut"), QL1S("Alt+F2")).toString());
     const bool history_use = mSettings->value(QL1S("dialog/history_use"), true).toBool();
     ui->historyUseCb->setChecked(history_use);
@@ -164,7 +188,30 @@ void ConfigureDialog::positionCbxChanged(int index)
  ************************************************/
 void ConfigureDialog::monitorCbxChanged(int index)
 {
-    mSettings->setValue(QL1S("dialog/monitor"), index - 1);
+    if (QGuiApplication::platformName() == QSL("wayland"))
+    {
+        const auto screens = QGuiApplication::screens();
+        if (index > 0 && index <= screens.size())
+        {
+            // only for Wayland
+            mSettings->setValue(QL1S("dialog/screen_name"), screens.at(index - 1)->name());
+        }
+        else
+        {
+            // for both Wayland and X11 (on the focused screen)
+            mSettings->remove(QL1S("dialog/screen_name"));
+            mSettings->setValue(QL1S("dialog/monitor"), -1);
+        }
+    }
+    else
+    {
+        if (index == 0)
+        {
+            // for both Wayland and X11 (on the focused screen)
+            mSettings->remove(QL1S("dialog/screen_name"));
+        }
+        mSettings->setValue(QL1S("dialog/monitor"), index - 1);
+    }
 }
 
 

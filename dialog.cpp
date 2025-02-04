@@ -225,11 +225,21 @@ void Dialog::showEvent(QShowEvent *event)
 
                 QScreen *screen = nullptr;
                 const auto screens = QGuiApplication::screens();
-                if (mMonitor >= 0 && mMonitor < screens.size())
-                    screen = screens.at(mMonitor);
+                for (int i = 0; i < screens.size(); ++i)
+                {
+                    if (screens.at(i)->name() == mScreenName)
+                    {
+                        screen = screens.at(i);
+                        break;
+                    }
+                }
                 if (screen)
                 {
                     win->setScreen(screen);
+                    if (auto parent = parentWidget())
+                    {
+                        parent->setScreen(screen);
+                    }
                     layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromQWindow);
                 }
                 else
@@ -487,6 +497,22 @@ void Dialog::applySettings()
     mClearOnRunning = mSettings->value(QL1S("dialog/clear_on_running"), true).toBool();
 
     mMonitor = mSettings->value(QL1S("dialog/monitor"), -1).toInt();
+    if (QGuiApplication::platformName() == QSL("wayland"))
+    {
+        mScreenName = mSettings->value(QL1S("dialog/screen_name")).toString();
+        if (mScreenName.isEmpty() && mMonitor >= 0)
+        {
+            const auto screens = QGuiApplication::screens();
+            if (mMonitor < screens.size())
+            {
+                mScreenName = screens.at(mMonitor)->name();
+                // save the found name
+                QTimer::singleShot(3000, mSettings, [this] {
+                    mSettings->setValue(QL1S("dialog/screen_name"), mScreenName);
+                });
+            }
+        }
+    }
 
     mCommandItemModel->setUseHistory(mSettings->value(QL1S("dialog/history_use"), true).toBool());
     mCommandItemModel->showHistoryFirst(mSettings->value(QL1S("dialog/history_first"), true).toBool());
