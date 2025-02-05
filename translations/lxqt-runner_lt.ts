@@ -30,41 +30,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Show on:</source>
         <translation>Rodyti:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="104"/>
         <source>Show history first</source>
         <translation>Iš pradžių, rodyti istoriją</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Store/show history</source>
         <translation>Saugoti/rodyti istoriją</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="74"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Pastaba&lt;/b&gt;: Aukščiausio lygio valdiklių dydis yra apribotas iki 2/3 darbalaukio aukščio ir pločio.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Show list with:</source>
         <translation>Rodyti sąrašą su:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="84"/>
+        <location filename="../configuredialog/configuredialog.ui" line="87"/>
         <source> item(s)</source>
         <translation> elementais(-ų)</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="94"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Clear input on launching</source>
         <translation>Paleidžiant, išvalyti įvestį</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="128"/>
         <source>Shortcut:</source>
         <translation>Spartusis klavišas:</translation>
     </message>
@@ -79,17 +89,17 @@
         <translation>Ekrano centre</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
         <source>Focused screen</source>
         <translation>Fokusuotame ekrane</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
         <source>Always on screen %1</source>
         <translation>Visada ekrane %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
         <source>Reset</source>
         <translation>Atstatyti</translation>
     </message>
@@ -112,7 +122,7 @@
         <translation>Išvalyti istoriją</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="465"/>
+        <location filename="../dialog.cpp" line="496"/>
         <source>Show/hide runner dialog</source>
         <translation>Rodyti/slėpti paleidiklio dialogą</translation>
     </message>

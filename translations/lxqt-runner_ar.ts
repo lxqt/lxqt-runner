@@ -30,41 +30,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Show on:</source>
         <translation>اعرض على:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="104"/>
         <source>Show history first</source>
         <translation>اعرض التأريخ أولا</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Store/show history</source>
         <translation>خزّن/اعرض التأريخ</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="74"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;لاحظ&lt;/b&gt;: مقاس الودجات ذات المستوى الأعلى محدّد ليكون ثُلثي ارتفاع سطح المكتب وعرضه.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Show list with:</source>
         <translation>اعرض القائمة وفيها:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="84"/>
+        <location filename="../configuredialog/configuredialog.ui" line="87"/>
         <source> item(s)</source>
         <translation> من العناصر</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="94"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Clear input on launching</source>
         <translation>امسح المدخل عند الإطلاق</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="128"/>
         <source>Shortcut:</source>
         <translation>الاختصار:</translation>
     </message>
@@ -79,17 +89,17 @@
         <translation>وسط الشاشة</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
         <source>Focused screen</source>
         <translation>الشاشة الحالية</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
         <source>Always on screen %1</source>
         <translation>الشاشة %1 دائما</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
         <source>Reset</source>
         <translation>صفّر</translation>
     </message>
@@ -112,7 +122,7 @@
         <translation>امسح التأريخ</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="465"/>
+        <location filename="../dialog.cpp" line="496"/>
         <source>Show/hide runner dialog</source>
         <translation>اعرض/أخفِ حواريّ المُطلق</translation>
     </message>

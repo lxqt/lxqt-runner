@@ -30,41 +30,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Show on:</source>
         <translation>Asukoht:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="104"/>
         <source>Show history first</source>
         <translation>Näita ajalugu esimesena</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Store/show history</source>
         <translation>Salvesta ja näita ajalugu</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="74"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Märkus&lt;/b&gt;: Ülataseme vidinate suurus on piiratud kahe kolmandikuga töölaua kõrgusest ja laiusest.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Show list with:</source>
         <translation>Otsingutulemuste arv:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="84"/>
+        <location filename="../configuredialog/configuredialog.ui" line="87"/>
         <source> item(s)</source>
         <translation> kirje(t)</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="94"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Clear input on launching</source>
         <translation>Käivitamisel kustuta sisestatud andmed</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="128"/>
         <source>Shortcut:</source>
         <translation>Kiirklahv:</translation>
     </message>
@@ -79,17 +89,17 @@
         <translation>Ekraani keskel</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
         <source>Focused screen</source>
         <translation>Ekraanil, mis on fookuses</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
         <source>Always on screen %1</source>
         <translation>Alati ekraanil %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
         <source>Reset</source>
         <translation>Lähtesta</translation>
     </message>
@@ -112,7 +122,7 @@
         <translation>Kustuta otsingute ajalugu</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="465"/>
+        <location filename="../dialog.cpp" line="496"/>
         <source>Show/hide runner dialog</source>
         <translation>Näita või peida rakenduste käivitaja</translation>
     </message>

@@ -30,41 +30,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Show on:</source>
         <translation>显示在:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="104"/>
         <source>Show history first</source>
         <translation>首先显示历史</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Store/show history</source>
         <translation>收起/显示历史</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="74"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;注意&lt;/b&gt;: 顶层小工具的大小限制在桌面长和宽的 2/3 。</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Show list with:</source>
         <translation>列表显示:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="84"/>
+        <location filename="../configuredialog/configuredialog.ui" line="87"/>
         <source> item(s)</source>
         <translation> 个项目</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="94"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Clear input on launching</source>
         <translation>启动时清空输入</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="128"/>
         <source>Shortcut:</source>
         <translation>快捷键:</translation>
     </message>
@@ -79,17 +89,17 @@
         <translation>屏幕中央</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
         <source>Focused screen</source>
         <translation>当前屏幕</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
         <source>Always on screen %1</source>
         <translation>总是显示在屏幕 %1 上</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
@@ -112,7 +122,7 @@
         <translation>清除历史</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="465"/>
+        <location filename="../dialog.cpp" line="496"/>
         <source>Show/hide runner dialog</source>
         <translation>显示/隐藏对话框</translation>
     </message>

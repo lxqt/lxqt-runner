@@ -30,41 +30,51 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
+        <source>Width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="67"/>
         <source>Show on:</source>
         <translation>Hiện tại:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="60"/>
+        <location filename="../configuredialog/configuredialog.ui" line="104"/>
         <source>Show history first</source>
         <translation>Hiển thị lịch sử trước</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="97"/>
         <source>Store/show history</source>
         <translation>Lưu trữ/hiển thị lịch sử</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="74"/>
+        <location filename="../configuredialog/configuredialog.ui" line="77"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Chú ý&lt;/b&gt;: Kích cỡ các widget ở trên cùng bị giới hạn theo 2/3 chiều cao và chiều rộng của bàn làm việc.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="80"/>
         <source>Show list with:</source>
         <translation>Hiện danh sách với:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="84"/>
+        <location filename="../configuredialog/configuredialog.ui" line="87"/>
         <source> item(s)</source>
         <translation> mục</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="94"/>
+        <location filename="../configuredialog/configuredialog.ui" line="111"/>
         <source>Clear input on launching</source>
         <translation>Xóa ô nhập vào khi khởi chạy</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="128"/>
         <source>Shortcut:</source>
         <translation>Lối tắt:</translation>
     </message>
@@ -79,17 +89,17 @@
         <translation>Trung tâm màn hình</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="67"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
         <source>Focused screen</source>
         <translation>Màn hình tập trung</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
         <source>Always on screen %1</source>
         <translation>Luôn hiện trên màn hình %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="80"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
         <source>Reset</source>
         <translation>Làm lại</translation>
     </message>
@@ -112,7 +122,7 @@
         <translation>Xóa Lịch sử</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="465"/>
+        <location filename="../dialog.cpp" line="496"/>
         <source>Show/hide runner dialog</source>
         <translation>Hiện/ẩn hộp thoại trình chạy</translation>
     </message>
