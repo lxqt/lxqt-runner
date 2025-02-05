@@ -62,6 +62,17 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     ui->positionCbx->addItem(tr("Center of the screen"), QVariant(ConfigureDialog::PositionCenter));
     connect(ui->positionCbx, &QComboBox::currentIndexChanged, this, &ConfigureDialog::positionCbxChanged);
 
+    // Width ....................................
+    if (QGuiApplication::platformName() == QSL("wayland"))
+    {
+        connect(ui->widthSB, &QAbstractSpinBox::editingFinished, this, [this] { mSettings->setValue(QL1S("dialog/wayland_width"), ui->widthSB->value()); });
+    }
+    else
+    {
+        ui->widthLabel->hide();
+        ui->widthSB->hide();
+    }
+
     // Monitor ..................................
 
     ui->monitorCbx->addItem(tr("Focused screen"), QVariant(-1));
@@ -94,6 +105,8 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
  ************************************************/
 void ConfigureDialog::settingsChanged()
 {
+    ui->widthSB->setValue(mSettings->value(QL1S("dialog/wayland_width")).toInt());
+
     if (mSettings->value(QL1S("dialog/show_on_top"), true).toBool())
     {
         ui->positionCbx->setCurrentIndex(0);

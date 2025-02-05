@@ -45,30 +45,33 @@
        </widget>
       </item>
       <item row="2" column="0">
+       <widget class="QLabel" name="widthLabel">
+        <property name="text">
+         <string>Width:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="widthSB">
+        <property name="suffix">
+         <string>%</string>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Show on:</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
+      <item row="3" column="1">
        <widget class="QComboBox" name="monitorCbx"/>
       </item>
-      <item row="5" column="0" colspan="2">
-       <widget class="QCheckBox" name="historyFirstCb">
-        <property name="text">
-         <string>Show history first</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="2">
-       <widget class="QCheckBox" name="historyUseCb">
-        <property name="text">
-         <string>Store/show history</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
+      <item row="4" column="0">
        <widget class="QLabel" name="label_4">
         <property name="toolTip">
          <string>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop's height and width.</string>
@@ -78,7 +81,7 @@
         </property>
        </widget>
       </item>
-      <item row="3" column="1">
+      <item row="4" column="1">
        <widget class="QSpinBox" name="listShownItemsSB">
         <property name="suffix">
          <string> item(s)</string>
@@ -88,7 +91,21 @@
         </property>
        </widget>
       </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QCheckBox" name="historyUseCb">
+        <property name="text">
+         <string>Store/show history</string>
+        </property>
+       </widget>
+      </item>
       <item row="6" column="0" colspan="2">
+       <widget class="QCheckBox" name="historyFirstCb">
+        <property name="text">
+         <string>Show history first</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" colspan="2">
        <widget class="QCheckBox" name="clearCb">
         <property name="text">
          <string>Clear input on launching</string>

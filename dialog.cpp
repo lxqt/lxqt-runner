@@ -136,12 +136,11 @@ Dialog::Dialog(QWidget *parent) :
         const auto primaryScreen = QGuiApplication::primaryScreen();
         if (primaryScreen != nullptr)
             connect(primaryScreen, &QScreen::availableGeometryChanged, this, &Dialog::realign);
+        resize(mSettings->value(QL1S("dialog/width"), 400).toInt(), size().height());
     }
 
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::activated, this, &Dialog::showHide);
     connect(mGlobalShortcut, &GlobalKeyShortcut::Action::shortcutChanged, this, &Dialog::shortcutChanged);
-
-    resize(mSettings->value(QL1S("dialog/width"), 400).toInt(), size().height());
 
     // TEST
     connect(mCommandItemModel, &CommandItemModel::layoutChanged, this, &Dialog::dataChanged);
@@ -183,8 +182,9 @@ QSize Dialog::sizeHint() const
  ************************************************/
 void Dialog::resizeEvent(QResizeEvent *event)
 {
-    if (event->spontaneous())
+    if (event->spontaneous() && QGuiApplication::platformName() != QSL("wayland"))
         mSettings->setValue(QL1S("dialog/width"), size().width());
+    QDialog::resizeEvent(event);
 }
 
 
@@ -219,9 +219,11 @@ void Dialog::showEvent(QShowEvent *event)
             {
                 layershell->setLayer(LayerShellQt::Window::Layer::LayerTop);
                 layershell->setKeyboardInteractivity(LayerShellQt::Window::KeyboardInteractivityOnDemand);
-                LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop};
-                layershell->setScope(QStringLiteral("launcher"));
+                LayerShellQt::Window::Anchors anchors = {LayerShellQt::Window::AnchorTop
+                                                         | LayerShellQt::Window::AnchorLeft
+                                                         | LayerShellQt::Window::AnchorRight};
                 layershell->setAnchors(anchors);
+                layershell->setScope(QStringLiteral("launcher"));
 
                 QScreen *screen = nullptr;
                 const auto screens = QGuiApplication::screens();
@@ -249,16 +251,20 @@ void Dialog::showEvent(QShowEvent *event)
                     screen = windowHandle()->screen();
                 }
 
-                if (mShowOnTop)
-                {
-                    layershell->setMargins(QMargins(0, mTopMargin, 0, 0));
-                }
-                else if (screen)
+                int topMargin = mTopMargin;
+                int hMragin = 0;
+                if (screen)
                 {
                     QRect desktop = screen->availableGeometry();
-                    int topMargin = desktop.center().y() - ui->panel->sizeHint().height();
-                    layershell->setMargins(QMargins(0, topMargin, 0, 0));
+                    int w = qBound(400, desktop.width() * mWaylandWidth / 100, desktop.width());
+                    setFixedWidth(w);
+                    hMragin = (desktop.width() - w) / 2;
+                    if (!mShowOnTop)
+                    {
+                        topMargin = desktop.height() / 2 - ui->panel->sizeHint().height();
+                    }
                 }
+                layershell->setMargins(QMargins(hMragin, topMargin, hMragin, 0));
             }
         }
     }
@@ -512,6 +518,7 @@ void Dialog::applySettings()
                 });
             }
         }
+        mWaylandWidth = mSettings->value(QL1S("dialog/wayland_width")).toInt();
     }
 
     mCommandItemModel->setUseHistory(mSettings->value(QL1S("dialog/history_use"), true).toBool());

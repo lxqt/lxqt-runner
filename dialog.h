@@ -82,6 +82,7 @@ private:
     bool mClearOnRunning;
     int mMonitor;
     QString mScreenName;
+    int mWaylandWidth;
     LXQt::PowerManager *mPowerManager;
     LXQt::ScreenSaver *mScreenSaver;
 
