@@ -48,8 +48,10 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     parser.process(a);
 
-    QWidget hiddenPreviewParent{0, Qt::Tool};
-    Dialog d(&hiddenPreviewParent);
+    std::shared_ptr<QWidget> hiddenPreviewParent;
+    if (QGuiApplication::platformName() != QSL("wayland"))
+        hiddenPreviewParent = std::make_shared<QWidget>(nullptr, Qt::Tool);
+    Dialog d(hiddenPreviewParent.get());
     a.setActivationWindow(&d);
 
     return a.exec();
