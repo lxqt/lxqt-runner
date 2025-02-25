@@ -48,10 +48,10 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     parser.process(a);
 
-    std::shared_ptr<QWidget> hiddenPreviewParent;
-    if (QGuiApplication::platformName() != QSL("wayland"))
-        hiddenPreviewParent = std::make_shared<QWidget>(nullptr, Qt::Tool);
-    Dialog d(hiddenPreviewParent.get());
+    // NOTE: At least on Wayland, and with some compositors, a hidden parent
+    // is needed for the dialog to appear on the screen that is set for it.
+    QWidget hiddenPreviewParent{0, Qt::Tool};
+    Dialog d(&hiddenPreviewParent);
     a.setActivationWindow(&d);
 
     return a.exec();

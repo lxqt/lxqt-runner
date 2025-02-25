@@ -225,6 +225,7 @@ void Dialog::showEvent(QShowEvent *event)
                 layershell->setAnchors(anchors);
                 layershell->setScope(QStringLiteral("launcher"));
 
+                bool onCursorScreen(false);
                 QScreen *screen = nullptr;
                 const auto screens = QGuiApplication::screens();
                 for (int i = 0; i < screens.size(); ++i)
@@ -246,6 +247,7 @@ void Dialog::showEvent(QShowEvent *event)
                 }
                 else
                 { // the screen is not set by us; leave it to the compositor
+                    onCursorScreen = true;
                     layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromCompositor);
                     // get the screen that the compositor chooses
                     screen = windowHandle()->screen();
@@ -255,13 +257,38 @@ void Dialog::showEvent(QShowEvent *event)
                 int hMragin = 0;
                 if (screen)
                 {
-                    QRect desktop = screen->availableGeometry();
-                    int w = qBound(400, desktop.width() * mWaylandWidth / 100, desktop.width());
+                    QRect ag = screen->availableGeometry();
+                    // NOTE: Since QShowEvent is non-spontaneous here, the window is not shown yet,
+                    // and so, this screen may not be the one with the cursor. Unfortunately, Qt
+                    // provides no way of knowing the screen with the cursor. Therefore, to prevent
+                    // an offscreen window, we should find the smallest geometry and set the
+                    // margins by considering it, at the cost of a wider window on the other
+                    // screens and positioning it above their centers.
+                    if (onCursorScreen)
+                    {
+                        for (const auto &screen : screens)
+                        {
+                            QRect sag = screen->availableGeometry();
+                            if(ag.width() > sag.width())
+                            {
+                                ag.setWidth(sag.width());
+                            }
+                            if(ag.height() > sag.height())
+                            {
+                                ag.setHeight(sag.height());
+                            }
+                        }
+                        if (mShowOnTop)
+                        {
+                            topMargin = qMin(topMargin, ag.height() - ui->panel->sizeHint().height());
+                        }
+                    }
+                    int w = qBound(400, ag.width() * mWaylandWidth / 100, ag.width());
                     setFixedWidth(w);
-                    hMragin = (desktop.width() - w) / 2;
+                    hMragin = qMax((ag.width() - w), 0) / 2;
                     if (!mShowOnTop)
                     {
-                        topMargin = desktop.height() / 2 - ui->panel->sizeHint().height();
+                        topMargin = qMax(ag.height() / 2 - ui->panel->sizeHint().height(), 0);
                     }
                 }
                 layershell->setMargins(QMargins(hMragin, topMargin, hMragin, 0));
