@@ -257,7 +257,7 @@ void Dialog::showEvent(QShowEvent *event)
                 int hMragin = 0;
                 if (screen)
                 {
-                    QRect ag = screen->availableGeometry();
+                    QSize aSize = screen->availableGeometry().size();
                     // NOTE: Since QShowEvent is non-spontaneous here, the window is not shown yet,
                     // and so, this screen may not be the one with the cursor. Unfortunately, Qt
                     // provides no way of knowing the screen with the cursor. Therefore, to prevent
@@ -268,27 +268,19 @@ void Dialog::showEvent(QShowEvent *event)
                     {
                         for (const auto &screen : screens)
                         {
-                            QRect sag = screen->availableGeometry();
-                            if(ag.width() > sag.width())
-                            {
-                                ag.setWidth(sag.width());
-                            }
-                            if(ag.height() > sag.height())
-                            {
-                                ag.setHeight(sag.height());
-                            }
+                            aSize = aSize.boundedTo(screen->availableGeometry().size());
                         }
                         if (mShowOnTop)
                         {
-                            topMargin = qMin(topMargin, ag.height() - ui->panel->sizeHint().height());
+                            topMargin = qMin(topMargin, aSize.height() - ui->panel->sizeHint().height());
                         }
                     }
-                    int w = qBound(400, ag.width() * mWaylandWidth / 100, ag.width());
+                    int w = qBound(400, aSize.width() * mWaylandWidth / 100, aSize.width());
                     setFixedWidth(w);
-                    hMragin = qMax((ag.width() - w), 0) / 2;
+                    hMragin = qMax((aSize.width() - w), 0) / 2;
                     if (!mShowOnTop)
                     {
-                        topMargin = qMax(ag.height() / 2 - ui->panel->sizeHint().height(), 0);
+                        topMargin = qMax(aSize.height() / 2 - ui->panel->sizeHint().height(), 0);
                     }
                 }
                 layershell->setMargins(QMargins(hMragin, topMargin, hMragin, 0));
@@ -696,11 +688,35 @@ void Dialog::showConfigDialog()
  ************************************************/
 bool Dialog::event(QEvent *event)
 {
-    // On Wayland, the workaround related to mDesktopChanged does not make sense because
-    // we cannot activate any window. So, we just hide the window on deactivation.
-    if (event->type() == QEvent::WindowDeactivate && QGuiApplication::platformName() != QSL("xcb"))
+    if (QGuiApplication::platformName() == QSL("wayland"))
     {
-        hide();
+        if (event->type() == QEvent::WindowDeactivate)
+        {
+            // On Wayland, the workaround related to mDesktopChanged does not make sense because
+            // we cannot activate any window. So, we just hide the window on deactivation.
+            hide();
+        }
+        else if (event->type() == QEvent::Hide || event->type() == QEvent::Show)
+        {
+            // A fixed width is set on Wayland because horizontal resizing does not work well.
+            // But sending the Show event when the window is already shown might make it shrink
+            // to its fixed width with a multi-screen setup because the active screen is reported
+            // incorrectly when the first Show event happens but correctly with the second one.
+            // As a workaround, the second Show event is consumed here.
+            static bool isHidden = true;
+            if (event->type() == QEvent::Hide)
+            {
+                isHidden = true;
+            }
+            else
+            {
+                if (!isHidden)
+                {
+                    return true;
+                }
+                isHidden = false;
+            }
+        }
     }
     return QDialog::event(event);
 }
