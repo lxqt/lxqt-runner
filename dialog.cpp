@@ -698,11 +698,7 @@ bool Dialog::event(QEvent *event)
         }
         else if (event->type() == QEvent::Hide || event->type() == QEvent::Show)
         {
-            // A fixed width is set on Wayland because horizontal resizing does not work well.
-            // But sending the Show event when the window is already shown might make it shrink
-            // to its fixed width with a multi-screen setup because the active screen is reported
-            // incorrectly when the first Show event happens but correctly with the second one.
-            // As a workaround, the second Show event is consumed here.
+            // Show or hide the window with the Wayland shortcut, imitating Dialog::showHide.
             static bool isHidden = true;
             if (event->type() == QEvent::Hide)
             {
@@ -710,11 +706,14 @@ bool Dialog::event(QEvent *event)
             }
             else
             {
-                if (!isHidden)
-                {
+                if (!isHidden && !event->spontaneous())
+                { // hide the window after consuming the event
+                    QTimer::singleShot(0, this, [this] {hide();});
                     return true;
                 }
                 isHidden = false;
+                ui->commandEd->setFocus();
+                ui->commandEd->selectAll();
             }
         }
     }
