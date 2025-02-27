@@ -66,6 +66,11 @@ ConfigureDialog::ConfigureDialog(QSettings *settings, const QString &defaultShor
     if (QGuiApplication::platformName() == QSL("wayland"))
     {
         connect(ui->widthSB, &QAbstractSpinBox::editingFinished, this, [this] { mSettings->setValue(QL1S("dialog/wayland_width"), ui->widthSB->value()); });
+        ui->labelShortcut->setEnabled(false);
+        ui->shortcutEd->setEnabled(false);
+        QString toolip = tr("On Wayland, the shortcut has to be added\nin the compositor settings for 'lxqt-runner'.");
+        ui->labelShortcut->setToolTip(toolip);
+        ui->shortcutEd->setToolTip(toolip);
     }
     else
     {
