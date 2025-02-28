@@ -53,6 +53,10 @@
       </item>
       <item row="2" column="1">
        <widget class="QSpinBox" name="widthSB">
+        <property name="toolTip">
+         <string>With multiple screens, if the window is shown on the focused screen,
+this value is only for the smallest screen. The minimum width is 400 px.</string>
+        </property>
         <property name="suffix">
          <string>%</string>
         </property>
@@ -123,7 +127,7 @@
         <enum>QFormLayout::ExpandingFieldsGrow</enum>
        </property>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="labelShortcut">
          <property name="text">
           <string>Shortcut:</string>
          </property>
