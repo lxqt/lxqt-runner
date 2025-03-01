@@ -31,12 +31,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>寬度：</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="67"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
-        <translation>配置</translation>
+        <translation>設定</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="113"/>
