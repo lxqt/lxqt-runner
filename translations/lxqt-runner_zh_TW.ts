@@ -35,46 +35,52 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>With multiple screens, if the window is shown on the focused screen,
+this value is only for the smallest screen. The minimum width is 400 px.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="71"/>
         <source>Show on:</source>
         <translation>顯示在：</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="104"/>
+        <location filename="../configuredialog/configuredialog.ui" line="108"/>
         <source>Show history first</source>
         <translation>優先顯示歷史紀錄</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="101"/>
         <source>Store/show history</source>
         <translation>儲存/顯示歷史紀錄</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="81"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;注意&lt;/b&gt;：頂層小工具的大小限制在桌面長和寬的2/3。</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source>Show list with:</source>
         <translation>顯示列表寬度：</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="87"/>
+        <location filename="../configuredialog/configuredialog.ui" line="91"/>
         <source> item(s)</source>
         <translation> 物件</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
         <translation>啟動時清空輸入框</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="128"/>
+        <location filename="../configuredialog/configuredialog.ui" line="132"/>
         <source>Shortcut:</source>
         <translation>快捷鍵：</translation>
     </message>
@@ -89,17 +95,23 @@
         <translation>螢幕中央</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>On Wayland, the shortcut has to be added
+in the compositor settings for &apos;lxqt-runner&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="83"/>
         <source>Focused screen</source>
         <translation>使用中的螢幕</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="87"/>
         <source>Always on screen %1</source>
         <translation>總是顯示在螢幕%1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
         <translation>重置</translation>
     </message>
@@ -122,7 +134,7 @@
         <translation>清除歷史紀錄</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="496"/>
+        <location filename="../dialog.cpp" line="515"/>
         <source>Show/hide runner dialog</source>
         <translation>顯示/隱藏啟動器對話框</translation>
     </message>

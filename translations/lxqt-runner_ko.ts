@@ -35,46 +35,52 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>With multiple screens, if the window is shown on the focused screen,
+this value is only for the smallest screen. The minimum width is 400 px.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="71"/>
         <source>Show on:</source>
         <translation>표시 대상:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="104"/>
+        <location filename="../configuredialog/configuredialog.ui" line="108"/>
         <source>Show history first</source>
         <translation>먼저 히스토리 표시하기</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="101"/>
         <source>Store/show history</source>
         <translation>히스토리 보관/표시하기</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="81"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;참고&lt;/b&gt;: 최상위 위젯의 크기는 바탕화면 높이와 너비의 2/3으로 제한됩니다.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source>Show list with:</source>
         <translation>다음으로 목록 표시하기:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="87"/>
+        <location filename="../configuredialog/configuredialog.ui" line="91"/>
         <source> item(s)</source>
         <translation> 개 항목</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
         <translation>실행 시 입력 지우기</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="128"/>
+        <location filename="../configuredialog/configuredialog.ui" line="132"/>
         <source>Shortcut:</source>
         <translation>단축키:</translation>
     </message>
@@ -89,17 +95,23 @@
         <translation>화면 중앙</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>On Wayland, the shortcut has to be added
+in the compositor settings for &apos;lxqt-runner&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="83"/>
         <source>Focused screen</source>
         <translation>초점이 맞춰진 화면</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="87"/>
         <source>Always on screen %1</source>
         <translation>항상 %1 화면에 표시</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
         <translation>재설정</translation>
     </message>
@@ -122,7 +134,7 @@
         <translation>히스토리 비우기</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="496"/>
+        <location filename="../dialog.cpp" line="515"/>
         <source>Show/hide runner dialog</source>
         <translation>실행도구 대화창 표시/숨김</translation>
     </message>
