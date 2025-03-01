@@ -35,46 +35,52 @@
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
+        <source>With multiple screens, if the window is shown on the focused screen,
+this value is only for the smallest screen. The minimum width is 400 px.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="67"/>
+        <location filename="../configuredialog/configuredialog.ui" line="71"/>
         <source>Show on:</source>
         <translation>Vis på:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="104"/>
+        <location filename="../configuredialog/configuredialog.ui" line="108"/>
         <source>Show history first</source>
         <translation>Vis historik først</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="97"/>
+        <location filename="../configuredialog/configuredialog.ui" line="101"/>
         <source>Store/show history</source>
         <translation>Gem/vis historik</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="77"/>
+        <location filename="../configuredialog/configuredialog.ui" line="81"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
         <translation>&lt;b&gt;Bemærk&lt;/b&gt;: Størrelsen af top-niveau widgets er begrænset til 2/3 af skrivebordets højde og bredde.</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="80"/>
+        <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source>Show list with:</source>
         <translation>Vis liste med:</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="87"/>
+        <location filename="../configuredialog/configuredialog.ui" line="91"/>
         <source> item(s)</source>
         <translation> element(er)</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="111"/>
+        <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
         <translation>Ryd input ved opstart</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.ui" line="128"/>
+        <location filename="../configuredialog/configuredialog.ui" line="132"/>
         <source>Shortcut:</source>
         <translation>Genvej:</translation>
     </message>
@@ -89,17 +95,23 @@
         <translation>I midten af skærmen</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="78"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="71"/>
+        <source>On Wayland, the shortcut has to be added
+in the compositor settings for &apos;lxqt-runner&apos;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../configuredialog/configuredialog.cpp" line="83"/>
         <source>Focused screen</source>
         <translation>Skærm som har fokus</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="82"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="87"/>
         <source>Always on screen %1</source>
         <translation>Altid på skærm %1</translation>
     </message>
     <message>
-        <location filename="../configuredialog/configuredialog.cpp" line="91"/>
+        <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
         <translation>Nulstil</translation>
     </message>
@@ -122,7 +134,7 @@
         <translation>Ryd historik</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="496"/>
+        <location filename="../dialog.cpp" line="515"/>
         <source>Show/hide runner dialog</source>
         <translation>Vis/skjul Programstarter-dialog</translation>
     </message>
