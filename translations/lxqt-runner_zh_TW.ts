@@ -37,7 +37,8 @@
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>對於使用多重螢幕，如果視窗顯示在聚焦螢幕上，
+則此值僅適用於最小的螢幕。最小寬度為 400 像素。</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
@@ -72,7 +73,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="91"/>
         <source> item(s)</source>
-        <translation> 物件</translation>
+        <translation> 項目</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="115"/>
@@ -82,7 +83,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="132"/>
         <source>Shortcut:</source>
-        <translation>快捷鍵：</translation>
+        <translation>快速鍵：</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
@@ -98,7 +99,8 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>在 Wayland 上，必須在 &apos;lxqt-runner&apos; 的
+合成器設定中加入快速鍵。</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
@@ -113,7 +115,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
-        <translation>重置</translation>
+        <translation>重新設定</translation>
     </message>
 </context>
 <context>
