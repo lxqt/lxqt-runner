@@ -37,7 +37,7 @@
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>في حالة وجود شاشات متعددة، إذا تم عرض النافذة على الشاشة المحددة، فإن هذه القيمة مخصصة فقط للشاشة الأصغر. الحد الأدنى للعرض هو 400 بكسل.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
@@ -98,7 +98,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>في Wayland، يجب إضافة الاختصار في إعدادات الملحن لـ &apos;lxqt-runner&apos;.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
