@@ -374,6 +374,10 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
             setFilter(QString(), false);
             return true;
         }
+        if (event->key() == Qt::Key_Home && !event->modifiers().testFlag(Qt::ControlModifier))
+        { // Use Home key without Ctrl inside the editor
+            return QDialog::eventFilter(ui->commandEd, event);
+        }
         qApp->sendEvent(ui->commandList, event);
         return true;
 
@@ -391,6 +395,10 @@ bool Dialog::editKeyPressEvent(QKeyEvent *event)
             ui->commandList->setFocus();
             ui->commandEd->setFocus();
             return true;
+        }
+        if (event->key() == Qt::Key_End && !event->modifiers().testFlag(Qt::ControlModifier))
+        { // Use End key without Ctrl inside the editor
+            return QDialog::eventFilter(ui->commandEd, event);
         }
         qApp->sendEvent(ui->commandList, event);
         return true;
