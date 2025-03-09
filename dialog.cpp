@@ -287,7 +287,7 @@ void Dialog::showEvent(QShowEvent *event)
             }
         }
     }
-    else
+    else if (QGuiApplication::platformName() == QSL("xcb"))
     {
         connect(KX11Extras::self(), &KX11Extras::activeWindowChanged, this, &Dialog::onActiveWindowChanged);
         connect(KX11Extras::self(), &KX11Extras::currentDesktopChanged, this, &Dialog::onCurrentDesktopChanged);
