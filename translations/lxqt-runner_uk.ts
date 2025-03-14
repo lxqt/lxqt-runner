@@ -37,7 +37,8 @@
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>На кількох екранах, якщо вікно показано на екрані у фокусі, це значення
+стосується лише найменшого екрана. Мінімальна ширина - 400 пікселів.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
@@ -98,7 +99,8 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>У Wayland скорочення слід додати у налаштуваннях композитора
+у налаштуваннях композитора для &apos;lxqt-runner&apos;.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>

@@ -21,7 +21,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation>Верхний отступ</translation>
+        <translation>Верхнее поле</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
@@ -37,7 +37,8 @@
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>При наличии нескольких экранов, если окно отображается на сфокусированном экране,
+это значение только для самого маленького экрана. Минимальная ширина — 400 пикселей.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
@@ -98,7 +99,8 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>На Wayland ярлык необходимо добавить
+в настройки композитора для «lxqt-runner».</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>

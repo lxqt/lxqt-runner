@@ -31,18 +31,19 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plotis:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Esant keliems ekranams, tuo atveju, kai langas rodomas fokusuotame ekrane,
+ši reikšmė yra tik mažiausiam ekranui. Mažiausias plotis yra 400 pikselių.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="71"/>
@@ -98,7 +99,8 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>„Wayland“ aplinkoje, tvarkytojo nustatymuose
+turi būti pridėtas spartusis klavišas, skirtas „lxqt-runner“.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
