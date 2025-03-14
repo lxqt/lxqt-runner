@@ -31,18 +31,19 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Šírka:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ak je okno zobrazené na cieľovej obrazovke,
+táto hodnota sa vzťahuje len na najmenšiu obrazovku. Minimálna šírka je 400 bodov.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="71"/>
@@ -98,7 +99,8 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>V systéme Wayland je potrebné pridať skratku
+v nastaveniach kompozitora pre &apos;lxqt-runner&apos;.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
