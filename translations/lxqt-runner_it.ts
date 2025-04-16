@@ -136,7 +136,7 @@ deve essere aggiunta nella configurazione del compositor.</translation>
         <translation>Pulisci cronologia</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostra/nascondi la finestra di runner</translation>
     </message>

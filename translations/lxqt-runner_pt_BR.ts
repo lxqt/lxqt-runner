@@ -136,7 +136,7 @@ nas configurações do compositor para &apos;lxqt-runner&apos;.</translation>
         <translation>Limpar histórico</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Exibir/ocultar diálogo do Runner</translation>
     </message>

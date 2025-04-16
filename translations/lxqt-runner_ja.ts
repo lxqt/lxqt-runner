@@ -136,7 +136,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>履歴の消去</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Runner ダイアログの表示/非表示</translation>
     </message>
