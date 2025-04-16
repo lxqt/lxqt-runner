@@ -136,7 +136,7 @@ del compositor per a lxqt-runner.</translation>
         <translation>Neteja l&apos;historial</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Mostra o oculta el diàleg de l&apos;executor</translation>
     </message>

@@ -136,7 +136,7 @@ v nastaveniach kompozitora pre &apos;lxqt-runner&apos;.</translation>
         <translation>Vymazať históriu</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Zobraziť/skryť okno Runneru</translation>
     </message>

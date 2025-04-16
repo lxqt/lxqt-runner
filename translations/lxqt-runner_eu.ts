@@ -134,7 +134,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>Garbitu historia</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Erakutsi/ezkutatu krunner-en elkarrizketa-koadroa</translation>
     </message>

@@ -136,7 +136,7 @@ turi būti pridėtas spartusis klavišas, skirtas „lxqt-runner“.</translatio
         <translation>Išvalyti istoriją</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Rodyti/slėpti paleidiklio dialogą</translation>
     </message>

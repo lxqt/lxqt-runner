@@ -134,7 +134,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>히스토리 비우기</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>실행도구 대화창 표시/숨김</translation>
     </message>

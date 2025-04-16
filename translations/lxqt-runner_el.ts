@@ -136,7 +136,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>Εκκαθάριση του ιστορικού</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Εμφάνιση/απόκρυψη του διαλόγου του εκτελεστή</translation>
     </message>

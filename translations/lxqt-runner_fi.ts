@@ -134,7 +134,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>Tyhjennä historia</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Näytä/piilota käynnistin</translation>
     </message>

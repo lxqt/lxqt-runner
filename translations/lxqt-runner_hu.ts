@@ -134,7 +134,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>Előzmények törlése</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Futtatóablak megjelenítése/elrejtése</translation>
     </message>
