@@ -31,18 +31,19 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Genişlik:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Birden fazla ekranda, pencere odaklanılan ekranda gösteriliyorsa,
+bu değer yalnızca en küçük ekran içindir. Minimum genişlik 400 pikseldir.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="71"/>
