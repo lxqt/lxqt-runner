@@ -1,3 +1,12 @@
+lxqt-runner-2.2.0 / 2025-04-17
+===============================
+ * Handle Wayland screens by using their names, not numbers.
+ * Set the width by percentage on Wayland (in config dialog).
+ * Best positioning of lxqt-runner with multi-screen Wayland.
+ * Implemented show/hide behavior for the Wayland shortcut.
+ * Added some tooltips on Wayland.
+ * Made HOME and END keys work inside the text entry.
+
 lxqt-runner-2.1.2 / 2025-01-29
 ===============================
  * Fixed a regression that broke case-insensitive filtering in some cases.
