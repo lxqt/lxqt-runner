@@ -110,7 +110,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="87"/>
         <source>Always on screen %1</source>
-        <translation>總是顯示在螢幕%1</translation>
+        <translation>總是顯示於螢幕 %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="96"/>
