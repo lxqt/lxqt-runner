@@ -16,12 +16,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>位於：</translation>
+        <translation>位置：</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation>上邊界</translation>
+        <translation>上方邊界</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
@@ -105,7 +105,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
         <source>Focused screen</source>
-        <translation>使用中的螢幕</translation>
+        <translation>作用中的螢幕</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="87"/>
@@ -151,7 +151,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>複製計算結果到剪貼簿</translation>
+        <translation>複製計算結果至剪貼簿</translation>
     </message>
 </context>
 </TS>
