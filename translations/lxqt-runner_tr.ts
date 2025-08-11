@@ -99,7 +99,7 @@ bu değer yalnızca en küçük ekran içindir. Minimum genişlik 400 pikseldir.
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wayland&apos;da, kısayolun &apos;lxqt-runner&apos; için kompozitör ayarlarına eklenmesi zorunludur.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
