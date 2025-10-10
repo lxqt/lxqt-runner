@@ -47,6 +47,7 @@ CommandItemModel::CommandItemModel(bool useHistory, QObject *parent) :
 {
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     setSortCaseSensitivity(Qt::CaseInsensitive);
+    setSortLocaleAware(true);
     setSourceModel(mSourceModel);
     sort(0);
 }
@@ -164,7 +165,7 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     // compare visible names
     if (leftItem != nullptr && righItem != nullptr)
     {
-        int comp = leftItem->title().compare(righItem->title());
+        int comp = QString::localeAwareCompare(leftItem->title(), righItem->title());
         if (comp != 0)
             return comp < 0;
     }
