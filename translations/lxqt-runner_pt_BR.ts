@@ -78,7 +78,7 @@ este valor é apenas para tela menor. A largura mínima é de 400 px.</translati
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
-        <translation>Limpar entrada</translation>
+        <translation>Limpar entrada ao abrir</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="132"/>
@@ -88,7 +88,7 @@ este valor é apenas para tela menor. A largura mínima é de 400 px.</translati
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation>Canto superior da tela</translation>
+        <translation>Borda superior da tela</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
