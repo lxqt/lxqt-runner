@@ -136,7 +136,7 @@ puloguramu ekwanaganya ebirabikira awakolerwa ezikwata ku &apos;lxqt-runner&apos
         <translation>Olukalala lusazemu</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="515"/>
+        <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
         <translation>Laga/kisa akaboozi ka LXQt-runner</translation>
     </message>
