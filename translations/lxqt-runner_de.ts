@@ -100,7 +100,8 @@ Die Mindestbreite beträgt 400 px.</translation>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Unter Wayland muss eine Verknüpfung für „lxqt-runner“ 
+in den Compositor-Einstellungenhinzugefügt werden.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
