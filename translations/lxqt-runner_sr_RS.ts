@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Поставке покретача</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -21,28 +21,28 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
         <source>Top margin</source>
-        <translation type="unfinished"></translation>
+        <translation>Горња маргина</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="43"/>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation> пкс</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="50"/>
         <source>Width:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ширина:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation type="unfinished"></translation>
+        <translation>Са више екрана, ако се прозор приказује на фокусираном екрану, ова вредност је само за најмањи екран. Минимална ширина је 400 пиксела.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
         <source>%</source>
-        <translation type="unfinished"></translation>
+        <translation>%</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="71"/>
@@ -52,32 +52,32 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="108"/>
         <source>Show history first</source>
-        <translation type="unfinished"></translation>
+        <translation>Прво прикажи историју</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="101"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Сачувај/прикажи историју</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="81"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Напомена&lt;/b&gt;: Величина виџета највишег нивоа је ограничена на 2/3 висине и ширине радне површине.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source>Show list with:</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи листе са:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="91"/>
         <source> item(s)</source>
-        <translation type="unfinished"></translation>
+        <translation> ставка(е)</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
-        <translation type="unfinished"></translation>
+        <translation>Очисти унос приликом покретања</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="132"/>
@@ -87,33 +87,33 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="61"/>
         <source>Top edge of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Горња ивица екрана</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Центар екрана</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation type="unfinished"></translation>
+        <translation>На вејленду, пречица мора бити додата у поставкама композитора за „lxqt-runner“.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
         <source>Focused screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Екран у фокусу</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="87"/>
         <source>Always on screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Увек на екрану %1</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ресетуј</translation>
     </message>
 </context>
 <context>
@@ -121,22 +121,22 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../dialog.ui" line="26"/>
         <source>Application launcher </source>
-        <translation>Покретач програма</translation>
+        <translation>Покретач програма </translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
-        <translation type="unfinished"></translation>
+        <translation>Конфигуриши</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="113"/>
         <source>Clear History</source>
-        <translation type="unfinished"></translation>
+        <translation>Обриши историју</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="523"/>
         <source>Show/hide runner dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Прикажи/сакриј дијалог покретача</translation>
     </message>
 </context>
 <context>
@@ -149,7 +149,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../providers.cpp" line="846"/>
         <source>Copy calculation result to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Копирај резултат израчунавања у клипборд</translation>
     </message>
 </context>
 </TS>
