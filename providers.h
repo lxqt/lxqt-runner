@@ -36,10 +36,6 @@
 #include <QString>
 #include <QIcon>
 
-#ifdef HAVE_MENU_CACHE
-#include <menu-cache.h>
-#endif
-
 #define MAX_RANK 0xFFFF
 
 /*! The CommandProviderItem class provides an item for use with CommandProvider.
@@ -117,10 +113,6 @@ class AppLinkItem: public CommandProviderItem
 public:
     AppLinkItem(const QDomElement &element);
 
-#ifdef HAVE_MENU_CACHE
-    AppLinkItem(MenuCacheApp* app);
-#endif
-
     bool run() const;
     bool compare(const QRegularExpression &regExp) const;
     QString command() const { return mCommand; }
@@ -155,13 +147,7 @@ private slots:
     void update();
 
 private:
-#ifdef HAVE_MENU_CACHE
-    MenuCache* mMenuCache;
-    MenuCacheNotifyId mMenuCacheNotify;
-    static void menuCacheReloadNotify(MenuCache* cache, gpointer user_data);
-#else
     XdgMenu *mXdgMenu;
-#endif
 };
 
 
