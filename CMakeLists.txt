@@ -18,7 +18,6 @@ include(GNUInstallDirs)
 option(RUNNER_MATH "Math operations support" ON)
 option(RUNNER_VBOX "Virtual Box support" ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
-option(USE_MENU_CACHE "Use libmenu-cache from LXDE to generate the app menu" OFF)
 cmake_dependent_option(RUNNER_VBOX_HEADLESS
     "Use headless mode instead of default window" OFF
     "RUNNER_VBOX" OFF
@@ -26,7 +25,6 @@ cmake_dependent_option(RUNNER_VBOX_HEADLESS
 
 # Minimum Versions
 set(KF6_MINIMUM_VERSION "6.0.0")
-set(LIBMENUCACHE_MINIMUM_VERSION "1.1.0")
 set(LXQT_MINIMUM_VERSION "2.3.0")
 set(LXQT_GLOBALKEYS_MINIMUM_VERSION "2.3.0")
 set(QT_MINIMUM_VERSION "6.6.0")
@@ -53,16 +51,8 @@ add_definitions(
 
 set(QTX_LIBRARIES Qt6::Widgets Qt6::Xml)
 
-if (USE_MENU_CACHE OR RUNNER_MATH)
-    find_package(PkgConfig REQUIRED)
-endif ()
-
-if (USE_MENU_CACHE)
-    # optionally use libmenu-cache from lxde to generate the application menu
-    find_package(MenuCache "${LIBMENUCACHE_MINIMUM_VERSION}" REQUIRED)
-endif()
-
 if (RUNNER_MATH)
+    find_package(PkgConfig REQUIRED)
     pkg_check_modules(MUPARSER REQUIRED muparser)
 endif ()
 
@@ -94,7 +84,6 @@ set(lxqt-runner_LIBRARIES
     lxqt
     lxqt-globalkeys
     lxqt-globalkeys-ui
-    ${MENUCACHE_LIBRARIES}
     ${QTX_LIBRARIES}
     ${MUPARSER_LDFLAGS}
 )
@@ -129,7 +118,6 @@ if (RUNNER_MATH)
 endif ()
 
 target_include_directories(${PROJECT_NAME}
-    PRIVATE "$<$<BOOL:${MENUCACHE_FOUND}>:${MENUCACHE_INCLUDE_DIRS}>"
     PRIVATE "$<$<BOOL:${MUPARSER_FOUND}>:${MUPARSER_INCLUDE_DIRS}>"
 )
 
@@ -137,7 +125,6 @@ target_compile_definitions(${PROJECT_NAME}
     PRIVATE "$<$<BOOL:${RUNNER_MATH}>:MATH_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX}>:VBOX_ENABLED>"
     PRIVATE "$<$<BOOL:${RUNNER_VBOX_HEADLESS}>:VBOX_HEADLESS_ENABLED>"
-    PRIVATE "$<$<BOOL:${MENUCACHE_FOUND}>:HAVE_MENU_CACHE=1>"
 )
 
 target_link_libraries(${PROJECT_NAME}
