@@ -2,7 +2,7 @@
 
 ## Overview
 
-lxqt-runner provides a GUI that comes up on the desktop and allows for launching applications or shutting down the system. A calculator function is implemented too.
+lxqt-runner provides a desktop GUI for launching applications or shutting down the system. It also includes a calculator, which is triggered by entering = or a sequence of numbers and operators.
 
 ![lxqt-runner](lxqt-runner.png)
 
