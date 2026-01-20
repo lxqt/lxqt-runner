@@ -827,6 +827,11 @@ bool MathItem::compare(const QRegularExpression &regExp) const
         s.chop(1);
     }
 
+    QRegularExpression mathPattern(QStringLiteral("^[0-9+\\-*/ ]+$"));
+    if (mathPattern.match(s).hasMatch()) {
+        is_math = true;
+    }
+
     if (is_math)
     {
         if (s != mCachedInput)
