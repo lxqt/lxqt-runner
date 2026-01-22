@@ -821,14 +821,15 @@ bool MathItem::compare(const QRegularExpression &regExp) const
         is_math = true;
         s.remove(0, 1);
     }
+
     if (s.endsWith(QLatin1Char('=')))
     {
         is_math = true;
         s.chop(1);
     }
 
-    QRegularExpression mathPattern(QStringLiteral("^[0-9+\\-*/ ]+$"));
-    if (mathPattern.match(s).hasMatch()) {
+    if (!s.isEmpty() && s.at(0).isDigit())
+    {
         is_math = true;
     }
 
