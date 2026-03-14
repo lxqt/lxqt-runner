@@ -243,12 +243,12 @@ void Dialog::showEvent(QShowEvent *event)
                     {
                         parent->setScreen(screen);
                     }
-                    layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromQWindow);
+                    layershell->setWantsToBeOnActiveScreen(true);
                 }
                 else
                 { // the screen is not set by us; leave it to the compositor
                     onCursorScreen = true;
-                    layershell->setScreenConfiguration(LayerShellQt::Window::ScreenConfiguration::ScreenFromCompositor);
+                    layershell->setWantsToBeOnActiveScreen(true);
                     // get the screen that the compositor chooses
                     screen = windowHandle()->screen();
                 }
