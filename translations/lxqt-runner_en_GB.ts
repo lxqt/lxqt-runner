@@ -58,7 +58,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</transl
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="101"/>
         <source>Store/show history</source>
-        <translation type="unfinished"></translation>
+        <translation>Store/show history</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="81"/>
