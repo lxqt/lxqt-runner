@@ -72,7 +72,7 @@ lxqt-runner-0.16.0 / 2020-11-01
 ===============================
   * Don't use QProcess deprecates methods.
   * Silenced the warnings about unused function parameters.
-  * Drop the obsolete classs QDesktopWidget.
+  * Drop the obsolete class QDesktopWidget.
 
 lxqt-runner-0.15.0 / 2020-04-23
 ===============================
@@ -95,10 +95,10 @@ lxqt-runner-0.14.0 / 2019-01-25
   * Don't use automatic string conversions
   * Improved cmake scripting
     - Set cmake_minimum_required to 3.1.0
-    - Removed locale compile definitons
+    - Removed locale compile definitions
     - Installed man page
   * Moved translations from lxqt-l10n back to lxqt-runner
-    - Removed obsolete translation fuctionality
+    - Removed obsolete translation functionality
     - Added translation promo in README.md
   * Translation updates
 
@@ -222,7 +222,7 @@ lxqt-runner-0.9.0 / 2015-01-29
   * Drop XdgDesktopFileCache::getFile()
   * Add tab-completion
   * uniform coding style
-  * Hide on loosing focus
+  * Hide on losing focus
   * Update lxqt-runner_pl_PL.ts
   * Fixes lxde/lxqt#347. HtmlDelegate on runner's list.
   * Makes the UPDATE_TRANSLATIONS option actually work.
@@ -291,7 +291,7 @@ lxqt-runner-0.6.99 / 2014-05-01
   * Removed line num from TS files.
   * Translations
   * Updated .ts.src files
-  * Extra explaination on compile flags
+  * Extra explanation on compile flags
   * indent fixes
   * Optional runtime VBoxHeadless support
   * Fix for Issue #290 Fails to build on BSD
@@ -317,8 +317,8 @@ lxqt-runner-0.6.99 / 2014-05-01
   * Preloading menu in the razor-runner.
   * Fix QRC_FILE definition
   * Fix the header path
-  * Implemention of Virtualbox Runner
-  * Implemention of VirtualBox runner
+  * Implementation of Virtualbox Runner
+  * Implementation of VirtualBox runner
   * Transifex desktop: sr_BA.ts should be a local
   * Transifex desktop: local translations
   * Transifex desktop: Translations pulled
@@ -356,7 +356,7 @@ lxqt-runner-0.6.99 / 2014-05-01
   * potential fix (workaround) from #40: XdgMenu does not display environment related items
   * homepage updated + auto replacement script
   * Micro fix in razorqt-runner
-  * XDG-files are splitted into qtxdg library.
+  * XDG-files are split into qtxdg library.
   * History mode in razor-runner.
   * Fixed  #23: Sorting razor-runner command list.
   * Translation
