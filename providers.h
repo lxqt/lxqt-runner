@@ -64,11 +64,11 @@ public:
     /// Returns the item's tooltip.
     QString toolTip() const { return mToolTip; }
 
-    /*! The result of this function is used when searching for a apropriate item.
+    /*! The result of this function is used when searching for a appropriate item.
         The item with the highest rank will be highlighted.
             0 - not suitable.
             MAX_RANK - an exact match.
-        In the most cases you can yse something like:
+        In the most cases you can use something like:
           return stringRank(mTitle, pattern);
      */
     virtual unsigned int rank(const QString &pattern) const  = 0;

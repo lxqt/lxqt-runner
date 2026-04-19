@@ -143,10 +143,10 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
         return left.row() < right.row();
 
     const auto leftItem = mSourceModel->command(left);
-    const auto righItem = mSourceModel->command(right);
+    const auto rightItem = mSourceModel->command(right);
 
     HistoryItem const * i_left = dynamic_cast<HistoryItem const *>(leftItem);
-    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(righItem);
+    HistoryItem const * i_right = dynamic_cast<HistoryItem const *>(rightItem);
     if (nullptr != i_left && nullptr == i_right)
         return mShowHistoryFirst;
     if (nullptr == i_left && nullptr != i_right)
@@ -163,9 +163,9 @@ bool CommandItemModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     }
 
     // compare visible names
-    if (leftItem != nullptr && righItem != nullptr)
+    if (leftItem != nullptr && rightItem != nullptr)
     {
-        int comp = QString::localeAwareCompare(leftItem->title(), righItem->title());
+        int comp = QString::localeAwareCompare(leftItem->title(), rightItem->title());
         if (comp != 0)
             return comp < 0;
     }
