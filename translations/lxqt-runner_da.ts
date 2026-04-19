@@ -143,12 +143,12 @@ compositor-indstillingerne for &apos;lxqt-runner&apos;.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="445"/>
+        <location filename="../providers.cpp" line="382"/>
         <source>History</source>
         <translation>Historik</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="846"/>
+        <location filename="../providers.cpp" line="783"/>
         <source>Copy calculation result to clipboard</source>
         <translation>Kopiér udregningsresultat til udklipsholder</translation>
     </message>

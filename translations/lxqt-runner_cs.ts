@@ -144,12 +144,12 @@ v nastavení kompozitoru pro „lxqt-runner“.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="445"/>
+        <location filename="../providers.cpp" line="382"/>
         <source>History</source>
         <translation>Historie</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="846"/>
+        <location filename="../providers.cpp" line="783"/>
         <source>Copy calculation result to clipboard</source>
         <translation>Zkopírovat výsledek výpočtu do schránky</translation>
     </message>
