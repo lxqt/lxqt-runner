@@ -144,12 +144,12 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="445"/>
+        <location filename="../providers.cpp" line="382"/>
         <source>History</source>
         <translation>Istoric</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="846"/>
+        <location filename="../providers.cpp" line="783"/>
         <source>Copy calculation result to clipboard</source>
         <translation>Copiază rezultatul calculului in clipboard</translation>
     </message>

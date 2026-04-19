@@ -143,12 +143,12 @@ trong cài đặt compositor cho &apos;lxqt-runner&apos;.</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../providers.cpp" line="445"/>
+        <location filename="../providers.cpp" line="382"/>
         <source>History</source>
         <translation>Lịch sử</translation>
     </message>
     <message>
-        <location filename="../providers.cpp" line="846"/>
+        <location filename="../providers.cpp" line="783"/>
         <source>Copy calculation result to clipboard</source>
         <translation>Chép kết quả tính toán vào khay nhớ tạm</translation>
     </message>
