@@ -1,3 +1,8 @@
+lxqt-runner-2.4.0 / 2026-04-20
+===============================
+ * Start calculator also on numbers.
+ * Removed menucache support.
+
 lxqt-runner-2.3.0 / 2025-11-05
 ===============================
  * Used locale-aware sorting for results.
