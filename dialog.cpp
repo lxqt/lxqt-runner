@@ -243,7 +243,8 @@ void Dialog::showEvent(QShowEvent *event)
                     {
                         parent->setScreen(screen);
                     }
-                    layershell->setWantsToBeOnActiveScreen(true);
+                    layershell->setWantsToBeOnActiveScreen(false);
+                    layershell->setScreen(nullptr);
                 }
                 else
                 { // the screen is not set by us; leave it to the compositor
