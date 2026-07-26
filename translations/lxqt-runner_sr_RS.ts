@@ -6,7 +6,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation>Поставке покретача</translation>
+        <translation>Подешавања покретача</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
         <source>Positioning:</source>
-        <translation>Позиција:</translation>
+        <translation>Постављање:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="36"/>
@@ -37,7 +37,8 @@
         <location filename="../configuredialog/configuredialog.ui" line="57"/>
         <source>With multiple screens, if the window is shown on the focused screen,
 this value is only for the smallest screen. The minimum width is 400 px.</source>
-        <translation>Са више екрана, ако се прозор приказује на фокусираном екрану, ова вредност је само за најмањи екран. Минимална ширина је 400 пиксела.</translation>
+        <translation>Са више екрана, ако се прозор приказује на фокусираном екрану,
+ова вредност је само за најмањи екран. Најмања ширина је 400 пиксела.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="61"/>
@@ -67,7 +68,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
         <source>Show list with:</source>
-        <translation>Прикажи листе са:</translation>
+        <translation>Прикажи листу са:</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="91"/>
@@ -92,13 +93,14 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="62"/>
         <source>Center of the screen</source>
-        <translation>Центар екрана</translation>
+        <translation>Средина екрана</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation>На вејленду, пречица мора бити додата у поставкама композитора за „lxqt-runner“.</translation>
+        <translation>На Вејленду, пречица мора бити додата
+у подешавањима композитора за „lxqt-runner“.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="83"/>
@@ -113,7 +115,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../configuredialog/configuredialog.cpp" line="96"/>
         <source>Reset</source>
-        <translation>Ресетуј</translation>
+        <translation>Врати</translation>
     </message>
 </context>
 <context>
@@ -126,7 +128,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../dialog.cpp" line="109"/>
         <source>Configure</source>
-        <translation>Конфигуриши</translation>
+        <translation>Подеси</translation>
     </message>
     <message>
         <location filename="../dialog.cpp" line="113"/>
@@ -149,7 +151,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
     <message>
         <location filename="../providers.cpp" line="783"/>
         <source>Copy calculation result to clipboard</source>
-        <translation>Копирај резултат израчунавања у клипборд</translation>
+        <translation>Копирај резултат прорачуна у оставу</translation>
     </message>
 </context>
 </TS>
