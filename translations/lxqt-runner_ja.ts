@@ -99,7 +99,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
         <location filename="../configuredialog/configuredialog.cpp" line="71"/>
         <source>On Wayland, the shortcut has to be added
 in the compositor settings for &apos;lxqt-runner&apos;.</source>
-        <translation>Wayland ではショートカットを「lxqt-runner」の
+        <translation>Wayland では、ショートカットを「lxqt-runner」用に
 コンポジター設定に追加する必要があります。</translation>
     </message>
     <message>
