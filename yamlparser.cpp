@@ -25,7 +25,6 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <QIODevice>
 #include <QRegularExpression>
 #include <QDebug>
 
@@ -44,17 +43,17 @@ YamlParser::~YamlParser()
 
 void YamlParser::consumeLine(const QString &line)
 {
-    static QRegularExpression documentStart(QSL("---\\s*(\\[\\]\\s*)?"));
-    static QRegularExpression mapStart(QSL("(-\\s*)(\\w*)\\s*:(.*)$"));
-    static QRegularExpression mapEntry(QSL("(\\s*)(\\w*)\\s*:(.*)"));
-    static QRegularExpression continuation(QSL("(\\s*)(.*)"));
-    static QRegularExpression documentEnd(QSL("...\\s*"));
-    static QRegularExpression emptyLine(QSL("\\s*(#.*)?"));
+    static const QRegularExpression documentStart(QSL("---\\s*(\\[\\]\\s*)?"));
+    static const QRegularExpression mapStart(QSL("(-\\s*)(\\w*)\\s*:(.*)$"));
+    static const QRegularExpression mapEntry(QSL("(\\s*)(\\w*)\\s*:(.*)"));
+    static const QRegularExpression continuation(QSL("(\\s*)(.*)"));
+    static const QRegularExpression documentEnd(QSL("...\\s*"));
+    static const QRegularExpression emptyLine(QSL("\\s*(#.*)?"));
 
-    QString anchoredLine = QRegularExpression::anchoredPattern(line);
+    const QString anchoredLine = QRegularExpression::anchoredPattern(line);
     QRegularExpressionMatch regexMatch;
 
-    //qDebug() << line;
+    // qDebug() << line;
 
     if (documentStart.match(anchoredLine).hasMatch())
     {
