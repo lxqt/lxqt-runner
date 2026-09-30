@@ -61,11 +61,7 @@ void YamlParser::consumeLine(const QString &line)
         state = atdocumentstart;
         m_CurrentIndent = -1;
     }
-    else if (state == error)
-    {
-        // Skip
-    }
-    else if (emptyLine.match(anchoredLine).hasMatch())
+    else if (state == error || emptyLine.match(anchoredLine).hasMatch())
     {
         // Skip
     }
