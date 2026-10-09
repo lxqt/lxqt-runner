@@ -49,8 +49,6 @@ add_definitions(
     "-DLXQT_RUNNER_VERSION=\"${LXQT_RUNNER_VERSION}\""
 )
 
-set(QTX_LIBRARIES Qt6::Widgets Qt6::Xml)
-
 if (RUNNER_MATH)
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(MUPARSER REQUIRED muparser)
@@ -84,7 +82,8 @@ set(lxqt-runner_LIBRARIES
     lxqt
     lxqt-globalkeys
     lxqt-globalkeys-ui
-    ${QTX_LIBRARIES}
+    Qt6::Widgets
+    Qt6::Xml
     ${MUPARSER_LDFLAGS}
 )
 
