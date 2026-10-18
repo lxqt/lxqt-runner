@@ -137,7 +137,7 @@ in den Compositor-Einstellungenhinzugefügt werden.</translation>
         <translation>Verlauf löschen</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Zeige/verberge Runnerdialog</translation>
     </message>

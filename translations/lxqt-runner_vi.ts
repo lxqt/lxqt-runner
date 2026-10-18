@@ -135,7 +135,7 @@ trong cài đặt compositor cho &apos;lxqt-runner&apos;.</translation>
         <translation>Xóa Lịch sử</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Hiện/ẩn hộp thoại trình chạy</translation>
     </message>

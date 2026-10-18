@@ -136,7 +136,7 @@ w ustawieniach kompozytora dla „lxqt-runner”.</translation>
         <translation>Wyczyść historię</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Pokaż/ukryj okno programu</translation>
     </message>

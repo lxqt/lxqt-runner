@@ -134,7 +134,7 @@ in the compositor settings for &apos;lxqt-runner&apos;.</source>
         <translation>Slett historikk</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Vis/skjul programstarter</translation>
     </message>

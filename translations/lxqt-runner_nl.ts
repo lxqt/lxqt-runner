@@ -136,7 +136,7 @@ toegevoegd in de vensterbeheerderinstellingen.</translation>
         <translation>Geschiedenis wissen</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Uitvoerdervenster tonen/verbergen</translation>
     </message>
