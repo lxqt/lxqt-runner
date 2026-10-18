@@ -63,7 +63,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="81"/>
         <source>&lt;b&gt;Note&lt;/b&gt;: The size of top-level widgets are constrained to 2/3 of the desktop&apos;s height and width.</source>
-        <translation>&lt;b&gt;Напомена&lt;/b&gt;: Величина виџета највишег нивоа је ограничена на 2/3 висине и ширине радне површине.</translation>
+        <translation>&lt;b&gt;Напомена&lt;/b&gt;: величина виџета највишег нивоа је ограничена на 2/3 висине и ширине радне површине.</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="84"/>
@@ -78,7 +78,7 @@ this value is only for the smallest screen. The minimum width is 400 px.</source
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="115"/>
         <source>Clear input on launching</source>
-        <translation>Очисти унос приликом покретања</translation>
+        <translation>Очисти унос при покретању</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="132"/>
