@@ -136,7 +136,7 @@ i kompositorsinställningarna för &apos;lxqt-runner&apos;.</translation>
         <translation>Rensa historik</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Visa/dölj programstartare</translation>
     </message>

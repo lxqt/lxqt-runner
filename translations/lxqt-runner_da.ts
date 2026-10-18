@@ -135,7 +135,7 @@ compositor-indstillingerne for &apos;lxqt-runner&apos;.</translation>
         <translation>Ryd historik</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Vis/skjul Programstarter-dialog</translation>
     </message>

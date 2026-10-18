@@ -136,7 +136,7 @@ u postavkama kompozitora za &apos;lxqt-runner&apos;.</translation>
         <translation>Izbriši povijest</translation>
     </message>
     <message>
-        <location filename="../dialog.cpp" line="523"/>
+        <location filename="../dialog.cpp" line="524"/>
         <source>Show/hide runner dialog</source>
         <translation>Prikaži/sakrij dijalog pokretača</translation>
     </message>
