@@ -6,12 +6,12 @@
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="14"/>
         <source>Runner Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>قوزغاتقۇچ تەڭشىكى</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="20"/>
         <source>Appearance</source>
-        <translation type="unfinished"></translation>
+        <translation>قىياپەت</translation>
     </message>
     <message>
         <location filename="../configuredialog/configuredialog.ui" line="26"/>
