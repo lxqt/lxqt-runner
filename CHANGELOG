@@ -1,3 +1,9 @@
+lxqt-runner-2.5.0 / 2026-11-05
+===============================
+ * Silenced layershell's warnings by updating its code.
+ * CMake maintenance.
+ * Updated the address of Free Software Foundation.
+
 lxqt-runner-2.4.0 / 2026-04-20
 ===============================
  * Start calculator also on numbers.
