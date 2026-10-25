@@ -672,7 +672,10 @@ void Dialog::runCommand()
     {
         hide();
         if (mClearOnRunning
-            && !qobject_cast<const MathItem*>(command)) // don't clear math results
+#ifdef MATH_ENABLED
+            && !qobject_cast<const MathItem*>(command) // don't clear math results
+#endif
+           )
         {
             ui->commandEd->clear();
         }
